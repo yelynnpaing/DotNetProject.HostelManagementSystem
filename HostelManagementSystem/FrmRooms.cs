@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HostelManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class FrmRooms : Form
     {
-        public Form1()
+        public FrmRooms()
         {
             InitializeComponent();
         }
