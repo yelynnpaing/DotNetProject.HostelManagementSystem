@@ -143,9 +143,9 @@
             this.LogoutLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.LogoutLabel.Location = new System.Drawing.Point(60, 16);
             this.LogoutLabel.Name = "LogoutLabel";
-            this.LogoutLabel.Size = new System.Drawing.Size(98, 25);
+            this.LogoutLabel.Size = new System.Drawing.Size(82, 25);
             this.LogoutLabel.TabIndex = 1;
-            this.LogoutLabel.Text = "Billing List";
+            this.LogoutLabel.Text = "Log Out";
             this.LogoutLabel.Click += new System.EventHandler(this.LogoutLabel_Click);
             // 
             // LogoutPic
