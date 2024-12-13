@@ -1,4 +1,5 @@
 ﻿using HostelManagementSystem;
+using HostelManagementSystem.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,7 +60,9 @@ namespace HostelManagementSystem
 
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Success.");
+                    //MessageBox.Show("Success.");
+                    FrmDashboard frmDashboard = new FrmDashboard();
+                    frmDashboard.Show();
 
                     this.Hide();
                 }
