@@ -57,6 +57,8 @@
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboRoomPosition = new System.Windows.Forms.ComboBox();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -74,6 +76,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgRoom = new System.Windows.Forms.DataGridView();
+            this.txtRoomPriceId = new System.Windows.Forms.TextBox();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -381,6 +384,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtRoomPriceId);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.cboRoomPosition);
             this.groupBox1.Controls.Add(this.DeleteBtn);
             this.groupBox1.Controls.Add(this.UpdateBtn);
             this.groupBox1.Controls.Add(this.SaveBtn);
@@ -399,6 +405,26 @@
             this.groupBox1.Size = new System.Drawing.Size(1059, 333);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(529, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(118, 20);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Room Position";
+            // 
+            // cboRoomPosition
+            // 
+            this.cboRoomPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRoomPosition.FormattingEnabled = true;
+            this.cboRoomPosition.Location = new System.Drawing.Point(532, 45);
+            this.cboRoomPosition.Name = "cboRoomPosition";
+            this.cboRoomPosition.Size = new System.Drawing.Size(188, 28);
+            this.cboRoomPosition.TabIndex = 32;
+            this.cboRoomPosition.Leave += new System.EventHandler(this.cboRoomPosition_Leave);
             // 
             // DeleteBtn
             // 
@@ -513,7 +539,7 @@
             // txtRoomPrice
             // 
             this.txtRoomPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomPrice.Location = new System.Drawing.Point(534, 45);
+            this.txtRoomPrice.Location = new System.Drawing.Point(787, 45);
             this.txtRoomPrice.Name = "txtRoomPrice";
             this.txtRoomPrice.Size = new System.Drawing.Size(188, 27);
             this.txtRoomPrice.TabIndex = 23;
@@ -522,7 +548,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(531, 24);
+            this.label4.Location = new System.Drawing.Point(784, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 20);
             this.label4.TabIndex = 22;
@@ -546,7 +572,6 @@
             this.cboRoomType.Name = "cboRoomType";
             this.cboRoomType.Size = new System.Drawing.Size(188, 28);
             this.cboRoomType.TabIndex = 1;
-            this.cboRoomType.Leave += new System.EventHandler(this.cboRoomType_Leave);
             // 
             // label8
             // 
@@ -580,6 +605,15 @@
             this.dgRoom.RowTemplate.Height = 24;
             this.dgRoom.Size = new System.Drawing.Size(1059, 423);
             this.dgRoom.TabIndex = 22;
+            // 
+            // txtRoomPriceId
+            // 
+            this.txtRoomPriceId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomPriceId.Location = new System.Drawing.Point(787, 129);
+            this.txtRoomPriceId.Name = "txtRoomPriceId";
+            this.txtRoomPriceId.Size = new System.Drawing.Size(188, 27);
+            this.txtRoomPriceId.TabIndex = 34;
+            this.txtRoomPriceId.Visible = false;
             // 
             // FrmRoom
             // 
@@ -679,5 +713,8 @@
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboRoomPosition;
+        private System.Windows.Forms.TextBox txtRoomPriceId;
     }
 }

@@ -36,6 +36,7 @@ namespace HostelManagementSystem.Views
         {
             txtRoomId.Text = "";
             cboRoomType.Text = "";
+            cboRoomPosition.Text = "";
             txtRoomPrice.Text = "";
             RoomPictureBox.Image = null;
             txtRoomId.Focus();
@@ -43,7 +44,7 @@ namespace HostelManagementSystem.Views
 
         private void FillCboRoomType()
         {
-            string query = "SELECT RoomTypeId, RoomType, RoomPrice FROM TblRoomTypes ORDER BY RoomTypeId";
+            string query = "SELECT RoomTypeId, RoomType FROM TblRoomTypes ORDER BY RoomTypeId";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet dataSet = new DataSet();
             DataTable dt = new DataTable();
@@ -52,6 +53,19 @@ namespace HostelManagementSystem.Views
             cboRoomType.DataSource = dt;
             cboRoomType.DisplayMember = dt.Columns["RoomType"].ToString();
             cboRoomType.ValueMember = dt.Columns["RoomTypeId"].ToString();
+        }
+
+        private void FillCboRoomPosition()
+        {
+            string query = "SELECT RoomPositionId, RoomPosition FROM TblRoomPositions ORDER BY RoomPositionId";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+            DataSet dataSet = new DataSet();
+            DataTable dt = new DataTable();
+            adapter.Fill(dataSet, "cboRoomPositions");
+            dt = dataSet.Tables["cboRoomPositions"];
+            cboRoomPosition.DataSource = dt;
+            cboRoomPosition.DisplayMember = dt.Columns["RoomPosition"].ToString();
+            cboRoomPosition.ValueMember = dt.Columns["RoomPositionId"].ToString();
         }
 
         private void AutoId()
@@ -81,6 +95,7 @@ namespace HostelManagementSystem.Views
             Clear();
             Connection();
             FillCboRoomType();
+            FillCboRoomPosition();
             FilldgRoomDatas();
         }
 
@@ -102,13 +117,24 @@ namespace HostelManagementSystem.Views
             AutoId();
         }
 
-        private void cboRoomType_Leave(object sender, EventArgs e)
+        private void cboRoomPosition_Leave(object sender, EventArgs e)
         {
-            string query = "SELECT RoomPrice FROM TblRoomTypes WHERE RoomTypeId = '" + cboRoomType.SelectedValue + "'";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            DataSet Dset = new DataSet();
-            adapter.Fill(Dset, "Price");
-            txtRoomPrice.Text = Dset.Tables["Price"].Rows[0][0].ToString();
+            try
+            {
+                string query = "SELECT RoomPriceId, RoomPrice, TblRoomPositions.RoomPositionId, TblRoomTypes.RoomTypeId FROM TblRoomPrices " +
+                    "INNER JOIN TblRoomTypes ON TblRoomPrices.RoomTypeId = '" + cboRoomType.SelectedValue + "'" +
+                    "INNER JOIN TblRoomPositions ON TblRoomPrices.RoomPositionId = '" + cboRoomPosition.SelectedValue + "'" +
+                    "WHERE TblRoomTypes.RoomTypeId = '" + cboRoomType.SelectedValue + "' AND TblRoomPositions.RoomPositionId = '" + cboRoomPosition.SelectedValue + "'";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                DataSet Dset = new DataSet();
+                adapter.Fill(Dset, "Price");
+                txtRoomPriceId.Text = Dset.Tables["Price"].Rows[0][0].ToString();
+                txtRoomPrice.Text = Dset.Tables["Price"].Rows[0][1].ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Please select Room Position", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -117,10 +143,12 @@ namespace HostelManagementSystem.Views
             {
                 var image = new ImageConverter().ConvertTo(RoomPictureBox.Image, typeof(Byte[]));
 
-                string query = "INSERT INTO TblRooms VALUES (@RoomId, @RoomTypeId, @image)";
+                string query = "INSERT INTO TblRooms VALUES (@RoomId, @RoomTypeId, @RoomPositionId, @RoomPriceId, @image)";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
                 cmd.Parameters.Add("@RoomTypeId", SqlDbType.Int).Value = cboRoomType.SelectedValue;
+                cmd.Parameters.Add("@RoomPositionId", SqlDbType.Int).Value = cboRoomPosition.SelectedValue;
+                cmd.Parameters.Add("@RoomPriceId", SqlDbType.Int).Value = txtRoomPriceId.Text;
                 cmd.Parameters.Add("@image", SqlDbType.Image).Value = image;
 
                 ExectueMyQuery(cmd, "Creating Room is success.");
@@ -150,8 +178,10 @@ namespace HostelManagementSystem.Views
       
         private void FilldgRoomDatas()
         {
-            string query = "SELECT RoomId, TblRoomTypes.RoomType, TblRoomTypes.RoomPrice , RoomImage FROM TblRooms " +
-                "INNER JOIN TblRoomTypes ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId;";
+            string query = "SELECT RoomId, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition , TblRoomPrices.RoomPrice, " +
+                "RoomImage FROM TblRooms INNER JOIN TblRoomTypes ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId" +
+                " INNER JOIN TblRoomPositions ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId" +
+                " INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
@@ -159,14 +189,13 @@ namespace HostelManagementSystem.Views
             dt = ds.Tables["rooms"];
 
             dgRoom.RowTemplate.Height = 100;
-            dgRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F , FontStyle.Bold);
+            dgRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F , FontStyle.Bold);
             dgRoom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgRoom.AllowUserToAddRows = false;
             dgRoom.DataSource = dt;
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
-            imgCol = (DataGridViewImageColumn)dgRoom.Columns[3];
+            imgCol = (DataGridViewImageColumn)dgRoom.Columns[4];
             imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
-    }
-    
+    } 
 }
