@@ -57,6 +57,8 @@
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ClearBtn = new System.Windows.Forms.Button();
+            this.txtRoomPriceId = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cboRoomPosition = new System.Windows.Forms.ComboBox();
             this.DeleteBtn = new System.Windows.Forms.Button();
@@ -76,7 +78,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgRoom = new System.Windows.Forms.DataGridView();
-            this.txtRoomPriceId = new System.Windows.Forms.TextBox();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -384,6 +385,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ClearBtn);
             this.groupBox1.Controls.Add(this.txtRoomPriceId);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cboRoomPosition);
@@ -405,6 +407,28 @@
             this.groupBox1.Size = new System.Drawing.Size(1059, 333);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
+            // 
+            // ClearBtn
+            // 
+            this.ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearBtn.ForeColor = System.Drawing.Color.Black;
+            this.ClearBtn.Location = new System.Drawing.Point(379, 274);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(130, 36);
+            this.ClearBtn.TabIndex = 35;
+            this.ClearBtn.Text = "Clear ";
+            this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
+            // txtRoomPriceId
+            // 
+            this.txtRoomPriceId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomPriceId.Location = new System.Drawing.Point(787, 129);
+            this.txtRoomPriceId.Name = "txtRoomPriceId";
+            this.txtRoomPriceId.Size = new System.Drawing.Size(188, 27);
+            this.txtRoomPriceId.TabIndex = 34;
+            this.txtRoomPriceId.Visible = false;
             // 
             // label10
             // 
@@ -431,31 +455,33 @@
             this.DeleteBtn.BackColor = System.Drawing.Color.OrangeRed;
             this.DeleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteBtn.Location = new System.Drawing.Point(570, 274);
+            this.DeleteBtn.Location = new System.Drawing.Point(742, 274);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(130, 36);
             this.DeleteBtn.TabIndex = 31;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // UpdateBtn
             // 
             this.UpdateBtn.BackColor = System.Drawing.Color.Yellow;
             this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBtn.ForeColor = System.Drawing.Color.Black;
-            this.UpdateBtn.Location = new System.Drawing.Point(392, 274);
+            this.UpdateBtn.Location = new System.Drawing.Point(559, 274);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(130, 36);
             this.UpdateBtn.TabIndex = 30;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // SaveBtn
             // 
             this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(206, 274);
+            this.SaveBtn.Location = new System.Drawing.Point(202, 274);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(130, 36);
             this.SaveBtn.TabIndex = 29;
@@ -591,9 +617,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label9.Location = new System.Drawing.Point(293, 522);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(239, 29);
+            this.label9.Size = new System.Drawing.Size(95, 29);
             this.label9.TabIndex = 21;
-            this.label9.Text = "Room Management";
+            this.label9.Text = "Rooms";
             // 
             // dgRoom
             // 
@@ -605,15 +631,7 @@
             this.dgRoom.RowTemplate.Height = 24;
             this.dgRoom.Size = new System.Drawing.Size(1059, 423);
             this.dgRoom.TabIndex = 22;
-            // 
-            // txtRoomPriceId
-            // 
-            this.txtRoomPriceId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomPriceId.Location = new System.Drawing.Point(787, 129);
-            this.txtRoomPriceId.Name = "txtRoomPriceId";
-            this.txtRoomPriceId.Size = new System.Drawing.Size(188, 27);
-            this.txtRoomPriceId.TabIndex = 34;
-            this.txtRoomPriceId.Visible = false;
+            this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRoom_CellClick);
             // 
             // FrmRoom
             // 
@@ -716,5 +734,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboRoomPosition;
         private System.Windows.Forms.TextBox txtRoomPriceId;
+        private System.Windows.Forms.Button ClearBtn;
     }
 }

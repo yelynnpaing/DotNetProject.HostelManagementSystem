@@ -5,12 +5,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames.Image;
+
 
 namespace HostelManagementSystem.Views
 {
@@ -109,7 +112,7 @@ namespace HostelManagementSystem.Views
                 //RoomPictureBox.Image = Image.FromFile(openFileDialog.FileName);
                 RoomPictureBox.Load(openFileDialog.FileName);
             }
-        }
+        } 
 
         private void NewBtn_Click(object sender, EventArgs e)
         {
@@ -166,7 +169,7 @@ namespace HostelManagementSystem.Views
             
             if(Command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show(Message);
+                MessageBox.Show(Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -183,10 +186,10 @@ namespace HostelManagementSystem.Views
                 " INNER JOIN TblRoomPositions ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId" +
                 " INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            DataSet ds = new DataSet();
+            Dset = new DataSet();
             DataTable dt = new DataTable();
-            adapter.Fill(ds, "rooms");
-            dt = ds.Tables["rooms"];
+            adapter.Fill(Dset, "rooms");
+            dt = Dset.Tables["rooms"];
 
             dgRoom.RowTemplate.Height = 100;
             dgRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F , FontStyle.Bold);
@@ -197,5 +200,68 @@ namespace HostelManagementSystem.Views
             imgCol = (DataGridViewImageColumn)dgRoom.Columns[4];
             imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
+
+
+        private void dgRoom_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int i;
+                i = dgRoom.CurrentRow.Index;
+                txtRoomId.Text = Dset.Tables["rooms"].Rows[i][0].ToString();
+                cboRoomType.Text = Dset.Tables["rooms"].Rows[i][1].ToString();
+                cboRoomPosition.Text = Dset.Tables["rooms"].Rows[i][2].ToString();
+                txtRoomPrice.Text = Dset.Tables["rooms"].Rows[i][3].ToString();
+
+                Byte[] imageData = (Byte[])dgRoom.CurrentRow.Cells[4].Value;
+                MemoryStream ms = new MemoryStream(imageData);
+                RoomPictureBox.Image = Image.FromStream(ms);
+            }
+            catch
+            {
+                MessageBox.Show("Warning , Something wrong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var img = new ImageConverter().ConvertTo(RoomPictureBox.Image, typeof(Byte[]));
+                string query = "UPDATE TblRooms SET RoomId = @RoomId, RoomTypeId = @RoomTypeId, RoomPositionId = @RoomPositionId, " +
+                    "RoomPriceId = @RoomPriceId, RoomImage = @image WHERE RoomId = '" + txtRoomId.Text + "'";
+                SqlCommand cmd = new SqlCommand(query, consql);
+                cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
+                cmd.Parameters.Add("@RoomTypeId", SqlDbType.Int).Value = cboRoomType.SelectedValue;
+                cmd.Parameters.Add("@RoomPositionId", SqlDbType.Int).Value = cboRoomPosition.SelectedValue;
+                cmd.Parameters.Add("@RoomPriceId", SqlDbType.Int).Value = txtRoomPriceId.Text;
+                cmd.Parameters.Add("@image", SqlDbType.Image).Value = img;
+
+                ExectueMyQuery(cmd, "Updating Room is success.");
+                FilldgRoomDatas();
+                Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Warning!, Please check, something wrong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            string query = "DELETE FROM TblRooms WHERE RoomId = @RoomId";
+            SqlCommand cmd = new SqlCommand(query, consql);
+            cmd.Parameters.AddWithValue("@RoomId", txtRoomId.Text);
+            ExectueMyQuery(cmd, "Deleting Room is Success!");
+            FilldgRoomDatas();
+            Clear();
+        }
     } 
 }
+
+
