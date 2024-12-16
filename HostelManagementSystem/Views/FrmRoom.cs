@@ -109,7 +109,6 @@ namespace HostelManagementSystem.Views
             openFileDialog.Filter = "Choose Image(*.PNG; *.JPG; *.JPEG) | *.png; *.jpg; *.jpeg";
             if(openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                //RoomPictureBox.Image = Image.FromFile(openFileDialog.FileName);
                 RoomPictureBox.Load(openFileDialog.FileName);
             }
         } 
@@ -175,30 +174,36 @@ namespace HostelManagementSystem.Views
             {
                 MessageBox.Show("Query cannot be execute!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //consql.Close();
         }
 
       
         private void FilldgRoomDatas()
         {
-            string query = "SELECT RoomId, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition , TblRoomPrices.RoomPrice, " +
-                "RoomImage FROM TblRooms INNER JOIN TblRoomTypes ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId" +
-                " INNER JOIN TblRoomPositions ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId" +
-                " INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-            Dset = new DataSet();
-            DataTable dt = new DataTable();
-            adapter.Fill(Dset, "rooms");
-            dt = Dset.Tables["rooms"];
+            try
+            {
+                string query = "SELECT RoomId, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition , TblRoomPrices.RoomPrice, " +
+               "RoomImage FROM TblRooms INNER JOIN TblRoomTypes ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId" +
+               " INNER JOIN TblRoomPositions ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId" +
+               " INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                Dset = new DataSet();
+                DataTable dt = new DataTable();
+                adapter.Fill(Dset, "rooms");
+                dt = Dset.Tables["rooms"];
 
-            dgRoom.RowTemplate.Height = 100;
-            dgRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F , FontStyle.Bold);
-            dgRoom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgRoom.AllowUserToAddRows = false;
-            dgRoom.DataSource = dt;
-            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
-            imgCol = (DataGridViewImageColumn)dgRoom.Columns[4];
-            imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                dgRoom.RowTemplate.Height = 100;
+                dgRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+                dgRoom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgRoom.AllowUserToAddRows = false;
+                dgRoom.DataSource = dt;
+                DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+                imgCol = (DataGridViewImageColumn)dgRoom.Columns[4];
+                imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            }
+            catch
+            {
+                MessageBox.Show("There is no room to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
 
@@ -206,20 +211,25 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                int i;
-                i = dgRoom.CurrentRow.Index;
-                txtRoomId.Text = Dset.Tables["rooms"].Rows[i][0].ToString();
-                cboRoomType.Text = Dset.Tables["rooms"].Rows[i][1].ToString();
-                cboRoomPosition.Text = Dset.Tables["rooms"].Rows[i][2].ToString();
-                txtRoomPrice.Text = Dset.Tables["rooms"].Rows[i][3].ToString();
+                //Not use because index out of range error
+                //int i;
+                //i = dgRoom.CurrentRow.Index;
+                //txtRoomId.Text = Dset.Tables["rooms"].Rows[i][0].ToString();
+                //cboRoomType.Text = Dset.Tables["rooms"].Rows[i][1].ToString();
+                //cboRoomPosition.Text = Dset.Tables["rooms"].Rows[i][2].ToString();
+                //txtRoomPrice.Text = Dset.Tables["rooms"].Rows[i][3].ToString();
 
+                txtRoomId.Text = dgRoom.CurrentRow.Cells[0].Value.ToString();
+                cboRoomType.Text = dgRoom.CurrentRow.Cells[1].Value.ToString();
+                cboRoomPosition.Text = dgRoom.CurrentRow.Cells[2].Value.ToString();
+                txtRoomPrice.Text = dgRoom.CurrentRow.Cells[3].Value.ToString();
                 Byte[] imageData = (Byte[])dgRoom.CurrentRow.Cells[4].Value;
                 MemoryStream ms = new MemoryStream(imageData);
                 RoomPictureBox.Image = Image.FromStream(ms);
             }
             catch
             {
-                MessageBox.Show("Warning , Something wrong!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Warning , Something went wrong! Please reload your page!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

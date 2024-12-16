@@ -59,22 +59,22 @@ namespace HostelManagementSystem.Views
 
         private void PersonDetailPic_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmPersonDetail());
+            FormLoad(new FrmResidentDetail());
         }
 
         private void PersonDetailLabel_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmPersonDetail());
+            FormLoad(new FrmResidentDetail());
         }
 
         private void PersonListPic_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmPersonList());
+            FormLoad(new FrmResidentList());
         }
 
         private void PersonListLabel_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmPersonList());
+            FormLoad(new FrmResidentList());
         }
 
         private void BillingPic_Click(object sender, EventArgs e)

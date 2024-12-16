@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.SidebarPanel = new System.Windows.Forms.Panel();
+            this.BanResidentPanel = new System.Windows.Forms.Panel();
+            this.BanResidantLabel = new System.Windows.Forms.Label();
+            this.BanResidentPic = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BillingLabel = new System.Windows.Forms.Label();
             this.BillingPic = new System.Windows.Forms.PictureBox();
@@ -58,6 +61,8 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.SidebarPanel.SuspendLayout();
+            this.BanResidentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingPic)).BeginInit();
             this.LogoutPanel.SuspendLayout();
@@ -80,6 +85,7 @@
             // SidebarPanel
             // 
             this.SidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.SidebarPanel.Controls.Add(this.BanResidentPanel);
             this.SidebarPanel.Controls.Add(this.panel2);
             this.SidebarPanel.Controls.Add(this.LogoutPanel);
             this.SidebarPanel.Controls.Add(this.BillListPanel);
@@ -92,8 +98,38 @@
             this.SidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(266, 956);
+            this.SidebarPanel.Size = new System.Drawing.Size(333, 956);
             this.SidebarPanel.TabIndex = 0;
+            // 
+            // BanResidentPanel
+            // 
+            this.BanResidentPanel.Controls.Add(this.BanResidantLabel);
+            this.BanResidentPanel.Controls.Add(this.BanResidentPic);
+            this.BanResidentPanel.Location = new System.Drawing.Point(32, 606);
+            this.BanResidentPanel.Name = "BanResidentPanel";
+            this.BanResidentPanel.Size = new System.Drawing.Size(231, 55);
+            this.BanResidentPanel.TabIndex = 4;
+            // 
+            // BanResidantLabel
+            // 
+            this.BanResidantLabel.AutoSize = true;
+            this.BanResidantLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BanResidantLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.BanResidantLabel.Location = new System.Drawing.Point(60, 16);
+            this.BanResidantLabel.Name = "BanResidantLabel";
+            this.BanResidantLabel.Size = new System.Drawing.Size(138, 25);
+            this.BanResidantLabel.TabIndex = 1;
+            this.BanResidantLabel.Text = "Ban Residents";
+            // 
+            // BanResidentPic
+            // 
+            this.BanResidentPic.Image = ((System.Drawing.Image)(resources.GetObject("BanResidentPic.Image")));
+            this.BanResidentPic.Location = new System.Drawing.Point(3, 3);
+            this.BanResidentPic.Name = "BanResidentPic";
+            this.BanResidentPic.Size = new System.Drawing.Size(51, 49);
+            this.BanResidentPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BanResidentPic.TabIndex = 0;
+            this.BanResidentPic.TabStop = false;
             // 
             // panel2
             // 
@@ -175,9 +211,9 @@
             this.BillListLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.BillListLabel.Location = new System.Drawing.Point(60, 16);
             this.BillListLabel.Name = "BillListLabel";
-            this.BillListLabel.Size = new System.Drawing.Size(98, 25);
+            this.BillListLabel.Size = new System.Drawing.Size(128, 25);
             this.BillListLabel.TabIndex = 1;
-            this.BillListLabel.Text = "Billing List";
+            this.BillListLabel.Text = "Billing History";
             this.BillListLabel.Click += new System.EventHandler(this.BillListLabel_Click);
             // 
             // BillListPic
@@ -207,9 +243,9 @@
             this.PersonListLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.PersonListLabel.Location = new System.Drawing.Point(60, 16);
             this.PersonListLabel.Name = "PersonListLabel";
-            this.PersonListLabel.Size = new System.Drawing.Size(109, 25);
+            this.PersonListLabel.Size = new System.Drawing.Size(123, 25);
             this.PersonListLabel.TabIndex = 1;
-            this.PersonListLabel.Text = "Person List";
+            this.PersonListLabel.Text = "Resident List";
             this.PersonListLabel.Click += new System.EventHandler(this.PersonListLabel_Click);
             // 
             // PersonListPic
@@ -271,9 +307,9 @@
             this.PersonDetailLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.PersonDetailLabel.Location = new System.Drawing.Point(60, 16);
             this.PersonDetailLabel.Name = "PersonDetailLabel";
-            this.PersonDetailLabel.Size = new System.Drawing.Size(128, 25);
+            this.PersonDetailLabel.Size = new System.Drawing.Size(142, 25);
             this.PersonDetailLabel.TabIndex = 1;
-            this.PersonDetailLabel.Text = "Person Detail";
+            this.PersonDetailLabel.Text = "Resident Detail";
             this.PersonDetailLabel.Click += new System.EventHandler(this.PersonDetailLabel_Click);
             // 
             // PersonDetailPic
@@ -294,14 +330,14 @@
             this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.LogoLabel.Location = new System.Drawing.Point(78, 104);
             this.LogoLabel.Name = "LogoLabel";
-            this.LogoLabel.Size = new System.Drawing.Size(123, 25);
+            this.LogoLabel.Size = new System.Drawing.Size(159, 25);
             this.LogoLabel.TabIndex = 2;
-            this.LogoLabel.Text = "HM System";
+            this.LogoLabel.Text = "GROUP EIGHT";
             // 
             // LogoPic
             // 
             this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
-            this.LogoPic.Location = new System.Drawing.Point(51, 4);
+            this.LogoPic.Location = new System.Drawing.Point(83, 4);
             this.LogoPic.Name = "LogoPic";
             this.LogoPic.Size = new System.Drawing.Size(167, 97);
             this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -345,9 +381,9 @@
             this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(214)))), ((int)(((byte)(222)))));
             this.HeaderPanel.Controls.Add(this.label1);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderPanel.Location = new System.Drawing.Point(266, 0);
+            this.HeaderPanel.Location = new System.Drawing.Point(333, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1289, 100);
+            this.HeaderPanel.Size = new System.Drawing.Size(1222, 100);
             this.HeaderPanel.TabIndex = 1;
             // 
             // label1
@@ -394,6 +430,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.SidebarPanel.ResumeLayout(false);
             this.SidebarPanel.PerformLayout();
+            this.BanResidentPanel.ResumeLayout(false);
+            this.BanResidentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingPic)).EndInit();
@@ -454,5 +493,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label BillingLabel;
         private System.Windows.Forms.PictureBox BillingPic;
+        private System.Windows.Forms.Panel BanResidentPanel;
+        private System.Windows.Forms.Label BanResidantLabel;
+        private System.Windows.Forms.PictureBox BanResidentPic;
     }
 }

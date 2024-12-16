@@ -124,17 +124,17 @@
     <Compile Include="Views\FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmPersonDetail.cs">
+    <Compile Include="Views\FrmResidentDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmPersonDetail.Designer.cs">
-      <DependentUpon>FrmPersonDetail.cs</DependentUpon>
+    <Compile Include="Views\FrmResidentDetail.Designer.cs">
+      <DependentUpon>FrmResidentDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmPersonList.cs">
+    <Compile Include="Views\FrmResidentList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmPersonList.Designer.cs">
-      <DependentUpon>FrmPersonList.cs</DependentUpon>
+    <Compile Include="Views\FrmResidentList.Designer.cs">
+      <DependentUpon>FrmResidentList.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmRoom.cs">
       <SubType>Form</SubType>
@@ -169,11 +169,11 @@
     <EmbeddedResource Include="Views\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmPersonDetail.resx">
-      <DependentUpon>FrmPersonDetail.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmResidentDetail.resx">
+      <DependentUpon>FrmResidentDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmPersonList.resx">
-      <DependentUpon>FrmPersonList.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmResidentList.resx">
+      <DependentUpon>FrmResidentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmRoom.resx">
       <DependentUpon>FrmRoom.cs</DependentUpon>

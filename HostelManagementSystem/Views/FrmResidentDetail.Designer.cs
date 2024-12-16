@@ -1,6 +1,6 @@
 ﻿namespace HostelManagementSystem.Views
 {
-    partial class FrmPersonList
+    partial class FrmResidentDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonList));
-            this.RoomPanel = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmResidentDetail));
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.SidebarPanel = new System.Windows.Forms.Panel();
@@ -58,8 +56,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
-            this.RoomPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,35 +75,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
             this.SuspendLayout();
             // 
-            // RoomPanel
-            // 
-            this.RoomPanel.Controls.Add(this.label2);
-            this.RoomPanel.Controls.Add(this.pictureBox1);
-            this.RoomPanel.Location = new System.Drawing.Point(279, 115);
-            this.RoomPanel.Name = "RoomPanel";
-            this.RoomPanel.Size = new System.Drawing.Size(204, 45);
-            this.RoomPanel.TabIndex = 14;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(61, 10);
+            this.label2.Location = new System.Drawing.Point(728, 322);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Person List";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.label2.Size = new System.Drawing.Size(143, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Personal Detail";
             // 
             // HeaderPanel
             // 
@@ -116,8 +93,8 @@
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(266, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1289, 100);
-            this.HeaderPanel.TabIndex = 13;
+            this.HeaderPanel.Size = new System.Drawing.Size(1307, 100);
+            this.HeaderPanel.TabIndex = 15;
             // 
             // label1
             // 
@@ -145,14 +122,14 @@
             this.SidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(266, 956);
-            this.SidebarPanel.TabIndex = 12;
+            this.SidebarPanel.Size = new System.Drawing.Size(266, 1003);
+            this.SidebarPanel.TabIndex = 14;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(32, 473);
+            this.panel2.Location = new System.Drawing.Point(32, 480);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(222, 55);
             this.panel2.TabIndex = 6;
@@ -379,21 +356,18 @@
             this.RoomPic.TabIndex = 0;
             this.RoomPic.TabStop = false;
             // 
-            // FrmPersonList
+            // FrmPersonDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1555, 956);
-            this.Controls.Add(this.RoomPanel);
+            this.ClientSize = new System.Drawing.Size(1573, 1003);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.SidebarPanel);
+            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmPersonList";
-            this.Text = "FrmPersonList";
+            this.Name = "FrmPersonDetail";
+            this.Text = "FrmPersonDetail";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.RoomPanel.ResumeLayout(false);
-            this.RoomPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             this.SidebarPanel.ResumeLayout(false);
@@ -421,14 +395,13 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel RoomPanel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel SidebarPanel;

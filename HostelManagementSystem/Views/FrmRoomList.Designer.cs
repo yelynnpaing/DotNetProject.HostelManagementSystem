@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRoomList));
-            this.RoomPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.SidebarPanel = new System.Windows.Forms.Panel();
@@ -58,8 +55,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
-            this.RoomPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BanResidentPanel = new System.Windows.Forms.Panel();
+            this.BanResidantLabel = new System.Windows.Forms.Label();
+            this.BanResidentPic = new System.Windows.Forms.PictureBox();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,37 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
+            this.BanResidentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RoomPanel
-            // 
-            this.RoomPanel.Controls.Add(this.label2);
-            this.RoomPanel.Controls.Add(this.pictureBox1);
-            this.RoomPanel.Location = new System.Drawing.Point(279, 115);
-            this.RoomPanel.Name = "RoomPanel";
-            this.RoomPanel.Size = new System.Drawing.Size(204, 45);
-            this.RoomPanel.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(61, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Room List";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // HeaderPanel
             // 
@@ -133,6 +103,7 @@
             // SidebarPanel
             // 
             this.SidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.SidebarPanel.Controls.Add(this.BanResidentPanel);
             this.SidebarPanel.Controls.Add(this.panel2);
             this.SidebarPanel.Controls.Add(this.LogoutPanel);
             this.SidebarPanel.Controls.Add(this.BillListPanel);
@@ -379,6 +350,36 @@
             this.RoomPic.TabIndex = 0;
             this.RoomPic.TabStop = false;
             // 
+            // BanResidentPanel
+            // 
+            this.BanResidentPanel.Controls.Add(this.BanResidantLabel);
+            this.BanResidentPanel.Controls.Add(this.BanResidentPic);
+            this.BanResidentPanel.Location = new System.Drawing.Point(32, 616);
+            this.BanResidentPanel.Name = "BanResidentPanel";
+            this.BanResidentPanel.Size = new System.Drawing.Size(231, 55);
+            this.BanResidentPanel.TabIndex = 22;
+            // 
+            // BanResidantLabel
+            // 
+            this.BanResidantLabel.AutoSize = true;
+            this.BanResidantLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BanResidantLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.BanResidantLabel.Location = new System.Drawing.Point(60, 16);
+            this.BanResidantLabel.Name = "BanResidantLabel";
+            this.BanResidantLabel.Size = new System.Drawing.Size(138, 25);
+            this.BanResidantLabel.TabIndex = 1;
+            this.BanResidantLabel.Text = "Ban Residents";
+            // 
+            // BanResidentPic
+            // 
+            this.BanResidentPic.Image = ((System.Drawing.Image)(resources.GetObject("BanResidentPic.Image")));
+            this.BanResidentPic.Location = new System.Drawing.Point(3, 3);
+            this.BanResidentPic.Name = "BanResidentPic";
+            this.BanResidentPic.Size = new System.Drawing.Size(51, 49);
+            this.BanResidentPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BanResidentPic.TabIndex = 0;
+            this.BanResidentPic.TabStop = false;
+            // 
             // FrmRoomList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -386,14 +387,10 @@
             this.ClientSize = new System.Drawing.Size(1555, 956);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.SidebarPanel);
-            this.Controls.Add(this.RoomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRoomList";
             this.Text = "FrmRoomList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.RoomPanel.ResumeLayout(false);
-            this.RoomPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             this.SidebarPanel.ResumeLayout(false);
@@ -420,14 +417,14 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).EndInit();
+            this.BanResidentPanel.ResumeLayout(false);
+            this.BanResidentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel RoomPanel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel SidebarPanel;
@@ -454,5 +451,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label RoomLabel;
         private System.Windows.Forms.PictureBox RoomPic;
+        private System.Windows.Forms.Panel BanResidentPanel;
+        private System.Windows.Forms.Label BanResidantLabel;
+        private System.Windows.Forms.PictureBox BanResidentPic;
     }
 }

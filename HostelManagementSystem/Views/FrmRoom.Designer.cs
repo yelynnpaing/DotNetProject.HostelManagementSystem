@@ -51,8 +51,6 @@
             this.PersonDetailPanel = new System.Windows.Forms.Panel();
             this.PersonDetailLabel = new System.Windows.Forms.Label();
             this.PersonDetailPic = new System.Windows.Forms.PictureBox();
-            this.LogoLabel = new System.Windows.Forms.Label();
-            this.LogoPic = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
@@ -78,6 +76,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgRoom = new System.Windows.Forms.DataGridView();
+            this.LogoLabel = new System.Windows.Forms.Label();
+            this.LogoPic = new System.Windows.Forms.PictureBox();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,13 +92,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.RoomListPic)).BeginInit();
             this.PersonDetailPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonDetailPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderPanel
@@ -106,9 +106,9 @@
             this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(214)))), ((int)(((byte)(222)))));
             this.HeaderPanel.Controls.Add(this.label1);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderPanel.Location = new System.Drawing.Point(266, 0);
+            this.HeaderPanel.Location = new System.Drawing.Point(333, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1307, 100);
+            this.HeaderPanel.Size = new System.Drawing.Size(1240, 100);
             this.HeaderPanel.TabIndex = 19;
             // 
             // label1
@@ -125,19 +125,19 @@
             // SidebarPanel
             // 
             this.SidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.SidebarPanel.Controls.Add(this.LogoLabel);
             this.SidebarPanel.Controls.Add(this.panel2);
             this.SidebarPanel.Controls.Add(this.LogoutPanel);
+            this.SidebarPanel.Controls.Add(this.LogoPic);
             this.SidebarPanel.Controls.Add(this.BillListPanel);
             this.SidebarPanel.Controls.Add(this.PersonListPanel);
             this.SidebarPanel.Controls.Add(this.RoomListPanel);
             this.SidebarPanel.Controls.Add(this.PersonDetailPanel);
-            this.SidebarPanel.Controls.Add(this.LogoLabel);
-            this.SidebarPanel.Controls.Add(this.LogoPic);
             this.SidebarPanel.Controls.Add(this.panel1);
             this.SidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(266, 1003);
+            this.SidebarPanel.Size = new System.Drawing.Size(333, 1003);
             this.SidebarPanel.TabIndex = 18;
             // 
             // panel2
@@ -332,27 +332,6 @@
             this.PersonDetailPic.TabIndex = 0;
             this.PersonDetailPic.TabStop = false;
             // 
-            // LogoLabel
-            // 
-            this.LogoLabel.AutoSize = true;
-            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogoLabel.Location = new System.Drawing.Point(78, 104);
-            this.LogoLabel.Name = "LogoLabel";
-            this.LogoLabel.Size = new System.Drawing.Size(123, 25);
-            this.LogoLabel.TabIndex = 2;
-            this.LogoLabel.Text = "HM System";
-            // 
-            // LogoPic
-            // 
-            this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
-            this.LogoPic.Location = new System.Drawing.Point(51, 4);
-            this.LogoPic.Name = "LogoPic";
-            this.LogoPic.Size = new System.Drawing.Size(167, 97);
-            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoPic.TabIndex = 4;
-            this.LogoPic.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.RoomLabel);
@@ -402,7 +381,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cboRoomType);
-            this.groupBox1.Location = new System.Drawing.Point(298, 157);
+            this.groupBox1.Location = new System.Drawing.Point(355, 163);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1059, 333);
             this.groupBox1.TabIndex = 20;
@@ -604,7 +583,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(293, 125);
+            this.label8.Location = new System.Drawing.Point(350, 131);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(239, 29);
             this.label8.TabIndex = 3;
@@ -615,7 +594,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(293, 522);
+            this.label9.Location = new System.Drawing.Point(350, 521);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 29);
             this.label9.TabIndex = 21;
@@ -625,13 +604,34 @@
             // 
             this.dgRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgRoom.Location = new System.Drawing.Point(298, 554);
+            this.dgRoom.Location = new System.Drawing.Point(355, 553);
             this.dgRoom.Name = "dgRoom";
             this.dgRoom.RowHeadersWidth = 51;
             this.dgRoom.RowTemplate.Height = 24;
             this.dgRoom.Size = new System.Drawing.Size(1059, 423);
             this.dgRoom.TabIndex = 22;
             this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRoom_CellClick);
+            // 
+            // LogoLabel
+            // 
+            this.LogoLabel.AutoSize = true;
+            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.LogoLabel.Location = new System.Drawing.Point(82, 107);
+            this.LogoLabel.Name = "LogoLabel";
+            this.LogoLabel.Size = new System.Drawing.Size(159, 25);
+            this.LogoLabel.TabIndex = 5;
+            this.LogoLabel.Text = "GROUP EIGHT";
+            // 
+            // LogoPic
+            // 
+            this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
+            this.LogoPic.Location = new System.Drawing.Point(87, 7);
+            this.LogoPic.Name = "LogoPic";
+            this.LogoPic.Size = new System.Drawing.Size(167, 97);
+            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPic.TabIndex = 6;
+            this.LogoPic.TabStop = false;
             // 
             // FrmRoom
             // 
@@ -671,7 +671,6 @@
             this.PersonDetailPanel.ResumeLayout(false);
             this.PersonDetailPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonDetailPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).EndInit();
@@ -680,6 +679,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,8 +707,6 @@
         private System.Windows.Forms.Panel PersonDetailPanel;
         private System.Windows.Forms.Label PersonDetailLabel;
         private System.Windows.Forms.PictureBox PersonDetailPic;
-        private System.Windows.Forms.Label LogoLabel;
-        private System.Windows.Forms.PictureBox LogoPic;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label RoomLabel;
         private System.Windows.Forms.PictureBox RoomPic;
@@ -735,5 +733,7 @@
         private System.Windows.Forms.ComboBox cboRoomPosition;
         private System.Windows.Forms.TextBox txtRoomPriceId;
         private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.Label LogoLabel;
+        private System.Windows.Forms.PictureBox LogoPic;
     }
 }
