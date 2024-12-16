@@ -95,10 +95,10 @@ namespace HostelManagementSystem.Views
 
         private void FrmRoom_Load(object sender, EventArgs e)
         {
-            Clear();
             Connection();
             FillCboRoomType();
             FillCboRoomPosition();
+            Clear();
             FilldgRoomDatas();
         }
 

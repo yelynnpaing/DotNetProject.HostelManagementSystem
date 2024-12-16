@@ -98,16 +98,16 @@
             this.SidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(333, 956);
+            this.SidebarPanel.Size = new System.Drawing.Size(333, 972);
             this.SidebarPanel.TabIndex = 0;
             // 
             // BanResidentPanel
             // 
             this.BanResidentPanel.Controls.Add(this.BanResidantLabel);
             this.BanResidentPanel.Controls.Add(this.BanResidentPic);
-            this.BanResidentPanel.Location = new System.Drawing.Point(32, 606);
+            this.BanResidentPanel.Location = new System.Drawing.Point(32, 566);
             this.BanResidentPanel.Name = "BanResidentPanel";
-            this.BanResidentPanel.Size = new System.Drawing.Size(231, 55);
+            this.BanResidentPanel.Size = new System.Drawing.Size(222, 55);
             this.BanResidentPanel.TabIndex = 4;
             // 
             // BanResidantLabel
@@ -126,7 +126,7 @@
             this.BanResidentPic.Image = ((System.Drawing.Image)(resources.GetObject("BanResidentPic.Image")));
             this.BanResidentPic.Location = new System.Drawing.Point(3, 3);
             this.BanResidentPic.Name = "BanResidentPic";
-            this.BanResidentPic.Size = new System.Drawing.Size(51, 49);
+            this.BanResidentPic.Size = new System.Drawing.Size(47, 49);
             this.BanResidentPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BanResidentPic.TabIndex = 0;
             this.BanResidentPic.TabStop = false;
@@ -135,7 +135,7 @@
             // 
             this.panel2.Controls.Add(this.BillingLabel);
             this.panel2.Controls.Add(this.BillingPic);
-            this.panel2.Location = new System.Drawing.Point(32, 478);
+            this.panel2.Location = new System.Drawing.Point(32, 450);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(222, 55);
             this.panel2.TabIndex = 7;
@@ -157,7 +157,7 @@
             this.BillingPic.Image = ((System.Drawing.Image)(resources.GetObject("BillingPic.Image")));
             this.BillingPic.Location = new System.Drawing.Point(3, 3);
             this.BillingPic.Name = "BillingPic";
-            this.BillingPic.Size = new System.Drawing.Size(51, 49);
+            this.BillingPic.Size = new System.Drawing.Size(47, 49);
             this.BillingPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BillingPic.TabIndex = 0;
             this.BillingPic.TabStop = false;
@@ -167,7 +167,7 @@
             // 
             this.LogoutPanel.Controls.Add(this.LogoutLabel);
             this.LogoutPanel.Controls.Add(this.LogoutPic);
-            this.LogoutPanel.Location = new System.Drawing.Point(32, 889);
+            this.LogoutPanel.Location = new System.Drawing.Point(32, 912);
             this.LogoutPanel.Name = "LogoutPanel";
             this.LogoutPanel.Size = new System.Drawing.Size(222, 55);
             this.LogoutPanel.TabIndex = 6;
@@ -189,7 +189,7 @@
             this.LogoutPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoutPic.Image")));
             this.LogoutPic.Location = new System.Drawing.Point(3, 3);
             this.LogoutPic.Name = "LogoutPic";
-            this.LogoutPic.Size = new System.Drawing.Size(51, 49);
+            this.LogoutPic.Size = new System.Drawing.Size(47, 49);
             this.LogoutPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoutPic.TabIndex = 0;
             this.LogoutPic.TabStop = false;
@@ -199,7 +199,7 @@
             // 
             this.BillListPanel.Controls.Add(this.BillListLabel);
             this.BillListPanel.Controls.Add(this.BillListPic);
-            this.BillListPanel.Location = new System.Drawing.Point(32, 545);
+            this.BillListPanel.Location = new System.Drawing.Point(32, 508);
             this.BillListPanel.Name = "BillListPanel";
             this.BillListPanel.Size = new System.Drawing.Size(222, 55);
             this.BillListPanel.TabIndex = 5;
@@ -221,7 +221,7 @@
             this.BillListPic.Image = ((System.Drawing.Image)(resources.GetObject("BillListPic.Image")));
             this.BillListPic.Location = new System.Drawing.Point(3, 3);
             this.BillListPic.Name = "BillListPic";
-            this.BillListPic.Size = new System.Drawing.Size(51, 49);
+            this.BillListPic.Size = new System.Drawing.Size(47, 49);
             this.BillListPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BillListPic.TabIndex = 0;
             this.BillListPic.TabStop = false;
@@ -231,7 +231,7 @@
             // 
             this.PersonListPanel.Controls.Add(this.PersonListLabel);
             this.PersonListPanel.Controls.Add(this.PersonListPic);
-            this.PersonListPanel.Location = new System.Drawing.Point(32, 412);
+            this.PersonListPanel.Location = new System.Drawing.Point(32, 392);
             this.PersonListPanel.Name = "PersonListPanel";
             this.PersonListPanel.Size = new System.Drawing.Size(222, 55);
             this.PersonListPanel.TabIndex = 4;
@@ -253,7 +253,7 @@
             this.PersonListPic.Image = ((System.Drawing.Image)(resources.GetObject("PersonListPic.Image")));
             this.PersonListPic.Location = new System.Drawing.Point(3, 3);
             this.PersonListPic.Name = "PersonListPic";
-            this.PersonListPic.Size = new System.Drawing.Size(51, 49);
+            this.PersonListPic.Size = new System.Drawing.Size(47, 49);
             this.PersonListPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PersonListPic.TabIndex = 0;
             this.PersonListPic.TabStop = false;
@@ -263,7 +263,7 @@
             // 
             this.RoomListPanel.Controls.Add(this.RoomListLabel);
             this.RoomListPanel.Controls.Add(this.RoomListPic);
-            this.RoomListPanel.Location = new System.Drawing.Point(32, 283);
+            this.RoomListPanel.Location = new System.Drawing.Point(32, 276);
             this.RoomListPanel.Name = "RoomListPanel";
             this.RoomListPanel.Size = new System.Drawing.Size(222, 55);
             this.RoomListPanel.TabIndex = 3;
@@ -285,7 +285,7 @@
             this.RoomListPic.Image = ((System.Drawing.Image)(resources.GetObject("RoomListPic.Image")));
             this.RoomListPic.Location = new System.Drawing.Point(3, 3);
             this.RoomListPic.Name = "RoomListPic";
-            this.RoomListPic.Size = new System.Drawing.Size(51, 49);
+            this.RoomListPic.Size = new System.Drawing.Size(47, 49);
             this.RoomListPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RoomListPic.TabIndex = 0;
             this.RoomListPic.TabStop = false;
@@ -295,7 +295,7 @@
             // 
             this.PersonDetailPanel.Controls.Add(this.PersonDetailLabel);
             this.PersonDetailPanel.Controls.Add(this.PersonDetailPic);
-            this.PersonDetailPanel.Location = new System.Drawing.Point(32, 348);
+            this.PersonDetailPanel.Location = new System.Drawing.Point(32, 334);
             this.PersonDetailPanel.Name = "PersonDetailPanel";
             this.PersonDetailPanel.Size = new System.Drawing.Size(222, 55);
             this.PersonDetailPanel.TabIndex = 3;
@@ -317,7 +317,7 @@
             this.PersonDetailPic.Image = ((System.Drawing.Image)(resources.GetObject("PersonDetailPic.Image")));
             this.PersonDetailPic.Location = new System.Drawing.Point(3, 3);
             this.PersonDetailPic.Name = "PersonDetailPic";
-            this.PersonDetailPic.Size = new System.Drawing.Size(51, 49);
+            this.PersonDetailPic.Size = new System.Drawing.Size(47, 49);
             this.PersonDetailPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PersonDetailPic.TabIndex = 0;
             this.PersonDetailPic.TabStop = false;
@@ -370,7 +370,7 @@
             this.RoomPic.Image = ((System.Drawing.Image)(resources.GetObject("RoomPic.Image")));
             this.RoomPic.Location = new System.Drawing.Point(3, 3);
             this.RoomPic.Name = "RoomPic";
-            this.RoomPic.Size = new System.Drawing.Size(51, 49);
+            this.RoomPic.Size = new System.Drawing.Size(47, 49);
             this.RoomPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RoomPic.TabIndex = 0;
             this.RoomPic.TabStop = false;
@@ -383,7 +383,7 @@
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(333, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1222, 100);
+            this.HeaderPanel.Size = new System.Drawing.Size(1579, 100);
             this.HeaderPanel.TabIndex = 1;
             // 
             // label1
@@ -402,7 +402,7 @@
             this.MainPanel.Controls.Add(this.label2);
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1555, 956);
+            this.MainPanel.Size = new System.Drawing.Size(1912, 972);
             this.MainPanel.TabIndex = 2;
             // 
             // label2
@@ -410,7 +410,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(779, 313);
+            this.label2.Location = new System.Drawing.Point(1782, 392);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 3;
@@ -420,7 +420,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1555, 956);
+            this.ClientSize = new System.Drawing.Size(1912, 972);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.SidebarPanel);
             this.Controls.Add(this.MainPanel);

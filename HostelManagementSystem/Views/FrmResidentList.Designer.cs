@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmResidentList));
-            this.RoomPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.SidebarPanel = new System.Windows.Forms.Panel();
@@ -58,8 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
-            this.RoomPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label9 = new System.Windows.Forms.Label();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,36 +74,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RoomPanel
-            // 
-            this.RoomPanel.Controls.Add(this.label2);
-            this.RoomPanel.Controls.Add(this.pictureBox1);
-            this.RoomPanel.Location = new System.Drawing.Point(279, 115);
-            this.RoomPanel.Name = "RoomPanel";
-            this.RoomPanel.Size = new System.Drawing.Size(204, 45);
-            this.RoomPanel.TabIndex = 14;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(61, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Person List";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // HeaderPanel
             // 
@@ -379,21 +345,29 @@
             this.RoomPic.TabIndex = 0;
             this.RoomPic.TabStop = false;
             // 
-            // FrmPersonList
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(440, 286);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(165, 29);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Resident List";
+            // 
+            // FrmResidentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1555, 956);
-            this.Controls.Add(this.RoomPanel);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.SidebarPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmPersonList";
+            this.Name = "FrmResidentList";
             this.Text = "FrmPersonList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.RoomPanel.ResumeLayout(false);
-            this.RoomPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             this.SidebarPanel.ResumeLayout(false);
@@ -421,14 +395,11 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel RoomPanel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel SidebarPanel;
@@ -455,5 +426,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label RoomLabel;
         private System.Windows.Forms.PictureBox RoomPic;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -16,5 +16,7 @@ namespace HostelManagementSystem.Views
         {
             InitializeComponent();
         }
+
+        
     }
 }
