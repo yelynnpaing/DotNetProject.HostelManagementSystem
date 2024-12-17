@@ -152,8 +152,15 @@ namespace HostelManagementSystem.Views
                 cmd.Parameters.Add("@RoomPositionId", SqlDbType.Int).Value = cboRoomPosition.SelectedValue;
                 cmd.Parameters.Add("@RoomPriceId", SqlDbType.Int).Value = txtRoomPriceId.Text;
                 cmd.Parameters.Add("@image", SqlDbType.Image).Value = image;
-
                 ExectueMyQuery(cmd, "Creating Room is success.");
+
+                //Insert RoomCapacity value
+                string rcQuery = "INSERT INTO TblRoomCapacity VALUES (@Capacity, @RoomId)";
+                SqlCommand rcCommand = new SqlCommand(rcQuery, consql);
+                rcCommand.Parameters.Add("@Capacity", SqlDbType.Int).Value = cboRoomType.SelectedValue;
+                rcCommand.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
+                ExectueMyQuery(rcCommand, "Successfully added room capacity value.");
+
                 FilldgRoomDatas();
                 Clear();
             }
@@ -175,7 +182,6 @@ namespace HostelManagementSystem.Views
                 MessageBox.Show("Query cannot be execute!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
       
         private void FilldgRoomDatas()
         {

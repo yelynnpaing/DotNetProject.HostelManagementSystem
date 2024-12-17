@@ -132,7 +132,7 @@
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(333, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1579, 100);
+            this.HeaderPanel.Size = new System.Drawing.Size(1599, 100);
             this.HeaderPanel.TabIndex = 26;
             // 
             // RoomPanel
@@ -473,6 +473,7 @@
             this.NewBtn.TabIndex = 24;
             this.NewBtn.Text = "New";
             this.NewBtn.UseVisualStyleBackColor = false;
+            this.NewBtn.Click += new System.EventHandler(this.NewBtn_Click);
             // 
             // label6
             // 
@@ -504,6 +505,7 @@
             this.SelectImageBtn.TabIndex = 27;
             this.SelectImageBtn.Text = "Select Image ...";
             this.SelectImageBtn.UseVisualStyleBackColor = false;
+            this.SelectImageBtn.Click += new System.EventHandler(this.SelectImageBtn_Click);
             // 
             // groupBox2
             // 
@@ -535,6 +537,7 @@
             this.SaveBtn.TabIndex = 29;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // UpdateBtn
             // 
@@ -568,6 +571,7 @@
             this.cboRoomId.Name = "cboRoomId";
             this.cboRoomId.Size = new System.Drawing.Size(188, 28);
             this.cboRoomId.TabIndex = 32;
+            this.cboRoomId.Leave += new System.EventHandler(this.cboRoomId_Leave);
             // 
             // label10
             // 
@@ -686,10 +690,10 @@
             this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDate.Location = new System.Drawing.Point(1014, 206);
+            this.endDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(159, 27);
             this.endDate.TabIndex = 45;
-            this.endDate.Visible = false;
             // 
             // label12
             // 
@@ -766,14 +770,15 @@
             this.dgResidentList.Name = "dgResidentList";
             this.dgResidentList.RowHeadersWidth = 51;
             this.dgResidentList.RowTemplate.Height = 24;
-            this.dgResidentList.Size = new System.Drawing.Size(1487, 410);
+            this.dgResidentList.Size = new System.Drawing.Size(1561, 410);
             this.dgResidentList.TabIndex = 24;
+            this.dgResidentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellContentClick);
             // 
             // FrmResidentDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1912, 1003);
+            this.ClientSize = new System.Drawing.Size(1932, 1003);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.SidebarPanel);
             this.Controls.Add(this.dgResidentList);
@@ -784,6 +789,7 @@
             this.Name = "FrmResidentDetail";
             this.Text = "FrmPersonDetail";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmResidentDetail_Load);
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             this.RoomPanel.ResumeLayout(false);

@@ -383,7 +383,7 @@
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(333, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1579, 100);
+            this.HeaderPanel.Size = new System.Drawing.Size(1591, 100);
             this.HeaderPanel.TabIndex = 1;
             // 
             // label1
@@ -402,7 +402,7 @@
             this.MainPanel.Controls.Add(this.label2);
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1912, 972);
+            this.MainPanel.Size = new System.Drawing.Size(1924, 972);
             this.MainPanel.TabIndex = 2;
             // 
             // label2
@@ -410,7 +410,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(1782, 392);
+            this.label2.Location = new System.Drawing.Point(1804, 419);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 3;
@@ -420,7 +420,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1912, 972);
+            this.ClientSize = new System.Drawing.Size(1924, 972);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.SidebarPanel);
             this.Controls.Add(this.MainPanel);
