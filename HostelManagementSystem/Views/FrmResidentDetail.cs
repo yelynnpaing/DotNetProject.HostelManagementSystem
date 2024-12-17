@@ -65,8 +65,14 @@ namespace HostelManagementSystem.Views
 
         private void FillCboRoomId()
         {
-            string query = "SELECT RoomId, TblRoomPrices.RoomPrice FROM TblRooms INNER JOIN TblRoomPrices " +
-                "ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId ORDER BY RoomId";
+            string query = @"SELECT TblRooms.RoomId
+                            FROM TblRooms
+                            INNER JOIN TblRoomCapacity 
+                                ON TblRooms.RoomId = TblRoomCapacity.RoomId
+                            LEFT JOIN TblRoomCapacityCheck
+                                ON TblRoomCapacity.RoomId = TblRoomCapacityCheck.RoomId 
+                            GROUP BY TblRooms.RoomId, TblRoomCapacity.Capacity
+                            HAVING TblRoomCapacity.Capacity > COALESCE(SUM(TblRoomCapacityCheck.CountCapacity), 0);";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
