@@ -89,12 +89,12 @@ namespace HostelManagementSystem.Views
 
         private void BillListPic_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmBillingList());
+            FormLoad(new FrmBillingHistory());
         }
 
         private void BillListLabel_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmBillingList());
+            FormLoad(new FrmBillingHistory());
         }
 
         private void LogoutPic_Click(object sender, EventArgs e)
