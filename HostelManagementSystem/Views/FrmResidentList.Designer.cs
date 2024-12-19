@@ -514,7 +514,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(364, 187);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1224, 234);
+            this.groupBox1.Size = new System.Drawing.Size(1007, 234);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
@@ -675,14 +675,16 @@
             // 
             // BtnResidentLeave
             // 
-            this.BtnResidentLeave.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BtnResidentLeave.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnResidentLeave.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.BtnResidentLeave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnResidentLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnResidentLeave.ForeColor = System.Drawing.Color.White;
-            this.BtnResidentLeave.Location = new System.Drawing.Point(1427, 106);
+            this.BtnResidentLeave.ForeColor = System.Drawing.Color.Blue;
+            this.BtnResidentLeave.Location = new System.Drawing.Point(1173, 106);
             this.BtnResidentLeave.Name = "BtnResidentLeave";
-            this.BtnResidentLeave.Size = new System.Drawing.Size(161, 36);
+            this.BtnResidentLeave.Size = new System.Drawing.Size(198, 36);
             this.BtnResidentLeave.TabIndex = 47;
-            this.BtnResidentLeave.Text = "Leave Residents";
+            this.BtnResidentLeave.Text = "Leaved Residents";
             this.BtnResidentLeave.UseVisualStyleBackColor = false;
             this.BtnResidentLeave.Click += new System.EventHandler(this.BtnResidentLeave_Click);
             // 

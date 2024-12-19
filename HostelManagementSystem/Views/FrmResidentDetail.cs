@@ -213,7 +213,6 @@ namespace HostelManagementSystem.Views
             {
                 MessageBox.Show("There is no resident to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void dgResidentList_CellContentClick(object sender, DataGridViewCellEventArgs e)

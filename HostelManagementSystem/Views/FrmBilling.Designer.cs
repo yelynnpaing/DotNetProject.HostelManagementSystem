@@ -58,30 +58,23 @@
             this.RoomPanel = new System.Windows.Forms.Panel();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
-            this.dgResidentList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgInvoiceList = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cboPaymentType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.cboResidentName = new System.Windows.Forms.ComboBox();
+            this.txtInvoiceId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtRoomPrice = new System.Windows.Forms.TextBox();
+            this.txtTotalBill = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.startDate = new System.Windows.Forms.DateTimePicker();
-            this.txtResidentName = new System.Windows.Forms.TextBox();
+            this.txtRoomPrice = new System.Windows.Forms.TextBox();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.cboRoomId = new System.Windows.Forms.ComboBox();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.NewBtn = new System.Windows.Forms.Button();
@@ -89,8 +82,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cboRoomPosition = new System.Windows.Forms.ComboBox();
+            this.txtRoomId = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.BillingDate = new System.Windows.Forms.DateTimePicker();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.BanResidentPanel.SuspendLayout();
@@ -110,7 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgResidentList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInvoiceList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -415,73 +409,16 @@
             this.RoomPic.TabIndex = 0;
             this.RoomPic.TabStop = false;
             // 
-            // dgResidentList
+            // dgInvoiceList
             // 
-            this.dgResidentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgResidentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgResidentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
-            this.dgResidentList.Location = new System.Drawing.Point(360, 450);
-            this.dgResidentList.Name = "dgResidentList";
-            this.dgResidentList.RowHeadersWidth = 51;
-            this.dgResidentList.RowTemplate.Height = 24;
-            this.dgResidentList.Size = new System.Drawing.Size(1561, 477);
-            this.dgResidentList.TabIndex = 27;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "InvoiceId";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "RoomId";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "RoomPrice";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "ResidentName";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Phone";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "StartDate";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "EndDate";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Bill";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
+            this.dgInvoiceList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgInvoiceList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInvoiceList.Location = new System.Drawing.Point(360, 450);
+            this.dgInvoiceList.Name = "dgInvoiceList";
+            this.dgInvoiceList.RowHeadersWidth = 51;
+            this.dgInvoiceList.RowTemplate.Height = 24;
+            this.dgInvoiceList.Size = new System.Drawing.Size(1561, 477);
+            this.dgInvoiceList.TabIndex = 27;
             // 
             // label9
             // 
@@ -496,21 +433,23 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.BillingDate);
+            this.groupBox1.Controls.Add(this.txtRoomId);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.cboRoomPosition);
+            this.groupBox1.Controls.Add(this.cboPaymentType);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.endDate);
+            this.groupBox1.Controls.Add(this.cboResidentName);
+            this.groupBox1.Controls.Add(this.txtInvoiceId);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtRoomPrice);
+            this.groupBox1.Controls.Add(this.txtTotalBill);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.startDate);
-            this.groupBox1.Controls.Add(this.txtResidentName);
+            this.groupBox1.Controls.Add(this.txtRoomPrice);
             this.groupBox1.Controls.Add(this.ClearBtn);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.cboRoomId);
             this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.NewBtn);
@@ -523,6 +462,25 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1021, 82);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(115, 20);
+            this.label12.TabIndex = 51;
+            this.label12.Text = "Payment Type";
+            // 
+            // cboPaymentType
+            // 
+            this.cboPaymentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPaymentType.FormattingEnabled = true;
+            this.cboPaymentType.Location = new System.Drawing.Point(1024, 103);
+            this.cboPaymentType.Name = "cboPaymentType";
+            this.cboPaymentType.Size = new System.Drawing.Size(188, 28);
+            this.cboPaymentType.TabIndex = 50;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -533,31 +491,32 @@
             this.label5.TabIndex = 49;
             this.label5.Text = "End Date";
             // 
-            // dateTimePicker1
+            // endDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(534, 104);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 27);
-            this.dateTimePicker1.TabIndex = 48;
+            this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.endDate.Location = new System.Drawing.Point(534, 104);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(188, 27);
+            this.endDate.TabIndex = 48;
             // 
-            // comboBox1
+            // cboResidentName
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(281, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 28);
-            this.comboBox1.TabIndex = 47;
+            this.cboResidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboResidentName.FormattingEnabled = true;
+            this.cboResidentName.Location = new System.Drawing.Point(281, 40);
+            this.cboResidentName.Name = "cboResidentName";
+            this.cboResidentName.Size = new System.Drawing.Size(188, 28);
+            this.cboResidentName.TabIndex = 47;
+            this.cboResidentName.Leave += new System.EventHandler(this.cboRoomId_Leave);
             // 
-            // textBox1
+            // txtInvoiceId
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(31, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 27);
-            this.textBox1.TabIndex = 46;
+            this.txtInvoiceId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceId.Location = new System.Drawing.Point(31, 41);
+            this.txtInvoiceId.Name = "txtInvoiceId";
+            this.txtInvoiceId.Size = new System.Drawing.Size(188, 27);
+            this.txtInvoiceId.TabIndex = 46;
             // 
             // label3
             // 
@@ -569,13 +528,13 @@
             this.label3.TabIndex = 45;
             this.label3.Text = "InvoiceId";
             // 
-            // txtRoomPrice
+            // txtTotalBill
             // 
-            this.txtRoomPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomPrice.Location = new System.Drawing.Point(785, 104);
-            this.txtRoomPrice.Name = "txtRoomPrice";
-            this.txtRoomPrice.Size = new System.Drawing.Size(188, 27);
-            this.txtRoomPrice.TabIndex = 44;
+            this.txtTotalBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalBill.Location = new System.Drawing.Point(785, 104);
+            this.txtTotalBill.Name = "txtTotalBill";
+            this.txtTotalBill.Size = new System.Drawing.Size(188, 27);
+            this.txtTotalBill.TabIndex = 44;
             // 
             // label11
             // 
@@ -583,9 +542,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(781, 83);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 20);
+            this.label11.Size = new System.Drawing.Size(75, 20);
             this.label11.TabIndex = 42;
-            this.label11.Text = "Bill";
+            this.label11.Text = "Total Bill";
             // 
             // label7
             // 
@@ -606,13 +565,13 @@
             this.startDate.Size = new System.Drawing.Size(188, 27);
             this.startDate.TabIndex = 39;
             // 
-            // txtResidentName
+            // txtRoomPrice
             // 
-            this.txtResidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResidentName.Location = new System.Drawing.Point(534, 41);
-            this.txtResidentName.Name = "txtResidentName";
-            this.txtResidentName.Size = new System.Drawing.Size(188, 27);
-            this.txtResidentName.TabIndex = 36;
+            this.txtRoomPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomPrice.Location = new System.Drawing.Point(785, 41);
+            this.txtRoomPrice.Name = "txtRoomPrice";
+            this.txtRoomPrice.Size = new System.Drawing.Size(188, 27);
+            this.txtRoomPrice.TabIndex = 36;
             // 
             // ClearBtn
             // 
@@ -625,25 +584,17 @@
             this.ClearBtn.TabIndex = 35;
             this.ClearBtn.Text = "Clear ";
             this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(782, 20);
+            this.label10.Location = new System.Drawing.Point(277, 17);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 20);
             this.label10.TabIndex = 33;
             this.label10.Text = "Resident Name";
-            // 
-            // cboRoomId
-            // 
-            this.cboRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRoomId.FormattingEnabled = true;
-            this.cboRoomId.Location = new System.Drawing.Point(785, 41);
-            this.cboRoomId.Name = "cboRoomId";
-            this.cboRoomId.Size = new System.Drawing.Size(188, 28);
-            this.cboRoomId.TabIndex = 32;
             // 
             // SaveBtn
             // 
@@ -656,12 +607,13 @@
             this.SaveBtn.TabIndex = 29;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(278, 20);
+            this.label6.Location = new System.Drawing.Point(530, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 20);
             this.label6.TabIndex = 25;
@@ -678,6 +630,7 @@
             this.NewBtn.TabIndex = 24;
             this.NewBtn.Text = "New";
             this.NewBtn.UseVisualStyleBackColor = false;
+            this.NewBtn.Click += new System.EventHandler(this.NewBtn_Click);
             // 
             // txtResidentPhone
             // 
@@ -701,7 +654,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(530, 20);
+            this.label2.Location = new System.Drawing.Point(781, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 21;
@@ -718,24 +671,32 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "Invoice Management";
             // 
-            // label12
+            // txtRoomId
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1021, 82);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 20);
-            this.label12.TabIndex = 51;
-            this.label12.Text = "Bill Type";
+            this.txtRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomId.Location = new System.Drawing.Point(534, 40);
+            this.txtRoomId.Name = "txtRoomId";
+            this.txtRoomId.Size = new System.Drawing.Size(188, 27);
+            this.txtRoomId.TabIndex = 52;
             // 
-            // cboRoomPosition
+            // label13
             // 
-            this.cboRoomPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRoomPosition.FormattingEnabled = true;
-            this.cboRoomPosition.Location = new System.Drawing.Point(1024, 103);
-            this.cboRoomPosition.Name = "cboRoomPosition";
-            this.cboRoomPosition.Size = new System.Drawing.Size(188, 28);
-            this.cboRoomPosition.TabIndex = 50;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1021, 17);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 20);
+            this.label13.TabIndex = 54;
+            this.label13.Text = "Billing Date";
+            // 
+            // BillingDate
+            // 
+            this.BillingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BillingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.BillingDate.Location = new System.Drawing.Point(1025, 40);
+            this.BillingDate.Name = "BillingDate";
+            this.BillingDate.Size = new System.Drawing.Size(188, 27);
+            this.BillingDate.TabIndex = 53;
             // 
             // FrmBilling
             // 
@@ -743,7 +704,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 972);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dgResidentList);
+            this.Controls.Add(this.dgInvoiceList);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.HeaderPanel);
@@ -752,6 +713,7 @@
             this.Name = "FrmBilling";
             this.Text = "FrmBilling";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmBilling_Load);
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             this.SidebarPanel.ResumeLayout(false);
@@ -781,7 +743,7 @@
             this.RoomPanel.ResumeLayout(false);
             this.RoomPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgResidentList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInvoiceList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -820,17 +782,16 @@
         private System.Windows.Forms.Panel RoomPanel;
         private System.Windows.Forms.Label RoomLabel;
         private System.Windows.Forms.PictureBox RoomPic;
-        private System.Windows.Forms.DataGridView dgResidentList;
+        private System.Windows.Forms.DataGridView dgInvoiceList;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtRoomPrice;
+        private System.Windows.Forms.TextBox txtTotalBill;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker startDate;
-        private System.Windows.Forms.TextBox txtResidentName;
+        private System.Windows.Forms.TextBox txtRoomPrice;
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboRoomId;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button NewBtn;
@@ -838,20 +799,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtInvoiceId;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.ComboBox cboResidentName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker endDate;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cboRoomPosition;
+        private System.Windows.Forms.ComboBox cboPaymentType;
+        private System.Windows.Forms.TextBox txtRoomId;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker BillingDate;
     }
 }
