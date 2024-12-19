@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HostelManagementSystem.Views
+namespace HostelManagementSystem.Views.ResidentListtems
 {
-    public partial class FrmBanResident : Form
+    public partial class FrmResidentLeave : Form
     {
-        public FrmBanResident()
+        public FrmResidentLeave()
         {
             InitializeComponent();
+        }
+
+        private void FrmResidentLeave_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

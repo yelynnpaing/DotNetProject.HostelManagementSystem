@@ -17,7 +17,7 @@ namespace HostelManagementSystem.Views
             InitializeComponent();
         }
 
-        private void FormLoad(object form)
+        public void FormLoad(object form)
         {
             if (this.MainPanel.Controls.Count > 0)
                 this.MainPanel.Controls.RemoveAt(0);
@@ -111,6 +111,16 @@ namespace HostelManagementSystem.Views
 
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
+        }
+
+        private void BanResidentPic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmBanResidentList());
+        }
+
+        private void BanResidantLabel_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmBanResidentList());
         }
     }
 }

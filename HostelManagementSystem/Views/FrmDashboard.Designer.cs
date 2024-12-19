@@ -59,7 +59,7 @@
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SidebarPanel.SuspendLayout();
             this.BanResidentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).BeginInit();
@@ -120,6 +120,7 @@
             this.BanResidantLabel.Size = new System.Drawing.Size(138, 25);
             this.BanResidantLabel.TabIndex = 1;
             this.BanResidantLabel.Text = "Ban Residents";
+            this.BanResidantLabel.Click += new System.EventHandler(this.BanResidantLabel_Click);
             // 
             // BanResidentPic
             // 
@@ -130,6 +131,7 @@
             this.BanResidentPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BanResidentPic.TabIndex = 0;
             this.BanResidentPic.TabStop = false;
+            this.BanResidentPic.Click += new System.EventHandler(this.BanResidentPic_Click);
             // 
             // panel2
             // 
@@ -399,22 +401,22 @@
             // 
             // MainPanel
             // 
-            this.MainPanel.Controls.Add(this.label2);
+            this.MainPanel.Controls.Add(this.label3);
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1924, 972);
             this.MainPanel.TabIndex = 2;
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(1804, 419);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Dashboard";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Teal;
+            this.label3.Location = new System.Drawing.Point(614, 392);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(758, 32);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "WLECOME TO THE HOSTEL MANAGEMENT SYSTEM";
             // 
             // FrmDashboard
             // 
@@ -489,12 +491,12 @@
         private System.Windows.Forms.Panel BillListPanel;
         private System.Windows.Forms.Label BillListLabel;
         private System.Windows.Forms.PictureBox BillListPic;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label BillingLabel;
         private System.Windows.Forms.PictureBox BillingPic;
         private System.Windows.Forms.Panel BanResidentPanel;
         private System.Windows.Forms.Label BanResidantLabel;
         private System.Windows.Forms.PictureBox BanResidentPic;
+        private System.Windows.Forms.Label label3;
     }
 }

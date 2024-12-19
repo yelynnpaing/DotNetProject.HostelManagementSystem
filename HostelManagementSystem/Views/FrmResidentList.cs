@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HostelManagementSystem.Views.ResidentListtems;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace HostelManagementSystem.Views
         public FrmResidentList()
         {
             InitializeComponent();
+        }
+
+        private void BtnResidentLeave_Click(object sender, EventArgs e)
+        {
+            FrmResidentLeave RLForm = new FrmResidentLeave();
+            RLForm.ShowDialog();
         }
     }
 }
