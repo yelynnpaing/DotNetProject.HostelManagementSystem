@@ -217,7 +217,33 @@ namespace HostelManagementSystem.Views
 
         private void dgResidentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           //
+            if (dgResidentList.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
+            {
+                DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgResidentList.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                bool isChecked = Convert.ToBoolean(cell.Value);
+                if (isChecked == false)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure ? you want to make this resident to leave from this room!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (result == DialogResult.OK)
+                    {
+                        cell.Value = true;
+                        CheckboxOccupy.Checked = false;
+                    }
+                    else
+                    {
+                        cell.ReadOnly = true;
+                        dgResidentList.CancelEdit();
+                    }
+                }
+                else
+                {
+                    cell.ReadOnly = true;
+                    dgResidentList.CancelEdit();
+                }
+            }
         }
     }
 }
+
+
+

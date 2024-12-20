@@ -66,9 +66,9 @@
             this.startDate = new System.Windows.Forms.DateTimePicker();
             this.txtResidentName = new System.Windows.Forms.TextBox();
             this.ClearBtn = new System.Windows.Forms.Button();
+            this.txtResidentId = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cboRoomId = new System.Windows.Forms.ComboBox();
-            this.txtResidentId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.NewBtn = new System.Windows.Forms.Button();
             this.txtResidentPhone = new System.Windows.Forms.TextBox();
@@ -82,6 +82,9 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BanDate = new System.Windows.Forms.DateTimePicker();
+            this.BanBtn = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.BanResidentPanel.SuspendLayout();
@@ -422,12 +425,15 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(361, 123);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(163, 29);
+            this.label8.Size = new System.Drawing.Size(274, 29);
             this.label8.TabIndex = 41;
-            this.label8.Text = "Search Form";
+            this.label8.Text = "Resident Management";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BanBtn);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.BanDate);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.endDate);
             this.groupBox1.Controls.Add(this.label7);
@@ -444,7 +450,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(366, 155);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(771, 234);
+            this.groupBox1.Size = new System.Drawing.Size(1043, 234);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             // 
@@ -501,12 +507,20 @@
             this.ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearBtn.Location = new System.Drawing.Point(200, 182);
+            this.ClearBtn.Location = new System.Drawing.Point(381, 179);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(130, 36);
             this.ClearBtn.TabIndex = 35;
             this.ClearBtn.Text = "Clear ";
             this.ClearBtn.UseVisualStyleBackColor = false;
+            // 
+            // txtResidentId
+            // 
+            this.txtResidentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentId.Location = new System.Drawing.Point(533, 45);
+            this.txtResidentId.Name = "txtResidentId";
+            this.txtResidentId.Size = new System.Drawing.Size(188, 27);
+            this.txtResidentId.TabIndex = 26;
             // 
             // label10
             // 
@@ -527,14 +541,6 @@
             this.cboRoomId.Size = new System.Drawing.Size(188, 28);
             this.cboRoomId.TabIndex = 32;
             // 
-            // txtResidentId
-            // 
-            this.txtResidentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResidentId.Location = new System.Drawing.Point(533, 45);
-            this.txtResidentId.Name = "txtResidentId";
-            this.txtResidentId.Size = new System.Drawing.Size(188, 27);
-            this.txtResidentId.TabIndex = 26;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -550,7 +556,7 @@
             this.NewBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.NewBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewBtn.ForeColor = System.Drawing.Color.White;
-            this.NewBtn.Location = new System.Drawing.Point(29, 182);
+            this.NewBtn.Location = new System.Drawing.Point(200, 179);
             this.NewBtn.Name = "NewBtn";
             this.NewBtn.Size = new System.Drawing.Size(130, 36);
             this.NewBtn.TabIndex = 24;
@@ -560,7 +566,7 @@
             // txtResidentPhone
             // 
             this.txtResidentPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResidentPhone.Location = new System.Drawing.Point(30, 110);
+            this.txtResidentPhone.Location = new System.Drawing.Point(777, 44);
             this.txtResidentPhone.Name = "txtResidentPhone";
             this.txtResidentPhone.Size = new System.Drawing.Size(188, 27);
             this.txtResidentPhone.TabIndex = 23;
@@ -569,7 +575,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 89);
+            this.label4.Location = new System.Drawing.Point(774, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 22;
@@ -649,6 +655,37 @@
             this.label9.Size = new System.Drawing.Size(226, 29);
             this.label9.TabIndex = 39;
             this.label9.Text = "Banned Residents";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Ban Date";
+            // 
+            // BanDate
+            // 
+            this.BanDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BanDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.BanDate.Location = new System.Drawing.Point(29, 110);
+            this.BanDate.Name = "BanDate";
+            this.BanDate.Size = new System.Drawing.Size(188, 27);
+            this.BanDate.TabIndex = 47;
+            // 
+            // BanBtn
+            // 
+            this.BanBtn.BackColor = System.Drawing.Color.Red;
+            this.BanBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BanBtn.ForeColor = System.Drawing.Color.White;
+            this.BanBtn.Location = new System.Drawing.Point(28, 179);
+            this.BanBtn.Name = "BanBtn";
+            this.BanBtn.Size = new System.Drawing.Size(130, 36);
+            this.BanBtn.TabIndex = 49;
+            this.BanBtn.Text = "Ban";
+            this.BanBtn.UseVisualStyleBackColor = false;
             // 
             // FrmBanResidentList
             // 
@@ -756,5 +793,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker BanDate;
+        private System.Windows.Forms.Button BanBtn;
     }
 }
