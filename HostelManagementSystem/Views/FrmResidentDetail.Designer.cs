@@ -70,7 +70,6 @@
             this.ResidentPictureBox = new System.Windows.Forms.PictureBox();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.UpdateBtn = new System.Windows.Forms.Button();
-            this.DeleteBtn = new System.Windows.Forms.Button();
             this.cboRoomId = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtResidentAddress = new System.Windows.Forms.TextBox();
@@ -550,18 +549,7 @@
             this.UpdateBtn.TabIndex = 30;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = false;
-            // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.BackColor = System.Drawing.Color.OrangeRed;
-            this.DeleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteBtn.Location = new System.Drawing.Point(743, 299);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(130, 36);
-            this.DeleteBtn.TabIndex = 31;
-            this.DeleteBtn.Text = "Delete";
-            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // cboRoomId
             // 
@@ -603,6 +591,7 @@
             this.ClearBtn.TabIndex = 35;
             this.ClearBtn.Text = "Clear ";
             this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // txtResidentName
             // 
@@ -625,9 +614,6 @@
             // CheckboxOccupy
             // 
             this.CheckboxOccupy.AutoSize = true;
-            this.CheckboxOccupy.Checked = true;
-            this.CheckboxOccupy.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CheckboxOccupy.Enabled = false;
             this.CheckboxOccupy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckboxOccupy.Location = new System.Drawing.Point(1014, 49);
             this.CheckboxOccupy.Name = "CheckboxOccupy";
@@ -635,6 +621,7 @@
             this.CheckboxOccupy.TabIndex = 38;
             this.CheckboxOccupy.Text = "Occupy";
             this.CheckboxOccupy.UseVisualStyleBackColor = true;
+            this.CheckboxOccupy.CheckedChanged += new System.EventHandler(this.CheckboxOccupy_CheckedChanged);
             // 
             // startDate
             // 
@@ -676,6 +663,7 @@
             this.CheckBoxLeave.TabIndex = 43;
             this.CheckBoxLeave.Text = "Leave";
             this.CheckBoxLeave.UseVisualStyleBackColor = true;
+            this.CheckBoxLeave.CheckedChanged += new System.EventHandler(this.CheckBoxLeave_CheckedChanged);
             // 
             // txtRoomPrice
             // 
@@ -704,7 +692,6 @@
             this.label12.Size = new System.Drawing.Size(79, 20);
             this.label12.TabIndex = 46;
             this.label12.Text = "End Date";
-            this.label12.Visible = false;
             // 
             // groupBox1
             // 
@@ -722,7 +709,6 @@
             this.groupBox1.Controls.Add(this.txtResidentAddress);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cboRoomId);
-            this.groupBox1.Controls.Add(this.DeleteBtn);
             this.groupBox1.Controls.Add(this.UpdateBtn);
             this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -772,6 +758,7 @@
             this.dgResidentList.RowTemplate.Height = 24;
             this.dgResidentList.Size = new System.Drawing.Size(1561, 410);
             this.dgResidentList.TabIndex = 24;
+            this.dgResidentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellClick);
             this.dgResidentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellContentClick);
             // 
             // FrmResidentDetail
@@ -872,7 +859,6 @@
         private System.Windows.Forms.PictureBox ResidentPictureBox;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button UpdateBtn;
-        private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.ComboBox cboRoomId;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtResidentAddress;

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -125,6 +126,8 @@ namespace HostelManagementSystem.Views
         {
             Clear();
             AutoId();
+            CheckboxOccupy.Checked = true;
+            CheckboxOccupy.Enabled = false;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -221,26 +224,132 @@ namespace HostelManagementSystem.Views
             {
                 DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgResidentList.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 bool isChecked = Convert.ToBoolean(cell.Value);
-                if (isChecked == false)
-                {
-                    DialogResult result = MessageBox.Show("Are you sure ? you want to make this resident to leave from this room!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    if (result == DialogResult.OK)
-                    {
-                        cell.Value = true;
-                        CheckboxOccupy.Checked = false;
-                    }
-                    else
-                    {
-                        cell.ReadOnly = true;
-                        dgResidentList.CancelEdit();
-                    }
-                }
-                else
-                {
-                    cell.ReadOnly = true;
-                    dgResidentList.CancelEdit();
-                }
+                cell.ReadOnly = true;
+                dgResidentList.CancelEdit();
+
+                // for checkbox individual
+                //if (isChecked == false)
+                //{
+                //    DialogResult result = MessageBox.Show("Are you sure ? you want to make this resident to leave from this room!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                //    if (result == DialogResult.OK)
+                //    {
+                //        cell.Value = true;
+                //        CheckboxOccupy.Checked = false;
+                //    }
+                //    else
+                //    {
+                //        cell.ReadOnly = true;
+                //        dgResidentList.CancelEdit();
+                //    }
+                //}
+                //else
+                //{
+                //    cell.ReadOnly = true;
+                //    dgResidentList.CancelEdit();
+                //}
             }
+        }
+
+        private void dgResidentList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtResidentId.Text = dgResidentList.CurrentRow.Cells[0].Value.ToString();
+                txtResidentName.Text = dgResidentList.CurrentRow.Cells[1].Value.ToString();
+                cboRoomId.Text = dgResidentList.CurrentRow.Cells[2].Value.ToString();
+                txtRoomPrice.Text = dgResidentList.CurrentRow.Cells[3].Value.ToString();
+                CheckboxOccupy.Enabled = false;
+                CheckBoxLeave.Enabled = true;
+                Byte[] ImageData = (Byte[])dgResidentList.CurrentRow.Cells[4].Value;
+                MemoryStream ms = new MemoryStream(ImageData);
+                ResidentPictureBox.Image = Image.FromStream(ms);
+                txtResidentAddress.Text = dgResidentList.CurrentRow.Cells[5].Value.ToString();
+                txtResidentPhone.Text = dgResidentList.CurrentRow.Cells[6].Value.ToString();
+                startDate.Enabled = false;
+                //startDate.Text = dgResidentList.CurrentRow.Cells[7].Value.ToString();
+                CheckboxOccupy.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[8].Value);
+                CheckBoxLeave.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[9].Value);
+                if(CheckBoxLeave.Checked == true)
+                {
+                    CheckBoxLeave.Enabled = false;
+                    CheckboxOccupy.Enabled = true;
+                }
+                endDate.Text = dgResidentList.CurrentRow.Cells[10].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Someting wrong! Please reload this page.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void CheckBoxLeave_CheckedChanged(object sender, EventArgs e)
+        {
+            Boolean isCheckedLeave = CheckBoxLeave.Checked;
+            if (isCheckedLeave)
+            {
+                CheckboxOccupy.Checked = false;
+                CheckBoxLeave.Enabled = false;
+            }    
+        }
+
+        private void CheckboxOccupy_CheckedChanged(object sender, EventArgs e)
+        {
+            Boolean isCheckedOccupy = CheckboxOccupy.Checked;
+            if (isCheckedOccupy)
+            {
+                CheckBoxLeave.Checked = false;
+                CheckboxOccupy.Enabled = false;
+            }
+                
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            var img = new ImageConverter().ConvertTo(ResidentPictureBox.Image, typeof(Byte[]));
+            string query = "UPDATE TblResidents SET ResidentId = @ResidentId, Name = @Name, RoomId = @RoomId, " +
+                "Image = @Image, Address = @Address, Phone = @Phone, StartDate = @StartDate, Occupy = @Occupy, " +
+                "Leave = @Leave, EndDate = @EndDate WHERE ResidentId = @ResidentId";
+            SqlCommand cmd = new SqlCommand(query, consql);
+            cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+            cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = txtResidentName.Text;
+            cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
+            cmd.Parameters.Add("@Image", SqlDbType.Image).Value = img;
+            cmd.Parameters.Add("@Address", SqlDbType.VarChar).Value = txtResidentAddress.Text;
+            cmd.Parameters.Add("@Phone", SqlDbType.VarChar).Value = txtResidentPhone.Text;
+            cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate.Text;
+            
+            cmd.Parameters.Add("@Occupy", SqlDbType.Bit).Value = CheckboxOccupy.Checked;
+            cmd.Parameters.Add("@Leave", SqlDbType.Bit).Value = CheckBoxLeave.Checked;
+            cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate.Text;
+            ExecuteMyQuery(cmd, "Resident was successfully updated.");
+
+            if (CheckBoxLeave.Checked == true)
+            {
+                //Remove from Room Capacity Check
+                string RCCquery = "DELETE FROM TblRoomCapacityCheck WHERE ResidentId = @ResidentId";
+                SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
+                RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                ExecuteMyQuery(RccCommand, "Update Room Capacity new Count for leaving resident");
+            }
+            else
+            {
+                //Adding to Room Capacity Check
+                int i = 1;
+                string RCCquery = "INSERT INTO TblRoomCapacityCheck VALUES (@CountCapacity, @RoomId, @ResidentId)";
+                SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
+                RccCommand.Parameters.Add("@CountCapacity", SqlDbType.Int).Value = i;
+                RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
+                RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                ExecuteMyQuery(RccCommand, "Add Room Capacity new Count for resident");
+            }
+            FillCboRoomId();
+            Clear();
+            FillDgResidents();
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }
