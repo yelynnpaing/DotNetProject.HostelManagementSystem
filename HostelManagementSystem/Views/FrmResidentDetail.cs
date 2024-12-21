@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Asn1;
+﻿using HostelManagementSystem.Views.ResidentListtems;
+using Org.BouncyCastle.Asn1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,8 +89,9 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = "SELECT TblRoomPrices.RoomPrice FROM TblRooms INNER JOIN TblRoomPrices " +
-                    "ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId WHERE TblRooms.RoomId = '" + cboRoomId.SelectedValue + "'";
+                string query = @"SELECT TblRoomPrices.RoomPrice FROM TblRooms INNER JOIN TblRoomPrices
+                                ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId 
+                                WHERE TblRooms.RoomId = '" + cboRoomId.SelectedValue + "'";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "roomPrice");
@@ -136,8 +138,8 @@ namespace HostelManagementSystem.Views
             {
                 var image = new ImageConverter().ConvertTo(ResidentPictureBox.Image, typeof(Byte[]));
 
-                string query = "INSERT INTO TblResidents VALUES (@ResidentId, @Name, @RoomId, @Image, " +
-                    "@Address, @Phone, @StartDate, @Occupy, @Leave, @EndDate)";
+                string query = @"INSERT INTO TblResidents VALUES (@ResidentId, @Name, @RoomId, @Image,
+                                @Address, @Phone, @StartDate, @Occupy, @Leave, @EndDate)";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
                 cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = txtResidentName.Text;
@@ -186,11 +188,12 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = "SELECT TblResidents.ResidentId as Id, TblResidents.Name,TblResidents.RoomId, TblRoomPrices.RoomPrice," +
-                " TblResidents.Image, TblResidents.Address, TblResidents.Phone,TblResidents.StartDate, TblResidents.Occupy, " +
-                "TblResidents.Leave, TblResidents.EndDate FROM TblResidents INNER JOIN TblRooms " +
-                "ON TblResidents.RoomId = TblRooms.RoomId INNER JOIN TblRoomPrices " +
-                "ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
+                string query = @"SELECT TblResidents.ResidentId as Id, TblResidents.Name,TblResidents.RoomId, 
+                                TblRoomPrices.RoomPrice, TblResidents.Image, TblResidents.Address, TblResidents.Phone,
+                                TblResidents.StartDate, TblResidents.Occupy,TblResidents.Leave, TblResidents.EndDate
+                                FROM TblResidents 
+                                INNER JOIN TblRooms ON TblResidents.RoomId = TblRooms.RoomId 
+                                INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
@@ -306,41 +309,56 @@ namespace HostelManagementSystem.Views
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
             var img = new ImageConverter().ConvertTo(ResidentPictureBox.Image, typeof(Byte[]));
-            string query = "UPDATE TblResidents SET ResidentId = @ResidentId, Name = @Name, RoomId = @RoomId, " +
+            try
+            {
+                string query = "UPDATE TblResidents SET ResidentId = @ResidentId, Name = @Name, RoomId = @RoomId, " +
                 "Image = @Image, Address = @Address, Phone = @Phone, StartDate = @StartDate, Occupy = @Occupy, " +
                 "Leave = @Leave, EndDate = @EndDate WHERE ResidentId = @ResidentId";
-            SqlCommand cmd = new SqlCommand(query, consql);
-            cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
-            cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = txtResidentName.Text;
-            cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
-            cmd.Parameters.Add("@Image", SqlDbType.Image).Value = img;
-            cmd.Parameters.Add("@Address", SqlDbType.VarChar).Value = txtResidentAddress.Text;
-            cmd.Parameters.Add("@Phone", SqlDbType.VarChar).Value = txtResidentPhone.Text;
-            cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate.Text;
-            
-            cmd.Parameters.Add("@Occupy", SqlDbType.Bit).Value = CheckboxOccupy.Checked;
-            cmd.Parameters.Add("@Leave", SqlDbType.Bit).Value = CheckBoxLeave.Checked;
-            cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate.Text;
-            ExecuteMyQuery(cmd, "Resident was successfully updated.");
+                SqlCommand cmd = new SqlCommand(query, consql);
+                cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = txtResidentName.Text;
+                cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
+                cmd.Parameters.Add("@Image", SqlDbType.Image).Value = img;
+                cmd.Parameters.Add("@Address", SqlDbType.VarChar).Value = txtResidentAddress.Text;
+                cmd.Parameters.Add("@Phone", SqlDbType.VarChar).Value = txtResidentPhone.Text;
+                cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate.Text;
 
-            if (CheckBoxLeave.Checked == true)
-            {
-                //Remove from Room Capacity Check
-                string RCCquery = "DELETE FROM TblRoomCapacityCheck WHERE ResidentId = @ResidentId";
-                SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
-                RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
-                ExecuteMyQuery(RccCommand, "Update Room Capacity new Count for leaving resident");
+                cmd.Parameters.Add("@Occupy", SqlDbType.Bit).Value = CheckboxOccupy.Checked;
+                cmd.Parameters.Add("@Leave", SqlDbType.Bit).Value = CheckBoxLeave.Checked;
+                cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate.Text;
+                ExecuteMyQuery(cmd, "Resident was successfully updated.");
             }
-            else
+            catch
             {
-                //Adding to Room Capacity Check
-                int i = 1;
-                string RCCquery = "INSERT INTO TblRoomCapacityCheck VALUES (@CountCapacity, @RoomId, @ResidentId)";
-                SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
-                RccCommand.Parameters.Add("@CountCapacity", SqlDbType.Int).Value = i;
-                RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
-                RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
-                ExecuteMyQuery(RccCommand, "Add Room Capacity new Count for resident");
+                MessageBox.Show("Someting wrong! Resident updating is fail!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            //For Room Capacity Check
+            try
+            {
+                if (CheckBoxLeave.Checked == true)
+                {
+                    //Remove from Room Capacity Check
+                    string RCCquery = "DELETE FROM TblRoomCapacityCheck WHERE ResidentId = @ResidentId";
+                    SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
+                    RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                    ExecuteMyQuery(RccCommand, "Update Room Capacity new Count for leaving resident");
+                }
+                else
+                {
+                    //Adding to Room Capacity Check
+                    int i = 1;
+                    string RCCquery = "INSERT INTO TblRoomCapacityCheck VALUES (@CountCapacity, @RoomId, @ResidentId)";
+                    SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
+                    RccCommand.Parameters.Add("@CountCapacity", SqlDbType.Int).Value = i;
+                    RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
+                    RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                    ExecuteMyQuery(RccCommand, "Add Room Capacity to new Count for resident");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Someting wrong! Room Capacity Updating is fail!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             FillCboRoomId();
             Clear();
@@ -350,6 +368,12 @@ namespace HostelManagementSystem.Views
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void BtnResidentLeave_Click(object sender, EventArgs e)
+        {
+            FrmResidentLeave frmResidentLeave = new FrmResidentLeave();
+            frmResidentLeave.ShowDialog();
         }
     }
 }

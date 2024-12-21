@@ -88,6 +88,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgResidentList = new System.Windows.Forms.DataGridView();
+            this.BtnResidentLeave = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
@@ -761,11 +762,27 @@
             this.dgResidentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellClick);
             this.dgResidentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellContentClick);
             // 
+            // BtnResidentLeave
+            // 
+            this.BtnResidentLeave.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnResidentLeave.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.BtnResidentLeave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnResidentLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnResidentLeave.ForeColor = System.Drawing.Color.Blue;
+            this.BtnResidentLeave.Location = new System.Drawing.Point(1722, 117);
+            this.BtnResidentLeave.Name = "BtnResidentLeave";
+            this.BtnResidentLeave.Size = new System.Drawing.Size(198, 36);
+            this.BtnResidentLeave.TabIndex = 48;
+            this.BtnResidentLeave.Text = "Leaved Residents";
+            this.BtnResidentLeave.UseVisualStyleBackColor = false;
+            this.BtnResidentLeave.Click += new System.EventHandler(this.BtnResidentLeave_Click);
+            // 
             // FrmResidentDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.BtnResidentLeave);
             this.Controls.Add(this.HeaderPanel);
             this.Controls.Add(this.SidebarPanel);
             this.Controls.Add(this.dgResidentList);
@@ -877,5 +894,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgResidentList;
+        private System.Windows.Forms.Button BtnResidentLeave;
     }
 }
