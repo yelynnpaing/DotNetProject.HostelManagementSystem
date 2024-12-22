@@ -89,6 +89,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dgResidentList = new System.Windows.Forms.DataGridView();
             this.BtnResidentLeave = new System.Windows.Forms.Button();
+            this.txtUIN = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.HeaderPanel.SuspendLayout();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
@@ -428,7 +430,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(277, 24);
+            this.label2.Location = new System.Drawing.Point(528, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 21;
@@ -541,7 +543,7 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.BackColor = System.Drawing.Color.Yellow;
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBtn.ForeColor = System.Drawing.Color.Black;
             this.UpdateBtn.Location = new System.Drawing.Point(560, 299);
@@ -556,7 +558,7 @@
             // 
             this.cboRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRoomId.FormattingEnabled = true;
-            this.cboRoomId.Location = new System.Drawing.Point(532, 45);
+            this.cboRoomId.Location = new System.Drawing.Point(783, 45);
             this.cboRoomId.Name = "cboRoomId";
             this.cboRoomId.Size = new System.Drawing.Size(188, 28);
             this.cboRoomId.TabIndex = 32;
@@ -566,7 +568,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(529, 24);
+            this.label10.Location = new System.Drawing.Point(780, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 20);
             this.label10.TabIndex = 33;
@@ -583,7 +585,7 @@
             // 
             // ClearBtn
             // 
-            this.ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClearBtn.BackColor = System.Drawing.Color.Silver;
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
             this.ClearBtn.Location = new System.Drawing.Point(380, 299);
@@ -597,7 +599,7 @@
             // txtResidentName
             // 
             this.txtResidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResidentName.Location = new System.Drawing.Point(281, 45);
+            this.txtResidentName.Location = new System.Drawing.Point(532, 45);
             this.txtResidentName.Name = "txtResidentName";
             this.txtResidentName.Size = new System.Drawing.Size(188, 27);
             this.txtResidentName.TabIndex = 36;
@@ -616,7 +618,7 @@
             // 
             this.CheckboxOccupy.AutoSize = true;
             this.CheckboxOccupy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckboxOccupy.Location = new System.Drawing.Point(1014, 49);
+            this.CheckboxOccupy.Location = new System.Drawing.Point(1034, 134);
             this.CheckboxOccupy.Name = "CheckboxOccupy";
             this.CheckboxOccupy.Size = new System.Drawing.Size(88, 24);
             this.CheckboxOccupy.TabIndex = 38;
@@ -628,7 +630,7 @@
             // 
             this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDate.Location = new System.Drawing.Point(783, 203);
+            this.startDate.Location = new System.Drawing.Point(783, 206);
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(188, 27);
             this.startDate.TabIndex = 39;
@@ -637,7 +639,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(779, 180);
+            this.label7.Location = new System.Drawing.Point(779, 183);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 20);
             this.label7.TabIndex = 40;
@@ -647,7 +649,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(779, 24);
+            this.label11.Location = new System.Drawing.Point(1030, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 20);
             this.label11.TabIndex = 42;
@@ -658,7 +660,7 @@
             this.CheckBoxLeave.AutoSize = true;
             this.CheckBoxLeave.Enabled = false;
             this.CheckBoxLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckBoxLeave.Location = new System.Drawing.Point(1013, 123);
+            this.CheckBoxLeave.Location = new System.Drawing.Point(1146, 134);
             this.CheckBoxLeave.Name = "CheckBoxLeave";
             this.CheckBoxLeave.Size = new System.Drawing.Size(76, 24);
             this.CheckBoxLeave.TabIndex = 43;
@@ -669,7 +671,7 @@
             // txtRoomPrice
             // 
             this.txtRoomPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomPrice.Location = new System.Drawing.Point(783, 45);
+            this.txtRoomPrice.Location = new System.Drawing.Point(1034, 45);
             this.txtRoomPrice.Name = "txtRoomPrice";
             this.txtRoomPrice.Size = new System.Drawing.Size(188, 27);
             this.txtRoomPrice.TabIndex = 44;
@@ -678,7 +680,7 @@
             // 
             this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.endDate.Location = new System.Drawing.Point(1014, 206);
+            this.endDate.Location = new System.Drawing.Point(1034, 206);
             this.endDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(159, 27);
@@ -688,7 +690,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1010, 183);
+            this.label12.Location = new System.Drawing.Point(1030, 183);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 20);
             this.label12.TabIndex = 46;
@@ -696,6 +698,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtUIN);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.endDate);
             this.groupBox1.Controls.Add(this.txtRoomPrice);
@@ -723,7 +727,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(359, 156);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1224, 349);
+            this.groupBox1.Size = new System.Drawing.Size(1260, 349);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
@@ -776,6 +780,25 @@
             this.BtnResidentLeave.Text = "Leaved Residents";
             this.BtnResidentLeave.UseVisualStyleBackColor = false;
             this.BtnResidentLeave.Click += new System.EventHandler(this.BtnResidentLeave_Click);
+            // 
+            // txtUIN
+            // 
+            this.txtUIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUIN.Location = new System.Drawing.Point(281, 45);
+            this.txtUIN.Name = "txtUIN";
+            this.txtUIN.Size = new System.Drawing.Size(188, 27);
+            this.txtUIN.TabIndex = 48;
+            this.txtUIN.Leave += new System.EventHandler(this.txtUIN_Leave);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(277, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 20);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Smart Card Id";
             // 
             // FrmResidentDetail
             // 
@@ -895,5 +918,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgResidentList;
         private System.Windows.Forms.Button BtnResidentLeave;
+        private System.Windows.Forms.TextBox txtUIN;
+        private System.Windows.Forms.Label label13;
     }
 }

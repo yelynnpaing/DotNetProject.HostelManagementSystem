@@ -35,6 +35,7 @@ namespace HostelManagementSystem.Views
         private void Clear()
         {
             txtResidentId.Text = "";
+            txtUIN.Text = "";
             txtResidentName.Text = "";
             cboRoomId.Text = "";
             txtRoomPrice.Text = "";
@@ -138,10 +139,11 @@ namespace HostelManagementSystem.Views
             {
                 var image = new ImageConverter().ConvertTo(ResidentPictureBox.Image, typeof(Byte[]));
 
-                string query = @"INSERT INTO TblResidents VALUES (@ResidentId, @Name, @RoomId, @Image,
+                string query = @"INSERT INTO TblResidents VALUES (@ResidentId,@UIN, @Name, @RoomId, @Image,
                                 @Address, @Phone, @StartDate, @Occupy, @Leave, @EndDate)";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                cmd.Parameters.Add("@UIN", SqlDbType.VarChar).Value = txtUIN.Text;
                 cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = txtResidentName.Text;
                 cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
                 cmd.Parameters.Add("@Image", SqlDbType.Image).Value = image;
@@ -188,7 +190,7 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = @"SELECT TblResidents.ResidentId as Id, TblResidents.Name,TblResidents.RoomId, 
+                string query = @"SELECT TblResidents.ResidentId as Id, TblResidents.UIN as SmartId, TblResidents.Name,TblResidents.RoomId, 
                                 TblRoomPrices.RoomPrice, TblResidents.Image, TblResidents.Address, TblResidents.Phone,
                                 TblResidents.StartDate, TblResidents.Occupy,TblResidents.Leave, TblResidents.EndDate
                                 FROM TblResidents 
@@ -202,9 +204,12 @@ namespace HostelManagementSystem.Views
                 dgResidentList.DataSource = dt;
 
                 dgResidentList.Columns[0].Width = 50;
-                dgResidentList.Columns[2].Width = 70;
-                dgResidentList.Columns[3].Width = 90;
-                dgResidentList.Columns[5].Width = 300;
+                dgResidentList.Columns[1].Width = 80;
+                dgResidentList.Columns[3].Width = 70;
+                dgResidentList.Columns[4].Width = 90;
+                dgResidentList.Columns[6].Width = 250;
+                dgResidentList.Columns[9].Width = 70;
+                dgResidentList.Columns[10].Width = 70;
 
                 dgResidentList.RowTemplate.Height = 100;
                 dgResidentList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
@@ -212,7 +217,7 @@ namespace HostelManagementSystem.Views
                 //dgResidentList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 DataGridViewImageColumn ImgCol = new DataGridViewImageColumn();
-                ImgCol = (DataGridViewImageColumn)dgResidentList.Columns[4];
+                ImgCol = (DataGridViewImageColumn)dgResidentList.Columns[5];
                 ImgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             }
             catch
@@ -258,26 +263,27 @@ namespace HostelManagementSystem.Views
             try
             {
                 txtResidentId.Text = dgResidentList.CurrentRow.Cells[0].Value.ToString();
-                txtResidentName.Text = dgResidentList.CurrentRow.Cells[1].Value.ToString();
-                cboRoomId.Text = dgResidentList.CurrentRow.Cells[2].Value.ToString();
-                txtRoomPrice.Text = dgResidentList.CurrentRow.Cells[3].Value.ToString();
+                txtUIN.Text = dgResidentList.CurrentRow.Cells[1].Value.ToString();
+                txtResidentName.Text = dgResidentList.CurrentRow.Cells[2].Value.ToString();
+                cboRoomId.Text = dgResidentList.CurrentRow.Cells[3].Value.ToString();
+                txtRoomPrice.Text = dgResidentList.CurrentRow.Cells[4].Value.ToString();
                 CheckboxOccupy.Enabled = false;
                 CheckBoxLeave.Enabled = true;
-                Byte[] ImageData = (Byte[])dgResidentList.CurrentRow.Cells[4].Value;
+                Byte[] ImageData = (Byte[])dgResidentList.CurrentRow.Cells[5].Value;
                 MemoryStream ms = new MemoryStream(ImageData);
                 ResidentPictureBox.Image = Image.FromStream(ms);
-                txtResidentAddress.Text = dgResidentList.CurrentRow.Cells[5].Value.ToString();
-                txtResidentPhone.Text = dgResidentList.CurrentRow.Cells[6].Value.ToString();
+                txtResidentAddress.Text = dgResidentList.CurrentRow.Cells[6].Value.ToString();
+                txtResidentPhone.Text = dgResidentList.CurrentRow.Cells[7].Value.ToString();
                 startDate.Enabled = false;
-                //startDate.Text = dgResidentList.CurrentRow.Cells[7].Value.ToString();
-                CheckboxOccupy.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[8].Value);
-                CheckBoxLeave.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[9].Value);
+                //startDate.Text = dgResidentList.CurrentRow.Cells[8].Value.ToString();
+                CheckboxOccupy.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[9].Value);
+                CheckBoxLeave.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[10].Value);
                 if(CheckBoxLeave.Checked == true)
                 {
                     CheckBoxLeave.Enabled = false;
                     CheckboxOccupy.Enabled = true;
                 }
-                endDate.Text = dgResidentList.CurrentRow.Cells[10].Value.ToString();
+                endDate.Text = dgResidentList.CurrentRow.Cells[11].Value.ToString();
             }
             catch
             {
@@ -311,11 +317,12 @@ namespace HostelManagementSystem.Views
             var img = new ImageConverter().ConvertTo(ResidentPictureBox.Image, typeof(Byte[]));
             try
             {
-                string query = "UPDATE TblResidents SET ResidentId = @ResidentId, Name = @Name, RoomId = @RoomId, " +
+                string query = "UPDATE TblResidents SET ResidentId = @ResidentId, UIN = @UIN, Name = @Name, RoomId = @RoomId, " +
                 "Image = @Image, Address = @Address, Phone = @Phone, StartDate = @StartDate, Occupy = @Occupy, " +
                 "Leave = @Leave, EndDate = @EndDate WHERE ResidentId = @ResidentId";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                cmd.Parameters.Add("@UIN", SqlDbType.VarChar).Value = txtUIN.Text;
                 cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = txtResidentName.Text;
                 cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
                 cmd.Parameters.Add("@Image", SqlDbType.Image).Value = img;
@@ -374,6 +381,11 @@ namespace HostelManagementSystem.Views
         {
             FrmResidentLeave frmResidentLeave = new FrmResidentLeave();
             frmResidentLeave.ShowDialog();
+        }
+
+        private void txtUIN_Leave(object sender, EventArgs e)
+        {
+            //
         }
     }
 }
