@@ -85,12 +85,12 @@
             this.endDate = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtUIN = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgResidentList = new System.Windows.Forms.DataGridView();
             this.BtnResidentLeave = new System.Windows.Forms.Button();
-            this.txtUIN = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.HeaderPanel.SuspendLayout();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
@@ -731,6 +731,25 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
+            // txtUIN
+            // 
+            this.txtUIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUIN.Location = new System.Drawing.Point(281, 45);
+            this.txtUIN.Name = "txtUIN";
+            this.txtUIN.Size = new System.Drawing.Size(188, 27);
+            this.txtUIN.TabIndex = 48;
+            this.txtUIN.Leave += new System.EventHandler(this.txtUIN_Leave);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(277, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 20);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Smart Card Id";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -780,25 +799,6 @@
             this.BtnResidentLeave.Text = "Leaved Residents";
             this.BtnResidentLeave.UseVisualStyleBackColor = false;
             this.BtnResidentLeave.Click += new System.EventHandler(this.BtnResidentLeave_Click);
-            // 
-            // txtUIN
-            // 
-            this.txtUIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUIN.Location = new System.Drawing.Point(281, 45);
-            this.txtUIN.Name = "txtUIN";
-            this.txtUIN.Size = new System.Drawing.Size(188, 27);
-            this.txtUIN.TabIndex = 48;
-            this.txtUIN.Leave += new System.EventHandler(this.txtUIN_Leave);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(277, 24);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 20);
-            this.label13.TabIndex = 47;
-            this.label13.Text = "Smart Card Id";
             // 
             // FrmResidentDetail
             // 
