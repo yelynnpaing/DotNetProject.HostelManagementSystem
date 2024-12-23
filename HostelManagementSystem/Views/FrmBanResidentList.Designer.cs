@@ -59,6 +59,8 @@
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtResidentPhone = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.BanBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.BanDate = new System.Windows.Forms.DateTimePicker();
@@ -70,23 +72,16 @@
             this.ClearBtn = new System.Windows.Forms.Button();
             this.txtRoomId = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.cboResidentId = new System.Windows.Forms.ComboBox();
+            this.cboResidentUIN = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.SearchBtn = new System.Windows.Forms.Button();
-            this.txtUIN = new System.Windows.Forms.TextBox();
+            this.txtResidentId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgBanResidentList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtResidentPhone = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.BanResidentPanel.SuspendLayout();
@@ -422,6 +417,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.UpdateBtn);
             this.groupBox1.Controls.Add(this.txtResidentPhone);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.BanBtn);
@@ -435,10 +431,10 @@
             this.groupBox1.Controls.Add(this.ClearBtn);
             this.groupBox1.Controls.Add(this.txtRoomId);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.cboResidentId);
+            this.groupBox1.Controls.Add(this.cboResidentUIN);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.SearchBtn);
-            this.groupBox1.Controls.Add(this.txtUIN);
+            this.groupBox1.Controls.Add(this.txtResidentId);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -447,6 +443,24 @@
             this.groupBox1.Size = new System.Drawing.Size(1010, 234);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
+            // 
+            // txtResidentPhone
+            // 
+            this.txtResidentPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentPhone.Location = new System.Drawing.Point(28, 111);
+            this.txtResidentPhone.Name = "txtResidentPhone";
+            this.txtResidentPhone.Size = new System.Drawing.Size(188, 27);
+            this.txtResidentPhone.TabIndex = 51;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(25, 90);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 20);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Phone";
             // 
             // BanBtn
             // 
@@ -459,6 +473,7 @@
             this.BanBtn.TabIndex = 49;
             this.BanBtn.Text = "Ban";
             this.BanBtn.UseVisualStyleBackColor = false;
+            this.BanBtn.Click += new System.EventHandler(this.BanBtn_Click);
             // 
             // label3
             // 
@@ -557,21 +572,21 @@
             this.label10.TabIndex = 33;
             this.label10.Text = "Room ID";
             // 
-            // cboResidentId
+            // cboResidentUIN
             // 
-            this.cboResidentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboResidentId.FormattingEnabled = true;
-            this.cboResidentId.Location = new System.Drawing.Point(29, 44);
-            this.cboResidentId.Name = "cboResidentId";
-            this.cboResidentId.Size = new System.Drawing.Size(188, 28);
-            this.cboResidentId.TabIndex = 32;
-            this.cboResidentId.Leave += new System.EventHandler(this.cboResidentId_Leave);
+            this.cboResidentUIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboResidentUIN.FormattingEnabled = true;
+            this.cboResidentUIN.Location = new System.Drawing.Point(29, 44);
+            this.cboResidentUIN.Name = "cboResidentUIN";
+            this.cboResidentUIN.Size = new System.Drawing.Size(188, 28);
+            this.cboResidentUIN.TabIndex = 32;
+            this.cboResidentUIN.Leave += new System.EventHandler(this.cboResidentUIN_Leave);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 24);
+            this.label6.Location = new System.Drawing.Point(277, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 20);
             this.label6.TabIndex = 25;
@@ -589,19 +604,19 @@
             this.SearchBtn.Text = "Search";
             this.SearchBtn.UseVisualStyleBackColor = false;
             // 
-            // txtUIN
+            // txtResidentId
             // 
-            this.txtUIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUIN.Location = new System.Drawing.Point(281, 44);
-            this.txtUIN.Name = "txtUIN";
-            this.txtUIN.Size = new System.Drawing.Size(188, 27);
-            this.txtUIN.TabIndex = 23;
+            this.txtResidentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentId.Location = new System.Drawing.Point(281, 44);
+            this.txtResidentId.Name = "txtResidentId";
+            this.txtResidentId.Size = new System.Drawing.Size(188, 27);
+            this.txtResidentId.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(278, 23);
+            this.label4.Location = new System.Drawing.Point(25, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 20);
             this.label4.TabIndex = 22;
@@ -621,55 +636,12 @@
             // 
             this.dgBanResidentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgBanResidentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBanResidentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column5,
-            this.Column3,
-            this.Column4,
-            this.Column6});
             this.dgBanResidentList.Location = new System.Drawing.Point(366, 440);
             this.dgBanResidentList.Name = "dgBanResidentList";
             this.dgBanResidentList.RowHeadersWidth = 51;
             this.dgBanResidentList.RowTemplate.Height = 24;
             this.dgBanResidentList.Size = new System.Drawing.Size(1533, 548);
             this.dgBanResidentList.TabIndex = 40;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Name";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Image";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "RoomId";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "RoomPrice";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Ban Date";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
             // 
             // label9
             // 
@@ -682,24 +654,6 @@
             this.label9.TabIndex = 39;
             this.label9.Text = "Banned Residents";
             // 
-            // txtResidentPhone
-            // 
-            this.txtResidentPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResidentPhone.Location = new System.Drawing.Point(28, 111);
-            this.txtResidentPhone.Name = "txtResidentPhone";
-            this.txtResidentPhone.Size = new System.Drawing.Size(188, 27);
-            this.txtResidentPhone.TabIndex = 51;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 90);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Phone";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -710,6 +664,18 @@
             this.label8.Size = new System.Drawing.Size(151, 25);
             this.label8.TabIndex = 43;
             this.label8.Text = "Ban Residents";
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBtn.ForeColor = System.Drawing.Color.Black;
+            this.UpdateBtn.Location = new System.Drawing.Point(552, 179);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(130, 36);
+            this.UpdateBtn.TabIndex = 52;
+            this.UpdateBtn.Text = "Update";
+            this.UpdateBtn.UseVisualStyleBackColor = false;
             // 
             // FrmBanResidentList
             // 
@@ -801,26 +767,21 @@
         private System.Windows.Forms.TextBox txtResidentName;
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboResidentId;
+        private System.Windows.Forms.ComboBox cboResidentUIN;
         private System.Windows.Forms.TextBox txtRoomId;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button SearchBtn;
-        private System.Windows.Forms.TextBox txtUIN;
+        private System.Windows.Forms.TextBox txtResidentId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgBanResidentList;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker BanDate;
         private System.Windows.Forms.Button BanBtn;
         private System.Windows.Forms.TextBox txtResidentPhone;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button UpdateBtn;
     }
 }
