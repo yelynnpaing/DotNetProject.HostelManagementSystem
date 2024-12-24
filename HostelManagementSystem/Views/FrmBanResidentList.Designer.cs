@@ -59,6 +59,9 @@
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.UnBanCheckBox = new System.Windows.Forms.CheckBox();
+            this.BanCheckBox = new System.Windows.Forms.CheckBox();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             this.txtResidentPhone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.BanBtn = new System.Windows.Forms.Button();
@@ -81,7 +84,6 @@
             this.dgBanResidentList = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.UpdateBtn = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             this.SidebarPanel.SuspendLayout();
             this.BanResidentPanel.SuspendLayout();
@@ -417,6 +419,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.UnBanCheckBox);
+            this.groupBox1.Controls.Add(this.BanCheckBox);
             this.groupBox1.Controls.Add(this.UpdateBtn);
             this.groupBox1.Controls.Add(this.txtResidentPhone);
             this.groupBox1.Controls.Add(this.label5);
@@ -440,9 +444,45 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(366, 155);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1010, 234);
+            this.groupBox1.Size = new System.Drawing.Size(1144, 234);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
+            // 
+            // UnBanCheckBox
+            // 
+            this.UnBanCheckBox.AutoSize = true;
+            this.UnBanCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnBanCheckBox.Location = new System.Drawing.Point(1031, 111);
+            this.UnBanCheckBox.Name = "UnBanCheckBox";
+            this.UnBanCheckBox.Size = new System.Drawing.Size(87, 26);
+            this.UnBanCheckBox.TabIndex = 54;
+            this.UnBanCheckBox.Text = "UnBan";
+            this.UnBanCheckBox.UseVisualStyleBackColor = true;
+            this.UnBanCheckBox.CheckedChanged += new System.EventHandler(this.UnBanCheckBox_CheckedChanged);
+            // 
+            // BanCheckBox
+            // 
+            this.BanCheckBox.AutoSize = true;
+            this.BanCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BanCheckBox.Location = new System.Drawing.Point(1031, 46);
+            this.BanCheckBox.Name = "BanCheckBox";
+            this.BanCheckBox.Size = new System.Drawing.Size(64, 26);
+            this.BanCheckBox.TabIndex = 53;
+            this.BanCheckBox.Text = "Ban";
+            this.BanCheckBox.UseVisualStyleBackColor = true;
+            this.BanCheckBox.CheckedChanged += new System.EventHandler(this.BanCheckBox_CheckedChanged);
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBtn.ForeColor = System.Drawing.Color.Black;
+            this.UpdateBtn.Location = new System.Drawing.Point(552, 179);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(130, 36);
+            this.UpdateBtn.TabIndex = 52;
+            this.UpdateBtn.Text = "Update";
+            this.UpdateBtn.UseVisualStyleBackColor = false;
             // 
             // txtResidentPhone
             // 
@@ -512,7 +552,7 @@
             this.endDate.Location = new System.Drawing.Point(785, 111);
             this.endDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(159, 27);
+            this.endDate.Size = new System.Drawing.Size(188, 27);
             this.endDate.TabIndex = 45;
             // 
             // label7
@@ -665,18 +705,6 @@
             this.label8.TabIndex = 43;
             this.label8.Text = "Ban Residents";
             // 
-            // UpdateBtn
-            // 
-            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateBtn.ForeColor = System.Drawing.Color.Black;
-            this.UpdateBtn.Location = new System.Drawing.Point(552, 179);
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(130, 36);
-            this.UpdateBtn.TabIndex = 52;
-            this.UpdateBtn.Text = "Update";
-            this.UpdateBtn.UseVisualStyleBackColor = false;
-            // 
             // FrmBanResidentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -783,5 +811,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button UpdateBtn;
+        private System.Windows.Forms.CheckBox UnBanCheckBox;
+        private System.Windows.Forms.CheckBox BanCheckBox;
     }
 }
