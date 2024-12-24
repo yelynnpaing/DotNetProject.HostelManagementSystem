@@ -682,6 +682,8 @@
             this.dgBanResidentList.RowTemplate.Height = 24;
             this.dgBanResidentList.Size = new System.Drawing.Size(1533, 548);
             this.dgBanResidentList.TabIndex = 40;
+            this.dgBanResidentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBanResidentList_CellClick);
+            this.dgBanResidentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBanResidentList_CellContentClick);
             // 
             // label9
             // 

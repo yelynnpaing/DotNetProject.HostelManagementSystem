@@ -48,11 +48,15 @@ namespace HostelManagementSystem.Views
             FillCboResidentId();
             Clear();
             UnBanCheckBox.Enabled = false;
+            FillDgBanResidentList();
         }
 
         private void FillCboResidentId()
         {
-            string query = "SELECT ResidentId, UIN, Name, RoomId, Phone FROM TblResidents ORDER BY ResidentId";
+            string query = @"SELECT TblResidents.ResidentId, TblResidents.UIN, TblResidents.Name, TblResidents.RoomId, TblResidents.Phone FROM TblResidents 
+                            INNER JOIN TblBanResidents
+                            ON TblResidents.ResidentId != TblBanResidents.ResidentId
+                            ORDER BY ResidentId";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "residents");
@@ -174,6 +178,65 @@ namespace HostelManagementSystem.Views
                 BanCheckBox.Checked = false;
                 BanCheckBox.Enabled = true;
                 UnBanCheckBox.Enabled = false;
+            }
+        }
+
+        private void FillDgBanResidentList()
+        {
+            try
+            {
+                string query = @"SELECT TblResidents.UIN, TblResidents.ResidentId, TblResidents.Name, TblBanResidents.RoomId, TblResidents.Phone,
+                                TblBanResidents.BanDate, TblBanResidents.StartDate, TblBanResidents.EndDate, TblBanResidents.Ban, TblBanResidents.UnBan
+                                FROM TblBanResidents
+                                INNER JOIN TblResidents
+                                ON TblResidents.ResidentId = TblBanResidents.ResidentId";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "banResidents");
+                dgBanResidentList.DataSource = ds.Tables["banResidents"];
+                dgBanResidentList.AllowUserToAddRows = false;
+                dgBanResidentList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+            }
+            catch
+            {
+                MessageBox.Show("There is no resident to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgBanResidentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgBanResidentList.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
+            {
+                DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)dgBanResidentList.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                //bool isChecked = Convert.ToBoolean(cell.Value);
+                cell.ReadOnly = true;
+                dgBanResidentList.CancelEdit();
+            }
+        }
+
+        private void dgBanResidentList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                cboResidentUIN.Text = dgBanResidentList.CurrentRow.Cells[0].Value.ToString();
+                txtResidentId.Text = dgBanResidentList.CurrentRow.Cells[1].Value.ToString();
+                txtResidentName.Text = dgBanResidentList.CurrentRow.Cells[2].Value.ToString();
+                txtRoomId.Text = dgBanResidentList.CurrentRow.Cells[3].Value.ToString();
+                txtResidentPhone.Text = dgBanResidentList.CurrentRow.Cells[4].Value.ToString();
+                BanDate.Text = dgBanResidentList.CurrentRow.Cells[5].Value.ToString();
+                //startDate.Text = dgBanResidentList.CurrentRow.Cells[6].Value.ToString();
+                endDate.Text = dgBanResidentList.CurrentRow.Cells[7].Value.ToString();
+                BanCheckBox.Checked = Convert.ToBoolean(dgBanResidentList.CurrentRow.Cells[8].Value.ToString());
+                UnBanCheckBox.Checked = Convert.ToBoolean(dgBanResidentList.CurrentRow.Cells[9].Value.ToString());
+                if(BanCheckBox.Checked == true)
+                {
+                    BanCheckBox.Enabled = false;
+                    UnBanCheckBox.Enabled = true;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Someting wrong! Please reload this page.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
