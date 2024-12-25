@@ -83,7 +83,7 @@
             // 
             // ClearBtn
             // 
-            this.ClearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClearBtn.BackColor = System.Drawing.Color.Silver;
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
             this.ClearBtn.Location = new System.Drawing.Point(379, 274);
@@ -138,7 +138,7 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.BackColor = System.Drawing.Color.Yellow;
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBtn.ForeColor = System.Drawing.Color.Black;
             this.UpdateBtn.Location = new System.Drawing.Point(559, 274);
@@ -188,7 +188,7 @@
             this.SelectImageBtn.ForeColor = System.Drawing.Color.White;
             this.SelectImageBtn.Location = new System.Drawing.Point(256, 168);
             this.SelectImageBtn.Name = "SelectImageBtn";
-            this.SelectImageBtn.Size = new System.Drawing.Size(144, 36);
+            this.SelectImageBtn.Size = new System.Drawing.Size(165, 36);
             this.SelectImageBtn.TabIndex = 27;
             this.SelectImageBtn.Text = "Select Image ...";
             this.SelectImageBtn.UseVisualStyleBackColor = false;

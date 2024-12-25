@@ -51,8 +51,6 @@
             this.PersonDetailPanel = new System.Windows.Forms.Panel();
             this.PersonDetailLabel = new System.Windows.Forms.Label();
             this.PersonDetailPic = new System.Windows.Forms.PictureBox();
-            this.LogoLabel = new System.Windows.Forms.Label();
-            this.LogoPic = new System.Windows.Forms.PictureBox();
             this.RoomPanel = new System.Windows.Forms.Panel();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
@@ -60,6 +58,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.LogoPic = new System.Windows.Forms.PictureBox();
+            this.LogoLabel = new System.Windows.Forms.Label();
             this.SidebarPanel.SuspendLayout();
             this.BanResidentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).BeginInit();
@@ -75,11 +75,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.RoomListPic)).BeginInit();
             this.PersonDetailPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonDetailPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
             this.HeaderPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.SuspendLayout();
             // 
             // SidebarPanel
@@ -325,27 +325,6 @@
             this.PersonDetailPic.TabStop = false;
             this.PersonDetailPic.Click += new System.EventHandler(this.PersonDetailPic_Click);
             // 
-            // LogoLabel
-            // 
-            this.LogoLabel.AutoSize = true;
-            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogoLabel.Location = new System.Drawing.Point(78, 104);
-            this.LogoLabel.Name = "LogoLabel";
-            this.LogoLabel.Size = new System.Drawing.Size(159, 25);
-            this.LogoLabel.TabIndex = 2;
-            this.LogoLabel.Text = "GROUP EIGHT";
-            // 
-            // LogoPic
-            // 
-            this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
-            this.LogoPic.Location = new System.Drawing.Point(83, 4);
-            this.LogoPic.Name = "LogoPic";
-            this.LogoPic.Size = new System.Drawing.Size(167, 97);
-            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoPic.TabIndex = 4;
-            this.LogoPic.TabStop = false;
-            // 
             // RoomPanel
             // 
             this.RoomPanel.Controls.Add(this.RoomLabel);
@@ -418,6 +397,27 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "WLECOME TO THE HOSTEL MANAGEMENT SYSTEM";
             // 
+            // LogoPic
+            // 
+            this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
+            this.LogoPic.Location = new System.Drawing.Point(83, 4);
+            this.LogoPic.Name = "LogoPic";
+            this.LogoPic.Size = new System.Drawing.Size(167, 97);
+            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPic.TabIndex = 4;
+            this.LogoPic.TabStop = false;
+            // 
+            // LogoLabel
+            // 
+            this.LogoLabel.AutoSize = true;
+            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.LogoLabel.Location = new System.Drawing.Point(30, 104);
+            this.LogoLabel.Name = "LogoLabel";
+            this.LogoLabel.Size = new System.Drawing.Size(262, 22);
+            this.LogoLabel.TabIndex = 2;
+            this.LogoLabel.Text = "MANDALAR MYAY HOSTEL";
+            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,7 +453,6 @@
             this.PersonDetailPanel.ResumeLayout(false);
             this.PersonDetailPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonDetailPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
             this.RoomPanel.ResumeLayout(false);
             this.RoomPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).EndInit();
@@ -461,6 +460,7 @@
             this.HeaderPanel.PerformLayout();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,8 +472,6 @@
         private System.Windows.Forms.Panel RoomPanel;
         private System.Windows.Forms.PictureBox RoomPic;
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Label LogoLabel;
-        private System.Windows.Forms.PictureBox LogoPic;
         private System.Windows.Forms.Label RoomLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PersonDetailPanel;
@@ -498,5 +496,7 @@
         private System.Windows.Forms.Label BanResidantLabel;
         private System.Windows.Forms.PictureBox BanResidentPic;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LogoLabel;
+        private System.Windows.Forms.PictureBox LogoPic;
     }
 }

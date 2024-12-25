@@ -369,11 +369,11 @@
             this.LogoLabel.AutoSize = true;
             this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogoLabel.Location = new System.Drawing.Point(78, 104);
+            this.LogoLabel.Location = new System.Drawing.Point(27, 104);
             this.LogoLabel.Name = "LogoLabel";
-            this.LogoLabel.Size = new System.Drawing.Size(159, 25);
+            this.LogoLabel.Size = new System.Drawing.Size(291, 25);
             this.LogoLabel.TabIndex = 2;
-            this.LogoLabel.Text = "GROUP EIGHT";
+            this.LogoLabel.Text = "MANDALAR MYAY HOSTEL";
             // 
             // LogoPic
             // 
