@@ -53,10 +53,11 @@ namespace HostelManagementSystem.Views
 
         private void FillCboResidentId()
         {
-            string query = @"SELECT TblResidents.ResidentId, TblResidents.UIN, TblResidents.Name, TblResidents.RoomId, TblResidents.Phone FROM TblResidents 
-                            INNER JOIN TblBanResidents
-                            ON TblResidents.ResidentId != TblBanResidents.ResidentId
-                            ORDER BY ResidentId";
+            string query = @"SELECT TblResidents.UIN, TblResidents.ResidentId, TblResidents.Name, TblResidents.RoomId, TblResidents.Phone
+                            FROM TblResidents
+                            LEFT JOIN TblBanResidents
+                            ON TblResidents.ResidentId = TblBanResidents.ResidentId
+                            WHERE TblBanResidents.ResidentId IS NULL OR TblBanResidents.UnBan = 1";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "residents");
@@ -80,6 +81,7 @@ namespace HostelManagementSystem.Views
                 txtResidentName.Text = ds.Tables["residentData"].Rows[0][1].ToString();
                 txtRoomId.Text = ds.Tables["residentData"].Rows[0][2].ToString();
                 txtResidentPhone.Text = ds.Tables["residentData"].Rows[0][3].ToString();
+                BanCheckBox.Checked = true;
             }
             catch
             {
@@ -103,6 +105,7 @@ namespace HostelManagementSystem.Views
                 cmd.Parameters.Add("@Ban", SqlDbType.Bit).Value = BanCheckBox.Checked;
                 cmd.Parameters.Add("@UnBan", SqlDbType.Bit).Value = UnBanCheckBox.Checked;
                 ExecuteMyQuery(cmd, "Resident banned successfully!");
+                FillDgBanResidentList();
 
                 //For Ban Residents History
                 if (UnBanCheckBox.Checked == false)
@@ -117,7 +120,6 @@ namespace HostelManagementSystem.Views
                     Hcmd.Parameters.Add("@endDate", SqlDbType.DateTime).Value = endDate.Text;
                     Hcmd.Parameters.Add("@Ban", SqlDbType.Bit).Value = BanCheckBox.Checked;
                     ExecuteMyQuery(Hcmd, "Ban Resident was successfully added to history!");
-
                 }
                 //For RoomCapacity Check Ban residents
                 string IdQuery = @"SELECT TblRoomCapacityCheck.ResidentId FROM TblRoomCapacityCheck
@@ -233,10 +235,40 @@ namespace HostelManagementSystem.Views
                     BanCheckBox.Enabled = false;
                     UnBanCheckBox.Enabled = true;
                 }
+                cboResidentUIN.Enabled = false;
+                txtResidentId.Enabled = false;
+                txtResidentName.Enabled = false;
+                txtRoomId.Enabled = false;
+                txtResidentPhone.Enabled = false;
+                BanDate.Enabled = false;
+                startDate.Enabled = false;
             }
             catch
             {
                 MessageBox.Show("Someting wrong! Please reload this page.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = @"UPDATE TblBanResidents SET ResidentId=@ResidentId, RoomId=@RoomId, BanDate=@BanDate,
+                            startDate=@startDate,endDate=@endDate, Ban=@Ban, UnBan=@UnBan";
+                SqlCommand cmd = new SqlCommand(query, consql);
+                cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
+                cmd.Parameters.Add("@BanDate", SqlDbType.DateTime).Value = BanDate.Text;
+                cmd.Parameters.Add("@startDate", SqlDbType.DateTime).Value = startDate.Text;
+                cmd.Parameters.Add("@endDate", SqlDbType.DateTime).Value = endDate.Text;
+                cmd.Parameters.Add("@Ban", SqlDbType.Bit).Value = BanCheckBox.Checked;
+                cmd.Parameters.Add("@UnBan", SqlDbType.Bit).Value = UnBanCheckBox.Checked;
+                ExecuteMyQuery(cmd, "Banned Resident updating successfully!");
+                FillDgBanResidentList();
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong! Update Banned resident!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

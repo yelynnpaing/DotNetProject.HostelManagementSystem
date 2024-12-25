@@ -483,6 +483,7 @@
             this.UpdateBtn.TabIndex = 52;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // txtResidentPhone
             // 
@@ -543,7 +544,6 @@
             this.label12.Size = new System.Drawing.Size(79, 20);
             this.label12.TabIndex = 46;
             this.label12.Text = "End Date";
-            this.label12.Visible = false;
             // 
             // endDate
             // 
