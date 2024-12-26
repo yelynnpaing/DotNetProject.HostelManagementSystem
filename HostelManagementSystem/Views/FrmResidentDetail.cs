@@ -429,13 +429,63 @@ namespace HostelManagementSystem.Views
 
         private void txtUIN_Leave(object sender, EventArgs e)
         {
-            //
+            try
+            {
+                string uin, residentId, name, roomId, ban, leave, message;
+                string query = @"SELECT TblResidents.ResidentId, TblResidents.UIN, TblResidents.Name, 
+                                TblResidents.RoomId, TblResidents.Leave,TblBanResidentHistory.Ban
+                                FROM TblResidents 
+                                LEFT JOIN TblBanResidentHistory
+                                ON TblResidents.ResidentId = TblBanResidentHistory.ResidentId
+                                WHERE UIN = '" + txtUIN.Text+"'";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "residentUIN");
+                if (ds.Tables["residentUIN"].Rows.Count > 0)
+                {
+                    residentId = ds.Tables["residentUIN"].Rows[0][0].ToString();
+                    uin = ds.Tables["residentUIN"].Rows[0][1].ToString();
+                    name = ds.Tables["residentUIN"].Rows[0][2].ToString();
+                    roomId = ds.Tables["residentUIN"].Rows[0][3].ToString();
+                    leave = ds.Tables["residentUIN"].Rows[0][4].ToString();
+                    ban = ds.Tables["residentUIN"].Rows[0][5].ToString();
+                    if (ban != "" && Convert.ToBoolean(ban) != false)
+                    {
+                        message = uin + " - " + name + " was banned from this Hostel.";
+                        MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        if (ban == "" && Convert.ToBoolean(leave) != true)
+                        {
+                            message = uin + " - " + name + " was registered this Hostel.";
+                            MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            message = uin + " - " + name + " was Leave from this Hostel. Make register again!";
+                            MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        
+                    }
+                }
+                
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong! Please reload your page.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void BtnBanResident_Click(object sender, EventArgs e)
         {
             FrmBanResidentHistory frmBanResidentHistory = new FrmBanResidentHistory();
             frmBanResidentHistory.ShowDialog();
+        }
+
+        private void txtUIN_TextChanged(object sender, EventArgs e)
+        {
+           //
         }
     }
 }
