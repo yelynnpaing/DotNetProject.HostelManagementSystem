@@ -31,10 +31,10 @@ namespace HostelManagementSystem.Views
 
         private void Clear()
         {
-            txtRoomId.Text = "";
+            cboResidentUIN.Text = "";
             txtResidentId.Text = "";
             txtResidentName.Text = "";
-            cboResidentUIN.Text = "";
+            txtRoomId.Text = "";
             txtResidentPhone.Text = "";
         }
 
@@ -121,6 +121,7 @@ namespace HostelManagementSystem.Views
                     Hcmd.Parameters.Add("@Ban", SqlDbType.Bit).Value = BanCheckBox.Checked;
                     ExecuteMyQuery(Hcmd, "Ban Resident was successfully added to history!");
                 }
+
                 //For RoomCapacity Check Ban residents
                 string IdQuery = @"SELECT TblRoomCapacityCheck.ResidentId FROM TblRoomCapacityCheck
                                 INNER JOIN TblBanResidents
@@ -254,7 +255,8 @@ namespace HostelManagementSystem.Views
             try
             {
                 string query = @"UPDATE TblBanResidents SET ResidentId=@ResidentId, RoomId=@RoomId, BanDate=@BanDate,
-                            startDate=@startDate,endDate=@endDate, Ban=@Ban, UnBan=@UnBan";
+                                startDate=@startDate,endDate=@endDate, Ban=@Ban, UnBan=@UnBan
+                                WHERE ResidentId = @ResidentId";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
                 cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
@@ -270,6 +272,17 @@ namespace HostelManagementSystem.Views
             {
                 MessageBox.Show("Something went wrong! Update Banned resident!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            FrmBanResidentHistory frmBanResidentHistory = new FrmBanResidentHistory();
+            frmBanResidentHistory.ShowDialog();
         }
     }
 }

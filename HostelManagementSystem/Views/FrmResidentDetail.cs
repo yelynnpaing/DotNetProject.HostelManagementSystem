@@ -196,7 +196,9 @@ namespace HostelManagementSystem.Views
                                 TblResidents.StartDate, TblResidents.Occupy,TblResidents.Leave, TblResidents.EndDate
                                 FROM TblResidents 
                                 INNER JOIN TblRooms ON TblResidents.RoomId = TblRooms.RoomId 
-                                INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
+                                INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId
+                                LEFT JOIN TblBanResidentHistory ON TblResidents.ResidentId = TblBanResidentHistory.ResidentId
+                                WHERE TblBanResidentHistory.ResidentId IS NULL";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
@@ -428,6 +430,12 @@ namespace HostelManagementSystem.Views
         private void txtUIN_Leave(object sender, EventArgs e)
         {
             //
+        }
+
+        private void BtnBanResident_Click(object sender, EventArgs e)
+        {
+            FrmBanResidentHistory frmBanResidentHistory = new FrmBanResidentHistory();
+            frmBanResidentHistory.ShowDialog();
         }
     }
 }
