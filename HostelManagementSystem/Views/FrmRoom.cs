@@ -30,7 +30,7 @@ namespace HostelManagementSystem.Views
 
         private void Connection()
         {
-            str = "Data Source=DESKTOP-L3SMK21\\SQLEXPRESS;Initial Catalog=HostelManagementSystemDb;Persist Security Info=True;User ID=sa;Password=sasa@123;";
+            str = "Data Source=DESKTOP-L3SMK21\\SQLEXPRESS;Initial Catalog=HostelManagementSystemDb;Persist Security Info=True;User ID=sa;Password=sasa@123;Connection Timeout=3600";
             consql = new SqlConnection(str);
             consql.Open();
         }
@@ -196,12 +196,12 @@ namespace HostelManagementSystem.Views
                 DataTable dt = new DataTable();
                 adapter.Fill(Dset, "rooms");
                 dt = Dset.Tables["rooms"];
+                dgRoom.DataSource = dt;
 
                 dgRoom.RowTemplate.Height = 100;
                 dgRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgRoom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgRoom.AllowUserToAddRows = false;
-                dgRoom.DataSource = dt;
                 DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
                 imgCol = (DataGridViewImageColumn)dgRoom.Columns[4];
                 imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
