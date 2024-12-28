@@ -21,6 +21,7 @@ namespace HostelManagementSystem.Views
 
         SqlConnection consql;
         string str;
+        
 
         private void Connection()
         {
@@ -31,49 +32,71 @@ namespace HostelManagementSystem.Views
 
         private void Clear()
         {
-            txtRoomId.Text = "";
-            cboRoomType.Text = "";
-            cboRoomPosition.Text = "";
-            txtRoomPrice.Text = "";
-            cboResidentName.Text = "";
+            cboRoomId.Text = "";
+        }
+
+        private void FillCboRoomId()
+        {
+            try
+            {
+                string query = "SELECT RoomId From TblRooms";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                DataSet dataSet = new DataSet();
+                DataTable dt = new DataTable();
+                adapter.Fill(dataSet, "cboRoomId");
+                dt = dataSet.Tables["cboRoomId"];
+                cboRoomId.DataSource = dt;
+                cboRoomId.DisplayMember = dt.Columns["RoomId"].ToString();
+                cboRoomId.ValueMember = dt.Columns["RoomId"].ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong! Please reload your Page.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        string QueryOrigin = @"SELECT TblRooms.RoomId, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition, 
+                               TblRooms.RoomImage, TblRoomPrices.RoomPrice, 
+                               TblRoomCapacity.Capacity AS CapacityCount , TblRoomCapacityCheck.CountCapacity As Occupy
+                               FROM TblRooms
+                               INNER JOIN TblRoomTypes
+                               ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId
+                               INNER JOIN TblRoomPositions
+                               ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId
+                               INNER JOIN TblRoomPrices
+                               ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId
+                               LEFT JOIN TblRoomCapacity
+                               ON TblRooms.RoomId = TblRoomCapacity.RoomId
+                               LEFT JOIN TblRoomCapacityCheck
+                               ON TblRooms.RoomId = TblRoomCapacityCheck.RoomId";
+
+        private void FillDgRoomListData()
+        {
+            foreach (DataGridViewColumn col in dgRoomList.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgRoomList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+            dgRoomList.AllowUserToAddRows = false;
+            dgRoomList.RowTemplate.Height = 100;
+
+            DataGridViewImageColumn imgCol1 = new DataGridViewImageColumn();
+            imgCol1 = (DataGridViewImageColumn)dgRoomList.Columns[3];
+            imgCol1.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
 
         private void FillDgRoomList()
         {
             try
             {
-                string query = @"SELECT TblRooms.RoomId, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition, TblRooms.RoomImage,
-                                TblRoomPrices.RoomPrice, TblRoomCapacity.Capacity AS CapacityCount , TblRoomCapacityCheck.CountCapacity As Occupy FROM TblRooms
-                                INNER JOIN TblRoomTypes
-                                ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId
-                                INNER JOIN TblRoomPositions
-                                ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId
-                                INNER JOIN TblRoomPrices
-                                ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId
-                                LEFT JOIN TblRoomCapacity
-                                ON TblRooms.RoomId = TblRoomCapacity.RoomId
-                                LEFT JOIN TblRoomCapacityCheck
-                                ON TblRooms.RoomId = TblRoomCapacityCheck.RoomId
-                                ORDER BY Occupy";
+                string query = @""+ QueryOrigin + " ORDER BY Occupy";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
                 adapter.Fill(ds, "roomList");
                 dgRoomList.DataSource = ds.Tables["roomList"];
-
-                foreach (DataGridViewColumn col in dgRoomList.Columns)
-                {
-                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                }
-                dgRoomList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
-                dgRoomList.AllowUserToAddRows = false;
-                dgRoomList.RowTemplate.Height = 100;
-
-                DataGridViewImageColumn imgCol1 = new DataGridViewImageColumn();
-                imgCol1 = (DataGridViewImageColumn)dgRoomList.Columns[3];
-                imgCol1.ImageLayout = DataGridViewImageCellLayout.Stretch;
-
+                FillDgRoomListData();
             }
             catch
             {
@@ -85,6 +108,24 @@ namespace HostelManagementSystem.Views
         {
             Clear();
             Connection();
+            FillCboRoomId();
+            FillDgRoomList();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string query = "" + QueryOrigin + " WHERE TblRooms.RoomId = '"+cboRoomId.Text+"' ORDER BY OCCUPY";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "roomList");
+            dgRoomList.DataSource = ds.Tables["roomList"];
+
+            FillDgRoomListData();
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            Clear();
             FillDgRoomList();
         }
     }
