@@ -97,6 +97,26 @@ namespace HostelManagementSystem.Views
             FormLoad(new FrmBillingHistory());
         }
 
+        private void BanResidentPic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmBanResidentList());
+        }
+
+        private void BanResidantLabel_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmBanResidentList());
+        }
+
+        private void RRPic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRulesAndRegulations());
+        }
+
+        private void RRLabel_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRulesAndRegulations());
+        }
+
         private void LogoutPic_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -112,15 +132,6 @@ namespace HostelManagementSystem.Views
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
         }
-
-        private void BanResidentPic_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmBanResidentList());
-        }
-
-        private void BanResidantLabel_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmBanResidentList());
-        }
+        
     }
 }

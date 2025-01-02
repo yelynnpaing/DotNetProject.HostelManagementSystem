@@ -345,9 +345,9 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(361, 133);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 25);
+            this.label8.Size = new System.Drawing.Size(140, 25);
             this.label8.TabIndex = 43;
-            this.label8.Text = "Add to Ban";
+            this.label8.Text = "Ban Resident\r\n";
             // 
             // FrmBanResidentList
             // 
@@ -361,6 +361,7 @@
             this.Controls.Add(this.SearchBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBanResidentList";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBanResidentList_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

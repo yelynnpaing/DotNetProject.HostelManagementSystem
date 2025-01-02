@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.SidebarPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.RRLabel = new System.Windows.Forms.Label();
+            this.RRPic = new System.Windows.Forms.PictureBox();
             this.BanResidentPanel = new System.Windows.Forms.Panel();
             this.BanResidantLabel = new System.Windows.Forms.Label();
             this.BanResidentPic = new System.Windows.Forms.PictureBox();
@@ -51,16 +54,19 @@
             this.PersonDetailPanel = new System.Windows.Forms.Panel();
             this.PersonDetailLabel = new System.Windows.Forms.Label();
             this.PersonDetailPic = new System.Windows.Forms.PictureBox();
+            this.LogoLabel = new System.Windows.Forms.Label();
+            this.LogoPic = new System.Windows.Forms.PictureBox();
             this.RoomPanel = new System.Windows.Forms.Panel();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.LogoPic = new System.Windows.Forms.PictureBox();
-            this.LogoLabel = new System.Windows.Forms.Label();
             this.SidebarPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RRPic)).BeginInit();
             this.BanResidentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).BeginInit();
             this.panel2.SuspendLayout();
@@ -75,16 +81,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.RoomListPic)).BeginInit();
             this.PersonDetailPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonDetailPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
             this.HeaderPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.SuspendLayout();
             // 
             // SidebarPanel
             // 
             this.SidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.SidebarPanel.Controls.Add(this.panel1);
             this.SidebarPanel.Controls.Add(this.BanResidentPanel);
             this.SidebarPanel.Controls.Add(this.panel2);
             this.SidebarPanel.Controls.Add(this.LogoutPanel);
@@ -100,6 +107,38 @@
             this.SidebarPanel.Name = "SidebarPanel";
             this.SidebarPanel.Size = new System.Drawing.Size(333, 972);
             this.SidebarPanel.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.RRLabel);
+            this.panel1.Controls.Add(this.RRPic);
+            this.panel1.Location = new System.Drawing.Point(32, 624);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(283, 55);
+            this.panel1.TabIndex = 5;
+            // 
+            // RRLabel
+            // 
+            this.RRLabel.AutoSize = true;
+            this.RRLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RRLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RRLabel.Location = new System.Drawing.Point(60, 16);
+            this.RRLabel.Name = "RRLabel";
+            this.RRLabel.Size = new System.Drawing.Size(206, 25);
+            this.RRLabel.TabIndex = 1;
+            this.RRLabel.Text = "Rules and Regulations";
+            this.RRLabel.Click += new System.EventHandler(this.RRLabel_Click);
+            // 
+            // RRPic
+            // 
+            this.RRPic.Image = ((System.Drawing.Image)(resources.GetObject("RRPic.Image")));
+            this.RRPic.Location = new System.Drawing.Point(3, 3);
+            this.RRPic.Name = "RRPic";
+            this.RRPic.Size = new System.Drawing.Size(47, 49);
+            this.RRPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RRPic.TabIndex = 0;
+            this.RRPic.TabStop = false;
+            this.RRPic.Click += new System.EventHandler(this.RRPic_Click);
             // 
             // BanResidentPanel
             // 
@@ -325,6 +364,27 @@
             this.PersonDetailPic.TabStop = false;
             this.PersonDetailPic.Click += new System.EventHandler(this.PersonDetailPic_Click);
             // 
+            // LogoLabel
+            // 
+            this.LogoLabel.AutoSize = true;
+            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.LogoLabel.Location = new System.Drawing.Point(30, 104);
+            this.LogoLabel.Name = "LogoLabel";
+            this.LogoLabel.Size = new System.Drawing.Size(262, 22);
+            this.LogoLabel.TabIndex = 2;
+            this.LogoLabel.Text = "MANDALAR MYAY HOSTEL";
+            // 
+            // LogoPic
+            // 
+            this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
+            this.LogoPic.Location = new System.Drawing.Point(83, 4);
+            this.LogoPic.Name = "LogoPic";
+            this.LogoPic.Size = new System.Drawing.Size(167, 97);
+            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPic.TabIndex = 4;
+            this.LogoPic.TabStop = false;
+            // 
             // RoomPanel
             // 
             this.RoomPanel.Controls.Add(this.RoomLabel);
@@ -380,43 +440,34 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.Controls.Add(this.label2);
             this.MainPanel.Controls.Add(this.label3);
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1924, 972);
             this.MainPanel.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(704, 350);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(530, 46);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "W E L C O M E  T O  T H E";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(614, 392);
+            this.label3.Location = new System.Drawing.Point(703, 408);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(758, 32);
+            this.label3.Size = new System.Drawing.Size(895, 54);
             this.label3.TabIndex = 6;
-            this.label3.Text = "WLECOME TO THE HOSTEL MANAGEMENT SYSTEM";
-            // 
-            // LogoPic
-            // 
-            this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
-            this.LogoPic.Location = new System.Drawing.Point(83, 4);
-            this.LogoPic.Name = "LogoPic";
-            this.LogoPic.Size = new System.Drawing.Size(167, 97);
-            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoPic.TabIndex = 4;
-            this.LogoPic.TabStop = false;
-            // 
-            // LogoLabel
-            // 
-            this.LogoLabel.AutoSize = true;
-            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogoLabel.Location = new System.Drawing.Point(30, 104);
-            this.LogoLabel.Name = "LogoLabel";
-            this.LogoLabel.Size = new System.Drawing.Size(262, 22);
-            this.LogoLabel.TabIndex = 2;
-            this.LogoLabel.Text = "MANDALAR MYAY HOSTEL";
+            this.label3.Text = "M A N D A L A R  M Y A Y  H O S T E L !";
             // 
             // FrmDashboard
             // 
@@ -432,6 +483,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.SidebarPanel.ResumeLayout(false);
             this.SidebarPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RRPic)).EndInit();
             this.BanResidentPanel.ResumeLayout(false);
             this.BanResidentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).EndInit();
@@ -453,6 +507,7 @@
             this.PersonDetailPanel.ResumeLayout(false);
             this.PersonDetailPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonDetailPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
             this.RoomPanel.ResumeLayout(false);
             this.RoomPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).EndInit();
@@ -460,7 +515,6 @@
             this.HeaderPanel.PerformLayout();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -498,5 +552,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LogoLabel;
         private System.Windows.Forms.PictureBox LogoPic;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label RRLabel;
+        private System.Windows.Forms.PictureBox RRPic;
+        private System.Windows.Forms.Label label2;
     }
 }
