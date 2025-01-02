@@ -22,7 +22,6 @@ namespace HostelManagementSystem.Views
         SqlConnection consql;
         string str;
         
-
         private void Connection()
         {
             str = "Data Source=DESKTOP-L3SMK21\\SQLEXPRESS;Initial Catalog=HostelManagementSystemDb;Persist Security Info=True;User ID=sa;Password=sasa@123; Connection Timeout=3600";
