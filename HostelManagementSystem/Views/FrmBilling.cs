@@ -195,7 +195,7 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = @"SELECT TblInvoices.InvID, TblResidents.Name, TblRooms.RoomId, TblRoomPrices.RoomPrice,
+                string query = @"SELECT TblInvoices.InvID, TblResidents.Name, TblRooms.RoomId As RoomNo, TblRoomPrices.RoomPrice,
                                 TblInvoices.BillingDate, TblResidents.Phone, TblInvoices.StartDate, TblInvoices.EndDate, 
                                 TblInvoices.TotalBill, TblPaymentTypes.PaymentName FROM TblInvoices
                                 INNER JOIN TblResidents

@@ -30,6 +30,7 @@
         {
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtUIN = new System.Windows.Forms.TextBox();
             this.txtResidentPhone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgBanResidentList = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtUIN = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBanResidentList)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +91,14 @@
             this.groupBox1.Size = new System.Drawing.Size(1010, 234);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
+            // 
+            // txtUIN
+            // 
+            this.txtUIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUIN.Location = new System.Drawing.Point(28, 45);
+            this.txtUIN.Name = "txtUIN";
+            this.txtUIN.Size = new System.Drawing.Size(188, 27);
+            this.txtUIN.TabIndex = 52;
             // 
             // txtResidentPhone
             // 
@@ -203,9 +211,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(781, 24);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 20);
+            this.label10.Size = new System.Drawing.Size(79, 20);
             this.label10.TabIndex = 33;
-            this.label10.Text = "Room ID";
+            this.label10.Text = "Room No";
             // 
             // label6
             // 
@@ -279,14 +287,6 @@
             this.label9.Size = new System.Drawing.Size(226, 29);
             this.label9.TabIndex = 44;
             this.label9.Text = "Banned Residents";
-            // 
-            // txtUIN
-            // 
-            this.txtUIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUIN.Location = new System.Drawing.Point(28, 45);
-            this.txtUIN.Name = "txtUIN";
-            this.txtUIN.Size = new System.Drawing.Size(188, 27);
-            this.txtUIN.TabIndex = 52;
             // 
             // FrmBanResidentHistory
             // 

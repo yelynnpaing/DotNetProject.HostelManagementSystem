@@ -42,7 +42,7 @@ namespace HostelManagementSystem.Views.ResidentListtems
         {
             try
             {
-                string query = @"SELECT TblResidents.ResidentId as Id, TblResidents.Name,TblResidents.RoomId, 
+                string query = @"SELECT TblResidents.ResidentId as Id, TblResidents.Name,TblResidents.RoomId As RoomNo, 
                                 TblResidents.Image, TblResidents.Address, TblResidents.Phone,
                                 TblResidents.StartDate, TblResidents.EndDate
                                 FROM TblResidents 

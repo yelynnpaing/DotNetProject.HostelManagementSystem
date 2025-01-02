@@ -55,9 +55,9 @@ namespace HostelManagementSystem.Views
             }
         }
 
-        string QueryOrigin = @"SELECT TblRooms.RoomId, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition, 
+        string QueryOrigin = @"SELECT TblRooms.RoomId As RoomNo, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition, 
                                TblRooms.RoomImage, TblRoomPrices.RoomPrice, 
-                               TblRoomCapacity.Capacity AS CapacityCount , TblRoomCapacityCheck.CountCapacity As Occupy
+                               TblRoomCapacity.Capacity, TblResidents.Name As Resident
                                FROM TblRooms
                                INNER JOIN TblRoomTypes
                                ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId
@@ -68,7 +68,9 @@ namespace HostelManagementSystem.Views
                                LEFT JOIN TblRoomCapacity
                                ON TblRooms.RoomId = TblRoomCapacity.RoomId
                                LEFT JOIN TblRoomCapacityCheck
-                               ON TblRooms.RoomId = TblRoomCapacityCheck.RoomId";
+                               ON TblRooms.RoomId = TblRoomCapacityCheck.RoomId
+                               LEFT JOIN TblResidents
+                               ON TblRoomCapacityCheck.ResidentId = TblResidents.ResidentId";
 
         private void FillDgRoomListData()
         {

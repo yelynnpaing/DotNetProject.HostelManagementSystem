@@ -187,7 +187,7 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = "SELECT RoomId, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition , TblRoomPrices.RoomPrice, " +
+                string query = "SELECT TblRooms.RoomId AS RoomNo, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition , TblRoomPrices.RoomPrice, " +
                "RoomImage FROM TblRooms INNER JOIN TblRoomTypes ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId" +
                " INNER JOIN TblRoomPositions ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId" +
                " INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";

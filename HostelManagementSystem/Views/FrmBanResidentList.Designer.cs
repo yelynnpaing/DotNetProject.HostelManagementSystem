@@ -249,9 +249,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(781, 24);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 20);
+            this.label10.Size = new System.Drawing.Size(79, 20);
             this.label10.TabIndex = 33;
-            this.label10.Text = "Room ID";
+            this.label10.Text = "Room No";
             // 
             // cboResidentUIN
             // 

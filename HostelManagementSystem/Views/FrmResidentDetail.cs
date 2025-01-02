@@ -191,7 +191,7 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = @"SELECT TblResidents.ResidentId as Id, TblResidents.UIN as SmartId, TblResidents.Name,TblResidents.RoomId, 
+                string query = @"SELECT TblResidents.ResidentId as Id, TblResidents.UIN as SmartId, TblResidents.Name,TblResidents.RoomId As RoomNo, 
                                 TblRoomPrices.RoomPrice, TblResidents.Image, TblResidents.Address, TblResidents.Phone,
                                 TblResidents.StartDate, TblResidents.Occupy,TblResidents.Leave, TblResidents.EndDate
                                 FROM TblResidents 

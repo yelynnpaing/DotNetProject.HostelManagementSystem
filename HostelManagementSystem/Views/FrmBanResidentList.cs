@@ -188,7 +188,7 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = @"SELECT TblResidents.UIN, TblResidents.ResidentId, TblResidents.Name, TblBanResidents.RoomId, TblResidents.Phone,
+                string query = @"SELECT TblResidents.UIN, TblResidents.ResidentId, TblResidents.Name, TblBanResidents.RoomId As RoomNo, TblResidents.Phone,
                                 TblBanResidents.BanDate, TblBanResidents.StartDate, TblBanResidents.EndDate, TblBanResidents.Ban, TblBanResidents.UnBan
                                 FROM TblBanResidents
                                 INNER JOIN TblResidents
