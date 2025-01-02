@@ -31,23 +31,62 @@ namespace HostelManagementSystem.Views.ResidentListtems
 
         private void Clear()
         {
-            txtResidentId.Text = "";
-            txtResidentName.Text = "";
-            cboRoomId.Text = "";
-            txtRoomPrice.Text = "";
-            txtResidentPhone.Text = "";
+            cboResidentUIN.Text = "";
+        }
+
+        private void FillCboResidentUIN()
+        {
+            try
+            {
+                string query = @"SELECT TblResidents.UIN, TblResidents.ResidentId FROM TblResidents 
+                                INNER JOIN TblRooms
+                                ON TblResidents.RoomId = TblRooms.RoomId
+                                WHERE Leave = 1
+                                ORDER BY UIN";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                DataSet dataSet = new DataSet();
+                DataTable dt = new DataTable();
+                adapter.Fill(dataSet, "cboResidentUIN");
+                dt = dataSet.Tables["cboResidentUIN"];
+                cboResidentUIN.DataSource = dt;
+                cboResidentUIN.DisplayMember = dt.Columns["UIN"].ToString();
+                cboResidentUIN.ValueMember = dt.Columns["ResidentId"].ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong! Please reload your Page.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        string OriginQuery = @"SELECT TblResidents.ResidentId as Id, TblResidents.Name,TblResidents.RoomId As RoomNo, 
+                                TblResidents.Image, TblResidents.Address, TblResidents.Phone,
+                                TblResidents.StartDate, TblResidents.EndDate
+                                FROM TblResidents 
+                                INNER JOIN TblRooms ON TblResidents.RoomId = TblRooms.RoomId
+                                WHERE Leave = 1";
+
+        private void FillLeaveResidentData()
+        {
+            foreach (DataGridViewColumn col in dgvLeaveResidents.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgvLeaveResidents.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+            dgvLeaveResidents.AllowUserToAddRows = false;
+            dgvLeaveResidents.RowTemplate.Height = 100;
+
+            DataGridViewImageColumn ImgCol1 = new DataGridViewImageColumn();
+            ImgCol1 = (DataGridViewImageColumn)dgvLeaveResidents.Columns[3];
+            ImgCol1.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
 
         private void FillLeaveResidents()
         {
             try
             {
-                string query = @"SELECT TblResidents.ResidentId as Id, TblResidents.Name,TblResidents.RoomId As RoomNo, 
-                                TblResidents.Image, TblResidents.Address, TblResidents.Phone,
-                                TblResidents.StartDate, TblResidents.EndDate
-                                FROM TblResidents 
-                                INNER JOIN TblRooms ON TblResidents.RoomId = TblRooms.RoomId
-                                WHERE Leave = 1";
+                string query = @""+ OriginQuery + "";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
@@ -60,14 +99,7 @@ namespace HostelManagementSystem.Views.ResidentListtems
                 dgvLeaveResidents.Columns[2].Width = 90;
                 dgvLeaveResidents.Columns[4].Width = 300;
 
-                //dgvLeaveResidents.RowTemplate.Height = 150;
-                dgvLeaveResidents.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
-                dgvLeaveResidents.AllowUserToAddRows = false;
-                //dgResidentList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                DataGridViewImageColumn ImgCol = new DataGridViewImageColumn();
-                ImgCol = (DataGridViewImageColumn)dgvLeaveResidents.Columns[3];
-                ImgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                FillLeaveResidentData();
             }
             catch
             {
@@ -79,6 +111,23 @@ namespace HostelManagementSystem.Views.ResidentListtems
         {
             Clear();
             Connection();
+            FillCboResidentUIN();
+            FillLeaveResidents();
+        }
+
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string searchQuery = @"" + OriginQuery + "  AND TblResidents.UIN = '" + cboResidentUIN.Text + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "leaveResidents");
+            dgvLeaveResidents.DataSource = ds.Tables["leaveResidents"];
+            FillLeaveResidentData();
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            Clear();
             FillLeaveResidents();
         }
     }
