@@ -48,6 +48,7 @@ namespace HostelManagementSystem.Views
             FillCboResidentId();
             Clear();
             UnBanCheckBox.Enabled = false;
+            FillCboRulesAndRegulations();
             FillDgBanResidentList();
         }
 
@@ -89,17 +90,38 @@ namespace HostelManagementSystem.Views
             }
         }
 
+        private void FillCboRulesAndRegulations()
+        {
+            try
+            {
+                string query = "SELECT RRId, Title FROM TblRulesAndRegulations";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable(); 
+                adapter.Fill(ds, "cboRulesAndRegulations");
+                dt = ds.Tables["cboRulesAndRegulations"];
+                cboRulesAndRegulations.DataSource = dt;
+                cboRulesAndRegulations.ValueMember = dt.Columns["RRId"].ToString();
+                cboRulesAndRegulations.DisplayMember = dt.Columns["Title"].ToString();
+            }
+            catch
+            {
+                MessageBox.Show("There is nothing to show rules and regulations! Please reload your page!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void BanBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 string Id;
-                string query = @"INSERT INTO TblBanResidents VALUES (@ResidentId, @RoomId, @BanDate, @startDate, 
+                string query = @"INSERT INTO TblBanResidents VALUES (@ResidentId, @RoomId, @BanDate, @RRID, @startDate, 
                                 @endDate, @Ban, @UnBan)";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = cboResidentUIN.SelectedValue;
                 cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
                 cmd.Parameters.Add("@BanDate", SqlDbType.DateTime).Value = BanDate.Text;
+                cmd.Parameters.Add("@RRID", SqlDbType.Int).Value = cboRulesAndRegulations.SelectedValue;
                 cmd.Parameters.Add("@startDate", SqlDbType.DateTime).Value = startDate.Text;
                 cmd.Parameters.Add("@endDate", SqlDbType.DateTime).Value = endDate.Text;
                 cmd.Parameters.Add("@Ban", SqlDbType.Bit).Value = BanCheckBox.Checked;
@@ -110,12 +132,13 @@ namespace HostelManagementSystem.Views
                 //For Ban Residents History
                 if (UnBanCheckBox.Checked == false)
                 {
-                    string HQuery = @"INSERT INTO TblBanResidentHistory VALUES (@ResidentId, @RoomId, @BanDate, @startDate, 
+                    string HQuery = @"INSERT INTO TblBanResidentHistory VALUES (@ResidentId, @RoomId, @BanDate, @RRID, @startDate, 
                                 @endDate, @Ban)";
                     SqlCommand Hcmd = new SqlCommand(HQuery, consql);
                     Hcmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = cboResidentUIN.SelectedValue;
                     Hcmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
                     Hcmd.Parameters.Add("@BanDate", SqlDbType.DateTime).Value = BanDate.Text;
+                    Hcmd.Parameters.Add("@RRID", SqlDbType.Int).Value = cboRulesAndRegulations.SelectedValue;
                     Hcmd.Parameters.Add("@startDate", SqlDbType.DateTime).Value = startDate.Text;
                     Hcmd.Parameters.Add("@endDate", SqlDbType.DateTime).Value = endDate.Text;
                     Hcmd.Parameters.Add("@Ban", SqlDbType.Bit).Value = BanCheckBox.Checked;
@@ -188,11 +211,14 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = @"SELECT TblResidents.UIN, TblResidents.ResidentId, TblResidents.Name, TblBanResidents.RoomId As RoomNo, TblResidents.Phone,
-                                TblBanResidents.BanDate, TblBanResidents.StartDate, TblBanResidents.EndDate, TblBanResidents.Ban, TblBanResidents.UnBan
-                                FROM TblBanResidents
-                                INNER JOIN TblResidents
-                                ON TblResidents.ResidentId = TblBanResidents.ResidentId";
+                string query = @"SELECT TblResidents.UIN, TblResidents.ResidentId, TblResidents.Name, TblBanResidents.RoomId As RoomNo, 
+                                    TblResidents.Phone,TblBanResidents.BanDate, TblRulesAndRegulations.Title AS BanReason, TblBanResidents.StartDate, TblBanResidents.EndDate, 
+                                    TblBanResidents.Ban, TblBanResidents.UnBan
+                                    FROM TblBanResidents
+                                    INNER JOIN TblResidents
+                                    ON TblResidents.ResidentId = TblBanResidents.ResidentId
+                                    INNER JOIN TblRulesAndRegulations
+                                    ON TblBanResidents.RRID = TblRulesAndRegulations.RRId";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "banResidents");
@@ -227,10 +253,11 @@ namespace HostelManagementSystem.Views
                 txtRoomId.Text = dgBanResidentList.CurrentRow.Cells[3].Value.ToString();
                 txtResidentPhone.Text = dgBanResidentList.CurrentRow.Cells[4].Value.ToString();
                 BanDate.Text = dgBanResidentList.CurrentRow.Cells[5].Value.ToString();
-                //startDate.Text = dgBanResidentList.CurrentRow.Cells[6].Value.ToString();
-                endDate.Text = dgBanResidentList.CurrentRow.Cells[7].Value.ToString();
-                BanCheckBox.Checked = Convert.ToBoolean(dgBanResidentList.CurrentRow.Cells[8].Value.ToString());
-                UnBanCheckBox.Checked = Convert.ToBoolean(dgBanResidentList.CurrentRow.Cells[9].Value.ToString());
+                cboRulesAndRegulations.Text = dgBanResidentList.CurrentRow.Cells[6].Value.ToString();
+                //startDate.Text = dgBanResidentList.CurrentRow.Cells[7].Value.ToString();
+                endDate.Text = dgBanResidentList.CurrentRow.Cells[8].Value.ToString();
+                BanCheckBox.Checked = Convert.ToBoolean(dgBanResidentList.CurrentRow.Cells[9].Value.ToString());
+                UnBanCheckBox.Checked = Convert.ToBoolean(dgBanResidentList.CurrentRow.Cells[10].Value.ToString());
                 if(BanCheckBox.Checked == true)
                 {
                     BanCheckBox.Enabled = false;
@@ -255,12 +282,14 @@ namespace HostelManagementSystem.Views
             try
             {
                 string query = @"UPDATE TblBanResidents SET ResidentId=@ResidentId, RoomId=@RoomId, BanDate=@BanDate,
-                                startDate=@startDate,endDate=@endDate, Ban=@Ban, UnBan=@UnBan
+                                RRID=@RRID, startDate=@startDate,endDate=@endDate, Ban=@Ban, UnBan=@UnBan
                                 WHERE ResidentId = @ResidentId";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
                 cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
                 cmd.Parameters.Add("@BanDate", SqlDbType.DateTime).Value = BanDate.Text;
+                cboRulesAndRegulations.Text = dgBanResidentList.CurrentRow.Cells[6].Value.ToString();
+                cmd.Parameters.Add("@RRID", SqlDbType.Int).Value = cboRulesAndRegulations.ValueMember;
                 cmd.Parameters.Add("@startDate", SqlDbType.DateTime).Value = startDate.Text;
                 cmd.Parameters.Add("@endDate", SqlDbType.DateTime).Value = endDate.Text;
                 cmd.Parameters.Add("@Ban", SqlDbType.Bit).Value = BanCheckBox.Checked;

@@ -54,12 +54,16 @@
             this.dgBanResidentList = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.cboRulesAndRegulations = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBanResidentList)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboRulesAndRegulations);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.UnBanCheckBox);
             this.groupBox1.Controls.Add(this.BanCheckBox);
             this.groupBox1.Controls.Add(this.UpdateBtn);
@@ -84,7 +88,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(366, 155);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1144, 234);
+            this.groupBox1.Size = new System.Drawing.Size(1323, 234);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             // 
@@ -92,7 +96,7 @@
             // 
             this.UnBanCheckBox.AutoSize = true;
             this.UnBanCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnBanCheckBox.Location = new System.Drawing.Point(1031, 111);
+            this.UnBanCheckBox.Location = new System.Drawing.Point(1209, 45);
             this.UnBanCheckBox.Name = "UnBanCheckBox";
             this.UnBanCheckBox.Size = new System.Drawing.Size(87, 26);
             this.UnBanCheckBox.TabIndex = 54;
@@ -104,7 +108,7 @@
             // 
             this.BanCheckBox.AutoSize = true;
             this.BanCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BanCheckBox.Location = new System.Drawing.Point(1031, 46);
+            this.BanCheckBox.Location = new System.Drawing.Point(1108, 44);
             this.BanCheckBox.Name = "BanCheckBox";
             this.BanCheckBox.Size = new System.Drawing.Size(64, 26);
             this.BanCheckBox.TabIndex = 53;
@@ -179,7 +183,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(781, 88);
+            this.label12.Location = new System.Drawing.Point(1104, 86);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 20);
             this.label12.TabIndex = 46;
@@ -189,7 +193,7 @@
             // 
             this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.endDate.Location = new System.Drawing.Point(785, 111);
+            this.endDate.Location = new System.Drawing.Point(1108, 109);
             this.endDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(188, 27);
@@ -199,7 +203,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(529, 88);
+            this.label7.Location = new System.Drawing.Point(866, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 20);
             this.label7.TabIndex = 40;
@@ -209,7 +213,7 @@
             // 
             this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDate.Location = new System.Drawing.Point(533, 111);
+            this.startDate.Location = new System.Drawing.Point(870, 111);
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(188, 27);
             this.startDate.TabIndex = 39;
@@ -219,7 +223,7 @@
             this.txtResidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResidentName.Location = new System.Drawing.Point(533, 45);
             this.txtResidentName.Name = "txtResidentName";
-            this.txtResidentName.Size = new System.Drawing.Size(188, 27);
+            this.txtResidentName.Size = new System.Drawing.Size(271, 27);
             this.txtResidentName.TabIndex = 36;
             // 
             // ClearBtn
@@ -238,7 +242,7 @@
             // txtRoomId
             // 
             this.txtRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomId.Location = new System.Drawing.Point(785, 45);
+            this.txtRoomId.Location = new System.Drawing.Point(870, 45);
             this.txtRoomId.Name = "txtRoomId";
             this.txtRoomId.Size = new System.Drawing.Size(188, 27);
             this.txtRoomId.TabIndex = 26;
@@ -247,7 +251,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(781, 24);
+            this.label10.Location = new System.Drawing.Point(866, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 20);
             this.label10.TabIndex = 33;
@@ -306,9 +310,9 @@
             this.SearchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(1681, 155);
+            this.SearchBtn.Location = new System.Drawing.Point(1695, 163);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(218, 36);
+            this.SearchBtn.Size = new System.Drawing.Size(204, 36);
             this.SearchBtn.TabIndex = 24;
             this.SearchBtn.Text = "Search Ban Residents";
             this.SearchBtn.UseVisualStyleBackColor = false;
@@ -348,6 +352,25 @@
             this.label8.Size = new System.Drawing.Size(140, 25);
             this.label8.TabIndex = 43;
             this.label8.Text = "Ban Resident\r\n";
+            // 
+            // cboRulesAndRegulations
+            // 
+            this.cboRulesAndRegulations.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRulesAndRegulations.FormattingEnabled = true;
+            this.cboRulesAndRegulations.Location = new System.Drawing.Point(533, 111);
+            this.cboRulesAndRegulations.Name = "cboRulesAndRegulations";
+            this.cboRulesAndRegulations.Size = new System.Drawing.Size(271, 28);
+            this.cboRulesAndRegulations.TabIndex = 56;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(529, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Rules";
             // 
             // FrmBanResidentList
             // 
@@ -398,5 +421,7 @@
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.CheckBox UnBanCheckBox;
         private System.Windows.Forms.CheckBox BanCheckBox;
+        private System.Windows.Forms.ComboBox cboRulesAndRegulations;
+        private System.Windows.Forms.Label label1;
     }
 }
