@@ -64,6 +64,7 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SidebarPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RRPic)).BeginInit();
@@ -86,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
             this.HeaderPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SidebarPanel
@@ -440,6 +442,7 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Controls.Add(this.label2);
             this.MainPanel.Controls.Add(this.label3);
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
@@ -451,12 +454,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.label2.Location = new System.Drawing.Point(704, 350);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(530, 46);
+            this.label2.Size = new System.Drawing.Size(499, 46);
             this.label2.TabIndex = 7;
-            this.label2.Text = "W E L C O M E  T O  T H E";
+            this.label2.Text = "W E L C O M E   F R O M";
             // 
             // label3
             // 
@@ -465,9 +468,19 @@
             this.label3.ForeColor = System.Drawing.Color.Teal;
             this.label3.Location = new System.Drawing.Point(703, 408);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(895, 54);
+            this.label3.Size = new System.Drawing.Size(921, 54);
             this.label3.TabIndex = 6;
-            this.label3.Text = "M A N D A L A R  M Y A Y  H O S T E L !";
+            this.label3.Text = "M A N D A L A R   M Y A Y   H O S T E L !\r\n";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1049, 508);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(212, 189);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmDashboard
             // 
@@ -515,6 +528,7 @@
             this.HeaderPanel.PerformLayout();
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,5 +570,6 @@
         private System.Windows.Forms.Label RRLabel;
         private System.Windows.Forms.PictureBox RRPic;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

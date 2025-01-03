@@ -131,6 +131,9 @@ namespace HostelManagementSystem.Views
             AutoId();
             CheckboxOccupy.Checked = true;
             CheckboxOccupy.Enabled = false;
+            SaveBtn.Visible = true;
+            ClearBtn.Visible = true;
+            UpdateBtn.Visible = true;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -451,22 +454,32 @@ namespace HostelManagementSystem.Views
                     ban = ds.Tables["residentUIN"].Rows[0][5].ToString();
                     if (ban != "" && Convert.ToBoolean(ban) != false)
                     {
-                        message = uin + " - " + name + " was banned from this Hostel.";
+                        message =  "Smart Card ID " + uin + " - " + name + " was banned from this Hostel.";
                         MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        SaveBtn.Visible = false;
+                        UpdateBtn.Visible = false;
+                        ClearBtn.Visible = false;
+                        Clear();
                     }
                     else
                     {
                         if (ban == "" && Convert.ToBoolean(leave) != true)
                         {
-                            message = uin + " - " + name + " was registered this Hostel.";
+                            message = "Smart Card ID " + uin + " - " + name + " was registered this Hostel.";
                             MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SaveBtn.Visible = false;
+                            UpdateBtn.Visible = false;
+                            ClearBtn.Visible = false;
+                            Clear();    
                         }
                         else
                         {
-                            message = uin + " - " + name + " was Leave from this Hostel. Make register again!";
+                            message = "Smart Card ID " + uin + " - " + name + " was Leave from this Hostel. Make register again!";
                             MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        
+                            SaveBtn.Visible = true;
+                            UpdateBtn.Visible = true;
+                            ClearBtn.Visible = true;
+                        } 
                     }
                 }
                 
