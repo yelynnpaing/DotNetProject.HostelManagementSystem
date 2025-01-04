@@ -1,5 +1,6 @@
 ﻿using HostelManagementSystem.Views.ResidentListtems;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -119,34 +120,31 @@ namespace HostelManagementSystem.Views
             FillCboResidentUIN();
             FillDgOccupyResidentList();
         }
-        
-        //private void cboResidentUIN_Leave(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        string query = @"SELECT TblResidents.RoomId FROM TblResidents
-        //                        INNER JOIN TblRoomCapacityCheck
-        //                        ON TblResidents.ResidentId = TblRoomCapacityCheck.ResidentId
-        //                        WHERE TblResidents.ResidentId = '" + cboResidentUIN.SelectedValue + "'";
-        //        SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-        //        DataSet ds = new DataSet();
-        //        adapter.Fill(ds, "roomId");
-        //        //cboRoomId.Text = ds.Tables["roomId"].Rows[0][0].ToString();
-        //    }
-        //    catch
-        //    {
-        //        MessageBox.Show("Please select Resident UIN", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //    }
-        //}
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            string searchQuery = @"" + QueryOrigin + "  WHERE TblResidents.UIN = '" + cboResidentUIN.Text + "'";
-            SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "occupyResidents");
-            dgOccupyResidentList.DataSource = ds.Tables["occupyResidents"];
-            FillDgOccupyResidentListData();
+            try
+            {
+                string searchQuery;
+                if (cboResidentUIN.Text == "")
+                {
+                    searchQuery = @"" + QueryOrigin + " WHERE TblResidents.StartDate BETWEEN '" + StartDate.Text + "'  AND '" + EndDate.Text + "'";
+                }
+                else
+                {
+                    searchQuery = @"" + QueryOrigin + " WHERE TblResidents.UIN = '" + cboResidentUIN.Text + "'" +
+                                    "AND TblResidents.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
+                }
+                SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "occupyResidents");
+                dgOccupyResidentList.DataSource = ds.Tables["occupyResidents"];
+                FillDgOccupyResidentListData();
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong.There is no Resident to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)

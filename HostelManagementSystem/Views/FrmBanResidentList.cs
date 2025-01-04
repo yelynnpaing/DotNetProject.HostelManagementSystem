@@ -225,6 +225,7 @@ namespace HostelManagementSystem.Views
                 dgBanResidentList.DataSource = ds.Tables["banResidents"];
                 dgBanResidentList.AllowUserToAddRows = false;
                 dgBanResidentList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+                dgBanResidentList.RowTemplate.Height = 50;
             }
             catch
             {

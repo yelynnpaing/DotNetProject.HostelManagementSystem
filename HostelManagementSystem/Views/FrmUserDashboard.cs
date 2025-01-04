@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,21 +10,11 @@ using System.Windows.Forms;
 
 namespace HostelManagementSystem.Views
 {
-    public partial class FrmDashboard : Form
+    public partial class FrmUserDashboard : Form
     {
-        public FrmDashboard()
+        public FrmUserDashboard()
         {
             InitializeComponent();
-        }
-
-        SqlConnection consql;
-        string str;
-
-        private void Connection()
-        {
-            str = "Data Source=DESKTOP-L3SMK21\\SQLEXPRESS;Initial Catalog=HostelManagementSystemDb;Persist Security Info=True;User ID=sa;Password=sasa@123";
-            consql = new SqlConnection(str);
-            consql.Open();
         }
 
         public void FormLoad(object form)
@@ -40,26 +29,6 @@ namespace HostelManagementSystem.Views
             this.MainPanel.Controls.Add(f);
             this.MainPanel.Tag = f;
             f.Show();
-        }
-
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void FrmDashboard_Load(object sender, EventArgs e)
-        {
-            Connection();
-        }
-
-        private void RoomPic_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmRoom());
-        }
-        
-        private void RoomLabel_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmRoom());
         }
 
         private void RoomListPic_Click(object sender, EventArgs e)
@@ -112,16 +81,6 @@ namespace HostelManagementSystem.Views
             FormLoad(new FrmBillingHistory());
         }
 
-        private void BanResidentPic_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmBanResidentList());
-        }
-
-        private void BanResidantLabel_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmBanResidentList());
-        }
-
         private void RRPic_Click(object sender, EventArgs e)
         {
             FormLoad(new FrmRulesAndRegulations());
@@ -147,6 +106,5 @@ namespace HostelManagementSystem.Views
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
         }
-
     }
 }

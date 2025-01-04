@@ -117,12 +117,29 @@ namespace HostelManagementSystem.Views.ResidentListtems
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            string searchQuery = @"" + OriginQuery + "  AND TblResidents.UIN = '" + cboResidentUIN.Text + "'";
-            SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "leaveResidents");
-            dgvLeaveResidents.DataSource = ds.Tables["leaveResidents"];
-            FillLeaveResidentData();
+            try
+            {
+                string searchQuery;
+                if (cboResidentUIN.Text == "")
+                {
+                    searchQuery = @"" + OriginQuery + " AND TblResidents.StartDate BETWEEN '" + StartDate.Text + "'  AND '" + EndDate.Text + "'";
+                }
+                else
+                {
+                    searchQuery = @"" + OriginQuery + " AND TblResidents.UIN = '" + cboResidentUIN.Text + "'" +
+                                    "AND TblResidents.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
+                }
+                
+                SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "leaveResidents");
+                dgvLeaveResidents.DataSource = ds.Tables["leaveResidents"];
+                FillLeaveResidentData();
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong.There is no leave Resident to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)

@@ -61,8 +61,17 @@ namespace HostelManagementSystem
                 if (dt.Rows.Count > 0)
                 {
                     //MessageBox.Show("Success.");
-                    FrmDashboard frmDashboard = new FrmDashboard();
-                    frmDashboard.Show();
+                    if(userName == "admin" && password == "admin123")
+                    {
+                        FrmDashboard frmDashboard = new FrmDashboard();
+                        frmDashboard.Show();
+                    }
+                    else
+                    {
+                        FrmUserDashboard frmUserDashboard = new FrmUserDashboard();
+                        frmUserDashboard.Show();
+                    }
+                    
 
                     this.Hide();
                 }

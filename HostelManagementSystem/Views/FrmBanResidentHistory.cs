@@ -107,11 +107,6 @@ namespace HostelManagementSystem.Views
             }
         }
 
-        private void ClearBtn_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
-
         private void dgBanResidentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgBanResidentList.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn && e.RowIndex >= 0)
@@ -124,12 +119,28 @@ namespace HostelManagementSystem.Views
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
-            string searchQuery = @"" + OriginQuery + "  WHERE TblResidents.UIN = '" + cboResidentUIN.Text + "'";
-            SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "banResidents");
-            dgBanResidentList.DataSource = ds.Tables["banResidents"];
-            FillDgBanResidentListData();
+            try
+            {
+                string searchQuery;
+                if (cboResidentUIN.Text == "")
+                {
+                    searchQuery = @"" + OriginQuery + " WHERE TblResidents.StartDate BETWEEN '" + StartDate.Text + "'  AND '" + EndDate.Text + "'";
+                }
+                else
+                {
+                    searchQuery = @"" + OriginQuery + " WHERE TblResidents.UIN = '" + cboResidentUIN.Text + "'" +
+                                    "AND TblResidents.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
+                }
+                SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds, "banResidents");
+                dgBanResidentList.DataSource = ds.Tables["banResidents"];
+                FillDgBanResidentListData();
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong.There is no Resident to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void ClearBtn_Click_1(object sender, EventArgs e)

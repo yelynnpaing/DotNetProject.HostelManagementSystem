@@ -215,6 +215,7 @@ namespace HostelManagementSystem.Views
 
                 dgInvoiceList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgInvoiceList.AllowUserToAddRows = false;
+                dgInvoiceList.RowTemplate.Height = 50;
             }
             catch
             {

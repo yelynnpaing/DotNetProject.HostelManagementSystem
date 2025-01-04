@@ -37,6 +37,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.BtnResidentLeave = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.EndDate = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.StartDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgOccupyResidentList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +50,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(359, 350);
+            this.label9.Location = new System.Drawing.Point(359, 378);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(259, 29);
             this.label9.TabIndex = 27;
@@ -56,11 +60,11 @@
             // 
             this.dgOccupyResidentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgOccupyResidentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgOccupyResidentList.Location = new System.Drawing.Point(364, 389);
+            this.dgOccupyResidentList.Location = new System.Drawing.Point(364, 413);
             this.dgOccupyResidentList.Name = "dgOccupyResidentList";
             this.dgOccupyResidentList.RowHeadersWidth = 51;
             this.dgOccupyResidentList.RowTemplate.Height = 24;
-            this.dgOccupyResidentList.Size = new System.Drawing.Size(1366, 524);
+            this.dgOccupyResidentList.Size = new System.Drawing.Size(1366, 517);
             this.dgOccupyResidentList.TabIndex = 28;
             // 
             // label8
@@ -76,13 +80,17 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.EndDate);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.StartDate);
             this.groupBox1.Controls.Add(this.cboResidentUIN);
             this.groupBox1.Controls.Add(this.ClearBtn);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.SearchBtn);
             this.groupBox1.Location = new System.Drawing.Point(364, 187);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(650, 121);
+            this.groupBox1.Size = new System.Drawing.Size(737, 160);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
@@ -94,14 +102,13 @@
             this.cboResidentUIN.Name = "cboResidentUIN";
             this.cboResidentUIN.Size = new System.Drawing.Size(188, 28);
             this.cboResidentUIN.TabIndex = 36;
-            //this.cboResidentUIN.Leave += new System.EventHandler(this.cboResidentUIN_Leave);
             // 
             // ClearBtn
             // 
             this.ClearBtn.BackColor = System.Drawing.Color.Silver;
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearBtn.Location = new System.Drawing.Point(467, 43);
+            this.ClearBtn.Location = new System.Drawing.Point(210, 100);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(130, 36);
             this.ClearBtn.TabIndex = 35;
@@ -124,7 +131,7 @@
             this.SearchBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(283, 43);
+            this.SearchBtn.Location = new System.Drawing.Point(26, 100);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(130, 36);
             this.SearchBtn.TabIndex = 24;
@@ -146,6 +153,44 @@
             this.BtnResidentLeave.Text = "Leaved Residents";
             this.BtnResidentLeave.UseVisualStyleBackColor = false;
             this.BtnResidentLeave.Click += new System.EventHandler(this.BtnResidentLeave_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(510, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 20);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "End Date";
+            // 
+            // EndDate
+            // 
+            this.EndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.EndDate.Location = new System.Drawing.Point(514, 49);
+            this.EndDate.Name = "EndDate";
+            this.EndDate.Size = new System.Drawing.Size(188, 27);
+            this.EndDate.TabIndex = 52;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(264, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.TabIndex = 51;
+            this.label7.Text = "Start Date";
+            // 
+            // StartDate
+            // 
+            this.StartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.StartDate.Location = new System.Drawing.Point(268, 49);
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Size = new System.Drawing.Size(188, 27);
+            this.StartDate.TabIndex = 50;
             // 
             // FrmResidentList
             // 
@@ -180,5 +225,9 @@
         private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.Button BtnResidentLeave;
         private System.Windows.Forms.ComboBox cboResidentUIN;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker EndDate;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker StartDate;
     }
 }
