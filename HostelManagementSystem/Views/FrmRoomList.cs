@@ -1,4 +1,6 @@
-﻿using MySqlX.XDevAPI.Relational;
+﻿using HostelManagementSystem.Print;
+using HostelManagementSystem.Reports;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -128,6 +130,34 @@ namespace HostelManagementSystem.Views
         {
             Clear();
             FillDgRoomList();
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Room No",  typeof(string));
+            dt.Columns.Add("Room Type",  typeof(string));
+            dt.Columns.Add("Room Position",  typeof(string));
+            dt.Columns.Add("Price",  typeof(float));
+            dt.Columns.Add("Capacity",  typeof(int));
+            dt.Columns.Add("Resident Name",  typeof(string));
+
+            foreach(DataGridViewRow dgv in dgRoomList.Rows)
+            {
+                dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[4].Value,
+                    dgv.Cells[5].Value, dgv.Cells[6].Value);
+            }
+
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("roomList.xml");
+
+            PrintRoomList printRoomList = new PrintRoomList();
+            RoomListCrystalReport roomListCrystalReport = new RoomListCrystalReport();
+            roomListCrystalReport.SetDataSource(ds);
+            printRoomList.RoomListCRViewer.ReportSource = roomListCrystalReport;
+            printRoomList.RoomListCRViewer.Refresh();
+            printRoomList.ShowDialog();
         }
     }
 }
