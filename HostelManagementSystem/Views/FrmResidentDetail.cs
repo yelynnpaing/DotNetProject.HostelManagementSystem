@@ -281,7 +281,10 @@ namespace HostelManagementSystem.Views
                 txtResidentAddress.Text = dgResidentList.CurrentRow.Cells[6].Value.ToString();
                 txtResidentPhone.Text = dgResidentList.CurrentRow.Cells[7].Value.ToString();
                 startDate.Enabled = false;
-                //startDate.Text = dgResidentList.CurrentRow.Cells[8].Value.ToString();
+                //string DTstartDate = dgResidentList.CurrentRow.Cells[8].Value.ToString();
+                //DateTime dt = DateTime.Parse(DTstartDate);
+                //string onlyDateSD = dt.ToString("MM/dd/yyyy");
+                //startDate.Text = onlyDateSD.ToString();
                 CheckboxOccupy.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[9].Value);
                 CheckBoxLeave.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[10].Value);
                 if(CheckBoxLeave.Checked == true)

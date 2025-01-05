@@ -1,4 +1,6 @@
-﻿using HostelManagementSystem.Views.ResidentListtems;
+﻿using HostelManagementSystem.Print;
+using HostelManagementSystem.Reports;
+using HostelManagementSystem.Views.ResidentListtems;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -151,6 +153,34 @@ namespace HostelManagementSystem.Views
         {
             Clear();
             FillDgOccupyResidentList();
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Resident UIN", typeof(string));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("Room No", typeof(string));
+            dt.Columns.Add("Room Price", typeof(string));
+            dt.Columns.Add("Start Date", typeof(DateTime));
+            dt.Columns.Add("End Date", typeof(DateTime));
+
+            foreach(DataGridViewRow dgv in dgOccupyResidentList.Rows)
+            {
+                dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[3].Value, dgv.Cells[5].Value,
+                    dgv.Cells[6].Value, dgv.Cells[7].Value);
+            }
+
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("OcResidentList.xml");
+
+            PrintOccupyResidentList printOccupyResidentList = new PrintOccupyResidentList();
+            OccupyResidentListCrystalReport occupyResidentListCrystalReport = new OccupyResidentListCrystalReport();
+            occupyResidentListCrystalReport.SetDataSource(ds);
+            printOccupyResidentList.OccupyResidentCRViwer.ReportSource = occupyResidentListCrystalReport;
+            printOccupyResidentList.OccupyResidentCRViwer.Refresh();
+            printOccupyResidentList.ShowDialog();
         }
     }
 }
