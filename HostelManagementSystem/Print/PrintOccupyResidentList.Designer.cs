@@ -35,19 +35,21 @@
             // 
             this.OccupyResidentCRViwer.ActiveViewIndex = -1;
             this.OccupyResidentCRViwer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OccupyResidentCRViwer.Cursor = System.Windows.Forms.Cursors.Default;
             this.OccupyResidentCRViwer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OccupyResidentCRViwer.Location = new System.Drawing.Point(0, 0);
             this.OccupyResidentCRViwer.Name = "OccupyResidentCRViwer";
-            this.OccupyResidentCRViwer.Size = new System.Drawing.Size(1083, 589);
+            this.OccupyResidentCRViwer.Size = new System.Drawing.Size(1398, 589);
             this.OccupyResidentCRViwer.TabIndex = 0;
             // 
             // PrintOccupyResidentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 589);
+            this.ClientSize = new System.Drawing.Size(1398, 589);
             this.Controls.Add(this.OccupyResidentCRViwer);
             this.Name = "PrintOccupyResidentList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintOccupyResidentList";
             this.ResumeLayout(false);
 

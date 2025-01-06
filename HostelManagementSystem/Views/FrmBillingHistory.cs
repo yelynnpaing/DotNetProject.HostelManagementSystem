@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HostelManagementSystem.Print;
+using HostelManagementSystem.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -140,6 +142,44 @@ namespace HostelManagementSystem.Views
         {
             Clear();
             FillDgInvoiceList();
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrintBtn_Click_1(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("InvoiceNo", typeof(string));
+            dt.Columns.Add("Resident", typeof(string));
+            dt.Columns.Add("Room No", typeof(string));
+            dt.Columns.Add("Price", typeof(decimal));
+            dt.Columns.Add("Billing Date", typeof(DateTime));
+            dt.Columns.Add("Phone No", typeof(string));
+            dt.Columns.Add("StartDate", typeof(DateTime));
+            dt.Columns.Add("EndDate", typeof(DateTime));
+            dt.Columns.Add("TotalBill", typeof(decimal));
+            dt.Columns.Add("PaymentName", typeof(string));
+
+            foreach(DataGridViewRow dgv in dgInvoiceList.Rows)
+            {
+                dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value,
+                    dgv.Cells[4].Value, dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value,
+                    dgv.Cells[8].Value, dgv.Cells[9].Value);
+            }
+
+            ds.Tables.Add(dt);
+            dt.WriteXmlSchema("BillingHistory.xml");
+
+            PrintBillingHistory printBillingHistory = new PrintBillingHistory();
+            BillingHistoryCrystalReport billingHistoryCrystalReport = new BillingHistoryCrystalReport();
+            billingHistoryCrystalReport.SetDataSource(ds);
+            printBillingHistory.BillingHistoryCRViewer.ReportSource = billingHistoryCrystalReport;
+            printBillingHistory.BillingHistoryCRViewer.Refresh();
+            printBillingHistory.ShowDialog();
         }
     }
 }

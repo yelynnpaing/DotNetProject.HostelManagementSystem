@@ -40,6 +40,7 @@
             this.StartDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.NewBtn = new System.Windows.Forms.Button();
+            this.PrintBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoiceList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,9 +63,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label9.Location = new System.Drawing.Point(358, 403);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(197, 29);
+            this.label9.Size = new System.Drawing.Size(175, 29);
             this.label9.TabIndex = 28;
-            this.label9.Text = "Invoices History";
+            this.label9.Text = "Billing History";
             // 
             // label8
             // 
@@ -176,11 +177,25 @@
             this.NewBtn.UseVisualStyleBackColor = false;
             this.NewBtn.Click += new System.EventHandler(this.NewBtn_Click);
             // 
+            // PrintBtn
+            // 
+            this.PrintBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.PrintBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrintBtn.ForeColor = System.Drawing.Color.Black;
+            this.PrintBtn.Location = new System.Drawing.Point(1710, 396);
+            this.PrintBtn.Name = "PrintBtn";
+            this.PrintBtn.Size = new System.Drawing.Size(189, 36);
+            this.PrintBtn.TabIndex = 57;
+            this.PrintBtn.Text = "Print Billing History";
+            this.PrintBtn.UseVisualStyleBackColor = false;
+            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click_1);
+            // 
             // FrmBillingHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 972);
+            this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgInvoiceList);
@@ -212,5 +227,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button NewBtn;
         private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.Button PrintBtn;
     }
 }

@@ -109,8 +109,8 @@ namespace HostelManagementSystem.Views
             Clear();
             Connection();
             FillCboRoomId();
-            startDate.MinDate = DateTime.Now;
-            endDate.MinDate = DateTime.Now;
+            //startDate.MinDate = DateTime.Now;
+            endDate.MinDate = DateTime.Now.AddDays(1);
             FillDgResidents();
         }
 
@@ -152,7 +152,7 @@ namespace HostelManagementSystem.Views
                 cmd.Parameters.Add("@Image", SqlDbType.Image).Value = image;
                 cmd.Parameters.Add("@Address", SqlDbType.VarChar).Value = txtResidentAddress.Text;
                 cmd.Parameters.Add("@Phone", SqlDbType.VarChar).Value = txtResidentPhone.Text;
-                cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate.Value;
+                cmd.Parameters.Add("@StartDate", SqlDbType.DateTime).Value = startDate.Text;
                 cmd.Parameters.Add("@Occupy", SqlDbType.Bit).Value = CheckboxOccupy.Checked;
                 cmd.Parameters.Add("@Leave", SqlDbType.Bit).Value = CheckBoxLeave.Checked;
                 cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate.Text;
@@ -280,11 +280,11 @@ namespace HostelManagementSystem.Views
                 ResidentPictureBox.Image = Image.FromStream(ms);
                 txtResidentAddress.Text = dgResidentList.CurrentRow.Cells[6].Value.ToString();
                 txtResidentPhone.Text = dgResidentList.CurrentRow.Cells[7].Value.ToString();
-                startDate.Enabled = false;
                 //string DTstartDate = dgResidentList.CurrentRow.Cells[8].Value.ToString();
                 //DateTime dt = DateTime.Parse(DTstartDate);
                 //string onlyDateSD = dt.ToString("MM/dd/yyyy");
-                //startDate.Text = onlyDateSD.ToString();
+                startDate.Text = dgResidentList.CurrentRow.Cells[8].Value.ToString();
+                startDate.Enabled = false;
                 CheckboxOccupy.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[9].Value);
                 CheckBoxLeave.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[10].Value);
                 if(CheckBoxLeave.Checked == true)
@@ -296,7 +296,7 @@ namespace HostelManagementSystem.Views
             }
             catch
             {
-                MessageBox.Show("Someting wrong! Please reload this page.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Something wrong! Please reload this page.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

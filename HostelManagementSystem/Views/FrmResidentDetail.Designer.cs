@@ -323,7 +323,6 @@
             this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDate.Location = new System.Drawing.Point(1034, 206);
-            this.endDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(159, 27);
             this.endDate.TabIndex = 45;

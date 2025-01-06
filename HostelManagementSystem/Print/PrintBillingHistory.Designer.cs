@@ -1,6 +1,6 @@
 ﻿namespace HostelManagementSystem.Print
 {
-    partial class PrintRoomList
+    partial class PrintBillingHistory
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RoomListCRViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.BillingHistoryCRViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // RoomListCRViewer
+            // BillingHistoryCRViewer
             // 
-            this.RoomListCRViewer.ActiveViewIndex = -1;
-            this.RoomListCRViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RoomListCRViewer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RoomListCRViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RoomListCRViewer.Location = new System.Drawing.Point(0, 0);
-            this.RoomListCRViewer.Name = "RoomListCRViewer";
-            this.RoomListCRViewer.Size = new System.Drawing.Size(1078, 572);
-            this.RoomListCRViewer.TabIndex = 0;
+            this.BillingHistoryCRViewer.ActiveViewIndex = -1;
+            this.BillingHistoryCRViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BillingHistoryCRViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BillingHistoryCRViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BillingHistoryCRViewer.Location = new System.Drawing.Point(0, 0);
+            this.BillingHistoryCRViewer.Name = "BillingHistoryCRViewer";
+            this.BillingHistoryCRViewer.Size = new System.Drawing.Size(1301, 619);
+            this.BillingHistoryCRViewer.TabIndex = 0;
             // 
-            // PrintRoomList
+            // PrintBillingHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 572);
-            this.Controls.Add(this.RoomListCRViewer);
-            this.Name = "PrintRoomList";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PrintRoomList";
+            this.ClientSize = new System.Drawing.Size(1301, 619);
+            this.Controls.Add(this.BillingHistoryCRViewer);
+            this.Name = "PrintBillingHistory";
+            this.Text = "PrintBillingHistory";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public CrystalDecisions.Windows.Forms.CrystalReportViewer RoomListCRViewer;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer BillingHistoryCRViewer;
     }
 }
