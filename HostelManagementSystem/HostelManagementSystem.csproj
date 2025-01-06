@@ -122,6 +122,12 @@
     <Compile Include="Print\PrintBillingHistory.Designer.cs">
       <DependentUpon>PrintBillingHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Print\PrintLeavedResidentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\PrintLeavedResidentList.Designer.cs">
+      <DependentUpon>PrintLeavedResidentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Print\PrintOccupyResidentList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BillingHistoryCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\LeavedResidentListCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeavedResidentListCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\OccupyResidentListCrystalReport.cs">
@@ -241,6 +253,9 @@
     <EmbeddedResource Include="Print\PrintBillingHistory.resx">
       <DependentUpon>PrintBillingHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Print\PrintLeavedResidentList.resx">
+      <DependentUpon>PrintLeavedResidentList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Print\PrintOccupyResidentList.resx">
       <DependentUpon>PrintOccupyResidentList.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +278,10 @@
     <EmbeddedResource Include="Reports\BillingHistoryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BillingHistoryCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LeavedResidentListCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LeavedResidentListCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\OccupyResidentListCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

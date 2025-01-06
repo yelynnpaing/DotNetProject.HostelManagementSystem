@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HostelManagementSystem.Print;
+using HostelManagementSystem.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,7 +61,7 @@ namespace HostelManagementSystem.Views.ResidentListtems
         }
 
 
-        string OriginQuery = @"SELECT TblResidents.ResidentId as Id, TblResidents.Name,TblResidents.RoomId As RoomNo, 
+        string OriginQuery = @"SELECT TblResidents.UIN AS ResidentUIN, TblResidents.Name,TblResidents.RoomId As RoomNo, 
                                 TblResidents.Image, TblResidents.Address, TblResidents.Phone,
                                 TblResidents.StartDate, TblResidents.EndDate
                                 FROM TblResidents 
@@ -94,7 +96,7 @@ namespace HostelManagementSystem.Views.ResidentListtems
                 dt = ds.Tables["residents"];
                 dgvLeaveResidents.DataSource = dt;
                 
-                dgvLeaveResidents.Columns[0].Width = 50;
+                //dgvLeaveResidents.Columns[0].Width = 50;
                 dgvLeaveResidents.Columns[1].Width = 70;
                 dgvLeaveResidents.Columns[2].Width = 90;
                 dgvLeaveResidents.Columns[4].Width = 300;
@@ -146,6 +148,35 @@ namespace HostelManagementSystem.Views.ResidentListtems
         {
             Clear();
             FillLeaveResidents();
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Resident UIN", typeof(string));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("Room No", typeof(string));
+            dt.Columns.Add("Address", typeof(string));
+            dt.Columns.Add("Phone No", typeof(string));
+            dt.Columns.Add("Start Date", typeof(DateTime));
+            dt.Columns.Add("End Date", typeof(DateTime));
+
+            foreach(DataGridViewRow dgv in dgvLeaveResidents.Rows)
+            {
+                dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[4].Value,
+                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value);
+            }
+
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("LeavedResidentList.xml");
+
+            PrintLeavedResidentList printLeavedResidentList = new PrintLeavedResidentList();
+            LeavedResidentListCrystalReport leavedResidentListCrystalReport = new LeavedResidentListCrystalReport();
+            leavedResidentListCrystalReport.SetDataSource(ds);
+            printLeavedResidentList.LeavedResidentCRViewer.ReportSource = leavedResidentListCrystalReport;
+            printLeavedResidentList.LeavedResidentCRViewer.Refresh();
+            printLeavedResidentList.ShowDialog();
         }
     }
 }
