@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.SidebarPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.RulesAndRegulationPanel = new System.Windows.Forms.Panel();
             this.RRLabel = new System.Windows.Forms.Label();
             this.RRPic = new System.Windows.Forms.PictureBox();
             this.BanResidentPanel = new System.Windows.Forms.Panel();
@@ -66,7 +66,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SidebarPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.RulesAndRegulationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RRPic)).BeginInit();
             this.BanResidentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).BeginInit();
@@ -93,7 +93,7 @@
             // SidebarPanel
             // 
             this.SidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
-            this.SidebarPanel.Controls.Add(this.panel1);
+            this.SidebarPanel.Controls.Add(this.RulesAndRegulationPanel);
             this.SidebarPanel.Controls.Add(this.BanResidentPanel);
             this.SidebarPanel.Controls.Add(this.panel2);
             this.SidebarPanel.Controls.Add(this.LogoutPanel);
@@ -110,14 +110,14 @@
             this.SidebarPanel.Size = new System.Drawing.Size(333, 972);
             this.SidebarPanel.TabIndex = 0;
             // 
-            // panel1
+            // RulesAndRegulationPanel
             // 
-            this.panel1.Controls.Add(this.RRLabel);
-            this.panel1.Controls.Add(this.RRPic);
-            this.panel1.Location = new System.Drawing.Point(32, 624);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 55);
-            this.panel1.TabIndex = 5;
+            this.RulesAndRegulationPanel.Controls.Add(this.RRLabel);
+            this.RulesAndRegulationPanel.Controls.Add(this.RRPic);
+            this.RulesAndRegulationPanel.Location = new System.Drawing.Point(32, 566);
+            this.RulesAndRegulationPanel.Name = "RulesAndRegulationPanel";
+            this.RulesAndRegulationPanel.Size = new System.Drawing.Size(283, 55);
+            this.RulesAndRegulationPanel.TabIndex = 5;
             // 
             // RRLabel
             // 
@@ -146,7 +146,7 @@
             // 
             this.BanResidentPanel.Controls.Add(this.BanResidantLabel);
             this.BanResidentPanel.Controls.Add(this.BanResidentPic);
-            this.BanResidentPanel.Location = new System.Drawing.Point(32, 566);
+            this.BanResidentPanel.Location = new System.Drawing.Point(32, 624);
             this.BanResidentPanel.Name = "BanResidentPanel";
             this.BanResidentPanel.Size = new System.Drawing.Size(222, 55);
             this.BanResidentPanel.TabIndex = 4;
@@ -497,8 +497,8 @@
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.SidebarPanel.ResumeLayout(false);
             this.SidebarPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.RulesAndRegulationPanel.ResumeLayout(false);
+            this.RulesAndRegulationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RRPic)).EndInit();
             this.BanResidentPanel.ResumeLayout(false);
             this.BanResidentPanel.PerformLayout();
@@ -567,7 +567,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LogoLabel;
         private System.Windows.Forms.PictureBox LogoPic;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel RulesAndRegulationPanel;
         private System.Windows.Forms.Label RRLabel;
         private System.Windows.Forms.PictureBox RRPic;
         private System.Windows.Forms.Label label2;

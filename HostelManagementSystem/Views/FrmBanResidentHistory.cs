@@ -65,6 +65,10 @@ namespace HostelManagementSystem.Views
             Connection();
             FillCboResidentUIN();
             FillDgBanResidentList();
+            if (FrmLogin.instance.UserRole != "admin")
+            {
+                PrintBtn.Visible = false;
+            }
         }
 
         string OriginQuery = @"SELECT TblResidents.Image, TblResidents.UIN, TblResidents.ResidentId, TblResidents.Name,

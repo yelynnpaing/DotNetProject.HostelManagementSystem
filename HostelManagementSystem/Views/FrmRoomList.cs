@@ -113,6 +113,10 @@ namespace HostelManagementSystem.Views
             Connection();
             FillCboRoomId();
             FillDgRoomList();
+            if(FrmLogin.instance.UserRole != "admin")
+            {
+                PrintBtn.Visible = false;
+            }
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)

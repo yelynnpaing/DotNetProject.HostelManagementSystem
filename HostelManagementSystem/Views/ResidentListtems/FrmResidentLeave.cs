@@ -115,6 +115,10 @@ namespace HostelManagementSystem.Views.ResidentListtems
             Connection();
             FillCboResidentUIN();
             FillLeaveResidents();
+            if (FrmLogin.instance.UserRole != "admin")
+            {
+                PrintBtn.Visible = false;
+            }
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)

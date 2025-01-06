@@ -177,6 +177,6 @@
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboRoomId;
-        private System.Windows.Forms.Button PrintBtn;
+        public System.Windows.Forms.Button PrintBtn;
     }
 }

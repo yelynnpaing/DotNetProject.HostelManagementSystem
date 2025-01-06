@@ -15,9 +15,12 @@ namespace HostelManagementSystem
 {
     public partial class FrmLogin : Form
     {
+        public static FrmLogin instance;
+        public string UserRole;
         public FrmLogin()
         {
             InitializeComponent();
+            instance = this;
         }
 
         SqlConnection consql;
@@ -45,7 +48,7 @@ namespace HostelManagementSystem
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            string userName, password, userRole = "admin";
+            string userName, password, userRole1 = "admin", userRole2 = "staff";
             userName = txtUserName.Text;
             password = txtPassword.Text;
 
@@ -61,22 +64,15 @@ namespace HostelManagementSystem
                 string pw = dset.Tables["Users"].Rows[0][2].ToString();
                 string role = dset.Tables["Users"].Rows[0][3].ToString();
 
+                UserRole = role;
 
                 if (dt.Rows.Count > 0)
                 {
-                    //MessageBox.Show("Success.");
-                    if(userName ==  name && password == pw && userRole ==  role)
+                    if (userName == name && password == pw && ( userRole1 == role || userRole2 == role ))
                     {
                         FrmDashboard frmDashboard = new FrmDashboard();
                         frmDashboard.Show();
                     }
-                    else
-                    {
-                        FrmUserDashboard frmUserDashboard = new FrmUserDashboard();
-                        frmUserDashboard.Show();
-                    }
-                    
-
                     this.Hide();
                 }
                 else
@@ -84,7 +80,6 @@ namespace HostelManagementSystem
                     MessageBox.Show("Invalid Login!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Clear();
                 }
-
             }
             catch
             {

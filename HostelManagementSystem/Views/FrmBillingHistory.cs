@@ -63,6 +63,10 @@ namespace HostelManagementSystem.Views
             Connection();
             FillCboRoomId();
             FillDgInvoiceList();
+            if (FrmLogin.instance.UserRole != "admin")
+            {
+                PrintBtn.Visible = false;
+            }
         }
 
         string OriginQuery = @"SELECT TblInvoices.InvID, TblResidents.Name, TblRooms.RoomId As RoomNo, TblRoomPrices.RoomPrice,

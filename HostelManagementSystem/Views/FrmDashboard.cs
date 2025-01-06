@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace HostelManagementSystem.Views
@@ -50,6 +51,11 @@ namespace HostelManagementSystem.Views
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
             Connection();
+            if(FrmLogin.instance.UserRole != "admin")
+            {
+                RoomPanel.Visible = false;
+                BanResidentPanel.Visible = false;
+            }
         }
 
         private void RoomPic_Click(object sender, EventArgs e)
