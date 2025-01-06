@@ -43,8 +43,8 @@ namespace HostelManagementSystem.Views
             Connection();
             BanDate.Value = DateTime.Now;
             BanDate.Enabled = false;
-            startDate.MinDate = DateTime.Now;
-            endDate.MinDate = DateTime.Now.AddDays(1);
+            //startDate.MinDate = DateTime.Now;
+            //endDate.MinDate = DateTime.Now.AddDays(1);
             FillCboResidentId();
             Clear();
             UnBanCheckBox.Enabled = false;
@@ -255,7 +255,7 @@ namespace HostelManagementSystem.Views
                 txtResidentPhone.Text = dgBanResidentList.CurrentRow.Cells[4].Value.ToString();
                 BanDate.Text = dgBanResidentList.CurrentRow.Cells[5].Value.ToString();
                 cboRulesAndRegulations.Text = dgBanResidentList.CurrentRow.Cells[6].Value.ToString();
-                //startDate.Text = dgBanResidentList.CurrentRow.Cells[7].Value.ToString();
+                startDate.Text = dgBanResidentList.CurrentRow.Cells[7].Value.ToString();
                 endDate.Text = dgBanResidentList.CurrentRow.Cells[8].Value.ToString();
                 BanCheckBox.Checked = Convert.ToBoolean(dgBanResidentList.CurrentRow.Cells[9].Value.ToString());
                 UnBanCheckBox.Checked = Convert.ToBoolean(dgBanResidentList.CurrentRow.Cells[10].Value.ToString());
