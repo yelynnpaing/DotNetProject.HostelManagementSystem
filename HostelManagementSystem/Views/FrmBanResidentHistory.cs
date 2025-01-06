@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HostelManagementSystem.Print;
+using HostelManagementSystem.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -147,6 +149,39 @@ namespace HostelManagementSystem.Views
         {
             Clear();
             FillDgBanResidentList();
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Resident UIN", typeof(string));
+            dt.Columns.Add("Resident ID", typeof(string));
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("Room No", typeof(string));
+            dt.Columns.Add("Phone No", typeof(string));
+            dt.Columns.Add("Ban Date", typeof(DateTime));
+            dt.Columns.Add("Ban Reason", typeof(string));
+            dt.Columns.Add("Start Date", typeof(DateTime));
+            dt.Columns.Add("End Date", typeof(DateTime));
+            dt.Columns.Add("Ban", typeof(Boolean));
+
+            foreach(DataGridViewRow dgv in dgBanResidentList.Rows)
+            {
+                dt.Rows.Add(dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value, dgv.Cells[4].Value,
+                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value, dgv.Cells[8].Value,
+                    dgv.Cells[9].Value, dgv.Cells[10].Value);
+            } 
+
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("BannedResidents.xml");
+
+            PrintBannedResident printBannedResident = new PrintBannedResident();
+            BannedResidentCrystalReport bannedResidentCrystalReport = new BannedResidentCrystalReport();
+            bannedResidentCrystalReport.SetDataSource(ds);
+            printBannedResident.BannedResidentsCRViewer.ReportSource = bannedResidentCrystalReport;
+            printBannedResident.BannedResidentsCRViewer.Refresh();
+            printBannedResident.ShowDialog();
         }
     }
 }

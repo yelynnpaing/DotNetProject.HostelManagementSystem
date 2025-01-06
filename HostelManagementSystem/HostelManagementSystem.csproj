@@ -110,6 +110,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Print\PrintBannedResident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print\PrintBannedResident.Designer.cs">
+      <DependentUpon>PrintBannedResident.cs</DependentUpon>
+    </Compile>
     <Compile Include="Print\PrintBillingHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\BannedResidentCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BannedResidentCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\BillingHistoryCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,6 +235,9 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Print\PrintBannedResident.resx">
+      <DependentUpon>PrintBannedResident.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Print\PrintBillingHistory.resx">
       <DependentUpon>PrintBillingHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +256,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\BannedResidentCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BannedResidentCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\BillingHistoryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BillingHistoryCrystalReport.cs</LastGenOutput>
