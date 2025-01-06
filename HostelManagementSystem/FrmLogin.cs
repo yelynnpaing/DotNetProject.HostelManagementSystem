@@ -45,7 +45,7 @@ namespace HostelManagementSystem
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            string userName, password;
+            string userName, password, userRole = "admin";
             userName = txtUserName.Text;
             password = txtPassword.Text;
 
@@ -57,11 +57,15 @@ namespace HostelManagementSystem
                 DataTable dt = new DataTable();
                 adapter.Fill(dset, "Users");
                 dt = dset.Tables["Users"];
+                string name = dset.Tables["Users"].Rows[0][1].ToString();
+                string pw = dset.Tables["Users"].Rows[0][2].ToString();
+                string role = dset.Tables["Users"].Rows[0][3].ToString();
+
 
                 if (dt.Rows.Count > 0)
                 {
                     //MessageBox.Show("Success.");
-                    if(userName == "admin" && password == "admin123")
+                    if(userName ==  name && password == pw && userRole ==  role)
                     {
                         FrmDashboard frmDashboard = new FrmDashboard();
                         frmDashboard.Show();
