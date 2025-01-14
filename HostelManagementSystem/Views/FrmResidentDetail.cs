@@ -352,18 +352,18 @@ namespace HostelManagementSystem.Views
             //For Room Capacity Check
             try
             {
-                string RId;
-                string RIdQuery = "SELECT ResidentId FROM TblRoomCapacityCheck WHERE ResidentId = '" + txtResidentId.Text + "'";
+                string RId, RoomID;
+                string RIdQuery = "SELECT ResidentId, RoomId FROM TblRoomCapacityCheck WHERE ResidentId = '" + txtResidentId.Text + "'";
                 SqlDataAdapter ad = new SqlDataAdapter(RIdQuery, consql);
                 DataSet dset = new DataSet();
-                ad.Fill(dset, "residentId");
-                if (dset.Tables["residentId"].Rows.Count == 0)
+                ad.Fill(dset, "residentDatas");
+                if (dset.Tables["residentDatas"].Rows.Count == 0)
                 {
                     int i = 1;
                     string RCCquery = "INSERT INTO TblRoomCapacityCheck VALUES (@CountCapacity, @RoomId, @ResidentId)";
                     SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
                     RccCommand.Parameters.Add("@CountCapacity", SqlDbType.Int).Value = i;
-                    RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
+                    RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.Text;
                     RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
                     //ExecuteMyQuery(RccCommand, "Add Room Capacity to new Count for resident");
                     RccCommand.ExecuteNonQuery();
@@ -371,7 +371,8 @@ namespace HostelManagementSystem.Views
                 }
                 else
                 {
-                    RId = dset.Tables["residentId"].Rows[0][0].ToString();
+                    RId = dset.Tables["residentDatas"].Rows[0][0].ToString();
+                    RoomID = dset.Tables["residentDatas"].Rows[0][1].ToString();
                     if (CheckBoxLeave.Checked == true)
                     {
                         //Remove from Room Capacity Check
@@ -406,6 +407,15 @@ namespace HostelManagementSystem.Views
                             RccCommand.ExecuteNonQuery();
                             MessageBox.Show("Add Room Capacity to new Count for resident.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        else if(RoomID != cboRoomId.Text)
+                        {
+                            string RCCquery = "UPDATE TblRoomCapacityCheck SET RoomId = @RoomId WHERE ResidentId = @ResidentId";
+                            SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
+                            RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.Text;
+                            RccCommand.Parameters.Add("ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                            RccCommand.ExecuteNonQuery();
+                            MessageBox.Show("Add new Room to new Capacity Count for resident.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         else
                         {
                             MessageBox.Show("This resident was occupy RoomCapacityCheck Table at early.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -413,9 +423,9 @@ namespace HostelManagementSystem.Views
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("This resident was removed from RoomCapacityCheck Table at early.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             FillCboRoomId();
             Clear();
