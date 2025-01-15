@@ -8,10 +8,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+//using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace HostelManagementSystem.Views
@@ -115,6 +117,55 @@ namespace HostelManagementSystem.Views
             }
         }
 
+        private void CheckForRoomBill()
+        {
+            try
+            {
+                DateTime expireDate = DateTime.Now.Date;
+                string RUIN, RName, RoomID;
+                DateTime startDate, endDate;
+
+                string query = @"SELECT TblResidents.UIN As ResidentUIN, TblResidents.Name, TblRoomCapacityCheck.RoomId As RoomNo,
+                                TblResidents.StartDate, TblResidents.EndDate
+                                FROM TblResidents 
+                                INNER JOIN TblRoomCapacityCheck
+                                ON TblResidents.ResidentId = TblRoomCapacityCheck.ResidentId
+                                INNER JOIN TblRooms
+                                ON TblResidents.RoomId = TblRooms.RoomId
+                                INNER JOIN TblRoomPrices
+                                ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                adapter.Fill(ds, "residentData");
+                ds.Tables.Add(dt);
+                foreach (DataTable dataTable in ds.Tables)
+                {
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        RUIN = row[0].ToString();
+                        RName = row[1].ToString();
+                        RoomID = row[2].ToString();
+                        startDate = (DateTime)row[3];
+                        endDate = (DateTime)row[4];
+                        if (endDate.Date == expireDate)
+                        {
+                            MessageBox.Show("Resident " + RUIN + " - " + RName + " is to pay Bill for Room " + RoomID + " and expire date is  " + endDate, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if(endDate.Date < expireDate)
+                        {
+                            MessageBox.Show("Resident " + RUIN + " - " + RName + " is to pay Bill for Room " + RoomID + " and expire date is  " + endDate + ". This resident bill is expire.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
         private void FrmResidentList_Load(object sender, EventArgs e)
         {
             Clear();
@@ -125,6 +176,7 @@ namespace HostelManagementSystem.Views
             {
                 PrintBtn.Visible = false;
             }
+            CheckForRoomBill();
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
