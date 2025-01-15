@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -58,7 +59,7 @@ namespace HostelManagementSystem.Views
 
         string QueryOrigin = @"SELECT TblRooms.RoomId As RoomNo, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition, 
                                TblRooms.RoomImage, TblRoomPrices.RoomPrice, 
-                               TblRoomCapacity.Capacity, TblResidents.Name As Resident
+                               TblRoomCapacity.Capacity, TblResidents.Name As Name, TblResidents.UIN AS ResidentUIN
                                FROM TblRooms
                                INNER JOIN TblRoomTypes
                                ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId
@@ -87,19 +88,39 @@ namespace HostelManagementSystem.Views
             DataGridViewImageColumn imgCol1 = new DataGridViewImageColumn();
             imgCol1 = (DataGridViewImageColumn)dgRoomList.Columns[3];
             imgCol1.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            
         }
 
         private void FillDgRoomList()
         {
             try
             {
+                string RUIN;
                 string query = @""+ QueryOrigin + " ORDER BY Occupy";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
-                adapter.Fill(ds, "roomList");
+                adapter.Fill(ds, "roomList");                
+                ds.Tables.Add(dt);
                 dgRoomList.DataSource = ds.Tables["roomList"];
                 FillDgRoomListData();
+                
+                //foreach (DataTable dataTable in ds.Tables)
+                //{
+                //    foreach (DataRow row in dataTable.Rows)
+                //    {
+                //        RUIN = row[7].ToString();
+                //        //if (endDate.Date == expireDate)
+                //        //{
+                //        //    MessageBox.Show("Resident " + RUIN + " - " + RName + " is to pay Bill for Room " + RoomID + " and expire date is  " + endDate, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //        //}
+                //        //else if (endDate.Date < expireDate)
+                //        //{
+                //        //    MessageBox.Show("Resident " + RUIN + " - " + RName + " is to pay Bill for Room " + RoomID + " and expire date is  " + endDate + ". This resident bill is expire.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //        //}
+                //    }
+                //}
+
             }
             catch
             {
@@ -112,6 +133,9 @@ namespace HostelManagementSystem.Views
             Clear();
             Connection();
             FillCboRoomId();
+            FrmResidentList frmResidentList = new FrmResidentList();
+            frmResidentList.Connection();
+            frmResidentList.CheckForRoomBill();
             FillDgRoomList();
             if(FrmLogin.instance.UserRole != "admin")
             {
@@ -146,11 +170,12 @@ namespace HostelManagementSystem.Views
             dt.Columns.Add("Price",  typeof(float));
             dt.Columns.Add("Capacity",  typeof(int));
             dt.Columns.Add("Resident Name",  typeof(string));
+            dt.Columns.Add("ResidentUIN", typeof(string));
 
             foreach(DataGridViewRow dgv in dgRoomList.Rows)
             {
                 dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[4].Value,
-                    dgv.Cells[5].Value, dgv.Cells[6].Value);
+                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value);
             }
 
             ds.Tables.Add(dt);
