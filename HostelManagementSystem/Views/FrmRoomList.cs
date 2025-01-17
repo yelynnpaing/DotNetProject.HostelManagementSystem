@@ -24,7 +24,8 @@ namespace HostelManagementSystem.Views
 
         SqlConnection consql;
         string str;
-        
+        FrmResidentList frmResidentList = new FrmResidentList();
+
         private void Connection()
         {
             str = "Data Source=DESKTOP-L3SMK21\\SQLEXPRESS;Initial Catalog=HostelManagementSystemDb;Persist Security Info=True;User ID=sa;Password=sasa@123; Connection Timeout=3600";
@@ -80,6 +81,7 @@ namespace HostelManagementSystem.Views
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                frmResidentList.formatRows();
             }
             dgRoomList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
             dgRoomList.AllowUserToAddRows = false;
@@ -103,24 +105,7 @@ namespace HostelManagementSystem.Views
                 adapter.Fill(ds, "roomList");                
                 ds.Tables.Add(dt);
                 dgRoomList.DataSource = ds.Tables["roomList"];
-                FillDgRoomListData();
-                
-                //foreach (DataTable dataTable in ds.Tables)
-                //{
-                //    foreach (DataRow row in dataTable.Rows)
-                //    {
-                //        RUIN = row[7].ToString();
-                //        //if (endDate.Date == expireDate)
-                //        //{
-                //        //    MessageBox.Show("Resident " + RUIN + " - " + RName + " is to pay Bill for Room " + RoomID + " and expire date is  " + endDate, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //        //}
-                //        //else if (endDate.Date < expireDate)
-                //        //{
-                //        //    MessageBox.Show("Resident " + RUIN + " - " + RName + " is to pay Bill for Room " + RoomID + " and expire date is  " + endDate + ". This resident bill is expire.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //        //}
-                //    }
-                //}
-
+                FillDgRoomListData();                
             }
             catch
             {
@@ -133,7 +118,6 @@ namespace HostelManagementSystem.Views
             Clear();
             Connection();
             FillCboRoomId();
-            FrmResidentList frmResidentList = new FrmResidentList();
             frmResidentList.Connection();
             frmResidentList.CheckForRoomBill();
             FillDgRoomList();
@@ -187,6 +171,11 @@ namespace HostelManagementSystem.Views
             printRoomList.RoomListCRViewer.ReportSource = roomListCrystalReport;
             printRoomList.RoomListCRViewer.Refresh();
             printRoomList.ShowDialog();
+        }
+
+        private void highlightBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

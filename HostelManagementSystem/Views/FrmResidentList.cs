@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -79,44 +80,6 @@ namespace HostelManagementSystem.Views
                                 INNER JOIN TblRoomPrices
                                 ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
 
-        private void FillDgOccupyResidentListData()
-        {
-            foreach (DataGridViewColumn col in dgOccupyResidentList.Columns)
-            {
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
-            dgOccupyResidentList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
-            dgOccupyResidentList.AllowUserToAddRows = false;
-            dgOccupyResidentList.RowTemplate.Height = 100;
-
-            DataGridViewImageColumn ImgCol1 = new DataGridViewImageColumn();
-            ImgCol1 = (DataGridViewImageColumn)dgOccupyResidentList.Columns[2];
-            ImgCol1.ImageLayout = DataGridViewImageCellLayout.Stretch;
-
-            DataGridViewImageColumn ImgCol2 = new DataGridViewImageColumn();
-            ImgCol2 = (DataGridViewImageColumn)dgOccupyResidentList.Columns[4];
-            ImgCol2.ImageLayout = DataGridViewImageCellLayout.Stretch;
-        }
-
-        private void FillDgOccupyResidentList()
-        {
-            try
-            { 
-                string query = @" "+ QueryOrigin + " ORDER BY ResidentUIN";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-                DataSet ds = new DataSet();
-                DataTable dt = new DataTable();
-                adapter.Fill(ds, "residentList");
-                dgOccupyResidentList.DataSource = ds.Tables["residentList"];
-                FillDgOccupyResidentListData();
-            }
-            catch
-            {
-                MessageBox.Show("There is no resident to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         public void CheckForRoomBill()
         {
             try
@@ -152,17 +115,80 @@ namespace HostelManagementSystem.Views
                         {
                             MessageBox.Show("Resident " + RUIN + " - " + RName + " is to pay Bill for Room " + RoomID + " and expire date is  " + endDate, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        else if(endDate.Date < expireDate)
+                        else if (endDate.Date < expireDate)
                         {
                             MessageBox.Show("Resident " + RUIN + " - " + RName + " is to pay Bill for Room " + RoomID + " and expire date is  " + endDate + ". This resident bill is expire.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        public void formatRows()
+        {
+            DateTime expireDate = DateTime.Now.Date;
+            foreach (DataGridViewRow row in dgOccupyResidentList.Rows)
+            {
+                if (row.Cells["EndDate"].Value != null)
+                {
+                    DateTime enddate;
+                    if (DateTime.TryParse(row.Cells["EndDate"].Value.ToString(), out enddate))
+                    {
+                        if (enddate.Date == expireDate || enddate < expireDate)
+                        {
+                            row.DefaultCellStyle.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            row.DefaultCellStyle.BackColor = Color.White;
+                        }
+                    }
+                }
+            }
+        }
+
+        public void FillDgOccupyResidentListData()
+        {
+            foreach (DataGridViewColumn col in dgOccupyResidentList.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                formatRows();
+            }
+            dgOccupyResidentList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+            dgOccupyResidentList.AllowUserToAddRows = false;
+            dgOccupyResidentList.RowTemplate.Height = 100;
+
+            DataGridViewImageColumn ImgCol1 = new DataGridViewImageColumn();
+            ImgCol1 = (DataGridViewImageColumn)dgOccupyResidentList.Columns[2];
+            ImgCol1.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            DataGridViewImageColumn ImgCol2 = new DataGridViewImageColumn();
+            ImgCol2 = (DataGridViewImageColumn)dgOccupyResidentList.Columns[4];
+            ImgCol2.ImageLayout = DataGridViewImageCellLayout.Stretch;
+        }
+
+        public void FillDgOccupyResidentList()
+        {
+            try
+            { 
+                string query = @" "+ QueryOrigin + " ORDER BY ResidentUIN";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                adapter.Fill(ds, "residentList");
+                dt = ds.Tables["residentList"];
+                dgOccupyResidentList.DataSource = ds.Tables["residentList"];
+                FillDgOccupyResidentListData();
+            }
+            catch
+            {
+                MessageBox.Show("There is no resident to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -171,12 +197,13 @@ namespace HostelManagementSystem.Views
             Clear();
             Connection();
             FillCboResidentUIN();
-            FillDgOccupyResidentList();
+            
             if(FrmLogin.instance.UserRole != "admin")
             {
                 PrintBtn.Visible = false;
             }
             CheckForRoomBill();
+            FillDgOccupyResidentList();
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
@@ -237,6 +264,11 @@ namespace HostelManagementSystem.Views
             printOccupyResidentList.OccupyResidentCRViwer.ReportSource = occupyResidentListCrystalReport;
             printOccupyResidentList.OccupyResidentCRViwer.Refresh();
             printOccupyResidentList.ShowDialog();
+        }
+
+        private void highlightBtn_Click(object sender, EventArgs e)
+        {
+            formatRows();
         }
     }
 }

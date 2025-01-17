@@ -37,6 +37,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboRoomId = new System.Windows.Forms.ComboBox();
             this.PrintBtn = new System.Windows.Forms.Button();
+            this.highlightBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -144,11 +145,25 @@
             this.PrintBtn.UseVisualStyleBackColor = false;
             this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
+            // highlightBtn
+            // 
+            this.highlightBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.highlightBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highlightBtn.ForeColor = System.Drawing.Color.White;
+            this.highlightBtn.Location = new System.Drawing.Point(544, 301);
+            this.highlightBtn.Name = "highlightBtn";
+            this.highlightBtn.Size = new System.Drawing.Size(205, 36);
+            this.highlightBtn.TabIndex = 56;
+            this.highlightBtn.Text = "Highlight Expire Bill";
+            this.highlightBtn.UseVisualStyleBackColor = false;
+            this.highlightBtn.Click += new System.EventHandler(this.highlightBtn_Click);
+            // 
             // FrmRoomList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.highlightBtn);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label8);
@@ -178,5 +193,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboRoomId;
         public System.Windows.Forms.Button PrintBtn;
+        private System.Windows.Forms.Button highlightBtn;
     }
 }

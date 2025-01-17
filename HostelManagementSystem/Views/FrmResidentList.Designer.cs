@@ -42,6 +42,7 @@
             this.SearchBtn = new System.Windows.Forms.Button();
             this.BtnResidentLeave = new System.Windows.Forms.Button();
             this.PrintBtn = new System.Windows.Forms.Button();
+            this.highlightBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgOccupyResidentList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -147,7 +148,7 @@
             this.ClearBtn.BackColor = System.Drawing.Color.Silver;
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearBtn.Location = new System.Drawing.Point(210, 100);
+            this.ClearBtn.Location = new System.Drawing.Point(209, 100);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(130, 36);
             this.ClearBtn.TabIndex = 35;
@@ -206,11 +207,25 @@
             this.PrintBtn.UseVisualStyleBackColor = false;
             this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
+            // highlightBtn
+            // 
+            this.highlightBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.highlightBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highlightBtn.ForeColor = System.Drawing.Color.White;
+            this.highlightBtn.Location = new System.Drawing.Point(643, 371);
+            this.highlightBtn.Name = "highlightBtn";
+            this.highlightBtn.Size = new System.Drawing.Size(205, 36);
+            this.highlightBtn.TabIndex = 54;
+            this.highlightBtn.Text = "Highlight Expire Bill";
+            this.highlightBtn.UseVisualStyleBackColor = false;
+            this.highlightBtn.Click += new System.EventHandler(this.highlightBtn_Click);
+            // 
             // FrmResidentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.highlightBtn);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.BtnResidentLeave);
             this.Controls.Add(this.label8);
@@ -245,5 +260,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker StartDate;
         private System.Windows.Forms.Button PrintBtn;
+        private System.Windows.Forms.Button highlightBtn;
     }
 }
