@@ -80,7 +80,7 @@
             this.SearchBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(265, 59);
+            this.SearchBtn.Location = new System.Drawing.Point(265, 61);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(130, 36);
             this.SearchBtn.TabIndex = 24;
@@ -103,7 +103,7 @@
             this.ClearBtn.BackColor = System.Drawing.Color.Silver;
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearBtn.Location = new System.Drawing.Point(443, 59);
+            this.ClearBtn.Location = new System.Drawing.Point(443, 61);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(130, 36);
             this.ClearBtn.TabIndex = 35;
@@ -119,7 +119,7 @@
             this.groupBox1.Controls.Add(this.SearchBtn);
             this.groupBox1.Location = new System.Drawing.Point(354, 157);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(643, 135);
+            this.groupBox1.Size = new System.Drawing.Size(626, 135);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             // 

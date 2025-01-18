@@ -60,7 +60,8 @@ namespace HostelManagementSystem.Views
 
         string QueryOrigin = @"SELECT TblRooms.RoomId As RoomNo, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition, 
                                TblRooms.RoomImage, TblRoomPrices.RoomPrice, 
-                               TblRoomCapacity.Capacity, TblResidents.Name As Name, TblResidents.UIN AS ResidentUIN
+                               TblRoomCapacity.Capacity, TblResidents.Name As Name, TblResidents.UIN AS ResidentUIN,
+                               TblResidents.EndDate
                                FROM TblRooms
                                INNER JOIN TblRoomTypes
                                ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId
@@ -75,13 +76,45 @@ namespace HostelManagementSystem.Views
                                LEFT JOIN TblResidents
                                ON TblRoomCapacityCheck.ResidentId = TblResidents.ResidentId";
 
+
+        private void formatRows()
+        {
+            try
+            {
+                DateTime expireDate = DateTime.Now.Date;
+                foreach (DataGridViewRow row in dgRoomList.Rows)
+                {
+                    if (row.Cells["EndDate"].Value != null)
+                    {
+                        DateTime enddate;
+                        if (DateTime.TryParse(row.Cells["EndDate"].Value.ToString(), out enddate))
+                        {
+                            if (enddate.Date == expireDate || enddate.Date < expireDate)
+                            {
+                                row.DefaultCellStyle.BackColor = Color.OrangeRed;
+                            }
+                            else
+                            {
+                                row.DefaultCellStyle.BackColor = Color.White;
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
         private void FillDgRoomListData()
         {
             foreach (DataGridViewColumn col in dgRoomList.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                frmResidentList.formatRows();
+                formatRows();
             }
             dgRoomList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
             dgRoomList.AllowUserToAddRows = false;
@@ -90,7 +123,6 @@ namespace HostelManagementSystem.Views
             DataGridViewImageColumn imgCol1 = new DataGridViewImageColumn();
             imgCol1 = (DataGridViewImageColumn)dgRoomList.Columns[3];
             imgCol1.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            
         }
 
         private void FillDgRoomList()
@@ -155,11 +187,12 @@ namespace HostelManagementSystem.Views
             dt.Columns.Add("Capacity",  typeof(int));
             dt.Columns.Add("Resident Name",  typeof(string));
             dt.Columns.Add("ResidentUIN", typeof(string));
+            dt.Columns.Add("End Date", typeof(DateTime));
 
-            foreach(DataGridViewRow dgv in dgRoomList.Rows)
+            foreach (DataGridViewRow dgv in dgRoomList.Rows)
             {
                 dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[4].Value,
-                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value);
+                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value, dgv.Cells[8].Value);
             }
 
             ds.Tables.Add(dt);
@@ -175,7 +208,7 @@ namespace HostelManagementSystem.Views
 
         private void highlightBtn_Click(object sender, EventArgs e)
         {
-            
+            FillDgRoomList();
         }
     }
 }
