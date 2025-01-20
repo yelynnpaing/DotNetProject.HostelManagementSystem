@@ -178,11 +178,11 @@
     <Compile Include="Views\FrmBanResidentHistory.Designer.cs">
       <DependentUpon>FrmBanResidentHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmBanResidentList.cs">
+    <Compile Include="Views\FrmBanResident.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmBanResidentList.Designer.cs">
-      <DependentUpon>FrmBanResidentList.cs</DependentUpon>
+    <Compile Include="Views\FrmBanResident.Designer.cs">
+      <DependentUpon>FrmBanResident.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmBilling.cs">
       <SubType>Form</SubType>
@@ -288,8 +288,8 @@
     <EmbeddedResource Include="Views\FrmBanResidentHistory.resx">
       <DependentUpon>FrmBanResidentHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmBanResidentList.resx">
-      <DependentUpon>FrmBanResidentList.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmBanResident.resx">
+      <DependentUpon>FrmBanResident.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmBilling.resx">
       <DependentUpon>FrmBilling.cs</DependentUpon>

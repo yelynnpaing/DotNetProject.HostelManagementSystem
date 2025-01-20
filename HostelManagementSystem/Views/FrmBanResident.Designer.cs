@@ -1,6 +1,6 @@
 ﻿namespace HostelManagementSystem.Views
 {
-    partial class FrmBanResidentList
+    partial class FrmBanResident
     {
         /// <summary>
         /// Required designer variable.
@@ -39,10 +39,6 @@
             this.BanBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.BanDate = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.endDate = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.startDate = new System.Windows.Forms.DateTimePicker();
             this.txtResidentName = new System.Windows.Forms.TextBox();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.txtRoomId = new System.Windows.Forms.TextBox();
@@ -72,10 +68,6 @@
             this.groupBox1.Controls.Add(this.BanBtn);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.BanDate);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.endDate);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.startDate);
             this.groupBox1.Controls.Add(this.txtResidentName);
             this.groupBox1.Controls.Add(this.ClearBtn);
             this.groupBox1.Controls.Add(this.txtRoomId);
@@ -198,45 +190,6 @@
             this.BanDate.Size = new System.Drawing.Size(188, 27);
             this.BanDate.TabIndex = 47;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1104, 86);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 20);
-            this.label12.TabIndex = 46;
-            this.label12.Text = "End Date";
-            // 
-            // endDate
-            // 
-            this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.endDate.Location = new System.Drawing.Point(1108, 109);
-            this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(188, 27);
-            this.endDate.TabIndex = 45;
-            this.endDate.Value = new System.DateTime(2025, 1, 6, 0, 0, 0, 0);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(866, 88);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 20);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Start Date";
-            // 
-            // startDate
-            // 
-            this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDate.Location = new System.Drawing.Point(870, 111);
-            this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(188, 27);
-            this.startDate.TabIndex = 39;
-            // 
             // txtResidentName
             // 
             this.txtResidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,11 +282,11 @@
             this.SearchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(1485, 113);
+            this.SearchBtn.Location = new System.Drawing.Point(1461, 113);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(204, 36);
+            this.SearchBtn.Size = new System.Drawing.Size(228, 36);
             this.SearchBtn.TabIndex = 24;
-            this.SearchBtn.Text = "Search Ban Residents";
+            this.SearchBtn.Text = "View Ban History";
             this.SearchBtn.UseVisualStyleBackColor = false;
             this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
@@ -372,7 +325,7 @@
             this.label8.TabIndex = 43;
             this.label8.Text = "Ban Resident\r\n";
             // 
-            // FrmBanResidentList
+            // FrmBanResident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -383,7 +336,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.SearchBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmBanResidentList";
+            this.Name = "FrmBanResident";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBanResidentList_Load);
             this.groupBox1.ResumeLayout(false);
@@ -396,10 +349,6 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker endDate;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker startDate;
         private System.Windows.Forms.TextBox txtResidentName;
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Label label10;

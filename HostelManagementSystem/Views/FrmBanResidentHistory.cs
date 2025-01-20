@@ -73,8 +73,7 @@ namespace HostelManagementSystem.Views
 
         string OriginQuery = @"SELECT TblResidents.Image, TblResidents.UIN, TblResidents.ResidentId, TblResidents.Name,
                                 TblBanResidentHistory.RoomId As RoomNo, TblResidents.Phone, TblBanResidentHistory.BanDate, 
-                                TblRulesAndRegulations.Title As BanReason, TblBanResidentHistory.StartDate, 
-                                TblBanResidentHistory.EndDate,TblBanResidentHistory.Ban
+                                TblRulesAndRegulations.Title As BanReason, TblBanResidentHistory.Ban
                                 FROM TblBanResidentHistory
                                 INNER JOIN TblResidents
                                 ON TblResidents.ResidentId = TblBanResidentHistory.ResidentId
@@ -84,9 +83,8 @@ namespace HostelManagementSystem.Views
         
         private void FillDgBanResidentListData()
         {
-            dgBanResidentList.Columns[7].Width = 150;
-            dgBanResidentList.Columns[10].Width = 60;
-
+            //dgBanResidentList.Columns[7].Width = 150;
+            //dgBanResidentList.Columns[10].Width = 60;
             dgBanResidentList.RowTemplate.Height = 70;
             dgBanResidentList.AllowUserToAddRows = false;
             dgBanResidentList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
@@ -130,12 +128,12 @@ namespace HostelManagementSystem.Views
                 string searchQuery;
                 if (cboResidentUIN.Text == "")
                 {
-                    searchQuery = @"" + OriginQuery + " WHERE TblResidents.StartDate BETWEEN '" + StartDate.Text + "'  AND '" + EndDate.Text + "'";
+                    searchQuery = @"" + OriginQuery + " WHERE TblBanResidentHistory.BanDate BETWEEN '" + StartDate.Text + "'  AND '" + EndDate.Text + "'";
                 }
                 else
                 {
                     searchQuery = @"" + OriginQuery + " WHERE TblResidents.UIN = '" + cboResidentUIN.Text + "'" +
-                                    "AND TblResidents.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
+                                    "AND TblBanResidentHistory.BanDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
                 }
                 SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
                 DataSet ds = new DataSet();
@@ -166,15 +164,12 @@ namespace HostelManagementSystem.Views
             dt.Columns.Add("Phone No", typeof(string));
             dt.Columns.Add("Ban Date", typeof(DateTime));
             dt.Columns.Add("Ban Reason", typeof(string));
-            dt.Columns.Add("Start Date", typeof(DateTime));
-            dt.Columns.Add("End Date", typeof(DateTime));
             dt.Columns.Add("Ban", typeof(Boolean));
 
             foreach(DataGridViewRow dgv in dgBanResidentList.Rows)
             {
                 dt.Rows.Add(dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value, dgv.Cells[4].Value,
-                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value, dgv.Cells[8].Value,
-                    dgv.Cells[9].Value, dgv.Cells[10].Value);
+                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value, dgv.Cells[8].Value);
             } 
 
             ds.Tables.Add(dt);

@@ -97,6 +97,7 @@ namespace HostelManagementSystem.Views
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "roomPrice");
                 txtRoomPrice.Text = ds.Tables["roomPrice"].Rows[0][0].ToString();
+                txtRoomPrice.Enabled = false;
             }
             catch
             {

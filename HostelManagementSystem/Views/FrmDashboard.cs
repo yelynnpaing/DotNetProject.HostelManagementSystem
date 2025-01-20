@@ -120,12 +120,12 @@ namespace HostelManagementSystem.Views
 
         private void BanResidentPic_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmBanResidentList());
+            FormLoad(new FrmBanResident());
         }
 
         private void BanResidantLabel_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmBanResidentList());
+            FormLoad(new FrmBanResident());
         }
 
         private void RRPic_Click(object sender, EventArgs e)
