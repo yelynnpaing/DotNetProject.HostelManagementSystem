@@ -33,6 +33,15 @@ namespace HostelManagementSystem.Views
             txtTotalBill.Text = "";
             cboPaymentType.Text="";
             txtInvoiceId.Focus();
+
+            txtInvoiceId.Enabled = true;
+            cboResidentName.Enabled = true;
+            txtRoomId.Enabled = true;
+            txtRoomPrice.Enabled = true;
+            txtResidentPhone.Enabled = true;
+            startDate.Enabled = true;
+            endDate.Enabled = true;
+            txtTotalBill.Enabled = true;
         }
 
         private void Connection()
@@ -64,23 +73,11 @@ namespace HostelManagementSystem.Views
             }
         }
 
-        //private void FillCboRoomId()
-        //{
-        //    string query = @"SELECT TblRooms.RoomId, TblRoomPrices.RoomPrice FROM TblRooms 
-        //                    INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
-        //    SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
-        //    DataSet ds = new DataSet();
-        //    DataTable dt = new DataTable();
-        //    adapter.Fill(ds, "roomId");
-        //    dt = ds.Tables["roomId"];
-        //    cboResidentName.DataSource = dt;
-        //    cboResidentName.DisplayMember = dt.Columns["RoomId"].ToString();
-        //    cboResidentName.ValueMember = dt.Columns["RoomId"].ToString();
-        //}
-
         private void FillCboResidents()
         {
-            string query = @"SELECT ResidentId, Name FROM TblResidents";
+            string query = @"SELECT TblResidents.ResidentId, TblResidents.Name FROM TblResidents
+                            INNER JOIN TblRoomCapacityCheck
+                            ON TblResidents.ResidentId = TblRoomCapacityCheck.ResidentId";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
@@ -107,7 +104,6 @@ namespace HostelManagementSystem.Views
         private void FrmBilling_Load(object sender, EventArgs e)
         {
             Connection();
-            //FillCboRoomId();
             FillCboResidents();
             BillingDate.MinDate = DateTime.Now;
             FillCboPaymentType();
@@ -115,11 +111,12 @@ namespace HostelManagementSystem.Views
             FilldgInvoiceList();
         }
 
-        private void cboRoomId_Leave(object sender, EventArgs e)
+        private void cboResidentName_Leave(object sender, EventArgs e)
         {
             try
             {
-                string query = @"SELECT TblResidents.Name, TblRooms.RoomId, TblRoomPrices.RoomPrice, TblResidents.Phone FROM TblRooms
+                string query = @"SELECT TblResidents.Name, TblRooms.RoomId, TblRoomPrices.RoomPrice, TblResidents.Phone,
+                                TblResidents.StartDate, TblResidents.EndDate FROM TblRooms
                                 INNER JOIN TblRoomPrices
                                 ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId
                                 INNER JOIN TblResidents
@@ -133,15 +130,22 @@ namespace HostelManagementSystem.Views
                 txtRoomId.Text = ds.Tables["invoiceDatas"].Rows[0][1].ToString();
                 txtRoomPrice.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
                 txtResidentPhone.Text = ds.Tables["invoiceDatas"].Rows[0][3].ToString();
+                startDate.Text = ds.Tables["invoiceDatas"].Rows[0][4].ToString();
+                endDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
                 txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
+                txtInvoiceId.Enabled = false;
+                cboResidentName.Enabled = false;
+                txtRoomId.Enabled = false;
+                txtRoomPrice.Enabled = false;
+                txtResidentPhone.Enabled = false;
+                startDate.Enabled = false;                
+                txtTotalBill.Enabled = false;
             }
             catch
             {
                 MessageBox.Show("There is no residents in this room!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error );
             }
         }
-
-        
 
         private void NewBtn_Click(object sender, EventArgs e)
         {

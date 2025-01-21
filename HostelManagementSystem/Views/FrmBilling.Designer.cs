@@ -195,7 +195,7 @@
             this.cboResidentName.Name = "cboResidentName";
             this.cboResidentName.Size = new System.Drawing.Size(188, 28);
             this.cboResidentName.TabIndex = 47;
-            this.cboResidentName.Leave += new System.EventHandler(this.cboRoomId_Leave);
+            this.cboResidentName.Leave += new System.EventHandler(this.cboResidentName_Leave);
             // 
             // txtInvoiceId
             // 

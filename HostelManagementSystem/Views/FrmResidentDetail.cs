@@ -110,8 +110,7 @@ namespace HostelManagementSystem.Views
             Clear();
             Connection();
             FillCboRoomId();
-            //startDate.MinDate = DateTime.Now;
-            endDate.MinDate = DateTime.Now.AddDays(1);
+            //endDate.MinDate = DateTime.Now.AddDays(1);
             FillDgResidents();
         }
 
@@ -202,7 +201,7 @@ namespace HostelManagementSystem.Views
                                 INNER JOIN TblRooms ON TblResidents.RoomId = TblRooms.RoomId 
                                 INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId
                                 LEFT JOIN TblBanResidentHistory ON TblResidents.ResidentId = TblBanResidentHistory.ResidentId
-                                WHERE TblBanResidentHistory.ResidentId IS NULL";
+                                WHERE TblBanResidentHistory.ResidentId IS NULL AND TblResidents.Leave != 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
@@ -241,27 +240,6 @@ namespace HostelManagementSystem.Views
                 bool isChecked = Convert.ToBoolean(cell.Value);
                 cell.ReadOnly = true;
                 dgResidentList.CancelEdit();
-
-                // for checkbox individual
-                //if (isChecked == false)
-                //{
-                //    DialogResult result = MessageBox.Show("Are you sure ? you want to make this resident to leave from this room!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                //    if (result == DialogResult.OK)
-                //    {
-                //        cell.Value = true;
-                //        CheckboxOccupy.Checked = false;
-                //    }
-                //    else
-                //    {
-                //        cell.ReadOnly = true;
-                //        dgResidentList.CancelEdit();
-                //    }
-                //}
-                //else
-                //{
-                //    cell.ReadOnly = true;
-                //    dgResidentList.CancelEdit();
-                //}
             }
         }
 
@@ -281,9 +259,6 @@ namespace HostelManagementSystem.Views
                 ResidentPictureBox.Image = Image.FromStream(ms);
                 txtResidentAddress.Text = dgResidentList.CurrentRow.Cells[6].Value.ToString();
                 txtResidentPhone.Text = dgResidentList.CurrentRow.Cells[7].Value.ToString();
-                //string DTstartDate = dgResidentList.CurrentRow.Cells[8].Value.ToString();
-                //DateTime dt = DateTime.Parse(DTstartDate);
-                //string onlyDateSD = dt.ToString("MM/dd/yyyy");
                 startDate.Text = dgResidentList.CurrentRow.Cells[8].Value.ToString();
                 startDate.Enabled = false;
                 CheckboxOccupy.Checked = Convert.ToBoolean(dgResidentList.CurrentRow.Cells[9].Value);
@@ -293,6 +268,7 @@ namespace HostelManagementSystem.Views
                     CheckBoxLeave.Enabled = false;
                     CheckboxOccupy.Enabled = true;
                 }
+                
                 endDate.Text = dgResidentList.CurrentRow.Cells[11].Value.ToString();
             }
             catch
@@ -508,11 +484,6 @@ namespace HostelManagementSystem.Views
         {
             FrmBanResidentHistory frmBanResidentHistory = new FrmBanResidentHistory();
             frmBanResidentHistory.ShowDialog();
-        }
-
-        private void txtUIN_TextChanged(object sender, EventArgs e)
-        {
-           //
         }
     }
 }
