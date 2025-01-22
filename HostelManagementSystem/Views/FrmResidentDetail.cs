@@ -268,8 +268,8 @@ namespace HostelManagementSystem.Views
                     CheckBoxLeave.Enabled = false;
                     CheckboxOccupy.Enabled = true;
                 }
-                
                 endDate.Text = dgResidentList.CurrentRow.Cells[11].Value.ToString();
+                endDate.Enabled = false;
             }
             catch
             {

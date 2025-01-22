@@ -26,7 +26,8 @@ namespace HostelManagementSystem.Views
         private void Clear()
         {
             txtInvoiceId.Text = "";
-            cboResidentName.Text = "";
+            cboResidentUIN.Text = "";
+            txtResidentName.Text = "";
             txtRoomPrice.Text = "";
             txtRoomId.Text = "";
             txtResidentPhone.Text = "";
@@ -35,7 +36,8 @@ namespace HostelManagementSystem.Views
             txtInvoiceId.Focus();
 
             txtInvoiceId.Enabled = true;
-            cboResidentName.Enabled = true;
+            cboResidentUIN.Enabled = true;
+            txtResidentName.Enabled = true;
             txtRoomId.Enabled = true;
             txtRoomPrice.Enabled = true;
             txtResidentPhone.Enabled = true;
@@ -75,7 +77,7 @@ namespace HostelManagementSystem.Views
 
         private void FillCboResidents()
         {
-            string query = @"SELECT TblResidents.ResidentId, TblResidents.Name FROM TblResidents
+            string query = @"SELECT TblResidents.ResidentId, TblResidents.UIN AS ResidentUIN, TblResidents.Name FROM TblResidents
                             INNER JOIN TblRoomCapacityCheck
                             ON TblResidents.ResidentId = TblRoomCapacityCheck.ResidentId";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
@@ -83,9 +85,9 @@ namespace HostelManagementSystem.Views
             DataTable dt = new DataTable();
             adapter.Fill(ds, "residents");
             dt = ds.Tables["residents"];
-            cboResidentName.DataSource = dt;
-            cboResidentName.DisplayMember = dt.Columns["Name"].ToString();
-            cboResidentName.ValueMember = dt.Columns["ResidentId"].ToString();
+            cboResidentUIN.DataSource = dt;
+            cboResidentUIN.DisplayMember = dt.Columns["ResidentUIN"].ToString();
+            cboResidentUIN.ValueMember = dt.Columns["ResidentId"].ToString();
         }
 
         private void FillCboPaymentType()
@@ -111,7 +113,7 @@ namespace HostelManagementSystem.Views
             FilldgInvoiceList();
         }
 
-        private void cboResidentName_Leave(object sender, EventArgs e)
+        private void cboResidentUIN_Leave(object sender, EventArgs e)
         {
             try
             {
@@ -121,20 +123,35 @@ namespace HostelManagementSystem.Views
                                 ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId
                                 INNER JOIN TblResidents
                                 ON TblRooms.RoomId = TblResidents.RoomId
-                                WHERE TblRooms.RoomId = TblResidents.RoomId AND TblResidents.ResidentId = '" + cboResidentName.SelectedValue+"'";
+                                WHERE TblRooms.RoomId = TblResidents.RoomId AND TblResidents.ResidentId = '" + cboResidentUIN.SelectedValue+"'";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
                 adapter.Fill(ds, "invoiceDatas");
                 dt = ds.Tables["invoiceDatas"];
+                txtResidentName.Text = ds.Tables["invoiceDatas"].Rows[0][0].ToString();
                 txtRoomId.Text = ds.Tables["invoiceDatas"].Rows[0][1].ToString();
                 txtRoomPrice.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
                 txtResidentPhone.Text = ds.Tables["invoiceDatas"].Rows[0][3].ToString();
-                startDate.Text = ds.Tables["invoiceDatas"].Rows[0][4].ToString();
-                endDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
+                //Insert EndDate value to New Start Date Value
+                foreach(DataGridViewRow dr in dgInvoiceList.Rows)
+                {
+                    if (dr.Cells["ResidentUIN"].Value.ToString() == cboResidentUIN.Text)
+                    {
+                        startDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
+                        endDate.Text = DateTime.Now.ToString();
+                    }
+                    else
+                    {
+                        startDate.Text = ds.Tables["invoiceDatas"].Rows[0][4].ToString();
+                        endDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
+                    }
+                }
+                
                 txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
                 txtInvoiceId.Enabled = false;
-                cboResidentName.Enabled = false;
+                cboResidentUIN.Enabled = false;
+                txtResidentName.Enabled = false;
                 txtRoomId.Enabled = false;
                 txtRoomPrice.Enabled = false;
                 txtResidentPhone.Enabled = false;
@@ -153,6 +170,23 @@ namespace HostelManagementSystem.Views
             AutoId();
         }
 
+        private void UpdateResidentEndDate()
+        {
+            try
+            {
+                string query = @"UPDATE TblResidents SET StartDate = @StartDate, EndDate = @EndDate WHERE ResidentId = @ResidentId";
+                SqlCommand cmd = new SqlCommand(query, consql);
+                cmd.Parameters.AddWithValue("@StartDate", startDate.Text);
+                cmd.Parameters.AddWithValue("@EndDate", endDate.Text);
+                cmd.Parameters.AddWithValue("@ResidentId", cboResidentUIN.SelectedValue);
+                ExecuteMyQuery(cmd, "This Resident EndDate is Updated.");
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrongs! Please try again...", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             try
@@ -160,7 +194,7 @@ namespace HostelManagementSystem.Views
                 string query = "INSERT INTO TblInvoices VALUES (@InvoiceId, @ResidentId, @RoomId, @BillingDate, @StartDate, @EndDate, @TotalBill, @PaymentTypeId)";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@InvoiceId", SqlDbType.VarChar).Value = txtInvoiceId.Text;
-                cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = cboResidentName.SelectedValue;
+                cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = cboResidentUIN.SelectedValue;
                 cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
                 cmd.Parameters.Add("@BillingDate", SqlDbType.Date).Value = BillingDate.Text;
                 cmd.Parameters.Add("@StartDate", SqlDbType.Date).Value = startDate.Text;
@@ -169,6 +203,7 @@ namespace HostelManagementSystem.Views
                 cmd.Parameters.Add("@PaymentTypeId", SqlDbType.Int).Value = cboPaymentType.SelectedValue;
 
                 ExecuteMyQuery(cmd, "Invoice datas save successfully!");
+                UpdateResidentEndDate();
                 Clear();
                 FilldgInvoiceList();
             }
@@ -199,9 +234,9 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = @"SELECT TblInvoices.InvID, TblResidents.Name, TblRooms.RoomId As RoomNo, TblRoomPrices.RoomPrice,
+                string query = @"SELECT TblInvoices.InvID, TblResidents.UIN AS ResidentUIN, TblResidents.Name, TblRooms.RoomId As RoomNo, TblRoomPrices.RoomPrice,
                                 TblInvoices.BillingDate, TblResidents.Phone, TblInvoices.StartDate, TblInvoices.EndDate, 
-                                TblInvoices.TotalBill, TblPaymentTypes.PaymentName FROM TblInvoices
+                                TblInvoices.TotalBill, TblPaymentTypes.PaymentName AS Payment FROM TblInvoices
                                 INNER JOIN TblResidents
                                 ON TblInvoices.ResidentId = TblResidents.ResidentId
                                 INNER JOIN TblRooms 
