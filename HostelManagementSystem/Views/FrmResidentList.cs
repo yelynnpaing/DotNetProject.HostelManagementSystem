@@ -66,7 +66,7 @@ namespace HostelManagementSystem.Views
 
         private void BtnResidentLeave_Click(object sender, EventArgs e)
         {
-            FrmResidentLeave RLForm = new FrmResidentLeave();
+            FrmResidentLeaveList RLForm = new FrmResidentLeaveList();
             RLForm.ShowDialog();
         }
 

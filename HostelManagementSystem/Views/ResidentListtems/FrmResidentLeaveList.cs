@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace HostelManagementSystem.Views.ResidentListtems
 {
-    public partial class FrmResidentLeave : Form
+    public partial class FrmResidentLeaveList : Form
     {
-        public FrmResidentLeave()
+        public FrmResidentLeaveList()
         {
             InitializeComponent();
         }

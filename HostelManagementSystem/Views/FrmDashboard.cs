@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HostelManagementSystem.Views.ResidentListtems;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -128,6 +129,26 @@ namespace HostelManagementSystem.Views
             FormLoad(new FrmBanResident());
         }
 
+        private void leaveResidentListPic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmResidentLeaveList());
+        }
+
+        private void leaveResidentListLabel_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmResidentLeaveList());
+        }
+
+        private void banResidentListPic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmBanResidentHistory());
+        }
+
+        private void banResidentLabel_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmBanResidentHistory());
+        }
+
         private void RRPic_Click(object sender, EventArgs e)
         {
             FormLoad(new FrmRulesAndRegulations());
@@ -153,6 +174,5 @@ namespace HostelManagementSystem.Views
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
         }
-
     }
 }

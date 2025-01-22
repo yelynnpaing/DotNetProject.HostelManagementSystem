@@ -49,11 +49,11 @@
             // 
             this.dgBanResidentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgBanResidentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBanResidentList.Location = new System.Drawing.Point(23, 275);
+            this.dgBanResidentList.Location = new System.Drawing.Point(365, 371);
             this.dgBanResidentList.Name = "dgBanResidentList";
             this.dgBanResidentList.RowHeadersWidth = 51;
             this.dgBanResidentList.RowTemplate.Height = 24;
-            this.dgBanResidentList.Size = new System.Drawing.Size(1446, 504);
+            this.dgBanResidentList.Size = new System.Drawing.Size(1446, 604);
             this.dgBanResidentList.TabIndex = 45;
             this.dgBanResidentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBanResidentList_CellContentClick);
             // 
@@ -62,7 +62,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(18, 241);
+            this.label9.Location = new System.Drawing.Point(360, 337);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(226, 29);
             this.label9.TabIndex = 44;
@@ -73,7 +73,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(18, 30);
+            this.label8.Location = new System.Drawing.Point(360, 126);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 29);
             this.label8.TabIndex = 46;
@@ -89,7 +89,7 @@
             this.groupBox1.Controls.Add(this.ClearBtn);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.SearchBtn);
-            this.groupBox1.Location = new System.Drawing.Point(23, 62);
+            this.groupBox1.Location = new System.Drawing.Point(365, 158);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(753, 159);
             this.groupBox1.TabIndex = 47;
@@ -183,7 +183,7 @@
             this.PrintBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.PrintBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintBtn.ForeColor = System.Drawing.Color.Black;
-            this.PrintBtn.Location = new System.Drawing.Point(1280, 234);
+            this.PrintBtn.Location = new System.Drawing.Point(1622, 330);
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(189, 36);
             this.PrintBtn.TabIndex = 58;
@@ -195,15 +195,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1536, 1003);
+            this.ClientSize = new System.Drawing.Size(1932, 1003);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgBanResidentList);
             this.Controls.Add(this.label9);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBanResidentHistory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBanResidentHistory";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBanResidentHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgBanResidentList)).EndInit();
             this.groupBox1.ResumeLayout(false);

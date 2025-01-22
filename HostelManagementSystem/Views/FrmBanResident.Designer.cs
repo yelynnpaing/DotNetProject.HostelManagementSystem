@@ -48,7 +48,6 @@
             this.txtResidentId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.SearchBtn = new System.Windows.Forms.Button();
             this.dgBanResidentList = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -277,19 +276,6 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Name";
             // 
-            // SearchBtn
-            // 
-            this.SearchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(1461, 113);
-            this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(228, 36);
-            this.SearchBtn.TabIndex = 24;
-            this.SearchBtn.Text = "View Ban History";
-            this.SearchBtn.UseVisualStyleBackColor = false;
-            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
-            // 
             // dgBanResidentList
             // 
             this.dgBanResidentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -334,7 +320,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgBanResidentList);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.SearchBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBanResident";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -355,7 +340,6 @@
         private System.Windows.Forms.ComboBox cboResidentUIN;
         private System.Windows.Forms.TextBox txtRoomId;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.TextBox txtResidentId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;

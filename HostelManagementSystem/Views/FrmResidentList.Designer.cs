@@ -40,7 +40,6 @@
             this.ClearBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.SearchBtn = new System.Windows.Forms.Button();
-            this.BtnResidentLeave = new System.Windows.Forms.Button();
             this.PrintBtn = new System.Windows.Forms.Button();
             this.highlightBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgOccupyResidentList)).BeginInit();
@@ -179,21 +178,6 @@
             this.SearchBtn.UseVisualStyleBackColor = false;
             this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
-            // BtnResidentLeave
-            // 
-            this.BtnResidentLeave.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnResidentLeave.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.BtnResidentLeave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            this.BtnResidentLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnResidentLeave.ForeColor = System.Drawing.Color.Blue;
-            this.BtnResidentLeave.Location = new System.Drawing.Point(1532, 148);
-            this.BtnResidentLeave.Name = "BtnResidentLeave";
-            this.BtnResidentLeave.Size = new System.Drawing.Size(198, 36);
-            this.BtnResidentLeave.TabIndex = 47;
-            this.BtnResidentLeave.Text = "Leaved Residents";
-            this.BtnResidentLeave.UseVisualStyleBackColor = false;
-            this.BtnResidentLeave.Click += new System.EventHandler(this.BtnResidentLeave_Click);
-            // 
             // PrintBtn
             // 
             this.PrintBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -227,7 +211,6 @@
             this.ClientSize = new System.Drawing.Size(1932, 1003);
             this.Controls.Add(this.highlightBtn);
             this.Controls.Add(this.PrintBtn);
-            this.Controls.Add(this.BtnResidentLeave);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgOccupyResidentList);
@@ -253,7 +236,6 @@
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button SearchBtn;
-        private System.Windows.Forms.Button BtnResidentLeave;
         private System.Windows.Forms.ComboBox cboResidentUIN;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker EndDate;

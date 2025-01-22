@@ -60,8 +60,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgResidentList = new System.Windows.Forms.DataGridView();
-            this.BtnResidentLeave = new System.Windows.Forms.Button();
-            this.BtnBanResident = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResidentPictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -379,7 +377,6 @@
             this.txtUIN.Name = "txtUIN";
             this.txtUIN.Size = new System.Drawing.Size(188, 27);
             this.txtUIN.TabIndex = 48;
-            //this.txtUIN.TextChanged += new System.EventHandler(this.txtUIN_TextChanged);
             this.txtUIN.Leave += new System.EventHandler(this.txtUIN_Leave);
             // 
             // label13
@@ -427,43 +424,11 @@
             this.dgResidentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellClick);
             this.dgResidentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellContentClick);
             // 
-            // BtnResidentLeave
-            // 
-            this.BtnResidentLeave.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnResidentLeave.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.BtnResidentLeave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            this.BtnResidentLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnResidentLeave.ForeColor = System.Drawing.Color.Blue;
-            this.BtnResidentLeave.Location = new System.Drawing.Point(1722, 117);
-            this.BtnResidentLeave.Name = "BtnResidentLeave";
-            this.BtnResidentLeave.Size = new System.Drawing.Size(198, 36);
-            this.BtnResidentLeave.TabIndex = 48;
-            this.BtnResidentLeave.Text = "Leaved Residents";
-            this.BtnResidentLeave.UseVisualStyleBackColor = false;
-            this.BtnResidentLeave.Click += new System.EventHandler(this.BtnResidentLeave_Click);
-            // 
-            // BtnBanResident
-            // 
-            this.BtnBanResident.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnBanResident.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.BtnBanResident.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            this.BtnBanResident.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBanResident.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.BtnBanResident.Location = new System.Drawing.Point(1722, 180);
-            this.BtnBanResident.Name = "BtnBanResident";
-            this.BtnBanResident.Size = new System.Drawing.Size(198, 36);
-            this.BtnBanResident.TabIndex = 49;
-            this.BtnBanResident.Text = "Banned Residents";
-            this.BtnBanResident.UseVisualStyleBackColor = false;
-            this.BtnBanResident.Click += new System.EventHandler(this.BtnBanResident_Click);
-            // 
             // FrmResidentDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
-            this.Controls.Add(this.BtnBanResident);
-            this.Controls.Add(this.BtnResidentLeave);
             this.Controls.Add(this.dgResidentList);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -514,9 +479,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgResidentList;
-        private System.Windows.Forms.Button BtnResidentLeave;
         private System.Windows.Forms.TextBox txtUIN;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button BtnBanResident;
     }
 }
