@@ -139,7 +139,8 @@ namespace HostelManagementSystem.Views
                     if (dr.Cells["ResidentUIN"].Value.ToString() == cboResidentUIN.Text)
                     {
                         startDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
-                        endDate.Text = DateTime.Now.ToString();
+                        endDate.Text = startDate.Value.AddDays(7).ToString();
+                        break;
                     }
                     else
                     {

@@ -30,9 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.SidebarPanel = new System.Windows.Forms.Panel();
+            this.BanResidentListPanel = new System.Windows.Forms.Panel();
+            this.banResidentLabel = new System.Windows.Forms.Label();
+            this.banResidentListPic = new System.Windows.Forms.PictureBox();
             this.ReportPanel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.LeaveResidentPanel = new System.Windows.Forms.Panel();
+            this.leaveResidentListLabel = new System.Windows.Forms.Label();
+            this.leaveResidentListPic = new System.Windows.Forms.PictureBox();
             this.RRPanel = new System.Windows.Forms.Panel();
             this.rulesAndRegulationLabel = new System.Windows.Forms.Label();
             this.rulesAndRegulationPic = new System.Windows.Forms.PictureBox();
@@ -77,15 +83,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.BanResidentListPanel = new System.Windows.Forms.Panel();
-            this.banResidentLabel = new System.Windows.Forms.Label();
-            this.banResidentListPic = new System.Windows.Forms.PictureBox();
-            this.LeaveResidentPanel = new System.Windows.Forms.Panel();
-            this.leaveResidentListLabel = new System.Windows.Forms.Label();
-            this.leaveResidentListPic = new System.Windows.Forms.PictureBox();
             this.SidebarPanel.SuspendLayout();
+            this.BanResidentListPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.banResidentListPic)).BeginInit();
             this.ReportPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.LeaveResidentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveResidentListPic)).BeginInit();
             this.RRPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rulesAndRegulationPic)).BeginInit();
             this.ProcessingPanel.SuspendLayout();
@@ -114,10 +118,6 @@
             this.HeaderPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.BanResidentListPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.banResidentListPic)).BeginInit();
-            this.LeaveResidentPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.leaveResidentListPic)).BeginInit();
             this.SuspendLayout();
             // 
             // SidebarPanel
@@ -145,6 +145,38 @@
             this.SidebarPanel.Name = "SidebarPanel";
             this.SidebarPanel.Size = new System.Drawing.Size(340, 972);
             this.SidebarPanel.TabIndex = 0;
+            // 
+            // BanResidentListPanel
+            // 
+            this.BanResidentListPanel.Controls.Add(this.banResidentLabel);
+            this.BanResidentListPanel.Controls.Add(this.banResidentListPic);
+            this.BanResidentListPanel.Location = new System.Drawing.Point(70, 739);
+            this.BanResidentListPanel.Name = "BanResidentListPanel";
+            this.BanResidentListPanel.Size = new System.Drawing.Size(222, 43);
+            this.BanResidentListPanel.TabIndex = 7;
+            // 
+            // banResidentLabel
+            // 
+            this.banResidentLabel.AutoSize = true;
+            this.banResidentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.banResidentLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.banResidentLabel.Location = new System.Drawing.Point(40, 11);
+            this.banResidentLabel.Name = "banResidentLabel";
+            this.banResidentLabel.Size = new System.Drawing.Size(160, 20);
+            this.banResidentLabel.TabIndex = 1;
+            this.banResidentLabel.Text = "Ban Resident List";
+            this.banResidentLabel.Click += new System.EventHandler(this.banResidentLabel_Click);
+            // 
+            // banResidentListPic
+            // 
+            this.banResidentListPic.Image = ((System.Drawing.Image)(resources.GetObject("banResidentListPic.Image")));
+            this.banResidentListPic.Location = new System.Drawing.Point(3, 3);
+            this.banResidentListPic.Name = "banResidentListPic";
+            this.banResidentListPic.Size = new System.Drawing.Size(34, 36);
+            this.banResidentListPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.banResidentListPic.TabIndex = 0;
+            this.banResidentListPic.TabStop = false;
+            this.banResidentListPic.Click += new System.EventHandler(this.banResidentListPic_Click);
             // 
             // ReportPanel
             // 
@@ -175,6 +207,38 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
+            // 
+            // LeaveResidentPanel
+            // 
+            this.LeaveResidentPanel.Controls.Add(this.leaveResidentListLabel);
+            this.LeaveResidentPanel.Controls.Add(this.leaveResidentListPic);
+            this.LeaveResidentPanel.Location = new System.Drawing.Point(70, 694);
+            this.LeaveResidentPanel.Name = "LeaveResidentPanel";
+            this.LeaveResidentPanel.Size = new System.Drawing.Size(238, 43);
+            this.LeaveResidentPanel.TabIndex = 6;
+            // 
+            // leaveResidentListLabel
+            // 
+            this.leaveResidentListLabel.AutoSize = true;
+            this.leaveResidentListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leaveResidentListLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.leaveResidentListLabel.Location = new System.Drawing.Point(40, 11);
+            this.leaveResidentListLabel.Name = "leaveResidentListLabel";
+            this.leaveResidentListLabel.Size = new System.Drawing.Size(177, 20);
+            this.leaveResidentListLabel.TabIndex = 1;
+            this.leaveResidentListLabel.Text = "Leave Resident List";
+            this.leaveResidentListLabel.Click += new System.EventHandler(this.leaveResidentListLabel_Click);
+            // 
+            // leaveResidentListPic
+            // 
+            this.leaveResidentListPic.Image = ((System.Drawing.Image)(resources.GetObject("leaveResidentListPic.Image")));
+            this.leaveResidentListPic.Location = new System.Drawing.Point(3, 3);
+            this.leaveResidentListPic.Name = "leaveResidentListPic";
+            this.leaveResidentListPic.Size = new System.Drawing.Size(34, 36);
+            this.leaveResidentListPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.leaveResidentListPic.TabIndex = 0;
+            this.leaveResidentListPic.TabStop = false;
+            this.leaveResidentListPic.Click += new System.EventHandler(this.leaveResidentListPic_Click);
             // 
             // RRPanel
             // 
@@ -527,7 +591,7 @@
             this.LogoLabel.AutoSize = true;
             this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogoLabel.Location = new System.Drawing.Point(20, 75);
+            this.LogoLabel.Location = new System.Drawing.Point(20, 80);
             this.LogoLabel.Name = "LogoLabel";
             this.LogoLabel.Size = new System.Drawing.Size(291, 25);
             this.LogoLabel.TabIndex = 2;
@@ -536,9 +600,9 @@
             // LogoPic
             // 
             this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
-            this.LogoPic.Location = new System.Drawing.Point(93, 0);
+            this.LogoPic.Location = new System.Drawing.Point(78, 1);
             this.LogoPic.Name = "LogoPic";
-            this.LogoPic.Size = new System.Drawing.Size(138, 71);
+            this.LogoPic.Size = new System.Drawing.Size(169, 76);
             this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoPic.TabIndex = 4;
             this.LogoPic.TabStop = false;
@@ -638,70 +702,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "M A N D A L A R   M Y A Y   H O S T E L !\r\n";
             // 
-            // BanResidentListPanel
-            // 
-            this.BanResidentListPanel.Controls.Add(this.banResidentLabel);
-            this.BanResidentListPanel.Controls.Add(this.banResidentListPic);
-            this.BanResidentListPanel.Location = new System.Drawing.Point(70, 739);
-            this.BanResidentListPanel.Name = "BanResidentListPanel";
-            this.BanResidentListPanel.Size = new System.Drawing.Size(222, 43);
-            this.BanResidentListPanel.TabIndex = 7;
-            // 
-            // banResidentLabel
-            // 
-            this.banResidentLabel.AutoSize = true;
-            this.banResidentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.banResidentLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.banResidentLabel.Location = new System.Drawing.Point(40, 11);
-            this.banResidentLabel.Name = "banResidentLabel";
-            this.banResidentLabel.Size = new System.Drawing.Size(160, 20);
-            this.banResidentLabel.TabIndex = 1;
-            this.banResidentLabel.Text = "Ban Resident List";
-            this.banResidentLabel.Click += new System.EventHandler(this.banResidentLabel_Click);
-            // 
-            // banResidentListPic
-            // 
-            this.banResidentListPic.Image = ((System.Drawing.Image)(resources.GetObject("banResidentListPic.Image")));
-            this.banResidentListPic.Location = new System.Drawing.Point(3, 3);
-            this.banResidentListPic.Name = "banResidentListPic";
-            this.banResidentListPic.Size = new System.Drawing.Size(34, 36);
-            this.banResidentListPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.banResidentListPic.TabIndex = 0;
-            this.banResidentListPic.TabStop = false;
-            this.banResidentListPic.Click += new System.EventHandler(this.banResidentListPic_Click);
-            // 
-            // LeaveResidentPanel
-            // 
-            this.LeaveResidentPanel.Controls.Add(this.leaveResidentListLabel);
-            this.LeaveResidentPanel.Controls.Add(this.leaveResidentListPic);
-            this.LeaveResidentPanel.Location = new System.Drawing.Point(70, 694);
-            this.LeaveResidentPanel.Name = "LeaveResidentPanel";
-            this.LeaveResidentPanel.Size = new System.Drawing.Size(238, 43);
-            this.LeaveResidentPanel.TabIndex = 6;
-            // 
-            // leaveResidentListLabel
-            // 
-            this.leaveResidentListLabel.AutoSize = true;
-            this.leaveResidentListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.leaveResidentListLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.leaveResidentListLabel.Location = new System.Drawing.Point(40, 11);
-            this.leaveResidentListLabel.Name = "leaveResidentListLabel";
-            this.leaveResidentListLabel.Size = new System.Drawing.Size(177, 20);
-            this.leaveResidentListLabel.TabIndex = 1;
-            this.leaveResidentListLabel.Text = "Leave Resident List";
-            this.leaveResidentListLabel.Click += new System.EventHandler(this.leaveResidentListLabel_Click);
-            // 
-            // leaveResidentListPic
-            // 
-            this.leaveResidentListPic.Image = ((System.Drawing.Image)(resources.GetObject("leaveResidentListPic.Image")));
-            this.leaveResidentListPic.Location = new System.Drawing.Point(3, 3);
-            this.leaveResidentListPic.Name = "leaveResidentListPic";
-            this.leaveResidentListPic.Size = new System.Drawing.Size(34, 36);
-            this.leaveResidentListPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.leaveResidentListPic.TabIndex = 0;
-            this.leaveResidentListPic.TabStop = false;
-            this.leaveResidentListPic.Click += new System.EventHandler(this.leaveResidentListPic_Click);
-            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -717,9 +717,15 @@
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.SidebarPanel.ResumeLayout(false);
             this.SidebarPanel.PerformLayout();
+            this.BanResidentListPanel.ResumeLayout(false);
+            this.BanResidentListPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.banResidentListPic)).EndInit();
             this.ReportPanel.ResumeLayout(false);
             this.ReportPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.LeaveResidentPanel.ResumeLayout(false);
+            this.LeaveResidentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveResidentListPic)).EndInit();
             this.RRPanel.ResumeLayout(false);
             this.RRPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rulesAndRegulationPic)).EndInit();
@@ -762,12 +768,6 @@
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.BanResidentListPanel.ResumeLayout(false);
-            this.BanResidentListPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.banResidentListPic)).EndInit();
-            this.LeaveResidentPanel.ResumeLayout(false);
-            this.LeaveResidentPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.leaveResidentListPic)).EndInit();
             this.ResumeLayout(false);
 
         }

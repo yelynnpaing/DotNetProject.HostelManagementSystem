@@ -52,21 +52,37 @@ namespace HostelManagementSystem.Views
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
             Connection();
-            if(FrmLogin.instance.UserRole != "admin")
-            {
-                RoomPanel.Visible = false;
-                BanResidentPanel.Visible = false;
-            }
+            //if(FrmLogin.instance.UserRole != "admin")
+            //{
+            //    RoomPanel.Enabled = false;
+            //    BanResidentPanel.Enabled = false;
+            //}
         }
 
         private void RoomPic_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmRoom());
+            if(FrmLogin.instance.UserRole != "admin")
+            {
+                MessageBox.Show("Warning! you cann't access this features. This is only for admin.So, You can use other features.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FormLoad(new FrmRoom());
+            }
         }
         
         private void RoomLabel_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmRoom());
+            if (FrmLogin.instance.UserRole != "admin")
+            {
+                MessageBox.Show("Warning! you cann't access this features. This is only for admin.So, You can use other features.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FormLoad(new FrmRoom());
+            }
         }
 
         private void RoomListPic_Click(object sender, EventArgs e)
@@ -121,12 +137,28 @@ namespace HostelManagementSystem.Views
 
         private void BanResidentPic_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmBanResident());
+            if (FrmLogin.instance.UserRole != "admin")
+            {
+                MessageBox.Show("Warning! you cann't access this features. This is only for admin.So, You can use other features.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FormLoad(new FrmBanResident());
+            }
         }
 
         private void BanResidantLabel_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmBanResident());
+            if (FrmLogin.instance.UserRole != "admin")
+            {
+                MessageBox.Show("Warning! you cann't access this features. This is only for admin.So, You can use other features.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FormLoad(new FrmBanResident());
+            }
         }
 
         private void leaveResidentListPic_Click(object sender, EventArgs e)
