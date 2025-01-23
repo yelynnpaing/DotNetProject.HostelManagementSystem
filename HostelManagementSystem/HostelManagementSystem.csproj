@@ -110,34 +110,34 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Print\PrintBannedResident.cs">
+    <Compile Include="PrintingForm\PrintBannedResident.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Print\PrintBannedResident.Designer.cs">
+    <Compile Include="PrintingForm\PrintBannedResident.Designer.cs">
       <DependentUpon>PrintBannedResident.cs</DependentUpon>
     </Compile>
-    <Compile Include="Print\PrintBillingHistory.cs">
+    <Compile Include="PrintingForm\PrintBillingHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Print\PrintBillingHistory.Designer.cs">
+    <Compile Include="PrintingForm\PrintBillingHistory.Designer.cs">
       <DependentUpon>PrintBillingHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Print\PrintLeavedResidentList.cs">
+    <Compile Include="PrintingForm\PrintLeavedResidentList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Print\PrintLeavedResidentList.Designer.cs">
+    <Compile Include="PrintingForm\PrintLeavedResidentList.Designer.cs">
       <DependentUpon>PrintLeavedResidentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Print\PrintOccupyResidentList.cs">
+    <Compile Include="PrintingForm\PrintOccupyResidentList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Print\PrintOccupyResidentList.Designer.cs">
+    <Compile Include="PrintingForm\PrintOccupyResidentList.Designer.cs">
       <DependentUpon>PrintOccupyResidentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Print\PrintRoomList.cs">
+    <Compile Include="PrintingForm\PrintRoomList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Print\PrintRoomList.Designer.cs">
+    <Compile Include="PrintingForm\PrintRoomList.Designer.cs">
       <DependentUpon>PrintRoomList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -172,28 +172,28 @@
       <DependentUpon>RoomListCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\FrmBanResidentHistory.cs">
+    <Compile Include="Views\ReportForm\FrmBanResidentHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmBanResidentHistory.Designer.cs">
+    <Compile Include="Views\ReportForm\FrmBanResidentHistory.Designer.cs">
       <DependentUpon>FrmBanResidentHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmBanResident.cs">
+    <Compile Include="Views\ProcessingForm\FrmBanResident.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmBanResident.Designer.cs">
+    <Compile Include="Views\ProcessingForm\FrmBanResident.Designer.cs">
       <DependentUpon>FrmBanResident.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmBilling.cs">
+    <Compile Include="Views\ProcessingForm\FrmBilling.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmBilling.Designer.cs">
+    <Compile Include="Views\ProcessingForm\FrmBilling.Designer.cs">
       <DependentUpon>FrmBilling.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmBillingHistory.cs">
+    <Compile Include="Views\ReportForm\FrmBillingHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmBillingHistory.Designer.cs">
+    <Compile Include="Views\ReportForm\FrmBillingHistory.Designer.cs">
       <DependentUpon>FrmBillingHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmDashboard.cs">
@@ -202,58 +202,58 @@
     <Compile Include="Views\FrmDashboard.Designer.cs">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmResidentDetail.cs">
+    <Compile Include="Views\DataEntryForm\FrmResidentDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmResidentDetail.Designer.cs">
+    <Compile Include="Views\DataEntryForm\FrmResidentDetail.Designer.cs">
       <DependentUpon>FrmResidentDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmResidentList.cs">
+    <Compile Include="Views\ReportForm\FrmResidentList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmResidentList.Designer.cs">
+    <Compile Include="Views\ReportForm\FrmResidentList.Designer.cs">
       <DependentUpon>FrmResidentList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmRoom.cs">
+    <Compile Include="Views\DataEntryForm\FrmRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmRoom.Designer.cs">
+    <Compile Include="Views\DataEntryForm\FrmRoom.Designer.cs">
       <DependentUpon>FrmRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmRoomList.cs">
+    <Compile Include="Views\ReportForm\FrmRoomList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmRoomList.Designer.cs">
+    <Compile Include="Views\ReportForm\FrmRoomList.Designer.cs">
       <DependentUpon>FrmRoomList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmRulesAndRegulations.cs">
+    <Compile Include="Views\ReportForm\FrmRulesAndRegulations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmRulesAndRegulations.Designer.cs">
+    <Compile Include="Views\ReportForm\FrmRulesAndRegulations.Designer.cs">
       <DependentUpon>FrmRulesAndRegulations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ResidentListtems\FrmResidentLeaveList.cs">
+    <Compile Include="Views\ReportForm\FrmResidentLeaveList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ResidentListtems\FrmResidentLeaveList.Designer.cs">
+    <Compile Include="Views\ReportForm\FrmResidentLeaveList.Designer.cs">
       <DependentUpon>FrmResidentLeaveList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Print\PrintBannedResident.resx">
+    <EmbeddedResource Include="PrintingForm\PrintBannedResident.resx">
       <DependentUpon>PrintBannedResident.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Print\PrintBillingHistory.resx">
+    <EmbeddedResource Include="PrintingForm\PrintBillingHistory.resx">
       <DependentUpon>PrintBillingHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Print\PrintLeavedResidentList.resx">
+    <EmbeddedResource Include="PrintingForm\PrintLeavedResidentList.resx">
       <DependentUpon>PrintLeavedResidentList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Print\PrintOccupyResidentList.resx">
+    <EmbeddedResource Include="PrintingForm\PrintOccupyResidentList.resx">
       <DependentUpon>PrintOccupyResidentList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Print\PrintRoomList.resx">
+    <EmbeddedResource Include="PrintingForm\PrintRoomList.resx">
       <DependentUpon>PrintRoomList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -285,37 +285,37 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RoomListCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmBanResidentHistory.resx">
+    <EmbeddedResource Include="Views\ReportForm\FrmBanResidentHistory.resx">
       <DependentUpon>FrmBanResidentHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmBanResident.resx">
+    <EmbeddedResource Include="Views\ProcessingForm\FrmBanResident.resx">
       <DependentUpon>FrmBanResident.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmBilling.resx">
+    <EmbeddedResource Include="Views\ProcessingForm\FrmBilling.resx">
       <DependentUpon>FrmBilling.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmBillingHistory.resx">
+    <EmbeddedResource Include="Views\ReportForm\FrmBillingHistory.resx">
       <DependentUpon>FrmBillingHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmResidentDetail.resx">
+    <EmbeddedResource Include="Views\DataEntryForm\FrmResidentDetail.resx">
       <DependentUpon>FrmResidentDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmResidentList.resx">
+    <EmbeddedResource Include="Views\ReportForm\FrmResidentList.resx">
       <DependentUpon>FrmResidentList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmRoom.resx">
+    <EmbeddedResource Include="Views\DataEntryForm\FrmRoom.resx">
       <DependentUpon>FrmRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmRoomList.resx">
+    <EmbeddedResource Include="Views\ReportForm\FrmRoomList.resx">
       <DependentUpon>FrmRoomList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmRulesAndRegulations.resx">
+    <EmbeddedResource Include="Views\ReportForm\FrmRulesAndRegulations.resx">
       <DependentUpon>FrmRulesAndRegulations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ResidentListtems\FrmResidentLeaveList.resx">
+    <EmbeddedResource Include="Views\ReportForm\FrmResidentLeaveList.resx">
       <DependentUpon>FrmResidentLeaveList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
