@@ -40,8 +40,8 @@
             this.leaveResidentListLabel = new System.Windows.Forms.Label();
             this.leaveResidentListPic = new System.Windows.Forms.PictureBox();
             this.RRPanel = new System.Windows.Forms.Panel();
-            this.rulesAndRegulationLabel = new System.Windows.Forms.Label();
-            this.rulesAndRegulationPic = new System.Windows.Forms.PictureBox();
+            this.RulesAndRegulationLabel = new System.Windows.Forms.Label();
+            this.RulesAndRegulationPic = new System.Windows.Forms.PictureBox();
             this.ProcessingPanel = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -91,7 +91,7 @@
             this.LeaveResidentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leaveResidentListPic)).BeginInit();
             this.RRPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rulesAndRegulationPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RulesAndRegulationPic)).BeginInit();
             this.ProcessingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.DataEntryPanel.SuspendLayout();
@@ -242,33 +242,35 @@
             // 
             // RRPanel
             // 
-            this.RRPanel.Controls.Add(this.rulesAndRegulationLabel);
-            this.RRPanel.Controls.Add(this.rulesAndRegulationPic);
-            this.RRPanel.Location = new System.Drawing.Point(70, 320);
+            this.RRPanel.Controls.Add(this.RulesAndRegulationLabel);
+            this.RRPanel.Controls.Add(this.RulesAndRegulationPic);
+            this.RRPanel.Location = new System.Drawing.Point(73, 229);
             this.RRPanel.Name = "RRPanel";
             this.RRPanel.Size = new System.Drawing.Size(258, 42);
             this.RRPanel.TabIndex = 4;
             // 
-            // rulesAndRegulationLabel
+            // RulesAndRegulationLabel
             // 
-            this.rulesAndRegulationLabel.AutoSize = true;
-            this.rulesAndRegulationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rulesAndRegulationLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.rulesAndRegulationLabel.Location = new System.Drawing.Point(40, 10);
-            this.rulesAndRegulationLabel.Name = "rulesAndRegulationLabel";
-            this.rulesAndRegulationLabel.Size = new System.Drawing.Size(188, 20);
-            this.rulesAndRegulationLabel.TabIndex = 1;
-            this.rulesAndRegulationLabel.Text = "RulesAndRegulations";
+            this.RulesAndRegulationLabel.AutoSize = true;
+            this.RulesAndRegulationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RulesAndRegulationLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RulesAndRegulationLabel.Location = new System.Drawing.Point(40, 10);
+            this.RulesAndRegulationLabel.Name = "RulesAndRegulationLabel";
+            this.RulesAndRegulationLabel.Size = new System.Drawing.Size(188, 20);
+            this.RulesAndRegulationLabel.TabIndex = 1;
+            this.RulesAndRegulationLabel.Text = "RulesAndRegulations";
+            this.RulesAndRegulationLabel.Click += new System.EventHandler(this.RulesAndRegulationLabel_Click);
             // 
-            // rulesAndRegulationPic
+            // RulesAndRegulationPic
             // 
-            this.rulesAndRegulationPic.Image = ((System.Drawing.Image)(resources.GetObject("rulesAndRegulationPic.Image")));
-            this.rulesAndRegulationPic.Location = new System.Drawing.Point(3, 3);
-            this.rulesAndRegulationPic.Name = "rulesAndRegulationPic";
-            this.rulesAndRegulationPic.Size = new System.Drawing.Size(34, 36);
-            this.rulesAndRegulationPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.rulesAndRegulationPic.TabIndex = 0;
-            this.rulesAndRegulationPic.TabStop = false;
+            this.RulesAndRegulationPic.Image = ((System.Drawing.Image)(resources.GetObject("RulesAndRegulationPic.Image")));
+            this.RulesAndRegulationPic.Location = new System.Drawing.Point(3, 3);
+            this.RulesAndRegulationPic.Name = "RulesAndRegulationPic";
+            this.RulesAndRegulationPic.Size = new System.Drawing.Size(34, 36);
+            this.RulesAndRegulationPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RulesAndRegulationPic.TabIndex = 0;
+            this.RulesAndRegulationPic.TabStop = false;
+            this.RulesAndRegulationPic.Click += new System.EventHandler(this.RulesAndRegulationPic_Click);
             // 
             // ProcessingPanel
             // 
@@ -558,7 +560,7 @@
             // 
             this.PersonDetailPanel.Controls.Add(this.PersonDetailLabel);
             this.PersonDetailPanel.Controls.Add(this.PersonDetailPic);
-            this.PersonDetailPanel.Location = new System.Drawing.Point(70, 275);
+            this.PersonDetailPanel.Location = new System.Drawing.Point(73, 319);
             this.PersonDetailPanel.Name = "PersonDetailPanel";
             this.PersonDetailPanel.Size = new System.Drawing.Size(222, 42);
             this.PersonDetailPanel.TabIndex = 3;
@@ -611,7 +613,7 @@
             // 
             this.RoomPanel.Controls.Add(this.RoomLabel);
             this.RoomPanel.Controls.Add(this.RoomPic);
-            this.RoomPanel.Location = new System.Drawing.Point(70, 230);
+            this.RoomPanel.Location = new System.Drawing.Point(73, 274);
             this.RoomPanel.Name = "RoomPanel";
             this.RoomPanel.Size = new System.Drawing.Size(222, 42);
             this.RoomPanel.TabIndex = 2;
@@ -728,7 +730,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.leaveResidentListPic)).EndInit();
             this.RRPanel.ResumeLayout(false);
             this.RRPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rulesAndRegulationPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RulesAndRegulationPic)).EndInit();
             this.ProcessingPanel.ResumeLayout(false);
             this.ProcessingPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -817,8 +819,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel RRPanel;
-        private System.Windows.Forms.Label rulesAndRegulationLabel;
-        private System.Windows.Forms.PictureBox rulesAndRegulationPic;
+        private System.Windows.Forms.Label RulesAndRegulationLabel;
+        private System.Windows.Forms.PictureBox RulesAndRegulationPic;
         private System.Windows.Forms.Panel ReportPanel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox5;

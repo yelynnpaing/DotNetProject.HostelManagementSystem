@@ -1,6 +1,6 @@
 ﻿namespace HostelManagementSystem.Views
 {
-    partial class FrmRulesAndRegulations
+    partial class FrmRulesAndRegulationsList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRulesAndRegulations));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRulesAndRegulationsList));
             this.label3 = new System.Windows.Forms.Label();
             this.dgRulesAndRegulations = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();

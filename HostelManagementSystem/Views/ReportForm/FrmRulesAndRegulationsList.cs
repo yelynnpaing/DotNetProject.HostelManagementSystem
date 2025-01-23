@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace HostelManagementSystem.Views
 {
-    public partial class FrmRulesAndRegulations : Form
+    public partial class FrmRulesAndRegulationsList : Form
     {
-        public FrmRulesAndRegulations()
+        public FrmRulesAndRegulationsList()
         {
             InitializeComponent();
         }

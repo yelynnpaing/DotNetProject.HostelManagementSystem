@@ -172,6 +172,12 @@
       <DependentUpon>RoomListCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Views\DataEntryForm\FrmRulesAndRegulations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DataEntryForm\FrmRulesAndRegulations.Designer.cs">
+      <DependentUpon>FrmRulesAndRegulations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReportForm\FrmBanResidentHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,11 +232,11 @@
     <Compile Include="Views\ReportForm\FrmRoomList.Designer.cs">
       <DependentUpon>FrmRoomList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ReportForm\FrmRulesAndRegulations.cs">
+    <Compile Include="Views\ReportForm\FrmRulesAndRegulationsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ReportForm\FrmRulesAndRegulations.Designer.cs">
-      <DependentUpon>FrmRulesAndRegulations.cs</DependentUpon>
+    <Compile Include="Views\ReportForm\FrmRulesAndRegulationsList.Designer.cs">
+      <DependentUpon>FrmRulesAndRegulationsList.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ReportForm\FrmResidentLeaveList.cs">
       <SubType>Form</SubType>
@@ -285,6 +291,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RoomListCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\DataEntryForm\FrmRulesAndRegulations.resx">
+      <DependentUpon>FrmRulesAndRegulations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ReportForm\FrmBanResidentHistory.resx">
       <DependentUpon>FrmBanResidentHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,8 +321,8 @@
     <EmbeddedResource Include="Views\ReportForm\FrmRoomList.resx">
       <DependentUpon>FrmRoomList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReportForm\FrmRulesAndRegulations.resx">
-      <DependentUpon>FrmRulesAndRegulations.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ReportForm\FrmRulesAndRegulationsList.resx">
+      <DependentUpon>FrmRulesAndRegulationsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ReportForm\FrmResidentLeaveList.resx">
       <DependentUpon>FrmResidentLeaveList.cs</DependentUpon>

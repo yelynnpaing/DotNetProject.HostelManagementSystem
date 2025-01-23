@@ -1,4 +1,5 @@
-﻿using HostelManagementSystem.Views.ResidentListtems;
+﻿using HostelManagementSystem.Views.DataEntryForm;
+using HostelManagementSystem.Views.ResidentListtems;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,16 @@ namespace HostelManagementSystem.Views
             //    RoomPanel.Enabled = false;
             //    BanResidentPanel.Enabled = false;
             //}
+        }
+
+        private void RulesAndRegulationPic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRulesAndRegulations());
+        }
+
+        private void RulesAndRegulationLabel_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRulesAndRegulations());
         }
 
         private void RoomPic_Click(object sender, EventArgs e)
@@ -183,12 +194,12 @@ namespace HostelManagementSystem.Views
 
         private void RRPic_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmRulesAndRegulations());
+            FormLoad(new FrmRulesAndRegulationsList());
         }
 
         private void RRLabel_Click(object sender, EventArgs e)
         {
-            FormLoad(new FrmRulesAndRegulations());
+            FormLoad(new FrmRulesAndRegulationsList());
         }
 
         private void LogoutPic_Click(object sender, EventArgs e)
