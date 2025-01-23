@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HostelManagementSystem.PrintingForm;
+using HostelManagementSystem.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +35,10 @@ namespace HostelManagementSystem.Views
         {
             Connection();
             FillDgRulesAndRegulations();
+            if(FrmLogin.instance.UserRole != "admin")
+            {
+                PrintBtn.Visible = false;
+            }
         }
 
         private void FillDgRulesAndRegulations()
@@ -48,13 +54,36 @@ namespace HostelManagementSystem.Views
                 dgRulesAndRegulations.Columns[1].Width = 230;
 
                 dgRulesAndRegulations.RowTemplate.Height = 40;
-                dgRulesAndRegulations.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12F, FontStyle.Bold);
+                dgRulesAndRegulations.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11F, FontStyle.Bold);
                 dgRulesAndRegulations.AllowUserToAddRows = false;
             }
             catch
             {
                 MessageBox.Show("There is no Rules and Regulations to show!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID",  typeof(int));
+            dt.Columns.Add("Title", typeof(string));
+            dt.Columns.Add("Description", typeof(string));
+            foreach(DataGridViewRow row in dgRulesAndRegulations.Rows)
+            {
+                dt.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value);
+            }
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("RulesAndRegulationsList.xml");
+
+            PrintRulesAndRegualtionsList printRulesAndRegualtionsList = new PrintRulesAndRegualtionsList();
+            RulesAndRegualtionsCrystalReport rulesAndRegulationsCrystalReport = new RulesAndRegualtionsCrystalReport();
+            rulesAndRegulationsCrystalReport.SetDataSource(ds);
+            printRulesAndRegualtionsList.RulesAndRegulationsCRViewer.ReportSource = rulesAndRegulationsCrystalReport;
+            printRulesAndRegualtionsList.RulesAndRegulationsCRViewer.Refresh();
+            printRulesAndRegualtionsList.ShowDialog();
+            //rulesAndRegulationsCrystalReport.PrintToPrinter(2, false, 0, 0);
         }
     }
 }
