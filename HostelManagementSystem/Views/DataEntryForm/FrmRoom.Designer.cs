@@ -50,6 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgRoom = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
@@ -58,6 +59,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.ClearBtn);
             this.groupBox1.Controls.Add(this.txtRoomPriceId);
             this.groupBox1.Controls.Add(this.label10);
@@ -86,7 +88,7 @@
             this.ClearBtn.BackColor = System.Drawing.Color.Silver;
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearBtn.Location = new System.Drawing.Point(379, 274);
+            this.ClearBtn.Location = new System.Drawing.Point(406, 274);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(130, 36);
             this.ClearBtn.TabIndex = 35;
@@ -107,7 +109,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(529, 24);
+            this.label10.Location = new System.Drawing.Point(278, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(118, 20);
             this.label10.TabIndex = 33;
@@ -117,7 +119,7 @@
             // 
             this.cboRoomPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRoomPosition.FormattingEnabled = true;
-            this.cboRoomPosition.Location = new System.Drawing.Point(532, 45);
+            this.cboRoomPosition.Location = new System.Drawing.Point(281, 45);
             this.cboRoomPosition.Name = "cboRoomPosition";
             this.cboRoomPosition.Size = new System.Drawing.Size(188, 28);
             this.cboRoomPosition.TabIndex = 32;
@@ -128,7 +130,7 @@
             this.DeleteBtn.BackColor = System.Drawing.Color.OrangeRed;
             this.DeleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteBtn.Location = new System.Drawing.Point(742, 274);
+            this.DeleteBtn.Location = new System.Drawing.Point(769, 274);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(130, 36);
             this.DeleteBtn.TabIndex = 31;
@@ -141,7 +143,7 @@
             this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBtn.ForeColor = System.Drawing.Color.Black;
-            this.UpdateBtn.Location = new System.Drawing.Point(559, 274);
+            this.UpdateBtn.Location = new System.Drawing.Point(586, 274);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(130, 36);
             this.UpdateBtn.TabIndex = 30;
@@ -154,7 +156,7 @@
             this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(202, 274);
+            this.SaveBtn.Location = new System.Drawing.Point(229, 274);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(130, 36);
             this.SaveBtn.TabIndex = 29;
@@ -197,7 +199,7 @@
             // txtRoomId
             // 
             this.txtRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomId.Location = new System.Drawing.Point(28, 45);
+            this.txtRoomId.Location = new System.Drawing.Point(788, 46);
             this.txtRoomId.Name = "txtRoomId";
             this.txtRoomId.Size = new System.Drawing.Size(188, 27);
             this.txtRoomId.TabIndex = 26;
@@ -206,7 +208,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 24);
+            this.label6.Location = new System.Drawing.Point(785, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 25;
@@ -219,9 +221,9 @@
             this.NewBtn.ForeColor = System.Drawing.Color.White;
             this.NewBtn.Location = new System.Drawing.Point(29, 274);
             this.NewBtn.Name = "NewBtn";
-            this.NewBtn.Size = new System.Drawing.Size(130, 36);
+            this.NewBtn.Size = new System.Drawing.Size(154, 36);
             this.NewBtn.TabIndex = 24;
-            this.NewBtn.Text = "New";
+            this.NewBtn.Text = "New RoomNo";
             this.NewBtn.UseVisualStyleBackColor = false;
             this.NewBtn.Click += new System.EventHandler(this.NewBtn_Click);
             // 
@@ -238,7 +240,7 @@
             // txtRoomPrice
             // 
             this.txtRoomPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomPrice.Location = new System.Drawing.Point(787, 45);
+            this.txtRoomPrice.Location = new System.Drawing.Point(536, 45);
             this.txtRoomPrice.Name = "txtRoomPrice";
             this.txtRoomPrice.Size = new System.Drawing.Size(188, 27);
             this.txtRoomPrice.TabIndex = 23;
@@ -247,7 +249,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(784, 24);
+            this.label4.Location = new System.Drawing.Point(533, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 20);
             this.label4.TabIndex = 22;
@@ -257,7 +259,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(277, 24);
+            this.label2.Location = new System.Drawing.Point(26, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 21;
@@ -267,7 +269,7 @@
             // 
             this.cboRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRoomType.FormattingEnabled = true;
-            this.cboRoomType.Location = new System.Drawing.Point(280, 45);
+            this.cboRoomType.Location = new System.Drawing.Point(29, 45);
             this.cboRoomType.Name = "cboRoomType";
             this.cboRoomType.Size = new System.Drawing.Size(188, 28);
             this.cboRoomType.TabIndex = 1;
@@ -305,6 +307,17 @@
             this.dgRoom.Size = new System.Drawing.Size(1059, 419);
             this.dgRoom.TabIndex = 22;
             this.dgRoom.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRoom_CellClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(784, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 20);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "RoomPriceId";
+            this.label1.Visible = false;
             // 
             // FrmRoom
             // 
@@ -353,5 +366,6 @@
         private System.Windows.Forms.ComboBox cboRoomPosition;
         private System.Windows.Forms.TextBox txtRoomPriceId;
         private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.Label label1;
     }
 }

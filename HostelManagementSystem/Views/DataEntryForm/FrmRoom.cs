@@ -42,6 +42,10 @@ namespace HostelManagementSystem.Views
             cboRoomPosition.Text = "";
             txtRoomPrice.Text = "";
             RoomPictureBox.Image = null;
+            txtRoomId.Enabled = true;
+            cboRoomType.Enabled = true;
+            cboRoomPosition.Enabled = true;
+            txtRoomPrice.Enabled = true;
             txtRoomId.Focus();
         }
 
@@ -74,9 +78,10 @@ namespace HostelManagementSystem.Views
         private void AutoId()
         {
             string RName;
-            int RID;
+            int RID;  
 
-            string query = "SELECT RoomId FROM Tblrooms ORDER BY RoomId";
+            //string query = "SELECT RoomId FROM Tblrooms ORDER BY RoomId";
+            string query = "SELECT RoomId FROM Tblrooms ORDER BY RoomSerialNo";
             SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
             Dset = new DataSet();
             adapter.Fill(Dset, "rooms");
@@ -85,11 +90,36 @@ namespace HostelManagementSystem.Views
             {
                 RName = Dset.Tables["rooms"].Rows[Dset.Tables["rooms"].Rows.Count - 1][0].ToString();
                 RID = int.Parse(RName.Substring(1, (RName.Length - 1)));
-                txtRoomId.Text = "R" + (RID + 1).ToString("000");
+                //for dynamic room number 
+                if(cboRoomType.GetItemText(this.cboRoomType.SelectedItem) == "Single")
+                {
+                    txtRoomId.Text = "S" + (RID + 1).ToString("000");
+                }
+                else if (cboRoomType.GetItemText(this.cboRoomType.SelectedItem) == "Double")
+                {
+                    txtRoomId.Text = "D" + (RID + 1).ToString("000");
+                }
+                else if (cboRoomType.GetItemText(this.cboRoomType.SelectedItem) == "Triple")
+                {
+                    txtRoomId.Text = "T" + (RID + 1).ToString("000");
+                }
+
+                //for static roomNumber
+                //txtRoomId.Text = "R" + (RID + 1).ToString("000");
             }
             else
             {
-                txtRoomId.Text = "R001";
+                if (cboRoomType.GetItemText(this.cboRoomType.SelectedItem) == "Single")
+                {
+                    txtRoomId.Text = "S001";
+                }
+                else
+                {
+                    MessageBox.Show("Please, Select Single RoomType.The first number is start from single.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                //for static roomNumber
+                //txtRoomId.Text = "R001";
             }
         }
 
@@ -115,7 +145,6 @@ namespace HostelManagementSystem.Views
 
         private void NewBtn_Click(object sender, EventArgs e)
         {
-            Clear();
             AutoId();
         }
 
@@ -190,7 +219,7 @@ namespace HostelManagementSystem.Views
                 string query = "SELECT TblRooms.RoomId AS RoomNo, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition , TblRoomPrices.RoomPrice, " +
                "RoomImage FROM TblRooms INNER JOIN TblRoomTypes ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId" +
                " INNER JOIN TblRoomPositions ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId" +
-               " INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId";
+               " INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId ORDER BY RoomSerialNo";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 Dset = new DataSet();
                 DataTable dt = new DataTable();
@@ -229,6 +258,10 @@ namespace HostelManagementSystem.Views
                 cboRoomType.Text = dgRoom.CurrentRow.Cells[1].Value.ToString();
                 cboRoomPosition.Text = dgRoom.CurrentRow.Cells[2].Value.ToString();
                 txtRoomPrice.Text = dgRoom.CurrentRow.Cells[3].Value.ToString();
+                txtRoomId.Enabled = false;
+                cboRoomType.Enabled = false;
+                cboRoomPosition.Enabled = false;
+                txtRoomPrice.Enabled = false;
                 Byte[] imageData = (Byte[])dgRoom.CurrentRow.Cells[4].Value;
                 MemoryStream ms = new MemoryStream(imageData);
                 RoomPictureBox.Image = Image.FromStream(ms);
