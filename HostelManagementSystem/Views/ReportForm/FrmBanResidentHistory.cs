@@ -83,8 +83,6 @@ namespace HostelManagementSystem.Views
         
         private void FillDgBanResidentListData()
         {
-            //dgBanResidentList.Columns[7].Width = 150;
-            //dgBanResidentList.Columns[10].Width = 60;
             dgBanResidentList.RowTemplate.Height = 70;
             dgBanResidentList.AllowUserToAddRows = false;
             dgBanResidentList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);

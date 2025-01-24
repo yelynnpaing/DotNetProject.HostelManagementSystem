@@ -50,15 +50,15 @@ namespace HostelManagementSystem.Views
             Application.Exit();
         }
 
-        private void FrmDashboard_Load(object sender, EventArgs e)
-        {
-            Connection();
-            //if(FrmLogin.instance.UserRole != "admin")
-            //{
-            //    RoomPanel.Enabled = false;
-            //    BanResidentPanel.Enabled = false;
-            //}
-        }
+        //private void FrmDashboard_Load(object sender, EventArgs e)
+        //{
+        //    Connection();
+        //    //if(FrmLogin.instance.UserRole != "admin")
+        //    //{
+        //    //    RoomPanel.Enabled = false;
+        //    //    BanResidentPanel.Enabled = false;
+        //    //}
+        //}
 
         private void RulesAndRegulationPic_Click(object sender, EventArgs e)
         {

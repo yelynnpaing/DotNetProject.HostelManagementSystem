@@ -130,7 +130,7 @@ namespace HostelManagementSystem.Views
             try
             {
                 string RUIN;
-                string query = @""+ QueryOrigin + " ORDER BY Occupy";
+                string query = @""+ QueryOrigin + " ORDER BY RoomSerialNo";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();

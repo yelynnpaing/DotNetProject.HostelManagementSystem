@@ -110,7 +110,6 @@ namespace HostelManagementSystem.Views
             Clear();
             Connection();
             FillCboRoomId();
-            //endDate.MinDate = DateTime.Now.AddDays(1);
             FillDgResidents();
         }
 
@@ -248,6 +247,7 @@ namespace HostelManagementSystem.Views
             try
             {
                 txtResidentId.Text = dgResidentList.CurrentRow.Cells[0].Value.ToString();
+                txtResidentId.Enabled = false;
                 txtUIN.Text = dgResidentList.CurrentRow.Cells[1].Value.ToString();
                 txtResidentName.Text = dgResidentList.CurrentRow.Cells[2].Value.ToString();
                 cboRoomId.Text = dgResidentList.CurrentRow.Cells[3].Value.ToString();
