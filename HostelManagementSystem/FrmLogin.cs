@@ -54,6 +54,15 @@ namespace HostelManagementSystem
 
             try
             {
+                if (String.IsNullOrEmpty(userName))
+                {
+                    MessageBox.Show("Fill user name into user name field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                if (String.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Fill password into password field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
                 string query = "SELECT * FROM TblUsers WHERE UserName='" + userName + "' AND UserPassword= '" + password + "'";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet dset = new DataSet();
@@ -68,17 +77,12 @@ namespace HostelManagementSystem
 
                 if (dt.Rows.Count > 0)
                 {
-                    if (userName == name && password == pw && ( userRole1 == role || userRole2 == role ))
+                    if (userName == name && password == pw && (userRole1 == role || userRole2 == role))
                     {
                         FrmDashboard frmDashboard = new FrmDashboard();
                         frmDashboard.Show();
                     }
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Login!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Clear();
                 }
             }
             catch

@@ -128,6 +128,7 @@ namespace HostelManagementSystem.Views
         {
             Clear();
             AutoId();
+            txtResidentId.Enabled = false;
             CheckboxOccupy.Checked = true;
             CheckboxOccupy.Enabled = false;
             SaveBtn.Visible = true;
@@ -252,6 +253,7 @@ namespace HostelManagementSystem.Views
                 txtResidentName.Text = dgResidentList.CurrentRow.Cells[2].Value.ToString();
                 cboRoomId.Text = dgResidentList.CurrentRow.Cells[3].Value.ToString();
                 txtRoomPrice.Text = dgResidentList.CurrentRow.Cells[4].Value.ToString();
+                txtRoomPrice.Enabled = false;
                 CheckboxOccupy.Enabled = false;
                 CheckBoxLeave.Enabled = true;
                 Byte[] ImageData = (Byte[])dgResidentList.CurrentRow.Cells[5].Value;
