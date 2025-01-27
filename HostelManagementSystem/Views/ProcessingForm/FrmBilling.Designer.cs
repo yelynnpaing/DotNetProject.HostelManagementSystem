@@ -31,6 +31,8 @@
             this.dgInvoiceList = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtResidentName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.BillingDate = new System.Windows.Forms.DateTimePicker();
             this.txtRoomId = new System.Windows.Forms.TextBox();
@@ -55,8 +57,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtResidentName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoiceList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,24 @@
             this.groupBox1.Size = new System.Drawing.Size(1492, 227);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
+            // 
+            // txtResidentName
+            // 
+            this.txtResidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentName.Location = new System.Drawing.Point(534, 40);
+            this.txtResidentName.Name = "txtResidentName";
+            this.txtResidentName.Size = new System.Drawing.Size(188, 27);
+            this.txtResidentName.TabIndex = 56;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(530, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 20);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Resident Name";
             // 
             // label13
             // 
@@ -190,6 +208,7 @@
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(188, 27);
             this.endDate.TabIndex = 48;
+            //this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
             // 
             // cboResidentUIN
             // 
@@ -233,9 +252,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(781, 83);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(96, 20);
+            this.label11.Size = new System.Drawing.Size(162, 20);
             this.label11.TabIndex = 42;
-            this.label11.Text = "Monthly Bill";
+            this.label11.Text = "Monthly Bill ( MMK )";
             // 
             // label7
             // 
@@ -337,9 +356,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(1032, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.Size = new System.Drawing.Size(158, 20);
             this.label2.TabIndex = 21;
-            this.label2.Text = "RoomPrice";
+            this.label2.Text = "RoomPrice ( MMK )";
             // 
             // label8
             // 
@@ -351,24 +370,6 @@
             this.label8.Size = new System.Drawing.Size(202, 29);
             this.label8.TabIndex = 28;
             this.label8.Text = "Invoice Creating";
-            // 
-            // txtResidentName
-            // 
-            this.txtResidentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResidentName.Location = new System.Drawing.Point(534, 40);
-            this.txtResidentName.Name = "txtResidentName";
-            this.txtResidentName.Size = new System.Drawing.Size(188, 27);
-            this.txtResidentName.TabIndex = 56;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(530, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 20);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Resident Name";
             // 
             // FrmBilling
             // 

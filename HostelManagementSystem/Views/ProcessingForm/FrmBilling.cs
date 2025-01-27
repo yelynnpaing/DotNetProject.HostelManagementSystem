@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.Protobuf.WellKnownTypes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,6 +64,7 @@ namespace HostelManagementSystem.Views
             {
                 txtInvoiceId.Text = "INV000001";
             }
+            txtInvoiceId.Enabled = false;
         }
 
         private void FillCboResidents()
@@ -101,12 +103,12 @@ namespace HostelManagementSystem.Views
             FillCboPaymentType();
             Clear();
             FilldgInvoiceList();
-            txtInvoiceId.Enabled = false;
             txtResidentName.Enabled = false;
             txtRoomId.Enabled = false;
             txtRoomPrice.Enabled = false;
             txtResidentPhone.Enabled = false;
             startDate.Enabled = false;
+            //endDate.Enabled = false;
             txtTotalBill.Enabled = false;
         }
 
@@ -136,17 +138,47 @@ namespace HostelManagementSystem.Views
                     if (dr.Cells["ResidentUIN"].Value.ToString() == cboResidentUIN.Text)
                     {
                         startDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
-                        endDate.Text = startDate.Value.AddDays(7).ToString();
+                        startDate.Text = startDate.Value.AddDays(1).ToString();
+                        int m = startDate.Value.Month;
+                        if (m == 2)
+                        {
+                            if (startDate.Value.Year / 4 == 0)
+                            {
+                                endDate.Text = startDate.Value.AddDays(28).ToString();
+                            }
+                            else
+                            {
+                                endDate.Text = startDate.Value.AddDays(27).ToString();
+                            }
+                        }
+                        else if (m == 1 || m == 3 || m == 5 || m == 7 || m == 10 || m == 12)
+                        {
+                            endDate.Text = startDate.Value.AddDays(30).ToString();
+                        }
+                        else
+                        {
+                            endDate.Text = startDate.Value.AddDays(29).ToString();
+                        }
+                        txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
                         break;
                     }
-                    else
+                    else if(dr.Index == dgInvoiceList.RowCount - 1)
                     {
                         startDate.Text = ds.Tables["invoiceDatas"].Rows[0][4].ToString();
                         endDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
+                        if (endDate.Value.Day - startDate.Value.Day <= 15)
+                        {
+                            string bill = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
+                            decimal totalBill = decimal.Parse(bill);
+                            totalBill = totalBill / 2;
+                            txtTotalBill.Text = totalBill.ToString();
+                        }
+                        else
+                        {
+                            txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
+                        }
                     }
-                }
-                
-                txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();                
+                } 
             }
             catch
             {
