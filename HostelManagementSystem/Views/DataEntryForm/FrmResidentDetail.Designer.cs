@@ -377,6 +377,7 @@
             this.txtUIN.Name = "txtUIN";
             this.txtUIN.Size = new System.Drawing.Size(188, 27);
             this.txtUIN.TabIndex = 48;
+            this.txtUIN.TabStop = false;
             this.txtUIN.Leave += new System.EventHandler(this.txtUIN_Leave);
             // 
             // label13

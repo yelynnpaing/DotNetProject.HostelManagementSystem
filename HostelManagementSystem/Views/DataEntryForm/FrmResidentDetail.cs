@@ -111,6 +111,8 @@ namespace HostelManagementSystem.Views
             Connection();
             FillCboRoomId();
             FillDgResidents();
+            txtResidentId.Enabled = false;
+            txtRoomPrice.Enabled = false;
         }
 
         private void SelectImageBtn_Click(object sender, EventArgs e)
@@ -285,7 +287,8 @@ namespace HostelManagementSystem.Views
             if (isCheckedLeave)
             {
                 CheckboxOccupy.Checked = false;
-                CheckBoxLeave.Enabled = false;
+                CheckBoxLeave.Enabled = false;                
+                txtUIN.TabStop = false;
             }    
         }
 

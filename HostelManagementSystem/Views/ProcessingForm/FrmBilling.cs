@@ -34,16 +34,6 @@ namespace HostelManagementSystem.Views
             txtTotalBill.Text = "";
             cboPaymentType.Text="";
             txtInvoiceId.Focus();
-
-            txtInvoiceId.Enabled = true;
-            cboResidentUIN.Enabled = true;
-            txtResidentName.Enabled = true;
-            txtRoomId.Enabled = true;
-            txtRoomPrice.Enabled = true;
-            txtResidentPhone.Enabled = true;
-            startDate.Enabled = true;
-            endDate.Enabled = true;
-            txtTotalBill.Enabled = true;
         }
 
         private void Connection()
@@ -111,6 +101,13 @@ namespace HostelManagementSystem.Views
             FillCboPaymentType();
             Clear();
             FilldgInvoiceList();
+            txtInvoiceId.Enabled = false;
+            txtResidentName.Enabled = false;
+            txtRoomId.Enabled = false;
+            txtRoomPrice.Enabled = false;
+            txtResidentPhone.Enabled = false;
+            startDate.Enabled = false;
+            txtTotalBill.Enabled = false;
         }
 
         private void cboResidentUIN_Leave(object sender, EventArgs e)
@@ -149,15 +146,7 @@ namespace HostelManagementSystem.Views
                     }
                 }
                 
-                txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
-                txtInvoiceId.Enabled = false;
-                cboResidentUIN.Enabled = false;
-                txtResidentName.Enabled = false;
-                txtRoomId.Enabled = false;
-                txtRoomPrice.Enabled = false;
-                txtResidentPhone.Enabled = false;
-                startDate.Enabled = false;                
-                txtTotalBill.Enabled = false;
+                txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();                
             }
             catch
             {

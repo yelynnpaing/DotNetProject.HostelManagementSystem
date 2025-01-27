@@ -129,6 +129,8 @@ namespace HostelManagementSystem.Views
             FillCboRoomType();
             FillCboRoomPosition();
             Clear();
+            txtRoomId.Enabled = false;
+            txtRoomPrice.Enabled = false;
             FilldgRoomDatas();
         }
 
