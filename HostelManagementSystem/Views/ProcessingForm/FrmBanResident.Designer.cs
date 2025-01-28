@@ -51,6 +51,8 @@
             this.dgBanResidentList = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtResidentCount = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBanResidentList)).BeginInit();
             this.SuspendLayout();
@@ -311,11 +313,35 @@
             this.label8.TabIndex = 43;
             this.label8.Text = "Ban Resident\r\n";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(616, 408);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 29);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "- ";
+            // 
+            // txtResidentCount
+            // 
+            this.txtResidentCount.AutoSize = true;
+            this.txtResidentCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtResidentCount.Location = new System.Drawing.Point(651, 408);
+            this.txtResidentCount.Name = "txtResidentCount";
+            this.txtResidentCount.Size = new System.Drawing.Size(29, 29);
+            this.txtResidentCount.TabIndex = 44;
+            this.txtResidentCount.Text = "- ";
+            // 
             // FrmBanResident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtResidentCount);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgBanResidentList);
@@ -356,5 +382,7 @@
         private System.Windows.Forms.CheckBox BanCheckBox;
         private System.Windows.Forms.ComboBox cboRulesAndRegulations;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txtResidentCount;
     }
 }

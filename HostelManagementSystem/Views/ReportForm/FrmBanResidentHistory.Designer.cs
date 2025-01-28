@@ -41,6 +41,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.PrintBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtResidentCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgBanResidentList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -191,11 +193,35 @@
             this.PrintBtn.UseVisualStyleBackColor = false;
             this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(610, 339);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 29);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "- ";
+            // 
+            // txtResidentCount
+            // 
+            this.txtResidentCount.AutoSize = true;
+            this.txtResidentCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtResidentCount.Location = new System.Drawing.Point(645, 339);
+            this.txtResidentCount.Name = "txtResidentCount";
+            this.txtResidentCount.Size = new System.Drawing.Size(29, 29);
+            this.txtResidentCount.TabIndex = 59;
+            this.txtResidentCount.Text = "- ";
+            // 
             // FrmBanResidentHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtResidentCount);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
@@ -228,5 +254,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker StartDate;
         private System.Windows.Forms.Button PrintBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtResidentCount;
     }
 }

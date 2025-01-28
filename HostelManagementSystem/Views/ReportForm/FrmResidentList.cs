@@ -183,6 +183,7 @@ namespace HostelManagementSystem.Views
                 adapter.Fill(ds, "residentList");
                 dt = ds.Tables["residentList"];
                 dgOccupyResidentList.DataSource = ds.Tables["residentList"];
+                txtResidentCount.Text = ds.Tables["residentList"].Rows.Count.ToString();
                 FillDgOccupyResidentListData();
             }
             catch

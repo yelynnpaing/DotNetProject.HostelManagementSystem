@@ -155,9 +155,9 @@ namespace HostelManagementSystem.Views
             try
             {
                 string query = "SELECT RoomPriceId, RoomPrice, TblRoomPositions.RoomPositionId, TblRoomTypes.RoomTypeId FROM TblRoomPrices " +
-                    "INNER JOIN TblRoomTypes ON TblRoomPrices.RoomTypeId = '" + cboRoomType.SelectedValue + "'" +
-                    "INNER JOIN TblRoomPositions ON TblRoomPrices.RoomPositionId = '" + cboRoomPosition.SelectedValue + "'" +
-                    "WHERE TblRoomTypes.RoomTypeId = '" + cboRoomType.SelectedValue + "' AND TblRoomPositions.RoomPositionId = '" + cboRoomPosition.SelectedValue + "'";
+                            "INNER JOIN TblRoomTypes ON TblRoomPrices.RoomTypeId = '" + cboRoomType.SelectedValue + "'" +
+                            "INNER JOIN TblRoomPositions ON TblRoomPrices.RoomPositionId = '" + cboRoomPosition.SelectedValue + "'" +
+                            "WHERE TblRoomTypes.RoomTypeId = '" + cboRoomType.SelectedValue + "' AND TblRoomPositions.RoomPositionId = '" + cboRoomPosition.SelectedValue + "'";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet Dset = new DataSet();
                 adapter.Fill(Dset, "Price");
@@ -218,16 +218,18 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = "SELECT TblRooms.RoomId AS RoomNo, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition , TblRoomPrices.RoomPrice, " +
-               "RoomImage FROM TblRooms INNER JOIN TblRoomTypes ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId" +
-               " INNER JOIN TblRoomPositions ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId" +
-               " INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId ORDER BY RoomSerialNo";
+                string query = @"SELECT TblRooms.RoomId AS RoomNo, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition , 
+                                TblRoomPrices.RoomPrice AS RoomPrice, RoomImage FROM TblRooms 
+                                INNER JOIN TblRoomTypes ON TblRooms.RoomTypeId = TblRoomTypes.RoomTypeId
+                                INNER JOIN TblRoomPositions ON TblRooms.RoomPositionId = TblRoomPositions.RoomPositionId
+                                INNER JOIN TblRoomPrices ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId ORDER BY RoomSerialNo";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 Dset = new DataSet();
                 DataTable dt = new DataTable();
                 adapter.Fill(Dset, "rooms");
                 dt = Dset.Tables["rooms"];
                 dgRoom.DataSource = dt;
+                txtRoomCount.Text = Dset.Tables["rooms"].Rows.Count.ToString();
 
                 dgRoom.RowTemplate.Height = 100;
                 dgRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);

@@ -225,6 +225,7 @@ namespace HostelManagementSystem.Views
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "banResidents");
                 dgBanResidentList.DataSource = ds.Tables["banResidents"];
+                txtResidentCount.Text = ds.Tables["banResidents"].Rows.Count.ToString();
                 dgBanResidentList.AllowUserToAddRows = false;
                 dgBanResidentList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgBanResidentList.RowTemplate.Height = 50;

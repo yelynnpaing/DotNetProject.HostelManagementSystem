@@ -50,6 +50,7 @@ namespace HostelManagementSystem.Views
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "rulesAndRegulations");
                 dgRulesAndRegulations.DataSource = ds.Tables["rulesAndRegulations"];
+                txtRRCount.Text = ds.Tables["rulesAndRegulations"].Rows.Count.ToString();
                 dgRulesAndRegulations.Columns[0].Width = 80;
                 dgRulesAndRegulations.Columns[1].Width = 230;
 

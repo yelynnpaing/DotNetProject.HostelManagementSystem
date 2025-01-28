@@ -95,6 +95,7 @@ namespace HostelManagementSystem.Views.ResidentListtems
                 adapter.Fill(ds, "residents");
                 dt = ds.Tables["residents"];
                 dgvLeaveResidents.DataSource = dt;
+                txtResidentCount.Text = ds.Tables["residents"].Rows.Count.ToString(); 
                 
                 //dgvLeaveResidents.Columns[0].Width = 50;
                 dgvLeaveResidents.Columns[1].Width = 70;

@@ -101,6 +101,7 @@ namespace HostelManagementSystem.Views
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "banResidents");
                 dgBanResidentList.DataSource = ds.Tables["banResidents"];
+                txtResidentCount.Text = ds.Tables["banResidents"].Rows.Count.ToString();
                 FillDgBanResidentListData();
             }
             catch

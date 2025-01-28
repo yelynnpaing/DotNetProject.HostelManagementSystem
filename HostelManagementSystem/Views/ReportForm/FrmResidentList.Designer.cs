@@ -42,6 +42,8 @@
             this.SearchBtn = new System.Windows.Forms.Button();
             this.PrintBtn = new System.Windows.Forms.Button();
             this.highlightBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtResidentCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgOccupyResidentList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -196,7 +198,7 @@
             this.highlightBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.highlightBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highlightBtn.ForeColor = System.Drawing.Color.White;
-            this.highlightBtn.Location = new System.Drawing.Point(643, 371);
+            this.highlightBtn.Location = new System.Drawing.Point(896, 371);
             this.highlightBtn.Name = "highlightBtn";
             this.highlightBtn.Size = new System.Drawing.Size(205, 36);
             this.highlightBtn.TabIndex = 54;
@@ -204,11 +206,35 @@
             this.highlightBtn.UseVisualStyleBackColor = false;
             this.highlightBtn.Click += new System.EventHandler(this.highlightBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(629, 378);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 29);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "- ";
+            // 
+            // txtResidentCount
+            // 
+            this.txtResidentCount.AutoSize = true;
+            this.txtResidentCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtResidentCount.Location = new System.Drawing.Point(664, 378);
+            this.txtResidentCount.Name = "txtResidentCount";
+            this.txtResidentCount.Size = new System.Drawing.Size(29, 29);
+            this.txtResidentCount.TabIndex = 57;
+            this.txtResidentCount.Text = "- ";
+            // 
             // FrmResidentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtResidentCount);
             this.Controls.Add(this.highlightBtn);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.label8);
@@ -243,5 +269,7 @@
         private System.Windows.Forms.DateTimePicker StartDate;
         private System.Windows.Forms.Button PrintBtn;
         private System.Windows.Forms.Button highlightBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtResidentCount;
     }
 }

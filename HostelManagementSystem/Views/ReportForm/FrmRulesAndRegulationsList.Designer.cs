@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRulesAndRegulationsList));
             this.label3 = new System.Windows.Forms.Label();
             this.dgRulesAndRegulations = new System.Windows.Forms.DataGridView();
@@ -36,6 +36,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PrintBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRRCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgRulesAndRegulations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,8 +61,8 @@
             this.dgRulesAndRegulations.Location = new System.Drawing.Point(369, 291);
             this.dgRulesAndRegulations.Name = "dgRulesAndRegulations";
             this.dgRulesAndRegulations.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgRulesAndRegulations.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgRulesAndRegulations.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgRulesAndRegulations.RowTemplate.Height = 24;
             this.dgRulesAndRegulations.Size = new System.Drawing.Size(1431, 633);
             this.dgRulesAndRegulations.TabIndex = 29;
@@ -110,11 +112,35 @@
             this.PrintBtn.UseVisualStyleBackColor = false;
             this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(1022, 170);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 29);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "- ";
+            // 
+            // txtRRCount
+            // 
+            this.txtRRCount.AutoSize = true;
+            this.txtRRCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRRCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtRRCount.Location = new System.Drawing.Point(1057, 170);
+            this.txtRRCount.Name = "txtRRCount";
+            this.txtRRCount.Size = new System.Drawing.Size(29, 29);
+            this.txtRRCount.TabIndex = 57;
+            this.txtRRCount.Text = "- ";
+            // 
             // FrmRulesAndRegulationsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtRRCount);
             this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -143,5 +169,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Button PrintBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtRRCount;
     }
 }

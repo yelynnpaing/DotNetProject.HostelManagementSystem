@@ -210,6 +210,7 @@ namespace HostelManagementSystem.Views
                 adapter.Fill(ds, "residents");
                 dt = ds.Tables["residents"];
                 dgResidentList.DataSource = dt;
+                txtResidentCount.Text = ds.Tables["residents"].Rows.Count.ToString();
 
                 dgResidentList.Columns[0].Width = 50;
                 dgResidentList.Columns[1].Width = 80;

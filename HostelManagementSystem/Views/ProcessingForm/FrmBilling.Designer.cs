@@ -57,6 +57,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtInvoiceCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoiceList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -208,7 +210,6 @@
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(188, 27);
             this.endDate.TabIndex = 48;
-            //this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
             // 
             // cboResidentUIN
             // 
@@ -371,11 +372,35 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "Invoice Creating";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(535, 418);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 29);
+            this.label14.TabIndex = 47;
+            this.label14.Text = "- ";
+            // 
+            // txtInvoiceCount
+            // 
+            this.txtInvoiceCount.AutoSize = true;
+            this.txtInvoiceCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtInvoiceCount.Location = new System.Drawing.Point(570, 418);
+            this.txtInvoiceCount.Name = "txtInvoiceCount";
+            this.txtInvoiceCount.Size = new System.Drawing.Size(29, 29);
+            this.txtInvoiceCount.TabIndex = 46;
+            this.txtInvoiceCount.Text = "- ";
+            // 
             // FrmBilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 972);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtInvoiceCount);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgInvoiceList);
             this.Controls.Add(this.label9);
@@ -423,5 +448,7 @@
         private System.Windows.Forms.DateTimePicker BillingDate;
         private System.Windows.Forms.TextBox txtResidentName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label txtInvoiceCount;
     }
 }

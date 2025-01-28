@@ -32,6 +32,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.txtRRDescription = new System.Windows.Forms.TextBox();
             this.DeleteBtn = new System.Windows.Forms.Button();
@@ -41,7 +42,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtRRTitle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtRRCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgRRList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +99,16 @@
             this.groupBox1.Size = new System.Drawing.Size(1085, 272);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Description";
             // 
             // ClearBtn
             // 
@@ -197,21 +209,35 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Title";
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Description";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(669, 461);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 29);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "- ";
+            // 
+            // txtRRCount
+            // 
+            this.txtRRCount.AutoSize = true;
+            this.txtRRCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRRCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtRRCount.Location = new System.Drawing.Point(704, 461);
+            this.txtRRCount.Name = "txtRRCount";
+            this.txtRRCount.Size = new System.Drawing.Size(29, 29);
+            this.txtRRCount.TabIndex = 27;
+            this.txtRRCount.Text = "- ";
             // 
             // FrmRulesAndRegulations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtRRCount);
             this.Controls.Add(this.dgRRList);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -244,5 +270,7 @@
         private System.Windows.Forms.TextBox txtRRTitle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtRRCount;
     }
 }

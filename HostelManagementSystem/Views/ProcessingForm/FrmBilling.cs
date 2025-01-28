@@ -273,7 +273,7 @@ namespace HostelManagementSystem.Views
                 adapter.Fill(ds, "invoices");
                 dt = ds.Tables["invoices"];
                 dgInvoiceList.DataSource = dt;
-
+                txtInvoiceCount.Text = ds.Tables["invoices"].Rows.Count.ToString();
                 dgInvoiceList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgInvoiceList.AllowUserToAddRows = false;
                 dgInvoiceList.RowTemplate.Height = 50;

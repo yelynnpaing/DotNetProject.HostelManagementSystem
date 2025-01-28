@@ -60,6 +60,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgResidentList = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtResidentCount = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResidentPictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -291,9 +293,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(1030, 24);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 20);
+            this.label11.Size = new System.Drawing.Size(163, 20);
             this.label11.TabIndex = 42;
-            this.label11.Text = "Room Price";
+            this.label11.Text = "Room Price ( MMK )";
             // 
             // CheckBoxLeave
             // 
@@ -425,11 +427,35 @@
             this.dgResidentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellClick);
             this.dgResidentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgResidentList_CellContentClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(541, 519);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 29);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "- ";
+            // 
+            // txtResidentCount
+            // 
+            this.txtResidentCount.AutoSize = true;
+            this.txtResidentCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResidentCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtResidentCount.Location = new System.Drawing.Point(576, 519);
+            this.txtResidentCount.Name = "txtResidentCount";
+            this.txtResidentCount.Size = new System.Drawing.Size(29, 29);
+            this.txtResidentCount.TabIndex = 25;
+            this.txtResidentCount.Text = "- ";
+            // 
             // FrmResidentDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1932, 1003);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtResidentCount);
             this.Controls.Add(this.dgResidentList);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -482,5 +508,7 @@
         private System.Windows.Forms.DataGridView dgResidentList;
         private System.Windows.Forms.TextBox txtUIN;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txtResidentCount;
     }
 }
