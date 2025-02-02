@@ -47,6 +47,8 @@ namespace HostelManagementSystem.Views
             cboRoomPosition.Enabled = true;
             txtRoomPrice.Enabled = true;
             txtRoomId.Focus();
+            UpdateBtn.Visible = false;
+            DeleteBtn.Visible = false;
         }
 
         private void FillCboRoomType()
@@ -269,6 +271,8 @@ namespace HostelManagementSystem.Views
                 Byte[] imageData = (Byte[])dgRoom.CurrentRow.Cells[4].Value;
                 MemoryStream ms = new MemoryStream(imageData);
                 RoomPictureBox.Image = Image.FromStream(ms);
+                UpdateBtn.Visible = true;
+                DeleteBtn.Visible = true;
             }
             catch
             {

@@ -1,4 +1,5 @@
-﻿using HostelManagementSystem.Views.ResidentListtems;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using HostelManagementSystem.Views.ResidentListtems;
 using Org.BouncyCastle.Asn1;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,7 @@ namespace HostelManagementSystem.Views
             ResidentPictureBox.Image = null;
             txtResidentAddress.Text = "";
             txtResidentPhone.Text = "";
+            UpdateBtn.Visible = false;
         }
 
         private void AutoId()
@@ -168,7 +170,7 @@ namespace HostelManagementSystem.Views
                 RccCommand.Parameters.Add("@CountCapacity", SqlDbType.Int).Value = i;
                 RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
                 RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
-                ExecuteMyQuery(RccCommand, "Add Room Capacity new Count for resident");
+                ExecuteMyQuery(RccCommand, "Add Room Capacity new Count for resident and Making Bill Process for this resident right now!");
                 
                 Clear();
                 FillDgResidents();
@@ -275,6 +277,7 @@ namespace HostelManagementSystem.Views
                 }
                 endDate.Text = dgResidentList.CurrentRow.Cells[11].Value.ToString();
                 endDate.Enabled = false;
+                UpdateBtn.Visible = true;
             }
             catch
             {
@@ -472,13 +475,24 @@ namespace HostelManagementSystem.Views
                         {
                             message = "Smart Card ID " + uin + " - " + name + " was Leave from this Hostel. Make register again!";
                             MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string selectQuery = "SELECT * FROM TblResidents WHERE UIN = '"+uin+"' ORDER BY ResidentId DESC";
+                            SqlDataAdapter selectAdapter = new SqlDataAdapter(selectQuery, consql);
+                            DataSet selectDs = new DataSet();
+                            selectAdapter.Fill(selectDs, "ResidentData");
+                            txtUIN.Text = selectDs.Tables["ResidentData"].Rows[0][1].ToString();
+                            txtResidentName.Text = selectDs.Tables["ResidentData"].Rows[0][2].ToString();
+                            Byte[] ImageData = (Byte[])selectDs.Tables["ResidentData"].Rows[0][4];
+                            MemoryStream ms = new MemoryStream(ImageData);
+                            ResidentPictureBox.Image = Image.FromStream(ms);
+                            txtResidentAddress.Text = selectDs.Tables["ResidentData"].Rows[0][5].ToString();
+                            txtResidentPhone.Text = selectDs.Tables["ResidentData"].Rows[0][6].ToString();
+                            CheckboxOccupy.Checked = true;
                             SaveBtn.Visible = true;
                             UpdateBtn.Visible = true;
                             ClearBtn.Visible = true;
                         } 
                     }
                 }
-                
             }
             catch
             {
