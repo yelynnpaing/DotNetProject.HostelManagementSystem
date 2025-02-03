@@ -43,7 +43,6 @@ namespace HostelManagementSystem.Views
             ResidentPictureBox.Image = null;
             txtResidentAddress.Text = "";
             txtResidentPhone.Text = "";
-            UpdateBtn.Visible = false;
         }
 
         private void AutoId()
@@ -115,6 +114,7 @@ namespace HostelManagementSystem.Views
             FillDgResidents();
             txtResidentId.Enabled = false;
             txtRoomPrice.Enabled = false;
+            UpdateBtn.Visible = false;
         }
 
         private void SelectImageBtn_Click(object sender, EventArgs e)
@@ -137,7 +137,6 @@ namespace HostelManagementSystem.Views
             CheckboxOccupy.Enabled = false;
             SaveBtn.Visible = true;
             ClearBtn.Visible = true;
-            UpdateBtn.Visible = true;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -421,6 +420,7 @@ namespace HostelManagementSystem.Views
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             Clear();
+            UpdateBtn.Visible = false;
         }
 
         private void BtnResidentLeave_Click(object sender, EventArgs e)
@@ -467,7 +467,6 @@ namespace HostelManagementSystem.Views
                             message = "Smart Card ID " + uin + " - " + name + " was registered this Hostel.";
                             MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             SaveBtn.Visible = false;
-                            UpdateBtn.Visible = false;
                             ClearBtn.Visible = false;
                             Clear();    
                         }
@@ -487,8 +486,7 @@ namespace HostelManagementSystem.Views
                             txtResidentAddress.Text = selectDs.Tables["ResidentData"].Rows[0][5].ToString();
                             txtResidentPhone.Text = selectDs.Tables["ResidentData"].Rows[0][6].ToString();
                             CheckboxOccupy.Checked = true;
-                            SaveBtn.Visible = true;
-                            UpdateBtn.Visible = true;
+                            SaveBtn.Visible = true;                            
                             ClearBtn.Visible = true;
                         } 
                     }

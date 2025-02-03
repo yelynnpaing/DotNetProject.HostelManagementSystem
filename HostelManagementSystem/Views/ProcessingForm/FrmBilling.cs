@@ -117,65 +117,85 @@ namespace HostelManagementSystem.Views
             try
             {
                 string query = @"SELECT TblResidents.Name, TblRooms.RoomId, TblRoomPrices.RoomPrice, TblResidents.Phone,
-                                TblResidents.StartDate, TblResidents.EndDate FROM TblRooms
+                                TblResidents.StartDate, TblResidents.EndDate, TblResidents.Leave FROM TblRooms
                                 INNER JOIN TblRoomPrices
                                 ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId
                                 INNER JOIN TblResidents
                                 ON TblRooms.RoomId = TblResidents.RoomId
-                                WHERE TblRooms.RoomId = TblResidents.RoomId AND TblResidents.ResidentId = '" + cboResidentUIN.SelectedValue+"'";
+                                WHERE TblResidents.UIN = '" + cboResidentUIN.Text+ "' ORDER BY EndDate DESC";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
-                adapter.Fill(ds, "invoiceDatas");
-                dt = ds.Tables["invoiceDatas"];
-                txtResidentName.Text = ds.Tables["invoiceDatas"].Rows[0][0].ToString();
-                txtRoomId.Text = ds.Tables["invoiceDatas"].Rows[0][1].ToString();
-                txtRoomPrice.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
-                txtResidentPhone.Text = ds.Tables["invoiceDatas"].Rows[0][3].ToString();
+                adapter.Fill(ds, "invoiceData");
+                dt = ds.Tables["invoiceData"];
+                txtResidentName.Text = ds.Tables["invoiceData"].Rows[0][0].ToString();
+                txtRoomId.Text = ds.Tables["invoiceData"].Rows[0][1].ToString();
+                txtRoomPrice.Text = ds.Tables["invoiceData"].Rows[0][2].ToString();
+                txtResidentPhone.Text = ds.Tables["invoiceData"].Rows[0][3].ToString();
+                string Leave = ds.Tables["InvoiceData"].Rows[1][6].ToString();
                 //Insert EndDate value to New Start Date Value
-                foreach(DataGridViewRow dr in dgInvoiceList.Rows)
+                foreach (DataGridViewRow dr in dgInvoiceList.Rows)
                 {
                     if (dr.Cells["ResidentUIN"].Value.ToString() == cboResidentUIN.Text)
                     {
-                        startDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
-                        startDate.Text = startDate.Value.AddDays(1).ToString();
-                        int m = startDate.Value.Month;
-                        if (m == 2)
+                        if(Leave == "True" && dr.Cells["EndDate"].Value.ToString() != ds.Tables["InvoiceData"].Rows[0][5].ToString())
                         {
-                            if (startDate.Value.Year / 4 == 0)
+                            startDate.Text = ds.Tables["invoiceData"].Rows[0][4].ToString();
+                            endDate.Text = ds.Tables["invoiceData"].Rows[0][5].ToString();
+                            if (endDate.Value.Day - startDate.Value.Day <= 15)
                             {
-                                endDate.Text = startDate.Value.AddDays(28).ToString();
+                                string bill = ds.Tables["invoiceData"].Rows[0][2].ToString();
+                                decimal totalBill = decimal.Parse(bill);
+                                totalBill = totalBill / 2;
+                                txtTotalBill.Text = totalBill.ToString();
                             }
                             else
                             {
-                                endDate.Text = startDate.Value.AddDays(27).ToString();
+                                txtTotalBill.Text = ds.Tables["invoiceData"].Rows[0][2].ToString();
                             }
-                        }
-                        else if (m == 1 || m == 3 || m == 5 || m == 7 || m == 10 || m == 12)
-                        {
-                            endDate.Text = startDate.Value.AddDays(30).ToString();
                         }
                         else
                         {
-                            endDate.Text = startDate.Value.AddDays(29).ToString();
+                            startDate.Text = ds.Tables["invoiceData"].Rows[0][5].ToString();
+                            startDate.Text = startDate.Value.AddDays(1).ToString();
+                            int m = startDate.Value.Month;
+                            if (m == 2)
+                            {
+                                if (startDate.Value.Year / 4 == 0)
+                                {
+                                    endDate.Text = startDate.Value.AddDays(28).ToString();
+                                }
+                                else
+                                {
+                                    endDate.Text = startDate.Value.AddDays(27).ToString();
+                                }
+                            }
+                            else if (m == 1 || m == 3 || m == 5 || m == 7 || m == 10 || m == 12)
+                            {
+                                endDate.Text = startDate.Value.AddDays(30).ToString();
+                            }
+                            else
+                            {
+                                endDate.Text = startDate.Value.AddDays(29).ToString();
+                            }
+                            txtTotalBill.Text = ds.Tables["invoiceData"].Rows[0][2].ToString();
                         }
-                        txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
                         break;
                     }
                     else if(dr.Index == dgInvoiceList.RowCount - 1)
                     {
-                        startDate.Text = ds.Tables["invoiceDatas"].Rows[0][4].ToString();
-                        endDate.Text = ds.Tables["invoiceDatas"].Rows[0][5].ToString();
+                        startDate.Text = ds.Tables["invoiceData"].Rows[0][4].ToString();
+                        endDate.Text = ds.Tables["invoiceData"].Rows[0][5].ToString();
                         if (endDate.Value.Day - startDate.Value.Day <= 15)
                         {
-                            string bill = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
+                            string bill = ds.Tables["invoiceData"].Rows[0][2].ToString();
                             decimal totalBill = decimal.Parse(bill);
                             totalBill = totalBill / 2;
                             txtTotalBill.Text = totalBill.ToString();
                         }
                         else
                         {
-                            txtTotalBill.Text = ds.Tables["invoiceDatas"].Rows[0][2].ToString();
+                            txtTotalBill.Text = ds.Tables["invoiceData"].Rows[0][2].ToString();
                         }
                     }
                 } 
@@ -266,7 +286,7 @@ namespace HostelManagementSystem.Views
                                 INNER JOIN TblRoomPrices 
                                 ON TblRooms.RoomPriceId = TblRoomPrices.RoomPriceId
                                 INNER JOIN TblPaymentTypes 
-                                ON TblInvoices.PaymentTypeId = TblPaymentTypes.PaymentTypeId";
+                                ON TblInvoices.PaymentTypeId = TblPaymentTypes.PaymentTypeId ORDER BY InvID DESC";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
