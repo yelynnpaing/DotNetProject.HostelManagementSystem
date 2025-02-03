@@ -477,7 +477,7 @@ namespace HostelManagementSystem.Views
                                 FROM TblResidents 
                                 LEFT JOIN TblBanResidentHistory
                                 ON TblResidents.ResidentId = TblBanResidentHistory.ResidentId
-                                WHERE UIN = '" + txtUIN.Text+"'";
+                                WHERE UIN = '" + txtUIN.Text+"' ORDER BY ResidentId DESC";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "residentUIN");

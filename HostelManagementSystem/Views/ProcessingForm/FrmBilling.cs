@@ -112,6 +112,7 @@ namespace HostelManagementSystem.Views
             txtTotalBill.Enabled = false;
         }
 
+        string Leave;
         private void cboResidentUIN_Leave(object sender, EventArgs e)
         {
             try
@@ -132,7 +133,10 @@ namespace HostelManagementSystem.Views
                 txtRoomId.Text = ds.Tables["invoiceData"].Rows[0][1].ToString();
                 txtRoomPrice.Text = ds.Tables["invoiceData"].Rows[0][2].ToString();
                 txtResidentPhone.Text = ds.Tables["invoiceData"].Rows[0][3].ToString();
-                string Leave = ds.Tables["InvoiceData"].Rows[1][6].ToString();
+                if (ds.Tables["invoiceData"].Rows.Count > 1)
+                {
+                    Leave = ds.Tables["InvoiceData"].Rows[1][6].ToString();
+                }
                 //Insert EndDate value to New Start Date Value
                 foreach (DataGridViewRow dr in dgInvoiceList.Rows)
                 {
