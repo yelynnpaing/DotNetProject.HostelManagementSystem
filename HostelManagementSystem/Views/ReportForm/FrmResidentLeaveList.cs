@@ -142,6 +142,7 @@ namespace HostelManagementSystem.Views.ResidentListtems
                 adapter.Fill(ds, "leaveResidents");
                 dgvLeaveResidents.DataSource = ds.Tables["leaveResidents"];
                 FillLeaveResidentData();
+                txtResidentCount.Text = ds.Tables["leaveResidents"].Rows.Count.ToString();
             }
             catch
             {

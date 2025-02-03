@@ -136,6 +136,7 @@ namespace HostelManagementSystem.Views
                 dt = ds.Tables["invoices"];
                 dgInvoiceList.DataSource = dt;
                 FillDgInvoiceListData();
+                txtBillingCount.Text = ds.Tables["invoices"].Rows.Count.ToString();
             }
             catch
             {

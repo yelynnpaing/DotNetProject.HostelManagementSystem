@@ -183,8 +183,8 @@ namespace HostelManagementSystem.Views
                 adapter.Fill(ds, "residentList");
                 dt = ds.Tables["residentList"];
                 dgOccupyResidentList.DataSource = ds.Tables["residentList"];
-                txtResidentCount.Text = ds.Tables["residentList"].Rows.Count.ToString();
                 FillDgOccupyResidentListData();
+                txtResidentCount.Text = ds.Tables["residentList"].Rows.Count.ToString();
             }
             catch
             {
@@ -222,9 +222,10 @@ namespace HostelManagementSystem.Views
                 }
                 SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "occupyResidents");
-                dgOccupyResidentList.DataSource = ds.Tables["occupyResidents"];
+                adapter.Fill(ds, "residentList");
+                dgOccupyResidentList.DataSource = ds.Tables["residentList"];
                 FillDgOccupyResidentListData();
+                txtResidentCount.Text = ds.Tables["residentList"].Rows.Count.ToString();
             }
             catch
             {

@@ -43,6 +43,10 @@ namespace HostelManagementSystem.Views
             ResidentPictureBox.Image = null;
             txtResidentAddress.Text = "";
             txtResidentPhone.Text = "";
+            startDate.Text = DateTime.Now.ToString();
+            endDate.Text = DateTime.Now.ToString();
+            startDate.Enabled = true;
+            endDate.Enabled = true;
         }
 
         private void AutoId()
@@ -106,6 +110,39 @@ namespace HostelManagementSystem.Views
             }
         }
 
+
+        private void CalculateEndDate()
+        {
+            DateTime sDate = DateTime.Now;
+            DateTime eDate;
+            int m = sDate.Month;
+            int d = sDate.Day;
+            if (m == 2)
+            {
+                if (startDate.Value.Year / 4 == 0)
+                {
+                    d = 29 - d;
+                    eDate = sDate.AddDays(d);
+                }
+                else
+                {
+                    d = 28 - d;
+                    eDate = sDate.AddDays(d);
+                }
+            }
+            else if (m == 1 || m == 3 || m == 5 || m == 7 || m == 10 || m == 12)
+            {
+                d = 31 - d;
+                eDate = sDate.AddDays(d);
+            }
+            else
+            {
+                d = 30 - d;
+                eDate = sDate.AddDays(d);
+            }
+            endDate.Text = eDate.ToString();
+        }
+
         private void FrmResidentDetail_Load(object sender, EventArgs e)
         {
             Clear();
@@ -137,6 +174,7 @@ namespace HostelManagementSystem.Views
             CheckboxOccupy.Enabled = false;
             SaveBtn.Visible = true;
             ClearBtn.Visible = true;
+            CalculateEndDate();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
