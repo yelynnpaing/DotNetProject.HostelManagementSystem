@@ -42,6 +42,7 @@ namespace HostelManagementSystem.Views
             txtResidentName.Enabled = true;
             txtRoomId.Enabled = true;
             txtResidentPhone.Enabled = true;
+            UpdateBtn.Visible = false;
         }
 
         private void FrmBanResidentList_Load(object sender, EventArgs e)
@@ -271,6 +272,7 @@ namespace HostelManagementSystem.Views
                 txtRoomId.Enabled = false;
                 txtResidentPhone.Enabled = false;
                 BanDate.Enabled = false;
+                UpdateBtn.Visible = true;
             }
             catch
             {
@@ -288,8 +290,7 @@ namespace HostelManagementSystem.Views
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
                 cmd.Parameters.Add("@RoomId", SqlDbType.VarChar).Value = txtRoomId.Text;
-                cmd.Parameters.Add("@BanDate", SqlDbType.DateTime).Value = BanDate.Text;
-                cboRulesAndRegulations.Text = dgBanResidentList.CurrentRow.Cells[6].Value.ToString();
+                cmd.Parameters.Add("@BanDate", SqlDbType.DateTime).Value = BanDate.Text;                
                 cmd.Parameters.Add("@RRID", SqlDbType.Int).Value = cboRulesAndRegulations.SelectedValue;
                 cmd.Parameters.Add("@Ban", SqlDbType.Bit).Value = BanCheckBox.Checked;
                 cmd.Parameters.Add("@UnBan", SqlDbType.Bit).Value = UnBanCheckBox.Checked;
@@ -306,12 +307,6 @@ namespace HostelManagementSystem.Views
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             Clear();
-        }
-
-        private void SearchBtn_Click(object sender, EventArgs e)
-        {
-            FrmBanResidentHistory frmBanResidentHistory = new FrmBanResidentHistory();
-            frmBanResidentHistory.ShowDialog();
         }
     }
 }

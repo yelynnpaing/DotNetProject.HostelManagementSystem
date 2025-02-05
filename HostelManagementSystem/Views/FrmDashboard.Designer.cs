@@ -716,7 +716,6 @@
             this.Name = "FrmDashboard";
             this.Text = "FrmDashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            //this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.SidebarPanel.ResumeLayout(false);
             this.SidebarPanel.PerformLayout();
             this.BanResidentListPanel.ResumeLayout(false);
