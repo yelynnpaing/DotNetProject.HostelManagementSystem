@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.SidebarPanel = new System.Windows.Forms.Panel();
             this.BanResidentListPanel = new System.Windows.Forms.Panel();
-            this.banResidentLabel = new System.Windows.Forms.Label();
+            this.banResidentListLabel = new System.Windows.Forms.Label();
             this.banResidentListPic = new System.Windows.Forms.PictureBox();
             this.ReportPanel = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.ReportLabel = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.LeaveResidentPanel = new System.Windows.Forms.Panel();
             this.leaveResidentListLabel = new System.Windows.Forms.Label();
@@ -43,10 +43,10 @@
             this.RulesAndRegulationLabel = new System.Windows.Forms.Label();
             this.RulesAndRegulationPic = new System.Windows.Forms.PictureBox();
             this.ProcessingPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.ProcessingLabel = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.DataEntryPanel = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.DataEntryLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.BanResidentPanel = new System.Windows.Forms.Panel();
             this.BanResidantLabel = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.RRListPanel = new System.Windows.Forms.Panel();
             this.RRLabel = new System.Windows.Forms.Label();
             this.RRPic = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.BillingPanel = new System.Windows.Forms.Panel();
             this.BillingLabel = new System.Windows.Forms.Label();
             this.BillingPic = new System.Windows.Forms.PictureBox();
             this.LogoutPanel = new System.Windows.Forms.Panel();
@@ -100,7 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).BeginInit();
             this.RRListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RRPic)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.BillingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingPic)).BeginInit();
             this.LogoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoutPic)).BeginInit();
@@ -131,7 +131,7 @@
             this.SidebarPanel.Controls.Add(this.DataEntryPanel);
             this.SidebarPanel.Controls.Add(this.BanResidentPanel);
             this.SidebarPanel.Controls.Add(this.RRListPanel);
-            this.SidebarPanel.Controls.Add(this.panel2);
+            this.SidebarPanel.Controls.Add(this.BillingPanel);
             this.SidebarPanel.Controls.Add(this.LogoutPanel);
             this.SidebarPanel.Controls.Add(this.BillListPanel);
             this.SidebarPanel.Controls.Add(this.PersonListPanel);
@@ -148,24 +148,26 @@
             // 
             // BanResidentListPanel
             // 
-            this.BanResidentListPanel.Controls.Add(this.banResidentLabel);
+            this.BanResidentListPanel.Controls.Add(this.banResidentListLabel);
             this.BanResidentListPanel.Controls.Add(this.banResidentListPic);
             this.BanResidentListPanel.Location = new System.Drawing.Point(70, 739);
             this.BanResidentListPanel.Name = "BanResidentListPanel";
             this.BanResidentListPanel.Size = new System.Drawing.Size(222, 43);
             this.BanResidentListPanel.TabIndex = 7;
             // 
-            // banResidentLabel
+            // banResidentListLabel
             // 
-            this.banResidentLabel.AutoSize = true;
-            this.banResidentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.banResidentLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.banResidentLabel.Location = new System.Drawing.Point(40, 11);
-            this.banResidentLabel.Name = "banResidentLabel";
-            this.banResidentLabel.Size = new System.Drawing.Size(160, 20);
-            this.banResidentLabel.TabIndex = 1;
-            this.banResidentLabel.Text = "Ban Resident List";
-            this.banResidentLabel.Click += new System.EventHandler(this.banResidentLabel_Click);
+            this.banResidentListLabel.AutoSize = true;
+            this.banResidentListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.banResidentListLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.banResidentListLabel.Location = new System.Drawing.Point(40, 11);
+            this.banResidentListLabel.Name = "banResidentListLabel";
+            this.banResidentListLabel.Size = new System.Drawing.Size(160, 20);
+            this.banResidentListLabel.TabIndex = 1;
+            this.banResidentListLabel.Text = "Ban Resident List";
+            this.banResidentListLabel.Click += new System.EventHandler(this.banResidentLabel_Click);
+            this.banResidentListLabel.MouseEnter += new System.EventHandler(this.banResidentListLabel_MouseEnter);
+            this.banResidentListLabel.MouseLeave += new System.EventHandler(this.banResidentListLabel_MouseLeave);
             // 
             // banResidentListPic
             // 
@@ -180,23 +182,25 @@
             // 
             // ReportPanel
             // 
-            this.ReportPanel.Controls.Add(this.label7);
+            this.ReportPanel.Controls.Add(this.ReportLabel);
             this.ReportPanel.Controls.Add(this.pictureBox5);
             this.ReportPanel.Location = new System.Drawing.Point(25, 506);
             this.ReportPanel.Name = "ReportPanel";
             this.ReportPanel.Size = new System.Drawing.Size(222, 52);
             this.ReportPanel.TabIndex = 4;
             // 
-            // label7
+            // ReportLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(49, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 22);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Reports";
+            this.ReportLabel.AutoSize = true;
+            this.ReportLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.ReportLabel.Location = new System.Drawing.Point(49, 13);
+            this.ReportLabel.Name = "ReportLabel";
+            this.ReportLabel.Size = new System.Drawing.Size(80, 22);
+            this.ReportLabel.TabIndex = 1;
+            this.ReportLabel.Text = "Reports";
+            this.ReportLabel.MouseEnter += new System.EventHandler(this.ReportLabel_MouseEnter);
+            this.ReportLabel.MouseLeave += new System.EventHandler(this.ReportLabel_MouseLeave);
             // 
             // pictureBox5
             // 
@@ -228,6 +232,8 @@
             this.leaveResidentListLabel.TabIndex = 1;
             this.leaveResidentListLabel.Text = "Leave Resident List";
             this.leaveResidentListLabel.Click += new System.EventHandler(this.leaveResidentListLabel_Click);
+            this.leaveResidentListLabel.MouseEnter += new System.EventHandler(this.leaveResidentListLabel_MouseEnter);
+            this.leaveResidentListLabel.MouseLeave += new System.EventHandler(this.leaveResidentListLabel_MouseLeave);
             // 
             // leaveResidentListPic
             // 
@@ -260,6 +266,10 @@
             this.RulesAndRegulationLabel.TabIndex = 1;
             this.RulesAndRegulationLabel.Text = "RulesAndRegulations";
             this.RulesAndRegulationLabel.Click += new System.EventHandler(this.RulesAndRegulationLabel_Click);
+            //this.RulesAndRegulationLabel.Enter += new System.EventHandler(this.RulesAndRegulationLabel_Enter);
+            //this.RulesAndRegulationLabel.Leave += new System.EventHandler(this.RulesAndRegulationLabel_Leave);
+            this.RulesAndRegulationLabel.MouseEnter += new System.EventHandler(this.RulesAndRegulationLabel_MouseEnter);
+            this.RulesAndRegulationLabel.MouseLeave += new System.EventHandler(this.RulesAndRegulationLabel_MouseLeave);
             // 
             // RulesAndRegulationPic
             // 
@@ -274,23 +284,25 @@
             // 
             // ProcessingPanel
             // 
-            this.ProcessingPanel.Controls.Add(this.label5);
+            this.ProcessingPanel.Controls.Add(this.ProcessingLabel);
             this.ProcessingPanel.Controls.Add(this.pictureBox3);
             this.ProcessingPanel.Location = new System.Drawing.Point(25, 364);
             this.ProcessingPanel.Name = "ProcessingPanel";
             this.ProcessingPanel.Size = new System.Drawing.Size(222, 49);
             this.ProcessingPanel.TabIndex = 4;
             // 
-            // label5
+            // ProcessingLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(49, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 22);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Processing";
+            this.ProcessingLabel.AutoSize = true;
+            this.ProcessingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProcessingLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.ProcessingLabel.Location = new System.Drawing.Point(49, 13);
+            this.ProcessingLabel.Name = "ProcessingLabel";
+            this.ProcessingLabel.Size = new System.Drawing.Size(109, 22);
+            this.ProcessingLabel.TabIndex = 1;
+            this.ProcessingLabel.Text = "Processing";
+            this.ProcessingLabel.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            this.ProcessingLabel.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
             // 
             // pictureBox3
             // 
@@ -304,23 +316,25 @@
             // 
             // DataEntryPanel
             // 
-            this.DataEntryPanel.Controls.Add(this.label4);
+            this.DataEntryPanel.Controls.Add(this.DataEntryLabel);
             this.DataEntryPanel.Controls.Add(this.pictureBox2);
             this.DataEntryPanel.Location = new System.Drawing.Point(22, 179);
             this.DataEntryPanel.Name = "DataEntryPanel";
             this.DataEntryPanel.Size = new System.Drawing.Size(222, 48);
             this.DataEntryPanel.TabIndex = 3;
             // 
-            // label4
+            // DataEntryLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(49, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 22);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Data Entry";
+            this.DataEntryLabel.AutoSize = true;
+            this.DataEntryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataEntryLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.DataEntryLabel.Location = new System.Drawing.Point(49, 12);
+            this.DataEntryLabel.Name = "DataEntryLabel";
+            this.DataEntryLabel.Size = new System.Drawing.Size(105, 22);
+            this.DataEntryLabel.TabIndex = 1;
+            this.DataEntryLabel.Text = "Data Entry";
+            this.DataEntryLabel.MouseEnter += new System.EventHandler(this.DataEntryLabel_MouseEnter);
+            this.DataEntryLabel.MouseLeave += new System.EventHandler(this.DataEntryLabel_MouseLeave);
             // 
             // pictureBox2
             // 
@@ -352,6 +366,8 @@
             this.BanResidantLabel.TabIndex = 1;
             this.BanResidantLabel.Text = "Ban Residents";
             this.BanResidantLabel.Click += new System.EventHandler(this.BanResidantLabel_Click);
+            this.BanResidantLabel.MouseEnter += new System.EventHandler(this.BanResidantLabel_MouseEnter);
+            this.BanResidantLabel.MouseLeave += new System.EventHandler(this.BanResidantLabel_MouseLeave);
             // 
             // BanResidentPic
             // 
@@ -384,6 +400,8 @@
             this.RRLabel.TabIndex = 1;
             this.RRLabel.Text = "RulesRegulationsList\r\n";
             this.RRLabel.Click += new System.EventHandler(this.RRLabel_Click);
+            this.RRLabel.MouseEnter += new System.EventHandler(this.RRLabel_MouseEnter);
+            this.RRLabel.MouseLeave += new System.EventHandler(this.RRLabel_MouseLeave);
             // 
             // RRPic
             // 
@@ -396,14 +414,14 @@
             this.RRPic.TabStop = false;
             this.RRPic.Click += new System.EventHandler(this.RRPic_Click);
             // 
-            // panel2
+            // BillingPanel
             // 
-            this.panel2.Controls.Add(this.BillingLabel);
-            this.panel2.Controls.Add(this.BillingPic);
-            this.panel2.Location = new System.Drawing.Point(70, 416);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(222, 43);
-            this.panel2.TabIndex = 7;
+            this.BillingPanel.Controls.Add(this.BillingLabel);
+            this.BillingPanel.Controls.Add(this.BillingPic);
+            this.BillingPanel.Location = new System.Drawing.Point(70, 416);
+            this.BillingPanel.Name = "BillingPanel";
+            this.BillingPanel.Size = new System.Drawing.Size(222, 43);
+            this.BillingPanel.TabIndex = 7;
             // 
             // BillingLabel
             // 
@@ -416,6 +434,8 @@
             this.BillingLabel.TabIndex = 1;
             this.BillingLabel.Text = "Billing";
             this.BillingLabel.Click += new System.EventHandler(this.BillingLabel_Click);
+            this.BillingLabel.MouseEnter += new System.EventHandler(this.BillingLabel_MouseEnter);
+            this.BillingLabel.MouseLeave += new System.EventHandler(this.BillingLabel_MouseLeave);
             // 
             // BillingPic
             // 
@@ -448,6 +468,8 @@
             this.LogoutLabel.TabIndex = 1;
             this.LogoutLabel.Text = "Log Out";
             this.LogoutLabel.Click += new System.EventHandler(this.LogoutLabel_Click);
+            this.LogoutLabel.MouseEnter += new System.EventHandler(this.LogoutLabel_MouseEnter);
+            this.LogoutLabel.MouseLeave += new System.EventHandler(this.LogoutLabel_MouseLeave);
             // 
             // LogoutPic
             // 
@@ -480,6 +502,8 @@
             this.BillListLabel.TabIndex = 1;
             this.BillListLabel.Text = "Billing History";
             this.BillListLabel.Click += new System.EventHandler(this.BillListLabel_Click);
+            this.BillListLabel.MouseEnter += new System.EventHandler(this.BillListLabel_MouseEnter);
+            this.BillListLabel.MouseLeave += new System.EventHandler(this.BillListLabel_MouseLeave);
             // 
             // BillListPic
             // 
@@ -512,6 +536,8 @@
             this.PersonListLabel.TabIndex = 1;
             this.PersonListLabel.Text = "Resident List";
             this.PersonListLabel.Click += new System.EventHandler(this.PersonListLabel_Click);
+            this.PersonListLabel.MouseEnter += new System.EventHandler(this.PersonListLabel_MouseEnter);
+            this.PersonListLabel.MouseLeave += new System.EventHandler(this.PersonListLabel_MouseLeave);
             // 
             // PersonListPic
             // 
@@ -544,6 +570,8 @@
             this.RoomListLabel.TabIndex = 1;
             this.RoomListLabel.Text = "Room List";
             this.RoomListLabel.Click += new System.EventHandler(this.RoomListLabel_Click);
+            this.RoomListLabel.MouseEnter += new System.EventHandler(this.RoomListLabel_MouseEnter);
+            this.RoomListLabel.MouseLeave += new System.EventHandler(this.RoomListLabel_MouseLeave);
             // 
             // RoomListPic
             // 
@@ -576,6 +604,8 @@
             this.PersonDetailLabel.TabIndex = 1;
             this.PersonDetailLabel.Text = "Resident Detail";
             this.PersonDetailLabel.Click += new System.EventHandler(this.PersonDetailLabel_Click);
+            this.PersonDetailLabel.MouseEnter += new System.EventHandler(this.PersonDetailLabel_MouseEnter);
+            this.PersonDetailLabel.MouseLeave += new System.EventHandler(this.PersonDetailLabel_MouseLeave);
             // 
             // PersonDetailPic
             // 
@@ -629,6 +659,8 @@
             this.RoomLabel.TabIndex = 1;
             this.RoomLabel.Text = "Room";
             this.RoomLabel.Click += new System.EventHandler(this.RoomLabel_Click);
+            this.RoomLabel.MouseEnter += new System.EventHandler(this.RoomLabel_MouseEnter);
+            this.RoomLabel.MouseLeave += new System.EventHandler(this.RoomLabel_MouseLeave);
             // 
             // RoomPic
             // 
@@ -742,8 +774,8 @@
             this.RRListPanel.ResumeLayout(false);
             this.RRListPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RRPic)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.BillingPanel.ResumeLayout(false);
+            this.BillingPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingPic)).EndInit();
             this.LogoutPanel.ResumeLayout(false);
             this.LogoutPanel.PerformLayout();
@@ -797,7 +829,7 @@
         private System.Windows.Forms.Panel BillListPanel;
         private System.Windows.Forms.Label BillListLabel;
         private System.Windows.Forms.PictureBox BillListPic;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel BillingPanel;
         private System.Windows.Forms.Label BillingLabel;
         private System.Windows.Forms.PictureBox BillingPic;
         private System.Windows.Forms.Panel BanResidentPanel;
@@ -812,19 +844,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel DataEntryPanel;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label DataEntryLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel ProcessingPanel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label ProcessingLabel;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel RRPanel;
         private System.Windows.Forms.Label RulesAndRegulationLabel;
         private System.Windows.Forms.PictureBox RulesAndRegulationPic;
         private System.Windows.Forms.Panel ReportPanel;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label ReportLabel;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel BanResidentListPanel;
-        private System.Windows.Forms.Label banResidentLabel;
+        private System.Windows.Forms.Label banResidentListLabel;
         private System.Windows.Forms.PictureBox banResidentListPic;
         private System.Windows.Forms.Panel LeaveResidentPanel;
         private System.Windows.Forms.Label leaveResidentListLabel;

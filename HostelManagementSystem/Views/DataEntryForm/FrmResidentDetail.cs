@@ -197,21 +197,27 @@ namespace HostelManagementSystem.Views
                 cmd.Parameters.Add("@Occupy", SqlDbType.Bit).Value = CheckboxOccupy.Checked;
                 cmd.Parameters.Add("@Leave", SqlDbType.Bit).Value = CheckBoxLeave.Checked;
                 cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate.Text;
+                if(!String.IsNullOrEmpty(txtResidentId.Text) && !String.IsNullOrEmpty(txtUIN.Text) && !String.IsNullOrEmpty(txtResidentName.Text) && !String.IsNullOrEmpty(cboRoomId.SelectedValue.ToString()) && !String.IsNullOrEmpty(txtResidentAddress.Text))
+                {
+                    ExecuteMyQuery(cmd, "New resident creating is success!");
 
-                ExecuteMyQuery(cmd, "New resident creating is success!");
+                    //For Room Capacity Check
+                    int i = 1;
+                    string RCCquery = "INSERT INTO TblRoomCapacityCheck VALUES (@CountCapacity, @RoomId, @ResidentId)";
+                    SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
+                    RccCommand.Parameters.Add("@CountCapacity", SqlDbType.Int).Value = i;
+                    RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
+                    RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
+                    ExecuteMyQuery(RccCommand, "Add Room Capacity new Count for resident and Making Bill Process for this resident right now!");
 
-                //For Room Capacity Check
-                int i = 1;
-                string RCCquery = "INSERT INTO TblRoomCapacityCheck VALUES (@CountCapacity, @RoomId, @ResidentId)";
-                SqlCommand RccCommand = new SqlCommand(RCCquery, consql);
-                RccCommand.Parameters.Add("@CountCapacity", SqlDbType.Int).Value = i;
-                RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
-                RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
-                ExecuteMyQuery(RccCommand, "Add Room Capacity new Count for resident and Making Bill Process for this resident right now!");
-                
-                Clear();
-                FillDgResidents();
-                FillCboRoomId();
+                    Clear();
+                    FillDgResidents();
+                    FillCboRoomId();
+                }
+                else
+                {
+                    MessageBox.Show("Fill Resident data to all field!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch
             {
