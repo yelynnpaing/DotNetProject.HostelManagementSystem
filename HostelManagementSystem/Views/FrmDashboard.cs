@@ -7,10 +7,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -25,6 +26,7 @@ namespace HostelManagementSystem.Views
 
         SqlConnection consql;
         string str;
+        private Label LastSelectLabel = null;
 
         private void Connection()
         {
@@ -47,10 +49,54 @@ namespace HostelManagementSystem.Views
             f.Show();
         }
 
+        // * * * Not Use 
+        //private void CheckLabelUnderLine()
+        //{
+        //    foreach (Control control in SidebarPanel.Controls)
+        //    {
+        //        if (control is Label label)
+        //        {
+        //            label.Click += Label_Click;
+        //        }
+        //    }
+        //}
+
+        //private void Label_Click(object sender, EventArgs e)
+        //{
+        //    if(sender is Label clickedLabel)
+        //    {
+        //        if (LastSelectLabel != null)
+        //        {
+        //            LastSelectLabel.Font = new Font(LastSelectLabel.Font, LastSelectLabel.Font.Style ^ FontStyle.Underline);
+        //        }
+        //        clickedLabel.Font = new Font(clickedLabel.Font, clickedLabel.Font.Style ^ FontStyle.Underline);
+        //        LastSelectLabel = clickedLabel;
+        //    }
+        //}
+
+        //for Active Page
+        private void LabelUnderLine(object sender)
+        {
+            if (sender is Label clickedLabel)
+            {
+                if (LastSelectLabel != null)
+                {
+                    LastSelectLabel.Font = new Font(LastSelectLabel.Font, LastSelectLabel.Font.Style ^ FontStyle.Underline);
+                    LastSelectLabel.Font = new Font(LastSelectLabel.Font, LastSelectLabel.Font.Style ^ FontStyle.Italic);
+                }
+
+                clickedLabel.Font = new Font(clickedLabel.Font, clickedLabel.Font.Style ^ FontStyle.Underline);
+                clickedLabel.Font = new Font(clickedLabel.Font, clickedLabel.Font.Style ^ FontStyle.Italic);
+               
+                LastSelectLabel = clickedLabel;
+            };
+        }
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
 
         //private void FrmDashboard_Load(object sender, EventArgs e)
         //{
@@ -69,6 +115,7 @@ namespace HostelManagementSystem.Views
 
         private void RulesAndRegulationLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmRulesAndRegulations());
         }
 
@@ -87,6 +134,7 @@ namespace HostelManagementSystem.Views
         
         private void RoomLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             if (FrmLogin.instance.UserRole != "admin")
             {
                 MessageBox.Show("Warning! you cann't access this features. This is only for admin.So, You can use other features.",
@@ -105,6 +153,7 @@ namespace HostelManagementSystem.Views
 
         private void RoomListLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmRoomList());
         }
 
@@ -115,6 +164,7 @@ namespace HostelManagementSystem.Views
 
         private void PersonDetailLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmResidentDetail());
         }
 
@@ -125,6 +175,7 @@ namespace HostelManagementSystem.Views
 
         private void PersonListLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmResidentList());
         }
 
@@ -135,6 +186,7 @@ namespace HostelManagementSystem.Views
 
         private void BillingLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmBilling());
         }
 
@@ -145,6 +197,7 @@ namespace HostelManagementSystem.Views
 
         private void BillListLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmBillingHistory());
         }
 
@@ -163,6 +216,7 @@ namespace HostelManagementSystem.Views
 
         private void BanResidantLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             if (FrmLogin.instance.UserRole != "admin")
             {
                 MessageBox.Show("Warning! you cann't access this features. This is only for admin.So, You can use other features.",
@@ -181,16 +235,19 @@ namespace HostelManagementSystem.Views
 
         private void leaveResidentListLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmResidentLeaveList());
         }
 
         private void banResidentListPic_Click(object sender, EventArgs e)
         {
+
             FormLoad(new FrmBanResidentHistory());
         }
 
         private void banResidentLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmBanResidentHistory());
         }
 
@@ -201,6 +258,7 @@ namespace HostelManagementSystem.Views
 
         private void RRLabel_Click(object sender, EventArgs e)
         {
+            LabelUnderLine(sender);
             FormLoad(new FrmRulesAndRegulationsList());
         }
 
@@ -221,8 +279,7 @@ namespace HostelManagementSystem.Views
         }
 
 
-        //for hover effect        
-       
+        //for hover effect     
         private void DataEntryLabel_MouseEnter(object sender, EventArgs e)
         {
             DataEntryPanel.BackColor = Color.Gray;
@@ -402,9 +459,6 @@ namespace HostelManagementSystem.Views
             LogoutPanel.BackColor = Color.Transparent;
             LogoutLabel.ForeColor = SystemColors.Control;
         }
-
-        //For active
-       
 
     }
 }

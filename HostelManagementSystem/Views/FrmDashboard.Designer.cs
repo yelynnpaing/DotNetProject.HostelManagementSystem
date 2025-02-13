@@ -266,8 +266,6 @@
             this.RulesAndRegulationLabel.TabIndex = 1;
             this.RulesAndRegulationLabel.Text = "RulesAndRegulations";
             this.RulesAndRegulationLabel.Click += new System.EventHandler(this.RulesAndRegulationLabel_Click);
-            //this.RulesAndRegulationLabel.Enter += new System.EventHandler(this.RulesAndRegulationLabel_Enter);
-            //this.RulesAndRegulationLabel.Leave += new System.EventHandler(this.RulesAndRegulationLabel_Leave);
             this.RulesAndRegulationLabel.MouseEnter += new System.EventHandler(this.RulesAndRegulationLabel_MouseEnter);
             this.RulesAndRegulationLabel.MouseLeave += new System.EventHandler(this.RulesAndRegulationLabel_MouseLeave);
             // 
@@ -850,7 +848,6 @@
         private System.Windows.Forms.Label ProcessingLabel;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel RRPanel;
-        private System.Windows.Forms.Label RulesAndRegulationLabel;
         private System.Windows.Forms.PictureBox RulesAndRegulationPic;
         private System.Windows.Forms.Panel ReportPanel;
         private System.Windows.Forms.Label ReportLabel;
@@ -861,5 +858,6 @@
         private System.Windows.Forms.Panel LeaveResidentPanel;
         private System.Windows.Forms.Label leaveResidentListLabel;
         private System.Windows.Forms.PictureBox leaveResidentListPic;
+        public System.Windows.Forms.Label RulesAndRegulationLabel;
     }
 }
