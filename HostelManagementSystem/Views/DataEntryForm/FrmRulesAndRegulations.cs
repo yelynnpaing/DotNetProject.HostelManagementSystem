@@ -37,6 +37,7 @@ namespace HostelManagementSystem.Views.DataEntryForm
             txtRRTitle.Focus();
             UpdateBtn.Visible = false;
             DeleteBtn.Visible = false;
+            SaveBtn.Visible = true;
         }
 
         private void FrmRulesAndRegulations_Load(object sender, EventArgs e)
@@ -118,6 +119,7 @@ namespace HostelManagementSystem.Views.DataEntryForm
             txtRRDescription.Text = dgRRList.CurrentRow.Cells[2].Value.ToString();
             UpdateBtn.Visible = true;
             DeleteBtn.Visible = true;
+            SaveBtn.Visible = false;
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)

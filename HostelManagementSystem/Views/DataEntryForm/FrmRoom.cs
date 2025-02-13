@@ -49,6 +49,8 @@ namespace HostelManagementSystem.Views
             txtRoomId.Focus();
             UpdateBtn.Visible = false;
             DeleteBtn.Visible = false;
+            NewBtn.Visible = true;
+            SaveBtn.Visible = true;
         }
 
         private void FillCboRoomType()
@@ -273,6 +275,8 @@ namespace HostelManagementSystem.Views
                 RoomPictureBox.Image = Image.FromStream(ms);
                 UpdateBtn.Visible = true;
                 DeleteBtn.Visible = true;
+                NewBtn.Visible = false;
+                SaveBtn.Visible = false;
             }
             catch
             {

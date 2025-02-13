@@ -47,6 +47,9 @@ namespace HostelManagementSystem.Views
             endDate.Text = DateTime.Now.ToString();
             startDate.Enabled = true;
             endDate.Enabled = true;
+            UpdateBtn.Visible = false;
+            NewBtn.Visible = true;
+            SaveBtn.Visible = true;
         }
 
         private void AutoId()
@@ -151,7 +154,6 @@ namespace HostelManagementSystem.Views
             FillDgResidents();
             txtResidentId.Enabled = false;
             txtRoomPrice.Enabled = false;
-            UpdateBtn.Visible = false;
         }
 
         private void SelectImageBtn_Click(object sender, EventArgs e)
@@ -321,6 +323,8 @@ namespace HostelManagementSystem.Views
                 endDate.Text = dgResidentList.CurrentRow.Cells[11].Value.ToString();
                 endDate.Enabled = false;
                 UpdateBtn.Visible = true;
+                NewBtn.Visible = false;
+                SaveBtn.Visible = false;
             }
             catch
             {
@@ -371,7 +375,7 @@ namespace HostelManagementSystem.Views
                 cmd.Parameters.Add("@Occupy", SqlDbType.Bit).Value = CheckboxOccupy.Checked;
                 cmd.Parameters.Add("@Leave", SqlDbType.Bit).Value = CheckBoxLeave.Checked;
                 cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate.Text;
-                ExecuteMyQuery(cmd, "Resident was successfully updated.");
+                ExecuteMyQuery(cmd, "Resident was successfully updated.");               
             }
             catch
             {
