@@ -18,4 +18,4 @@ ER for MM Hostel Management System
 
 Resident Register in Hostel Management System
 ----------------------------------------------
-![ResidentRegister](Images/systemImages/resident-register.png)
+![ResidentRegister](Images/systemImages/resident-register(2).png)
