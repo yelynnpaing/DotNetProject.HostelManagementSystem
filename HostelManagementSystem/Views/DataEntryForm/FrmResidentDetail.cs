@@ -50,6 +50,8 @@ namespace HostelManagementSystem.Views
             UpdateBtn.Visible = false;
             NewBtn.Visible = true;
             SaveBtn.Visible = true;
+            leaveDateLabel.Visible = false;
+            leaveDate.Visible = false;
         }
 
         private void AutoId()
@@ -174,6 +176,7 @@ namespace HostelManagementSystem.Views
             txtResidentId.Enabled = false;
             CheckboxOccupy.Checked = true;
             CheckboxOccupy.Enabled = false;
+            endDate.Enabled = false;
             SaveBtn.Visible = true;
             ClearBtn.Visible = true;
             CalculateEndDate();
@@ -186,7 +189,7 @@ namespace HostelManagementSystem.Views
                 var image = new ImageConverter().ConvertTo(ResidentPictureBox.Image, typeof(Byte[]));
 
                 string query = @"INSERT INTO TblResidents VALUES (@ResidentId,@UIN, @Name, @RoomId, @Image,
-                                @Address, @Phone, @StartDate, @Occupy, @Leave, @EndDate)";
+                                @Address, @Phone, @StartDate, @Occupy, @Leave, @EndDate, @LeaveDate)";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
                 cmd.Parameters.Add("@UIN", SqlDbType.VarChar).Value = txtUIN.Text;
@@ -199,7 +202,8 @@ namespace HostelManagementSystem.Views
                 cmd.Parameters.Add("@Occupy", SqlDbType.Bit).Value = CheckboxOccupy.Checked;
                 cmd.Parameters.Add("@Leave", SqlDbType.Bit).Value = CheckBoxLeave.Checked;
                 cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate.Text;
-                if(!String.IsNullOrEmpty(txtResidentId.Text) && !String.IsNullOrEmpty(txtUIN.Text) && !String.IsNullOrEmpty(txtResidentName.Text) && !String.IsNullOrEmpty(cboRoomId.SelectedValue.ToString()) && !String.IsNullOrEmpty(txtResidentAddress.Text))
+                cmd.Parameters.Add("@LeaveDate", SqlDbType.DateTime).Value = endDate.Text;
+                if (!String.IsNullOrEmpty(txtResidentId.Text) && !String.IsNullOrEmpty(txtUIN.Text) && !String.IsNullOrEmpty(txtResidentName.Text) && !String.IsNullOrEmpty(cboRoomId.SelectedValue.ToString()) && !String.IsNullOrEmpty(txtResidentAddress.Text))
                 {
                     ExecuteMyQuery(cmd, "New resident creating is success!");
 
@@ -297,6 +301,10 @@ namespace HostelManagementSystem.Views
         {
             try
             {
+                leaveDateLabel.Visible = true;
+                leaveDate.Visible = true;
+                leaveDate.Enabled = false;
+                leaveDate.Text = DateTime.Now.ToString();
                 txtResidentId.Text = dgResidentList.CurrentRow.Cells[0].Value.ToString();
                 txtResidentId.Enabled = false;
                 txtUIN.Text = dgResidentList.CurrentRow.Cells[1].Value.ToString();
@@ -361,7 +369,7 @@ namespace HostelManagementSystem.Views
             {
                 string query = "UPDATE TblResidents SET ResidentId = @ResidentId, UIN = @UIN, Name = @Name, RoomId = @RoomId, " +
                 "Image = @Image, Address = @Address, Phone = @Phone, StartDate = @StartDate, Occupy = @Occupy, " +
-                "Leave = @Leave, EndDate = @EndDate WHERE ResidentId = @ResidentId";
+                "Leave = @Leave, EndDate = @EndDate, LeaveDate = @LeaveDate WHERE ResidentId = @ResidentId";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
                 cmd.Parameters.Add("@UIN", SqlDbType.VarChar).Value = txtUIN.Text;
@@ -375,7 +383,10 @@ namespace HostelManagementSystem.Views
                 cmd.Parameters.Add("@Occupy", SqlDbType.Bit).Value = CheckboxOccupy.Checked;
                 cmd.Parameters.Add("@Leave", SqlDbType.Bit).Value = CheckBoxLeave.Checked;
                 cmd.Parameters.Add("@EndDate", SqlDbType.DateTime).Value = endDate.Text;
-                ExecuteMyQuery(cmd, "Resident was successfully updated.");               
+                cmd.Parameters.Add("@LeaveDate", SqlDbType.DateTime).Value = leaveDate.Text;
+                ExecuteMyQuery(cmd, "Resident was successfully updated.");
+                leaveDateLabel.Visible = false;
+                leaveDate.Visible = false;
             }
             catch
             {

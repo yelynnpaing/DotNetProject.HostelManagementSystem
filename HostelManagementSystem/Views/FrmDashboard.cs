@@ -83,14 +83,37 @@ namespace HostelManagementSystem.Views
                 {
                     LastSelectLabel.Font = new Font(LastSelectLabel.Font, LastSelectLabel.Font.Style ^ FontStyle.Underline);
                     LastSelectLabel.Font = new Font(LastSelectLabel.Font, LastSelectLabel.Font.Style ^ FontStyle.Italic);
+                    LastSelectLabel.ForeColor = SystemColors.Control;
                 }
 
                 clickedLabel.Font = new Font(clickedLabel.Font, clickedLabel.Font.Style ^ FontStyle.Underline);
                 clickedLabel.Font = new Font(clickedLabel.Font, clickedLabel.Font.Style ^ FontStyle.Italic);
-               
+                clickedLabel.ForeColor = Color.Gold;
                 LastSelectLabel = clickedLabel;
             };
         }
+
+
+        private void ChangeLabelColor(object sender, EventArgs e)
+        {
+            if(sender is Label hoverLabel)
+            {
+                if(hoverLabel.ForeColor == Color.Gold)
+                {
+                    hoverLabel.ForeColor = Color.Gold;
+                }
+                else if(hoverLabel.ForeColor == Color.Black)
+                {
+                    hoverLabel.ForeColor = SystemColors.Control;
+                }
+                else if(hoverLabel.ForeColor == SystemColors.Control)
+                {
+                    hoverLabel.ForeColor = Color.Black;
+                }
+            }
+        }
+
+        // End Active Page
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -279,7 +302,8 @@ namespace HostelManagementSystem.Views
         }
 
 
-        //for hover effect     
+        //for hover effect
+        
         private void DataEntryLabel_MouseEnter(object sender, EventArgs e)
         {
             DataEntryPanel.BackColor = Color.Gray;
@@ -288,176 +312,176 @@ namespace HostelManagementSystem.Views
 
         private void DataEntryLabel_MouseLeave(object sender, EventArgs e)
         {
-            DataEntryPanel.BackColor = Color.Transparent;
+            DataEntryPanel.BackColor = Color.Transparent;            
             DataEntryLabel.ForeColor = SystemColors.Control;
         }
 
         private void RulesAndRegulationLabel_MouseEnter(object sender, EventArgs e)
         {
-            RRPanel.BackColor = Color.Gray;
-            RulesAndRegulationLabel.ForeColor = Color.Black;
+            RRPanel.BackColor = Color.Gray;           
+            ChangeLabelColor(sender, e);
         }
 
         private void RulesAndRegulationLabel_MouseLeave(object sender, EventArgs e)
         {
-            RRPanel.BackColor = Color.Transparent;
-            RulesAndRegulationLabel.ForeColor = SystemColors.Control;
+            RRPanel.BackColor = Color.Transparent;            
+            ChangeLabelColor(sender, e);
         }
 
         private void RoomLabel_MouseEnter(object sender, EventArgs e)
         {
-            RoomPanel.BackColor = Color.Gray;
-            RoomLabel.ForeColor = Color.Black;
+            RoomPanel.BackColor = Color.Gray;           
+            ChangeLabelColor(sender, e);
         }
 
         private void RoomLabel_MouseLeave(object sender, EventArgs e)
         {
             RoomPanel.BackColor = Color.Transparent;
-            RoomLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void PersonDetailLabel_MouseEnter(object sender, EventArgs e)
         {
             PersonDetailPanel.BackColor = Color.Gray;
-            PersonDetailLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void PersonDetailLabel_MouseLeave(object sender, EventArgs e)
         {
             PersonDetailPanel.BackColor = Color.Transparent;
-            PersonDetailLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void label5_MouseEnter(object sender, EventArgs e)
         {
             ProcessingPanel.BackColor = Color.Gray;
-            ProcessingLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void label5_MouseLeave(object sender, EventArgs e)
         {
             ProcessingPanel.BackColor = Color.Transparent;
-            ProcessingLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void BillingLabel_MouseEnter(object sender, EventArgs e)
         {
             BillingPanel.BackColor = Color.Gray;
-            BillingLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void BillingLabel_MouseLeave(object sender, EventArgs e)
         {
             BillingPanel.BackColor = Color.Transparent;
-            BillingLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void BanResidantLabel_MouseEnter(object sender, EventArgs e)
         {
             BanResidentPanel.BackColor = Color.Gray;
-            BanResidantLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void BanResidantLabel_MouseLeave(object sender, EventArgs e)
         {
             BanResidentPanel.BackColor = Color.Transparent;
-            BanResidantLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void ReportLabel_MouseEnter(object sender, EventArgs e)
         {
             ReportPanel.BackColor = Color.Gray;
-            ReportLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void ReportLabel_MouseLeave(object sender, EventArgs e)
         {
             ReportPanel.BackColor = Color.Transparent;
-            ReportLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void RoomListLabel_MouseEnter(object sender, EventArgs e)
         {
             RoomListPanel.BackColor = Color.Gray;
-            RoomListLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void RoomListLabel_MouseLeave(object sender, EventArgs e)
         {
             RoomListPanel.BackColor = Color.Transparent;
-            RoomListLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void PersonListLabel_MouseEnter(object sender, EventArgs e)
         {
             PersonListPanel.BackColor = Color.Gray;
-            PersonListLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void PersonListLabel_MouseLeave(object sender, EventArgs e)
         {
             PersonListPanel.BackColor = Color.Transparent;
-            PersonListLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void BillListLabel_MouseEnter(object sender, EventArgs e)
         {
             BillListPanel.BackColor = Color.Gray;
-            BillListLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void BillListLabel_MouseLeave(object sender, EventArgs e)
         {
             BillListPanel.BackColor = Color.Transparent;
-            BillListLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void leaveResidentListLabel_MouseEnter(object sender, EventArgs e)
         {
             LeaveResidentPanel.BackColor = Color.Gray;
-            leaveResidentListLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void leaveResidentListLabel_MouseLeave(object sender, EventArgs e)
         {
             LeaveResidentPanel.BackColor = Color.Transparent;
-            leaveResidentListLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void banResidentListLabel_MouseEnter(object sender, EventArgs e)
         {
             BanResidentListPanel.BackColor = Color.Gray;
-            banResidentListLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void banResidentListLabel_MouseLeave(object sender, EventArgs e)
         {
             BanResidentListPanel.BackColor = Color.Transparent;
-            banResidentListLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void RRLabel_MouseEnter(object sender, EventArgs e)
         {
             RRListPanel.BackColor = Color.Gray;
-            RRLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void RRLabel_MouseLeave(object sender, EventArgs e)
         {
             RRListPanel.BackColor = Color.Transparent;
-            RRLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
         private void LogoutLabel_MouseEnter(object sender, EventArgs e)
         {
             LogoutPanel.BackColor = Color.Gray;
-            LogoutLabel.ForeColor = Color.Black;
+            ChangeLabelColor(sender, e);
         }
 
         private void LogoutLabel_MouseLeave(object sender, EventArgs e)
         {
             LogoutPanel.BackColor = Color.Transparent;
-            LogoutLabel.ForeColor = SystemColors.Control;
+            ChangeLabelColor(sender, e);
         }
 
     }

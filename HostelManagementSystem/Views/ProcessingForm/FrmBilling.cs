@@ -108,7 +108,7 @@ namespace HostelManagementSystem.Views
             txtRoomPrice.Enabled = false;
             txtResidentPhone.Enabled = false;
             startDate.Enabled = false;
-            //endDate.Enabled = false;
+            endDate.Enabled = false;
             txtTotalBill.Enabled = false;
         }
 

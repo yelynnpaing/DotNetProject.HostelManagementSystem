@@ -62,6 +62,8 @@
             this.dgResidentList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtResidentCount = new System.Windows.Forms.Label();
+            this.leaveDateLabel = new System.Windows.Forms.Label();
+            this.leaveDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ResidentPictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -339,6 +341,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.leaveDateLabel);
+            this.groupBox1.Controls.Add(this.leaveDate);
             this.groupBox1.Controls.Add(this.txtUIN);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
@@ -368,7 +372,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(359, 156);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1260, 349);
+            this.groupBox1.Size = new System.Drawing.Size(1502, 349);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
@@ -449,6 +453,25 @@
             this.txtResidentCount.TabIndex = 25;
             this.txtResidentCount.Text = "- ";
             // 
+            // leaveDateLabel
+            // 
+            this.leaveDateLabel.AutoSize = true;
+            this.leaveDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leaveDateLabel.Location = new System.Drawing.Point(1281, 20);
+            this.leaveDateLabel.Name = "leaveDateLabel";
+            this.leaveDateLabel.Size = new System.Drawing.Size(95, 20);
+            this.leaveDateLabel.TabIndex = 50;
+            this.leaveDateLabel.Text = "Leave Date";
+            // 
+            // leaveDate
+            // 
+            this.leaveDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leaveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.leaveDate.Location = new System.Drawing.Point(1285, 43);
+            this.leaveDate.Name = "leaveDate";
+            this.leaveDate.Size = new System.Drawing.Size(159, 27);
+            this.leaveDate.TabIndex = 49;
+            // 
             // FrmResidentDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -510,5 +533,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtResidentCount;
+        private System.Windows.Forms.Label leaveDateLabel;
+        private System.Windows.Forms.DateTimePicker leaveDate;
     }
 }

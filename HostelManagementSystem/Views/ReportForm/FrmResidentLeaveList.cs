@@ -63,7 +63,7 @@ namespace HostelManagementSystem.Views.ResidentListtems
 
         string OriginQuery = @"SELECT TblResidents.UIN AS ResidentUIN, TblResidents.Name,TblResidents.RoomId As RoomNo, 
                                 TblResidents.Image, TblResidents.Address, TblResidents.Phone,
-                                TblResidents.StartDate, TblResidents.EndDate
+                                TblResidents.StartDate, TblResidents.EndDate, TblResidents.LeaveDate
                                 FROM TblResidents 
                                 INNER JOIN TblRooms ON TblResidents.RoomId = TblRooms.RoomId
                                 WHERE Leave = 1";
@@ -129,12 +129,13 @@ namespace HostelManagementSystem.Views.ResidentListtems
                 string searchQuery;
                 if (cboResidentUIN.Text == "")
                 {
-                    searchQuery = @"" + OriginQuery + " AND TblResidents.StartDate BETWEEN '" + StartDate.Text + "'  AND '" + EndDate.Text + "'";
+                    //searchQuery = @"" + OriginQuery + " AND TblResidents.LeaveDate BETWEEN '" + StartDate.Text + "'  AND '" + EndDate.Text + "'";
+                    searchQuery = @"" + OriginQuery + " AND TblResidents.LeaveDate = '" + leaveDate.Text + "'";
                 }
                 else
                 {
                     searchQuery = @"" + OriginQuery + " AND TblResidents.UIN = '" + cboResidentUIN.Text + "'" +
-                                    "AND TblResidents.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
+                                    "AND TblResidents.LeaveDate = '" + leaveDate.Text + "'";
                 }
                 
                 SqlDataAdapter adapter = new SqlDataAdapter(searchQuery, consql);
@@ -167,11 +168,12 @@ namespace HostelManagementSystem.Views.ResidentListtems
             dt.Columns.Add("Phone No", typeof(string));
             dt.Columns.Add("Start Date", typeof(DateTime));
             dt.Columns.Add("End Date", typeof(DateTime));
+            dt.Columns.Add("Leave Date", typeof(DateTime));
 
-            foreach(DataGridViewRow dgv in dgvLeaveResidents.Rows)
+            foreach (DataGridViewRow dgv in dgvLeaveResidents.Rows)
             {
                 dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[4].Value,
-                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value);
+                    dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value, dgv.Cells[8].Value);
             }
 
             ds.Tables.Add(dt);
