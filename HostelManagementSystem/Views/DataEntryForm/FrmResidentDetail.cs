@@ -214,8 +214,8 @@ namespace HostelManagementSystem.Views
                     RccCommand.Parameters.Add("@CountCapacity", SqlDbType.Int).Value = i;
                     RccCommand.Parameters.Add("RoomId", SqlDbType.VarChar).Value = cboRoomId.SelectedValue;
                     RccCommand.Parameters.Add("@ResidentId", SqlDbType.VarChar).Value = txtResidentId.Text;
-                    ExecuteMyQuery(RccCommand, "Add Room Capacity new Count for resident and Making Bill Process for this resident right now!");
-
+                    ExecuteMyQuery(RccCommand, "Add Room Capacity new Count for this resident!");
+                    MessageBox.Show("Hello System User, Making Bill Process for this resident right now!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Clear();
                     FillDgResidents();
                     FillCboRoomId();

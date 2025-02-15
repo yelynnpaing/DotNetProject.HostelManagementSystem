@@ -33,6 +33,7 @@ namespace HostelManagementSystem.Views
         private void Clear()
         {
             cboRoomId.Text = "";
+            cboResidentUIN.Text = "";
             StartDate.Text = "";
             EndDate.Text = "";
         }
@@ -57,11 +58,27 @@ namespace HostelManagementSystem.Views
             }
         }
 
+        private void FillCboResidents()
+        {
+            string query = @"SELECT TblResidents.ResidentId, TblResidents.UIN AS ResidentUIN, TblResidents.Name FROM TblResidents
+                            INNER JOIN TblRoomCapacityCheck
+                            ON TblResidents.ResidentId = TblRoomCapacityCheck.ResidentId";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            adapter.Fill(ds, "residents");
+            dt = ds.Tables["residents"];
+            cboResidentUIN.DataSource = dt;
+            cboResidentUIN.DisplayMember = dt.Columns["ResidentUIN"].ToString();
+            cboResidentUIN.ValueMember = dt.Columns["ResidentId"].ToString();
+        }
+
         private void FrmBillingHistory_Load(object sender, EventArgs e)
         {
             Clear();
             Connection();
             FillCboRoomId();
+            FillCboResidents();
             FillDgInvoiceList();
             if (FrmLogin.instance.UserRole != "admin")
             {
@@ -69,9 +86,9 @@ namespace HostelManagementSystem.Views
             }
         }
 
-        string OriginQuery = @"SELECT TblInvoices.InvID, TblResidents.Name, TblRooms.RoomId As RoomNo, TblRoomPrices.RoomPrice,
+        string OriginQuery = @"SELECT TblInvoices.InvID, TblResidents.Name,TblResidents.UIN, TblRooms.RoomId As RoomNo, TblRoomPrices.RoomPrice,
                                 TblInvoices.BillingDate, TblResidents.Phone, TblInvoices.StartDate, TblInvoices.EndDate, 
-                                TblInvoices.TotalBill, TblPaymentTypes.PaymentName FROM TblInvoices
+                                TblInvoices.TotalBill, TblPaymentTypes.PaymentName As Payment FROM TblInvoices
                                 INNER JOIN TblResidents
                                 ON TblInvoices.ResidentId = TblResidents.ResidentId
                                 INNER JOIN TblRooms 
@@ -98,7 +115,7 @@ namespace HostelManagementSystem.Views
         {
             try
             {
-                string query = @""+OriginQuery+ " ORDER BY InvID";
+                string query = @""+OriginQuery+ " ORDER BY InvID DESC";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 DataTable dt = new DataTable();
@@ -119,14 +136,25 @@ namespace HostelManagementSystem.Views
             try
             {
                 string query;
-                if (cboRoomId.Text == "")
+                if (cboRoomId.Text == "" && cboResidentUIN.Text == "")
                 {
                     query = @"" + OriginQuery + " WHERE TblInvoices.StartDate BETWEEN '" + StartDate.Text + "'  AND '" + EndDate.Text + "'";
+                }
+                else if(cboRoomId.Text == "")
+                {
+                    query = @"" + OriginQuery + " WHERE TblResidents.UIN = '" + cboResidentUIN.Text + "'" +
+                                    "AND TblInvoices.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
+                }
+                else if(cboResidentUIN.Text == "")
+                {
+                    query = @"" + OriginQuery + " WHERE TblRooms.RoomId = '" + cboRoomId.Text + "'" +
+                                    "AND TblInvoices.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
                 }
                 else
                 {
                     query = @"" + OriginQuery + " WHERE TblRooms.RoomId = '" + cboRoomId.Text + "'" +
-                                    "AND TblInvoices.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
+                                    "AND TblResidents.UIN = '" + cboResidentUIN.Text + "'" +
+                                   "AND TblInvoices.StartDate BETWEEN '" + StartDate.Text + "' AND '" + EndDate.Text + "'";
                 }
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
@@ -152,15 +180,11 @@ namespace HostelManagementSystem.Views
 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void PrintBtn_Click_1(object sender, EventArgs e)
-        {
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             dt.Columns.Add("InvoiceNo", typeof(string));
             dt.Columns.Add("Resident", typeof(string));
+            dt.Columns.Add("UIN", typeof(string));
             dt.Columns.Add("Room No", typeof(string));
             dt.Columns.Add("Price", typeof(decimal));
             dt.Columns.Add("Billing Date", typeof(DateTime));
@@ -174,7 +198,7 @@ namespace HostelManagementSystem.Views
             {
                 dt.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value,
                     dgv.Cells[4].Value, dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value,
-                    dgv.Cells[8].Value, dgv.Cells[9].Value);
+                    dgv.Cells[8].Value, dgv.Cells[9].Value, dgv.Cells[10].Value);
             }
 
             ds.Tables.Add(dt);

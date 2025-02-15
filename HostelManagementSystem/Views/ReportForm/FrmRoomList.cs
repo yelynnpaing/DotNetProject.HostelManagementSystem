@@ -60,7 +60,7 @@ namespace HostelManagementSystem.Views
 
         string QueryOrigin = @"SELECT TblRooms.RoomId As RoomNo, TblRoomTypes.RoomType, TblRoomPositions.RoomPosition, 
                                TblRooms.RoomImage, TblRoomPrices.RoomPrice, 
-                               TblRoomCapacity.Capacity, TblResidents.Name As Name, TblResidents.UIN AS ResidentUIN,
+                               TblRoomCapacity.Capacity, TblResidents.Name As Resident, TblResidents.UIN AS ResidentUIN,
                                TblResidents.EndDate
                                FROM TblRooms
                                INNER JOIN TblRoomTypes

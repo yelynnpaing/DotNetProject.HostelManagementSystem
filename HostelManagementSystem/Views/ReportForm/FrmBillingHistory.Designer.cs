@@ -43,6 +43,8 @@
             this.PrintBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBillingCount = new System.Windows.Forms.Label();
+            this.cboResidentUIN = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoiceList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +84,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboResidentUIN);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.ClearBtn);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.EndDate);
@@ -92,7 +96,7 @@
             this.groupBox1.Controls.Add(this.NewBtn);
             this.groupBox1.Location = new System.Drawing.Point(363, 181);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 187);
+            this.groupBox1.Size = new System.Drawing.Size(997, 187);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             // 
@@ -113,7 +117,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(527, 39);
+            this.label5.Location = new System.Drawing.Point(767, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 20);
             this.label5.TabIndex = 49;
@@ -123,7 +127,7 @@
             // 
             this.EndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.EndDate.Location = new System.Drawing.Point(531, 62);
+            this.EndDate.Location = new System.Drawing.Point(771, 61);
             this.EndDate.Name = "EndDate";
             this.EndDate.Size = new System.Drawing.Size(188, 27);
             this.EndDate.TabIndex = 48;
@@ -141,7 +145,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(281, 39);
+            this.label7.Location = new System.Drawing.Point(521, 38);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 20);
             this.label7.TabIndex = 40;
@@ -151,7 +155,7 @@
             // 
             this.StartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.StartDate.Location = new System.Drawing.Point(285, 62);
+            this.StartDate.Location = new System.Drawing.Point(525, 61);
             this.StartDate.Name = "StartDate";
             this.StartDate.Size = new System.Drawing.Size(188, 27);
             this.StartDate.TabIndex = 39;
@@ -190,7 +194,7 @@
             this.PrintBtn.TabIndex = 57;
             this.PrintBtn.Text = "Print Billing History";
             this.PrintBtn.UseVisualStyleBackColor = false;
-            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click_1);
+            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
             // label1
             // 
@@ -213,6 +217,25 @@
             this.txtBillingCount.Size = new System.Drawing.Size(29, 29);
             this.txtBillingCount.TabIndex = 58;
             this.txtBillingCount.Text = "- ";
+            // 
+            // cboResidentUIN
+            // 
+            this.cboResidentUIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboResidentUIN.FormattingEnabled = true;
+            this.cboResidentUIN.Location = new System.Drawing.Point(282, 61);
+            this.cboResidentUIN.Name = "cboResidentUIN";
+            this.cboResidentUIN.Size = new System.Drawing.Size(188, 28);
+            this.cboResidentUIN.TabIndex = 52;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(278, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Resident UIN";
             // 
             // FrmBillingHistory
             // 
@@ -256,5 +279,7 @@
         private System.Windows.Forms.Button PrintBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtBillingCount;
+        private System.Windows.Forms.ComboBox cboResidentUIN;
+        private System.Windows.Forms.Label label2;
     }
 }

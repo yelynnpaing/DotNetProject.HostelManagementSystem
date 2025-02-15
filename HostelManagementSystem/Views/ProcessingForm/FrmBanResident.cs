@@ -43,6 +43,8 @@ namespace HostelManagementSystem.Views
             txtRoomId.Enabled = true;
             txtResidentPhone.Enabled = true;
             UpdateBtn.Visible = false;
+            BanBtn.Visible = true;
+            UnBanCheckBox.Enabled = false;
         }
 
         private void FrmBanResidentList_Load(object sender, EventArgs e)
@@ -273,6 +275,7 @@ namespace HostelManagementSystem.Views
                 txtResidentPhone.Enabled = false;
                 BanDate.Enabled = false;
                 UpdateBtn.Visible = true;
+                BanBtn.Visible = false;
             }
             catch
             {
