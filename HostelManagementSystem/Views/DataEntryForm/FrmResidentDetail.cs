@@ -267,7 +267,7 @@ namespace HostelManagementSystem.Views
                 dgResidentList.Columns[1].Width = 80;
                 dgResidentList.Columns[3].Width = 70;
                 dgResidentList.Columns[4].Width = 90;
-                dgResidentList.Columns[6].Width = 250;
+                dgResidentList.Columns[6].Width = 200;
                 dgResidentList.Columns[9].Width = 70;
                 dgResidentList.Columns[10].Width = 70;
 

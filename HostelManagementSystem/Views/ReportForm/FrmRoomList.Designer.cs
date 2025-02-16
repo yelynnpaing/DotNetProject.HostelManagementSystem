@@ -46,11 +46,11 @@
             // 
             this.dgRoomList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRoomList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgRoomList.Location = new System.Drawing.Point(354, 340);
+            this.dgRoomList.Location = new System.Drawing.Point(377, 340);
             this.dgRoomList.Name = "dgRoomList";
             this.dgRoomList.RowHeadersWidth = 51;
             this.dgRoomList.RowTemplate.Height = 24;
-            this.dgRoomList.Size = new System.Drawing.Size(1551, 599);
+            this.dgRoomList.Size = new System.Drawing.Size(1543, 599);
             this.dgRoomList.TabIndex = 30;
             // 
             // label9
@@ -58,7 +58,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(349, 308);
+            this.label9.Location = new System.Drawing.Point(372, 308);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 29);
             this.label9.TabIndex = 29;
@@ -69,7 +69,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(349, 125);
+            this.label8.Location = new System.Drawing.Point(372, 125);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 29);
             this.label8.TabIndex = 34;
@@ -80,7 +80,7 @@
             this.SearchBtn.BackColor = System.Drawing.Color.DodgerBlue;
             this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(265, 61);
+            this.SearchBtn.Location = new System.Drawing.Point(288, 61);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(130, 36);
             this.SearchBtn.TabIndex = 24;
@@ -92,7 +92,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 43);
+            this.label6.Location = new System.Drawing.Point(56, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 25;
@@ -103,7 +103,7 @@
             this.ClearBtn.BackColor = System.Drawing.Color.Silver;
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearBtn.Location = new System.Drawing.Point(443, 61);
+            this.ClearBtn.Location = new System.Drawing.Point(466, 61);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(130, 36);
             this.ClearBtn.TabIndex = 35;
@@ -117,7 +117,7 @@
             this.groupBox1.Controls.Add(this.ClearBtn);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.SearchBtn);
-            this.groupBox1.Location = new System.Drawing.Point(354, 157);
+            this.groupBox1.Location = new System.Drawing.Point(377, 157);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(626, 135);
             this.groupBox1.TabIndex = 35;
@@ -127,7 +127,7 @@
             // 
             this.cboRoomId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRoomId.FormattingEnabled = true;
-            this.cboRoomId.Location = new System.Drawing.Point(37, 66);
+            this.cboRoomId.Location = new System.Drawing.Point(60, 66);
             this.cboRoomId.Name = "cboRoomId";
             this.cboRoomId.Size = new System.Drawing.Size(188, 28);
             this.cboRoomId.TabIndex = 54;
@@ -137,7 +137,7 @@
             this.PrintBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.PrintBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrintBtn.ForeColor = System.Drawing.Color.Black;
-            this.PrintBtn.Location = new System.Drawing.Point(1716, 298);
+            this.PrintBtn.Location = new System.Drawing.Point(1731, 298);
             this.PrintBtn.Name = "PrintBtn";
             this.PrintBtn.Size = new System.Drawing.Size(189, 36);
             this.PrintBtn.TabIndex = 55;
@@ -150,7 +150,7 @@
             this.highlightBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.highlightBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.highlightBtn.ForeColor = System.Drawing.Color.White;
-            this.highlightBtn.Location = new System.Drawing.Point(544, 301);
+            this.highlightBtn.Location = new System.Drawing.Point(567, 301);
             this.highlightBtn.Name = "highlightBtn";
             this.highlightBtn.Size = new System.Drawing.Size(205, 36);
             this.highlightBtn.TabIndex = 56;

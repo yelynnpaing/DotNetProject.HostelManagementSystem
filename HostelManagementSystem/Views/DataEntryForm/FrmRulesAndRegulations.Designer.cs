@@ -52,7 +52,7 @@
             // 
             this.dgRRList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRRList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgRRList.Location = new System.Drawing.Point(377, 493);
+            this.dgRRList.Location = new System.Drawing.Point(382, 493);
             this.dgRRList.Name = "dgRRList";
             this.dgRRList.RowHeadersWidth = 51;
             this.dgRRList.RowTemplate.Height = 24;
@@ -65,7 +65,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(372, 461);
+            this.label9.Location = new System.Drawing.Point(377, 461);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(278, 29);
             this.label9.TabIndex = 25;
@@ -76,7 +76,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(372, 130);
+            this.label8.Location = new System.Drawing.Point(377, 130);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(391, 29);
             this.label8.TabIndex = 23;
@@ -94,7 +94,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtRRTitle);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(377, 162);
+            this.groupBox1.Location = new System.Drawing.Point(382, 162);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1085, 272);
             this.groupBox1.TabIndex = 24;
@@ -104,7 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 91);
+            this.label2.Location = new System.Drawing.Point(29, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 20);
             this.label2.TabIndex = 36;
@@ -115,7 +115,7 @@
             this.ClearBtn.BackColor = System.Drawing.Color.Silver;
             this.ClearBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Black;
-            this.ClearBtn.Location = new System.Drawing.Point(205, 215);
+            this.ClearBtn.Location = new System.Drawing.Point(210, 215);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(130, 36);
             this.ClearBtn.TabIndex = 35;
@@ -126,7 +126,7 @@
             // txtRRDescription
             // 
             this.txtRRDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRRDescription.Location = new System.Drawing.Point(29, 114);
+            this.txtRRDescription.Location = new System.Drawing.Point(34, 114);
             this.txtRRDescription.Multiline = true;
             this.txtRRDescription.Name = "txtRRDescription";
             this.txtRRDescription.Size = new System.Drawing.Size(843, 86);
@@ -137,7 +137,7 @@
             this.DeleteBtn.BackColor = System.Drawing.Color.OrangeRed;
             this.DeleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteBtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteBtn.Location = new System.Drawing.Point(568, 215);
+            this.DeleteBtn.Location = new System.Drawing.Point(573, 215);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(130, 36);
             this.DeleteBtn.TabIndex = 31;
@@ -150,7 +150,7 @@
             this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBtn.ForeColor = System.Drawing.Color.Black;
-            this.UpdateBtn.Location = new System.Drawing.Point(385, 215);
+            this.UpdateBtn.Location = new System.Drawing.Point(390, 215);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(130, 36);
             this.UpdateBtn.TabIndex = 30;
@@ -163,7 +163,7 @@
             this.SaveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.ForeColor = System.Drawing.Color.White;
-            this.SaveBtn.Location = new System.Drawing.Point(28, 215);
+            this.SaveBtn.Location = new System.Drawing.Point(33, 215);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(130, 36);
             this.SaveBtn.TabIndex = 29;
@@ -174,7 +174,7 @@
             // txtRRId
             // 
             this.txtRRId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRRId.Location = new System.Drawing.Point(889, 48);
+            this.txtRRId.Location = new System.Drawing.Point(894, 48);
             this.txtRRId.Name = "txtRRId";
             this.txtRRId.Size = new System.Drawing.Size(188, 27);
             this.txtRRId.TabIndex = 26;
@@ -184,7 +184,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(886, 27);
+            this.label6.Location = new System.Drawing.Point(891, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 20);
             this.label6.TabIndex = 25;
@@ -194,7 +194,7 @@
             // txtRRTitle
             // 
             this.txtRRTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRRTitle.Location = new System.Drawing.Point(29, 50);
+            this.txtRRTitle.Location = new System.Drawing.Point(34, 50);
             this.txtRRTitle.Name = "txtRRTitle";
             this.txtRRTitle.Size = new System.Drawing.Size(843, 27);
             this.txtRRTitle.TabIndex = 23;
@@ -203,7 +203,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 29);
+            this.label3.Location = new System.Drawing.Point(31, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 20);
             this.label3.TabIndex = 22;
@@ -214,7 +214,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(669, 461);
+            this.label1.Location = new System.Drawing.Point(674, 461);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 29);
             this.label1.TabIndex = 28;
@@ -225,7 +225,7 @@
             this.txtRRCount.AutoSize = true;
             this.txtRRCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRRCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtRRCount.Location = new System.Drawing.Point(704, 461);
+            this.txtRRCount.Location = new System.Drawing.Point(709, 461);
             this.txtRRCount.Name = "txtRRCount";
             this.txtRRCount.Size = new System.Drawing.Size(29, 29);
             this.txtRRCount.TabIndex = 27;

@@ -83,6 +83,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.RoomTypePanel = new System.Windows.Forms.Panel();
+            this.RoomTypeLabel = new System.Windows.Forms.Label();
+            this.RoomTypePic = new System.Windows.Forms.PictureBox();
+            this.RoomPricePanel = new System.Windows.Forms.Panel();
+            this.RoomPriceLabel = new System.Windows.Forms.Label();
+            this.RoomPricePic = new System.Windows.Forms.PictureBox();
+            this.RoomPositionPanel = new System.Windows.Forms.Panel();
+            this.RoomPositionLabel = new System.Windows.Forms.Label();
+            this.RoomPositionPic = new System.Windows.Forms.PictureBox();
+            this.UserPanel = new System.Windows.Forms.Panel();
+            this.UserLabel = new System.Windows.Forms.Label();
+            this.UserPic = new System.Windows.Forms.PictureBox();
             this.SidebarPanel.SuspendLayout();
             this.BanResidentListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.banResidentListPic)).BeginInit();
@@ -118,11 +130,27 @@
             this.HeaderPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.RoomTypePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomTypePic)).BeginInit();
+            this.RoomPricePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPricePic)).BeginInit();
+            this.RoomPositionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPositionPic)).BeginInit();
+            this.UserPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPic)).BeginInit();
             this.SuspendLayout();
             // 
             // SidebarPanel
             // 
             this.SidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.SidebarPanel.Controls.Add(this.UserPanel);
+            this.SidebarPanel.Controls.Add(this.RoomPositionPanel);
+            this.SidebarPanel.Controls.Add(this.LogoLabel);
+            this.SidebarPanel.Controls.Add(this.LogoutPanel);
+            this.SidebarPanel.Controls.Add(this.LogoPic);
+            this.SidebarPanel.Controls.Add(this.RoomPricePanel);
+            this.SidebarPanel.Controls.Add(this.RRListPanel);
+            this.SidebarPanel.Controls.Add(this.RoomTypePanel);
             this.SidebarPanel.Controls.Add(this.BanResidentListPanel);
             this.SidebarPanel.Controls.Add(this.ReportPanel);
             this.SidebarPanel.Controls.Add(this.LeaveResidentPanel);
@@ -130,27 +158,23 @@
             this.SidebarPanel.Controls.Add(this.ProcessingPanel);
             this.SidebarPanel.Controls.Add(this.DataEntryPanel);
             this.SidebarPanel.Controls.Add(this.BanResidentPanel);
-            this.SidebarPanel.Controls.Add(this.RRListPanel);
             this.SidebarPanel.Controls.Add(this.BillingPanel);
-            this.SidebarPanel.Controls.Add(this.LogoutPanel);
             this.SidebarPanel.Controls.Add(this.BillListPanel);
             this.SidebarPanel.Controls.Add(this.PersonListPanel);
             this.SidebarPanel.Controls.Add(this.RoomListPanel);
             this.SidebarPanel.Controls.Add(this.PersonDetailPanel);
-            this.SidebarPanel.Controls.Add(this.LogoLabel);
-            this.SidebarPanel.Controls.Add(this.LogoPic);
             this.SidebarPanel.Controls.Add(this.RoomPanel);
             this.SidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidebarPanel.Location = new System.Drawing.Point(0, 0);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(340, 972);
+            this.SidebarPanel.Size = new System.Drawing.Size(357, 972);
             this.SidebarPanel.TabIndex = 0;
             // 
             // BanResidentListPanel
             // 
             this.BanResidentListPanel.Controls.Add(this.banResidentListLabel);
             this.BanResidentListPanel.Controls.Add(this.banResidentListPic);
-            this.BanResidentListPanel.Location = new System.Drawing.Point(70, 739);
+            this.BanResidentListPanel.Location = new System.Drawing.Point(70, 830);
             this.BanResidentListPanel.Name = "BanResidentListPanel";
             this.BanResidentListPanel.Size = new System.Drawing.Size(222, 43);
             this.BanResidentListPanel.TabIndex = 7;
@@ -184,9 +208,9 @@
             // 
             this.ReportPanel.Controls.Add(this.ReportLabel);
             this.ReportPanel.Controls.Add(this.pictureBox5);
-            this.ReportPanel.Location = new System.Drawing.Point(25, 506);
+            this.ReportPanel.Location = new System.Drawing.Point(25, 602);
             this.ReportPanel.Name = "ReportPanel";
-            this.ReportPanel.Size = new System.Drawing.Size(222, 52);
+            this.ReportPanel.Size = new System.Drawing.Size(222, 47);
             this.ReportPanel.TabIndex = 4;
             // 
             // ReportLabel
@@ -216,7 +240,7 @@
             // 
             this.LeaveResidentPanel.Controls.Add(this.leaveResidentListLabel);
             this.LeaveResidentPanel.Controls.Add(this.leaveResidentListPic);
-            this.LeaveResidentPanel.Location = new System.Drawing.Point(70, 694);
+            this.LeaveResidentPanel.Location = new System.Drawing.Point(70, 785);
             this.LeaveResidentPanel.Name = "LeaveResidentPanel";
             this.LeaveResidentPanel.Size = new System.Drawing.Size(238, 43);
             this.LeaveResidentPanel.TabIndex = 6;
@@ -250,7 +274,7 @@
             // 
             this.RRPanel.Controls.Add(this.RulesAndRegulationLabel);
             this.RRPanel.Controls.Add(this.RulesAndRegulationPic);
-            this.RRPanel.Location = new System.Drawing.Point(73, 229);
+            this.RRPanel.Location = new System.Drawing.Point(70, 192);
             this.RRPanel.Name = "RRPanel";
             this.RRPanel.Size = new System.Drawing.Size(258, 42);
             this.RRPanel.TabIndex = 4;
@@ -284,7 +308,7 @@
             // 
             this.ProcessingPanel.Controls.Add(this.ProcessingLabel);
             this.ProcessingPanel.Controls.Add(this.pictureBox3);
-            this.ProcessingPanel.Location = new System.Drawing.Point(25, 364);
+            this.ProcessingPanel.Location = new System.Drawing.Point(25, 460);
             this.ProcessingPanel.Name = "ProcessingPanel";
             this.ProcessingPanel.Size = new System.Drawing.Size(222, 49);
             this.ProcessingPanel.TabIndex = 4;
@@ -316,7 +340,7 @@
             // 
             this.DataEntryPanel.Controls.Add(this.DataEntryLabel);
             this.DataEntryPanel.Controls.Add(this.pictureBox2);
-            this.DataEntryPanel.Location = new System.Drawing.Point(22, 179);
+            this.DataEntryPanel.Location = new System.Drawing.Point(25, 96);
             this.DataEntryPanel.Name = "DataEntryPanel";
             this.DataEntryPanel.Size = new System.Drawing.Size(222, 48);
             this.DataEntryPanel.TabIndex = 3;
@@ -348,7 +372,7 @@
             // 
             this.BanResidentPanel.Controls.Add(this.BanResidantLabel);
             this.BanResidentPanel.Controls.Add(this.BanResidentPic);
-            this.BanResidentPanel.Location = new System.Drawing.Point(70, 461);
+            this.BanResidentPanel.Location = new System.Drawing.Point(70, 557);
             this.BanResidentPanel.Name = "BanResidentPanel";
             this.BanResidentPanel.Size = new System.Drawing.Size(222, 43);
             this.BanResidentPanel.TabIndex = 4;
@@ -382,7 +406,7 @@
             // 
             this.RRListPanel.Controls.Add(this.RRLabel);
             this.RRListPanel.Controls.Add(this.RRPic);
-            this.RRListPanel.Location = new System.Drawing.Point(70, 784);
+            this.RRListPanel.Location = new System.Drawing.Point(70, 875);
             this.RRListPanel.Name = "RRListPanel";
             this.RRListPanel.Size = new System.Drawing.Size(258, 42);
             this.RRListPanel.TabIndex = 5;
@@ -416,7 +440,7 @@
             // 
             this.BillingPanel.Controls.Add(this.BillingLabel);
             this.BillingPanel.Controls.Add(this.BillingPic);
-            this.BillingPanel.Location = new System.Drawing.Point(70, 416);
+            this.BillingPanel.Location = new System.Drawing.Point(70, 512);
             this.BillingPanel.Name = "BillingPanel";
             this.BillingPanel.Size = new System.Drawing.Size(222, 43);
             this.BillingPanel.TabIndex = 7;
@@ -450,9 +474,9 @@
             // 
             this.LogoutPanel.Controls.Add(this.LogoutLabel);
             this.LogoutPanel.Controls.Add(this.LogoutPic);
-            this.LogoutPanel.Location = new System.Drawing.Point(32, 919);
+            this.LogoutPanel.Location = new System.Drawing.Point(25, 921);
             this.LogoutPanel.Name = "LogoutPanel";
-            this.LogoutPanel.Size = new System.Drawing.Size(222, 48);
+            this.LogoutPanel.Size = new System.Drawing.Size(205, 48);
             this.LogoutPanel.TabIndex = 6;
             // 
             // LogoutLabel
@@ -484,7 +508,7 @@
             // 
             this.BillListPanel.Controls.Add(this.BillListLabel);
             this.BillListPanel.Controls.Add(this.BillListPic);
-            this.BillListPanel.Location = new System.Drawing.Point(70, 649);
+            this.BillListPanel.Location = new System.Drawing.Point(70, 740);
             this.BillListPanel.Name = "BillListPanel";
             this.BillListPanel.Size = new System.Drawing.Size(222, 43);
             this.BillListPanel.TabIndex = 5;
@@ -518,7 +542,7 @@
             // 
             this.PersonListPanel.Controls.Add(this.PersonListLabel);
             this.PersonListPanel.Controls.Add(this.PersonListPic);
-            this.PersonListPanel.Location = new System.Drawing.Point(70, 604);
+            this.PersonListPanel.Location = new System.Drawing.Point(70, 695);
             this.PersonListPanel.Name = "PersonListPanel";
             this.PersonListPanel.Size = new System.Drawing.Size(222, 43);
             this.PersonListPanel.TabIndex = 4;
@@ -552,7 +576,7 @@
             // 
             this.RoomListPanel.Controls.Add(this.RoomListLabel);
             this.RoomListPanel.Controls.Add(this.RoomListPic);
-            this.RoomListPanel.Location = new System.Drawing.Point(70, 559);
+            this.RoomListPanel.Location = new System.Drawing.Point(70, 651);
             this.RoomListPanel.Name = "RoomListPanel";
             this.RoomListPanel.Size = new System.Drawing.Size(222, 42);
             this.RoomListPanel.TabIndex = 3;
@@ -586,7 +610,7 @@
             // 
             this.PersonDetailPanel.Controls.Add(this.PersonDetailLabel);
             this.PersonDetailPanel.Controls.Add(this.PersonDetailPic);
-            this.PersonDetailPanel.Location = new System.Drawing.Point(73, 319);
+            this.PersonDetailPanel.Location = new System.Drawing.Point(70, 415);
             this.PersonDetailPanel.Name = "PersonDetailPanel";
             this.PersonDetailPanel.Size = new System.Drawing.Size(222, 42);
             this.PersonDetailPanel.TabIndex = 3;
@@ -619,20 +643,21 @@
             // LogoLabel
             // 
             this.LogoLabel.AutoSize = true;
-            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
             this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogoLabel.Location = new System.Drawing.Point(20, 80);
+            this.LogoLabel.Location = new System.Drawing.Point(79, 20);
             this.LogoLabel.Name = "LogoLabel";
-            this.LogoLabel.Size = new System.Drawing.Size(291, 25);
+            this.LogoLabel.Size = new System.Drawing.Size(229, 58);
             this.LogoLabel.TabIndex = 2;
-            this.LogoLabel.Text = "MANDALAR MYAY HOSTEL";
+            this.LogoLabel.Text = "MANDALAR MYAY\r\nHOSTEL";
+            this.LogoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LogoPic
             // 
             this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
-            this.LogoPic.Location = new System.Drawing.Point(78, 1);
+            this.LogoPic.Location = new System.Drawing.Point(11, 12);
             this.LogoPic.Name = "LogoPic";
-            this.LogoPic.Size = new System.Drawing.Size(169, 76);
+            this.LogoPic.Size = new System.Drawing.Size(82, 68);
             this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoPic.TabIndex = 4;
             this.LogoPic.TabStop = false;
@@ -641,7 +666,7 @@
             // 
             this.RoomPanel.Controls.Add(this.RoomLabel);
             this.RoomPanel.Controls.Add(this.RoomPic);
-            this.RoomPanel.Location = new System.Drawing.Point(73, 274);
+            this.RoomPanel.Location = new System.Drawing.Point(70, 370);
             this.RoomPanel.Name = "RoomPanel";
             this.RoomPanel.Size = new System.Drawing.Size(222, 42);
             this.RoomPanel.TabIndex = 2;
@@ -676,9 +701,9 @@
             this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(214)))), ((int)(((byte)(222)))));
             this.HeaderPanel.Controls.Add(this.label1);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderPanel.Location = new System.Drawing.Point(340, 0);
+            this.HeaderPanel.Location = new System.Drawing.Point(357, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1584, 100);
+            this.HeaderPanel.Size = new System.Drawing.Size(1567, 80);
             this.HeaderPanel.TabIndex = 1;
             // 
             // label1
@@ -686,7 +711,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 42);
+            this.label1.Location = new System.Drawing.Point(6, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(418, 29);
             this.label1.TabIndex = 5;
@@ -733,6 +758,126 @@
             this.label3.Size = new System.Drawing.Size(921, 54);
             this.label3.TabIndex = 6;
             this.label3.Text = "M A N D A L A R   M Y A Y   H O S T E L !\r\n";
+            // 
+            // RoomTypePanel
+            // 
+            this.RoomTypePanel.Controls.Add(this.RoomTypeLabel);
+            this.RoomTypePanel.Controls.Add(this.RoomTypePic);
+            this.RoomTypePanel.Location = new System.Drawing.Point(70, 237);
+            this.RoomTypePanel.Name = "RoomTypePanel";
+            this.RoomTypePanel.Size = new System.Drawing.Size(258, 42);
+            this.RoomTypePanel.TabIndex = 5;
+            // 
+            // RoomTypeLabel
+            // 
+            this.RoomTypeLabel.AutoSize = true;
+            this.RoomTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomTypeLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RoomTypeLabel.Location = new System.Drawing.Point(40, 10);
+            this.RoomTypeLabel.Name = "RoomTypeLabel";
+            this.RoomTypeLabel.Size = new System.Drawing.Size(107, 20);
+            this.RoomTypeLabel.TabIndex = 1;
+            this.RoomTypeLabel.Text = "RoomTypes";
+            // 
+            // RoomTypePic
+            // 
+            this.RoomTypePic.Image = ((System.Drawing.Image)(resources.GetObject("RoomTypePic.Image")));
+            this.RoomTypePic.Location = new System.Drawing.Point(3, 3);
+            this.RoomTypePic.Name = "RoomTypePic";
+            this.RoomTypePic.Size = new System.Drawing.Size(34, 36);
+            this.RoomTypePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RoomTypePic.TabIndex = 0;
+            this.RoomTypePic.TabStop = false;
+            // 
+            // RoomPricePanel
+            // 
+            this.RoomPricePanel.Controls.Add(this.RoomPriceLabel);
+            this.RoomPricePanel.Controls.Add(this.RoomPricePic);
+            this.RoomPricePanel.Location = new System.Drawing.Point(70, 325);
+            this.RoomPricePanel.Name = "RoomPricePanel";
+            this.RoomPricePanel.Size = new System.Drawing.Size(222, 42);
+            this.RoomPricePanel.TabIndex = 3;
+            // 
+            // RoomPriceLabel
+            // 
+            this.RoomPriceLabel.AutoSize = true;
+            this.RoomPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomPriceLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RoomPriceLabel.Location = new System.Drawing.Point(40, 11);
+            this.RoomPriceLabel.Name = "RoomPriceLabel";
+            this.RoomPriceLabel.Size = new System.Drawing.Size(111, 20);
+            this.RoomPriceLabel.TabIndex = 1;
+            this.RoomPriceLabel.Text = "RoomPrices";
+            // 
+            // RoomPricePic
+            // 
+            this.RoomPricePic.Image = ((System.Drawing.Image)(resources.GetObject("RoomPricePic.Image")));
+            this.RoomPricePic.Location = new System.Drawing.Point(3, 3);
+            this.RoomPricePic.Name = "RoomPricePic";
+            this.RoomPricePic.Size = new System.Drawing.Size(34, 36);
+            this.RoomPricePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RoomPricePic.TabIndex = 0;
+            this.RoomPricePic.TabStop = false;
+            // 
+            // RoomPositionPanel
+            // 
+            this.RoomPositionPanel.Controls.Add(this.RoomPositionLabel);
+            this.RoomPositionPanel.Controls.Add(this.RoomPositionPic);
+            this.RoomPositionPanel.Location = new System.Drawing.Point(70, 281);
+            this.RoomPositionPanel.Name = "RoomPositionPanel";
+            this.RoomPositionPanel.Size = new System.Drawing.Size(222, 42);
+            this.RoomPositionPanel.TabIndex = 4;
+            // 
+            // RoomPositionLabel
+            // 
+            this.RoomPositionLabel.AutoSize = true;
+            this.RoomPositionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomPositionLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RoomPositionLabel.Location = new System.Drawing.Point(40, 11);
+            this.RoomPositionLabel.Name = "RoomPositionLabel";
+            this.RoomPositionLabel.Size = new System.Drawing.Size(135, 20);
+            this.RoomPositionLabel.TabIndex = 1;
+            this.RoomPositionLabel.Text = "RoomPositions";
+            // 
+            // RoomPositionPic
+            // 
+            this.RoomPositionPic.Image = ((System.Drawing.Image)(resources.GetObject("RoomPositionPic.Image")));
+            this.RoomPositionPic.Location = new System.Drawing.Point(3, 3);
+            this.RoomPositionPic.Name = "RoomPositionPic";
+            this.RoomPositionPic.Size = new System.Drawing.Size(34, 36);
+            this.RoomPositionPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RoomPositionPic.TabIndex = 0;
+            this.RoomPositionPic.TabStop = false;
+            // 
+            // UserPanel
+            // 
+            this.UserPanel.Controls.Add(this.UserLabel);
+            this.UserPanel.Controls.Add(this.UserPic);
+            this.UserPanel.Location = new System.Drawing.Point(70, 147);
+            this.UserPanel.Name = "UserPanel";
+            this.UserPanel.Size = new System.Drawing.Size(258, 42);
+            this.UserPanel.TabIndex = 5;
+            // 
+            // UserLabel
+            // 
+            this.UserLabel.AutoSize = true;
+            this.UserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.UserLabel.Location = new System.Drawing.Point(40, 10);
+            this.UserLabel.Name = "UserLabel";
+            this.UserLabel.Size = new System.Drawing.Size(59, 20);
+            this.UserLabel.TabIndex = 1;
+            this.UserLabel.Text = "Users";
+            // 
+            // UserPic
+            // 
+            this.UserPic.Image = ((System.Drawing.Image)(resources.GetObject("UserPic.Image")));
+            this.UserPic.Location = new System.Drawing.Point(3, 3);
+            this.UserPic.Name = "UserPic";
+            this.UserPic.Size = new System.Drawing.Size(34, 36);
+            this.UserPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UserPic.TabIndex = 0;
+            this.UserPic.TabStop = false;
             // 
             // FrmDashboard
             // 
@@ -799,6 +944,18 @@
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.RoomTypePanel.ResumeLayout(false);
+            this.RoomTypePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomTypePic)).EndInit();
+            this.RoomPricePanel.ResumeLayout(false);
+            this.RoomPricePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPricePic)).EndInit();
+            this.RoomPositionPanel.ResumeLayout(false);
+            this.RoomPositionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPositionPic)).EndInit();
+            this.UserPanel.ResumeLayout(false);
+            this.UserPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -859,5 +1016,17 @@
         private System.Windows.Forms.Label leaveResidentListLabel;
         private System.Windows.Forms.PictureBox leaveResidentListPic;
         public System.Windows.Forms.Label RulesAndRegulationLabel;
+        private System.Windows.Forms.Panel RoomTypePanel;
+        public System.Windows.Forms.Label RoomTypeLabel;
+        private System.Windows.Forms.PictureBox RoomTypePic;
+        private System.Windows.Forms.Panel RoomPricePanel;
+        private System.Windows.Forms.Label RoomPriceLabel;
+        private System.Windows.Forms.PictureBox RoomPricePic;
+        private System.Windows.Forms.Panel RoomPositionPanel;
+        private System.Windows.Forms.Label RoomPositionLabel;
+        private System.Windows.Forms.PictureBox RoomPositionPic;
+        private System.Windows.Forms.Panel UserPanel;
+        public System.Windows.Forms.Label UserLabel;
+        private System.Windows.Forms.PictureBox UserPic;
     }
 }

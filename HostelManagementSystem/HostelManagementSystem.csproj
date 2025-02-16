@@ -184,6 +184,12 @@
       <DependentUpon>RulesAndRegualtionsCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Views\DataEntryForm\FrmRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DataEntryForm\FrmRoomType.Designer.cs">
+      <DependentUpon>FrmRoomType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DataEntryForm\FrmRulesAndRegulations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,9 @@
     <EmbeddedResource Include="Reports\RulesAndRegualtionsCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RulesAndRegualtionsCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DataEntryForm\FrmRoomType.resx">
+      <DependentUpon>FrmRoomType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DataEntryForm\FrmRulesAndRegulations.resx">
       <DependentUpon>FrmRulesAndRegulations.cs</DependentUpon>
