@@ -131,6 +131,33 @@ namespace HostelManagementSystem.Views
         //    //}
         //}
 
+        private void UserPic_Click(object sender, EventArgs e)
+        {
+            if (FrmLogin.instance.UserRole != "admin")
+            {
+                MessageBox.Show("Warning! you cann't access this features. This is only for admin.So, You can use other features.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FormLoad(new FrmUser());
+            }
+        }
+
+        private void UserLabel_Click(object sender, EventArgs e)
+        {
+            if(FrmLogin.instance.UserRole != "admin")
+            {
+                MessageBox.Show("Warning! you cann't access this features. This is only for admin.So, You can use other features.",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                LabelUnderLine(sender);
+                FormLoad(new FrmUser());
+            }
+        }
+
         private void RulesAndRegulationPic_Click(object sender, EventArgs e)
         {
             FormLoad(new FrmRulesAndRegulations());            
@@ -140,6 +167,39 @@ namespace HostelManagementSystem.Views
         {
             LabelUnderLine(sender);
             FormLoad(new FrmRulesAndRegulations());
+        }
+        
+        private void RoomTypePic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRoomType());
+        }
+
+        private void RoomTypeLabel_Click(object sender, EventArgs e)
+        {
+            LabelUnderLine(sender);
+            FormLoad(new FrmRoomType());
+        }
+
+        private void RoomPositionPic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRoomPosition());
+        }
+
+        private void RoomPositionLabel_Click(object sender, EventArgs e)
+        {
+            LabelUnderLine(sender);
+            FormLoad(new FrmRoomPosition());
+        }
+
+        private void RoomPricePic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRoomPrice());
+        }
+
+        private void RoomPriceLabel_Click(object sender, EventArgs e)
+        {
+            LabelUnderLine(sender);
+            FormLoad(new FrmRoomPrice());
         }
 
         private void RoomPic_Click(object sender, EventArgs e)
@@ -303,7 +363,6 @@ namespace HostelManagementSystem.Views
 
 
         //for hover effect
-        
         private void DataEntryLabel_MouseEnter(object sender, EventArgs e)
         {
             DataEntryPanel.BackColor = Color.Gray;
@@ -530,40 +589,6 @@ namespace HostelManagementSystem.Views
         {
             LogoutPanel.BackColor = Color.Transparent;
             ChangeLabelColor(sender, e);
-        }
-
-        //New Features
-        private void RoomTypePic_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmRoomType());
-        }
-
-        private void RoomTypeLabel_Click(object sender, EventArgs e)
-        {
-            LabelUnderLine(sender);
-            FormLoad(new FrmRoomType());
-        }
-
-        private void RoomPositionPic_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmRoomPosition());
-        }
-
-        private void RoomPositionLabel_Click(object sender, EventArgs e)
-        {
-            LabelUnderLine(sender);
-            FormLoad(new FrmRoomPosition());
-        }
-
-        private void RoomPricePic_Click(object sender, EventArgs e)
-        {
-            FormLoad(new FrmRoomPrice());
-        }
-
-        private void RoomPriceLabel_Click(object sender, EventArgs e)
-        {
-            LabelUnderLine(sender);
-            FormLoad(new FrmRoomPrice());
         }
     }
 }

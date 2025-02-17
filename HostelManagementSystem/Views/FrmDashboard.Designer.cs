@@ -189,6 +189,7 @@
             this.UserLabel.Size = new System.Drawing.Size(59, 20);
             this.UserLabel.TabIndex = 1;
             this.UserLabel.Text = "Users";
+            this.UserLabel.Click += new System.EventHandler(this.UserLabel_Click);
             this.UserLabel.MouseEnter += new System.EventHandler(this.UserLabel_MouseEnter);
             this.UserLabel.MouseLeave += new System.EventHandler(this.UserLabel_MouseLeave);
             // 
@@ -201,6 +202,7 @@
             this.UserPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UserPic.TabIndex = 0;
             this.UserPic.TabStop = false;
+            this.UserPic.Click += new System.EventHandler(this.UserPic_Click);
             // 
             // RoomPositionPanel
             // 
