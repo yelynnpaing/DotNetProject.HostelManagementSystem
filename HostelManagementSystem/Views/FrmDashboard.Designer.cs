@@ -186,9 +186,9 @@
             this.UserLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.UserLabel.Location = new System.Drawing.Point(40, 10);
             this.UserLabel.Name = "UserLabel";
-            this.UserLabel.Size = new System.Drawing.Size(59, 20);
+            this.UserLabel.Size = new System.Drawing.Size(49, 20);
             this.UserLabel.TabIndex = 1;
-            this.UserLabel.Text = "Users";
+            this.UserLabel.Text = "User";
             this.UserLabel.Click += new System.EventHandler(this.UserLabel_Click);
             this.UserLabel.MouseEnter += new System.EventHandler(this.UserLabel_MouseEnter);
             this.UserLabel.MouseLeave += new System.EventHandler(this.UserLabel_MouseLeave);
@@ -512,9 +512,9 @@
             this.RulesAndRegulationLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.RulesAndRegulationLabel.Location = new System.Drawing.Point(40, 10);
             this.RulesAndRegulationLabel.Name = "RulesAndRegulationLabel";
-            this.RulesAndRegulationLabel.Size = new System.Drawing.Size(188, 20);
+            this.RulesAndRegulationLabel.Size = new System.Drawing.Size(178, 20);
             this.RulesAndRegulationLabel.TabIndex = 1;
-            this.RulesAndRegulationLabel.Text = "RulesAndRegulations";
+            this.RulesAndRegulationLabel.Text = "RulesAndRegulation";
             this.RulesAndRegulationLabel.Click += new System.EventHandler(this.RulesAndRegulationLabel_Click);
             this.RulesAndRegulationLabel.MouseEnter += new System.EventHandler(this.RulesAndRegulationLabel_MouseEnter);
             this.RulesAndRegulationLabel.MouseLeave += new System.EventHandler(this.RulesAndRegulationLabel_MouseLeave);
@@ -610,9 +610,9 @@
             this.BanResidantLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.BanResidantLabel.Location = new System.Drawing.Point(40, 13);
             this.BanResidantLabel.Name = "BanResidantLabel";
-            this.BanResidantLabel.Size = new System.Drawing.Size(132, 20);
+            this.BanResidantLabel.Size = new System.Drawing.Size(122, 20);
             this.BanResidantLabel.TabIndex = 1;
-            this.BanResidantLabel.Text = "Ban Residents";
+            this.BanResidantLabel.Text = "Ban Resident";
             this.BanResidantLabel.Click += new System.EventHandler(this.BanResidantLabel_Click);
             this.BanResidantLabel.MouseEnter += new System.EventHandler(this.BanResidantLabel_MouseEnter);
             this.BanResidantLabel.MouseLeave += new System.EventHandler(this.BanResidantLabel_MouseLeave);
