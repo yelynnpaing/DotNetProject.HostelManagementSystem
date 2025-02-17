@@ -328,6 +328,54 @@ namespace HostelManagementSystem.Views
             ChangeLabelColor(sender, e);
         }
 
+        private void UserLabel_MouseEnter(object sender, EventArgs e)
+        {
+            UserPanel.BackColor = Color.Gray;
+            ChangeLabelColor(sender, e);
+        }
+
+        private void UserLabel_MouseLeave(object sender, EventArgs e)
+        {
+            UserPanel.BackColor = Color.Transparent;
+            ChangeLabelColor(sender, e);
+        }
+
+        private void RoomTypeLabel_MouseEnter(object sender, EventArgs e)
+        {
+            RoomTypePanel.BackColor = Color.Gray;
+            ChangeLabelColor(sender, e);
+        }
+
+        private void RoomTypeLabel_MouseLeave(object sender, EventArgs e)
+        {
+            RoomTypePanel.BackColor = Color.Transparent;
+            ChangeLabelColor(sender, e);
+        }
+
+        private void RoomPositionLabel_MouseEnter(object sender, EventArgs e)
+        {
+            RoomPositionPanel.BackColor = Color.Gray;
+            ChangeLabelColor(sender, e);
+        }
+
+        private void RoomPositionLabel_MouseLeave(object sender, EventArgs e)
+        {
+            RoomPositionPanel.BackColor = Color.Transparent;
+            ChangeLabelColor(sender, e);
+        }
+
+        private void RoomPriceLabel_MouseEnter(object sender, EventArgs e)
+        {
+            RoomPricePanel.BackColor = Color.Gray;
+            ChangeLabelColor(sender, e);
+        }
+
+        private void RoomPriceLabel_MouseLeave(object sender, EventArgs e)
+        {
+            RoomPricePanel.BackColor = Color.Transparent;
+            ChangeLabelColor(sender, e);
+        }        
+
         private void RoomLabel_MouseEnter(object sender, EventArgs e)
         {
             RoomPanel.BackColor = Color.Gray;           
@@ -484,5 +532,38 @@ namespace HostelManagementSystem.Views
             ChangeLabelColor(sender, e);
         }
 
+        //New Features
+        private void RoomTypePic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRoomType());
+        }
+
+        private void RoomTypeLabel_Click(object sender, EventArgs e)
+        {
+            LabelUnderLine(sender);
+            FormLoad(new FrmRoomType());
+        }
+
+        private void RoomPositionPic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRoomPosition());
+        }
+
+        private void RoomPositionLabel_Click(object sender, EventArgs e)
+        {
+            LabelUnderLine(sender);
+            FormLoad(new FrmRoomPosition());
+        }
+
+        private void RoomPricePic_Click(object sender, EventArgs e)
+        {
+            FormLoad(new FrmRoomPrice());
+        }
+
+        private void RoomPriceLabel_Click(object sender, EventArgs e)
+        {
+            LabelUnderLine(sender);
+            FormLoad(new FrmRoomPrice());
+        }
     }
 }

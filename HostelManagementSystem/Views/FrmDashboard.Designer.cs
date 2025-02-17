@@ -30,6 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
             this.SidebarPanel = new System.Windows.Forms.Panel();
+            this.UserPanel = new System.Windows.Forms.Panel();
+            this.UserLabel = new System.Windows.Forms.Label();
+            this.UserPic = new System.Windows.Forms.PictureBox();
+            this.RoomPositionPanel = new System.Windows.Forms.Panel();
+            this.RoomPositionLabel = new System.Windows.Forms.Label();
+            this.RoomPositionPic = new System.Windows.Forms.PictureBox();
+            this.LogoLabel = new System.Windows.Forms.Label();
+            this.LogoutPanel = new System.Windows.Forms.Panel();
+            this.LogoutLabel = new System.Windows.Forms.Label();
+            this.LogoutPic = new System.Windows.Forms.PictureBox();
+            this.LogoPic = new System.Windows.Forms.PictureBox();
+            this.RoomPricePanel = new System.Windows.Forms.Panel();
+            this.RoomPriceLabel = new System.Windows.Forms.Label();
+            this.RoomPricePic = new System.Windows.Forms.PictureBox();
+            this.RRListPanel = new System.Windows.Forms.Panel();
+            this.RRLabel = new System.Windows.Forms.Label();
+            this.RRPic = new System.Windows.Forms.PictureBox();
+            this.RoomTypePanel = new System.Windows.Forms.Panel();
+            this.RoomTypeLabel = new System.Windows.Forms.Label();
+            this.RoomTypePic = new System.Windows.Forms.PictureBox();
             this.BanResidentListPanel = new System.Windows.Forms.Panel();
             this.banResidentListLabel = new System.Windows.Forms.Label();
             this.banResidentListPic = new System.Windows.Forms.PictureBox();
@@ -51,15 +71,9 @@
             this.BanResidentPanel = new System.Windows.Forms.Panel();
             this.BanResidantLabel = new System.Windows.Forms.Label();
             this.BanResidentPic = new System.Windows.Forms.PictureBox();
-            this.RRListPanel = new System.Windows.Forms.Panel();
-            this.RRLabel = new System.Windows.Forms.Label();
-            this.RRPic = new System.Windows.Forms.PictureBox();
             this.BillingPanel = new System.Windows.Forms.Panel();
             this.BillingLabel = new System.Windows.Forms.Label();
             this.BillingPic = new System.Windows.Forms.PictureBox();
-            this.LogoutPanel = new System.Windows.Forms.Panel();
-            this.LogoutLabel = new System.Windows.Forms.Label();
-            this.LogoutPic = new System.Windows.Forms.PictureBox();
             this.BillListPanel = new System.Windows.Forms.Panel();
             this.BillListLabel = new System.Windows.Forms.Label();
             this.BillListPic = new System.Windows.Forms.PictureBox();
@@ -72,8 +86,6 @@
             this.PersonDetailPanel = new System.Windows.Forms.Panel();
             this.PersonDetailLabel = new System.Windows.Forms.Label();
             this.PersonDetailPic = new System.Windows.Forms.PictureBox();
-            this.LogoLabel = new System.Windows.Forms.Label();
-            this.LogoPic = new System.Windows.Forms.PictureBox();
             this.RoomPanel = new System.Windows.Forms.Panel();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPic = new System.Windows.Forms.PictureBox();
@@ -83,19 +95,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.RoomTypePanel = new System.Windows.Forms.Panel();
-            this.RoomTypeLabel = new System.Windows.Forms.Label();
-            this.RoomTypePic = new System.Windows.Forms.PictureBox();
-            this.RoomPricePanel = new System.Windows.Forms.Panel();
-            this.RoomPriceLabel = new System.Windows.Forms.Label();
-            this.RoomPricePic = new System.Windows.Forms.PictureBox();
-            this.RoomPositionPanel = new System.Windows.Forms.Panel();
-            this.RoomPositionLabel = new System.Windows.Forms.Label();
-            this.RoomPositionPic = new System.Windows.Forms.PictureBox();
-            this.UserPanel = new System.Windows.Forms.Panel();
-            this.UserLabel = new System.Windows.Forms.Label();
-            this.UserPic = new System.Windows.Forms.PictureBox();
             this.SidebarPanel.SuspendLayout();
+            this.UserPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPic)).BeginInit();
+            this.RoomPositionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPositionPic)).BeginInit();
+            this.LogoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoutPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
+            this.RoomPricePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPricePic)).BeginInit();
+            this.RRListPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RRPic)).BeginInit();
+            this.RoomTypePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomTypePic)).BeginInit();
             this.BanResidentListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.banResidentListPic)).BeginInit();
             this.ReportPanel.SuspendLayout();
@@ -110,12 +123,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.BanResidentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).BeginInit();
-            this.RRListPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RRPic)).BeginInit();
             this.BillingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingPic)).BeginInit();
-            this.LogoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoutPic)).BeginInit();
             this.BillListPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillListPic)).BeginInit();
             this.PersonListPanel.SuspendLayout();
@@ -124,20 +133,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.RoomListPic)).BeginInit();
             this.PersonDetailPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonDetailPic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).BeginInit();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).BeginInit();
             this.HeaderPanel.SuspendLayout();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.RoomTypePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoomTypePic)).BeginInit();
-            this.RoomPricePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoomPricePic)).BeginInit();
-            this.RoomPositionPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoomPositionPic)).BeginInit();
-            this.UserPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPic)).BeginInit();
             this.SuspendLayout();
             // 
             // SidebarPanel
@@ -169,6 +169,230 @@
             this.SidebarPanel.Name = "SidebarPanel";
             this.SidebarPanel.Size = new System.Drawing.Size(357, 972);
             this.SidebarPanel.TabIndex = 0;
+            // 
+            // UserPanel
+            // 
+            this.UserPanel.Controls.Add(this.UserLabel);
+            this.UserPanel.Controls.Add(this.UserPic);
+            this.UserPanel.Location = new System.Drawing.Point(70, 147);
+            this.UserPanel.Name = "UserPanel";
+            this.UserPanel.Size = new System.Drawing.Size(258, 42);
+            this.UserPanel.TabIndex = 5;
+            // 
+            // UserLabel
+            // 
+            this.UserLabel.AutoSize = true;
+            this.UserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.UserLabel.Location = new System.Drawing.Point(40, 10);
+            this.UserLabel.Name = "UserLabel";
+            this.UserLabel.Size = new System.Drawing.Size(59, 20);
+            this.UserLabel.TabIndex = 1;
+            this.UserLabel.Text = "Users";
+            this.UserLabel.MouseEnter += new System.EventHandler(this.UserLabel_MouseEnter);
+            this.UserLabel.MouseLeave += new System.EventHandler(this.UserLabel_MouseLeave);
+            // 
+            // UserPic
+            // 
+            this.UserPic.Image = ((System.Drawing.Image)(resources.GetObject("UserPic.Image")));
+            this.UserPic.Location = new System.Drawing.Point(3, 3);
+            this.UserPic.Name = "UserPic";
+            this.UserPic.Size = new System.Drawing.Size(34, 36);
+            this.UserPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UserPic.TabIndex = 0;
+            this.UserPic.TabStop = false;
+            // 
+            // RoomPositionPanel
+            // 
+            this.RoomPositionPanel.Controls.Add(this.RoomPositionLabel);
+            this.RoomPositionPanel.Controls.Add(this.RoomPositionPic);
+            this.RoomPositionPanel.Location = new System.Drawing.Point(70, 281);
+            this.RoomPositionPanel.Name = "RoomPositionPanel";
+            this.RoomPositionPanel.Size = new System.Drawing.Size(222, 42);
+            this.RoomPositionPanel.TabIndex = 4;
+            // 
+            // RoomPositionLabel
+            // 
+            this.RoomPositionLabel.AutoSize = true;
+            this.RoomPositionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomPositionLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RoomPositionLabel.Location = new System.Drawing.Point(40, 11);
+            this.RoomPositionLabel.Name = "RoomPositionLabel";
+            this.RoomPositionLabel.Size = new System.Drawing.Size(125, 20);
+            this.RoomPositionLabel.TabIndex = 1;
+            this.RoomPositionLabel.Text = "RoomPosition";
+            this.RoomPositionLabel.Click += new System.EventHandler(this.RoomPositionLabel_Click);
+            this.RoomPositionLabel.MouseEnter += new System.EventHandler(this.RoomPositionLabel_MouseEnter);
+            this.RoomPositionLabel.MouseLeave += new System.EventHandler(this.RoomPositionLabel_MouseLeave);
+            // 
+            // RoomPositionPic
+            // 
+            this.RoomPositionPic.Image = ((System.Drawing.Image)(resources.GetObject("RoomPositionPic.Image")));
+            this.RoomPositionPic.Location = new System.Drawing.Point(3, 3);
+            this.RoomPositionPic.Name = "RoomPositionPic";
+            this.RoomPositionPic.Size = new System.Drawing.Size(34, 36);
+            this.RoomPositionPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RoomPositionPic.TabIndex = 0;
+            this.RoomPositionPic.TabStop = false;
+            this.RoomPositionPic.Click += new System.EventHandler(this.RoomPositionPic_Click);
+            // 
+            // LogoLabel
+            // 
+            this.LogoLabel.AutoSize = true;
+            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
+            this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.LogoLabel.Location = new System.Drawing.Point(90, 20);
+            this.LogoLabel.Name = "LogoLabel";
+            this.LogoLabel.Size = new System.Drawing.Size(229, 58);
+            this.LogoLabel.TabIndex = 2;
+            this.LogoLabel.Text = "MANDALAR MYAY\r\nHOSTEL";
+            this.LogoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LogoutPanel
+            // 
+            this.LogoutPanel.Controls.Add(this.LogoutLabel);
+            this.LogoutPanel.Controls.Add(this.LogoutPic);
+            this.LogoutPanel.Location = new System.Drawing.Point(25, 923);
+            this.LogoutPanel.Name = "LogoutPanel";
+            this.LogoutPanel.Size = new System.Drawing.Size(205, 48);
+            this.LogoutPanel.TabIndex = 6;
+            // 
+            // LogoutLabel
+            // 
+            this.LogoutLabel.AutoSize = true;
+            this.LogoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.LogoutLabel.Location = new System.Drawing.Point(49, 15);
+            this.LogoutLabel.Name = "LogoutLabel";
+            this.LogoutLabel.Size = new System.Drawing.Size(76, 20);
+            this.LogoutLabel.TabIndex = 1;
+            this.LogoutLabel.Text = "Log Out";
+            this.LogoutLabel.Click += new System.EventHandler(this.LogoutLabel_Click);
+            this.LogoutLabel.MouseEnter += new System.EventHandler(this.LogoutLabel_MouseEnter);
+            this.LogoutLabel.MouseLeave += new System.EventHandler(this.LogoutLabel_MouseLeave);
+            // 
+            // LogoutPic
+            // 
+            this.LogoutPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoutPic.Image")));
+            this.LogoutPic.Location = new System.Drawing.Point(3, 3);
+            this.LogoutPic.Name = "LogoutPic";
+            this.LogoutPic.Size = new System.Drawing.Size(40, 42);
+            this.LogoutPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoutPic.TabIndex = 0;
+            this.LogoutPic.TabStop = false;
+            this.LogoutPic.Click += new System.EventHandler(this.LogoutPic_Click);
+            // 
+            // LogoPic
+            // 
+            this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
+            this.LogoPic.Location = new System.Drawing.Point(11, 12);
+            this.LogoPic.Name = "LogoPic";
+            this.LogoPic.Size = new System.Drawing.Size(82, 68);
+            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LogoPic.TabIndex = 4;
+            this.LogoPic.TabStop = false;
+            // 
+            // RoomPricePanel
+            // 
+            this.RoomPricePanel.Controls.Add(this.RoomPriceLabel);
+            this.RoomPricePanel.Controls.Add(this.RoomPricePic);
+            this.RoomPricePanel.Location = new System.Drawing.Point(70, 325);
+            this.RoomPricePanel.Name = "RoomPricePanel";
+            this.RoomPricePanel.Size = new System.Drawing.Size(222, 42);
+            this.RoomPricePanel.TabIndex = 3;
+            // 
+            // RoomPriceLabel
+            // 
+            this.RoomPriceLabel.AutoSize = true;
+            this.RoomPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomPriceLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RoomPriceLabel.Location = new System.Drawing.Point(40, 11);
+            this.RoomPriceLabel.Name = "RoomPriceLabel";
+            this.RoomPriceLabel.Size = new System.Drawing.Size(101, 20);
+            this.RoomPriceLabel.TabIndex = 1;
+            this.RoomPriceLabel.Text = "RoomPrice";
+            this.RoomPriceLabel.Click += new System.EventHandler(this.RoomPriceLabel_Click);
+            this.RoomPriceLabel.MouseEnter += new System.EventHandler(this.RoomPriceLabel_MouseEnter);
+            this.RoomPriceLabel.MouseLeave += new System.EventHandler(this.RoomPriceLabel_MouseLeave);
+            // 
+            // RoomPricePic
+            // 
+            this.RoomPricePic.Image = ((System.Drawing.Image)(resources.GetObject("RoomPricePic.Image")));
+            this.RoomPricePic.Location = new System.Drawing.Point(3, 3);
+            this.RoomPricePic.Name = "RoomPricePic";
+            this.RoomPricePic.Size = new System.Drawing.Size(34, 36);
+            this.RoomPricePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RoomPricePic.TabIndex = 0;
+            this.RoomPricePic.TabStop = false;
+            this.RoomPricePic.Click += new System.EventHandler(this.RoomPricePic_Click);
+            // 
+            // RRListPanel
+            // 
+            this.RRListPanel.Controls.Add(this.RRLabel);
+            this.RRListPanel.Controls.Add(this.RRPic);
+            this.RRListPanel.Location = new System.Drawing.Point(70, 875);
+            this.RRListPanel.Name = "RRListPanel";
+            this.RRListPanel.Size = new System.Drawing.Size(258, 42);
+            this.RRListPanel.TabIndex = 5;
+            // 
+            // RRLabel
+            // 
+            this.RRLabel.AutoSize = true;
+            this.RRLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RRLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RRLabel.Location = new System.Drawing.Point(41, 13);
+            this.RRLabel.Name = "RRLabel";
+            this.RRLabel.Size = new System.Drawing.Size(188, 20);
+            this.RRLabel.TabIndex = 1;
+            this.RRLabel.Text = "RulesRegulationsList\r\n";
+            this.RRLabel.Click += new System.EventHandler(this.RRLabel_Click);
+            this.RRLabel.MouseEnter += new System.EventHandler(this.RRLabel_MouseEnter);
+            this.RRLabel.MouseLeave += new System.EventHandler(this.RRLabel_MouseLeave);
+            // 
+            // RRPic
+            // 
+            this.RRPic.Image = ((System.Drawing.Image)(resources.GetObject("RRPic.Image")));
+            this.RRPic.Location = new System.Drawing.Point(3, 3);
+            this.RRPic.Name = "RRPic";
+            this.RRPic.Size = new System.Drawing.Size(34, 36);
+            this.RRPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RRPic.TabIndex = 0;
+            this.RRPic.TabStop = false;
+            this.RRPic.Click += new System.EventHandler(this.RRPic_Click);
+            // 
+            // RoomTypePanel
+            // 
+            this.RoomTypePanel.Controls.Add(this.RoomTypeLabel);
+            this.RoomTypePanel.Controls.Add(this.RoomTypePic);
+            this.RoomTypePanel.Location = new System.Drawing.Point(70, 237);
+            this.RoomTypePanel.Name = "RoomTypePanel";
+            this.RoomTypePanel.Size = new System.Drawing.Size(258, 42);
+            this.RoomTypePanel.TabIndex = 5;
+            // 
+            // RoomTypeLabel
+            // 
+            this.RoomTypeLabel.AutoSize = true;
+            this.RoomTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RoomTypeLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.RoomTypeLabel.Location = new System.Drawing.Point(40, 10);
+            this.RoomTypeLabel.Name = "RoomTypeLabel";
+            this.RoomTypeLabel.Size = new System.Drawing.Size(97, 20);
+            this.RoomTypeLabel.TabIndex = 1;
+            this.RoomTypeLabel.Text = "RoomType";
+            this.RoomTypeLabel.Click += new System.EventHandler(this.RoomTypeLabel_Click);
+            this.RoomTypeLabel.MouseEnter += new System.EventHandler(this.RoomTypeLabel_MouseEnter);
+            this.RoomTypeLabel.MouseLeave += new System.EventHandler(this.RoomTypeLabel_MouseLeave);
+            // 
+            // RoomTypePic
+            // 
+            this.RoomTypePic.Image = ((System.Drawing.Image)(resources.GetObject("RoomTypePic.Image")));
+            this.RoomTypePic.Location = new System.Drawing.Point(3, 3);
+            this.RoomTypePic.Name = "RoomTypePic";
+            this.RoomTypePic.Size = new System.Drawing.Size(34, 36);
+            this.RoomTypePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RoomTypePic.TabIndex = 0;
+            this.RoomTypePic.TabStop = false;
+            this.RoomTypePic.Click += new System.EventHandler(this.RoomTypePic_Click);
             // 
             // BanResidentListPanel
             // 
@@ -402,40 +626,6 @@
             this.BanResidentPic.TabStop = false;
             this.BanResidentPic.Click += new System.EventHandler(this.BanResidentPic_Click);
             // 
-            // RRListPanel
-            // 
-            this.RRListPanel.Controls.Add(this.RRLabel);
-            this.RRListPanel.Controls.Add(this.RRPic);
-            this.RRListPanel.Location = new System.Drawing.Point(70, 875);
-            this.RRListPanel.Name = "RRListPanel";
-            this.RRListPanel.Size = new System.Drawing.Size(258, 42);
-            this.RRListPanel.TabIndex = 5;
-            // 
-            // RRLabel
-            // 
-            this.RRLabel.AutoSize = true;
-            this.RRLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.RRLabel.Location = new System.Drawing.Point(41, 13);
-            this.RRLabel.Name = "RRLabel";
-            this.RRLabel.Size = new System.Drawing.Size(188, 20);
-            this.RRLabel.TabIndex = 1;
-            this.RRLabel.Text = "RulesRegulationsList\r\n";
-            this.RRLabel.Click += new System.EventHandler(this.RRLabel_Click);
-            this.RRLabel.MouseEnter += new System.EventHandler(this.RRLabel_MouseEnter);
-            this.RRLabel.MouseLeave += new System.EventHandler(this.RRLabel_MouseLeave);
-            // 
-            // RRPic
-            // 
-            this.RRPic.Image = ((System.Drawing.Image)(resources.GetObject("RRPic.Image")));
-            this.RRPic.Location = new System.Drawing.Point(3, 3);
-            this.RRPic.Name = "RRPic";
-            this.RRPic.Size = new System.Drawing.Size(34, 36);
-            this.RRPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RRPic.TabIndex = 0;
-            this.RRPic.TabStop = false;
-            this.RRPic.Click += new System.EventHandler(this.RRPic_Click);
-            // 
             // BillingPanel
             // 
             this.BillingPanel.Controls.Add(this.BillingLabel);
@@ -469,40 +659,6 @@
             this.BillingPic.TabIndex = 0;
             this.BillingPic.TabStop = false;
             this.BillingPic.Click += new System.EventHandler(this.BillingPic_Click);
-            // 
-            // LogoutPanel
-            // 
-            this.LogoutPanel.Controls.Add(this.LogoutLabel);
-            this.LogoutPanel.Controls.Add(this.LogoutPic);
-            this.LogoutPanel.Location = new System.Drawing.Point(25, 921);
-            this.LogoutPanel.Name = "LogoutPanel";
-            this.LogoutPanel.Size = new System.Drawing.Size(205, 48);
-            this.LogoutPanel.TabIndex = 6;
-            // 
-            // LogoutLabel
-            // 
-            this.LogoutLabel.AutoSize = true;
-            this.LogoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogoutLabel.Location = new System.Drawing.Point(49, 15);
-            this.LogoutLabel.Name = "LogoutLabel";
-            this.LogoutLabel.Size = new System.Drawing.Size(76, 20);
-            this.LogoutLabel.TabIndex = 1;
-            this.LogoutLabel.Text = "Log Out";
-            this.LogoutLabel.Click += new System.EventHandler(this.LogoutLabel_Click);
-            this.LogoutLabel.MouseEnter += new System.EventHandler(this.LogoutLabel_MouseEnter);
-            this.LogoutLabel.MouseLeave += new System.EventHandler(this.LogoutLabel_MouseLeave);
-            // 
-            // LogoutPic
-            // 
-            this.LogoutPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoutPic.Image")));
-            this.LogoutPic.Location = new System.Drawing.Point(3, 3);
-            this.LogoutPic.Name = "LogoutPic";
-            this.LogoutPic.Size = new System.Drawing.Size(40, 42);
-            this.LogoutPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoutPic.TabIndex = 0;
-            this.LogoutPic.TabStop = false;
-            this.LogoutPic.Click += new System.EventHandler(this.LogoutPic_Click);
             // 
             // BillListPanel
             // 
@@ -640,28 +796,6 @@
             this.PersonDetailPic.TabStop = false;
             this.PersonDetailPic.Click += new System.EventHandler(this.PersonDetailPic_Click);
             // 
-            // LogoLabel
-            // 
-            this.LogoLabel.AutoSize = true;
-            this.LogoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
-            this.LogoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LogoLabel.Location = new System.Drawing.Point(79, 20);
-            this.LogoLabel.Name = "LogoLabel";
-            this.LogoLabel.Size = new System.Drawing.Size(229, 58);
-            this.LogoLabel.TabIndex = 2;
-            this.LogoLabel.Text = "MANDALAR MYAY\r\nHOSTEL";
-            this.LogoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LogoPic
-            // 
-            this.LogoPic.Image = ((System.Drawing.Image)(resources.GetObject("LogoPic.Image")));
-            this.LogoPic.Location = new System.Drawing.Point(11, 12);
-            this.LogoPic.Name = "LogoPic";
-            this.LogoPic.Size = new System.Drawing.Size(82, 68);
-            this.LogoPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoPic.TabIndex = 4;
-            this.LogoPic.TabStop = false;
-            // 
             // RoomPanel
             // 
             this.RoomPanel.Controls.Add(this.RoomLabel);
@@ -759,126 +893,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "M A N D A L A R   M Y A Y   H O S T E L !\r\n";
             // 
-            // RoomTypePanel
-            // 
-            this.RoomTypePanel.Controls.Add(this.RoomTypeLabel);
-            this.RoomTypePanel.Controls.Add(this.RoomTypePic);
-            this.RoomTypePanel.Location = new System.Drawing.Point(70, 237);
-            this.RoomTypePanel.Name = "RoomTypePanel";
-            this.RoomTypePanel.Size = new System.Drawing.Size(258, 42);
-            this.RoomTypePanel.TabIndex = 5;
-            // 
-            // RoomTypeLabel
-            // 
-            this.RoomTypeLabel.AutoSize = true;
-            this.RoomTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomTypeLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.RoomTypeLabel.Location = new System.Drawing.Point(40, 10);
-            this.RoomTypeLabel.Name = "RoomTypeLabel";
-            this.RoomTypeLabel.Size = new System.Drawing.Size(107, 20);
-            this.RoomTypeLabel.TabIndex = 1;
-            this.RoomTypeLabel.Text = "RoomTypes";
-            // 
-            // RoomTypePic
-            // 
-            this.RoomTypePic.Image = ((System.Drawing.Image)(resources.GetObject("RoomTypePic.Image")));
-            this.RoomTypePic.Location = new System.Drawing.Point(3, 3);
-            this.RoomTypePic.Name = "RoomTypePic";
-            this.RoomTypePic.Size = new System.Drawing.Size(34, 36);
-            this.RoomTypePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RoomTypePic.TabIndex = 0;
-            this.RoomTypePic.TabStop = false;
-            // 
-            // RoomPricePanel
-            // 
-            this.RoomPricePanel.Controls.Add(this.RoomPriceLabel);
-            this.RoomPricePanel.Controls.Add(this.RoomPricePic);
-            this.RoomPricePanel.Location = new System.Drawing.Point(70, 325);
-            this.RoomPricePanel.Name = "RoomPricePanel";
-            this.RoomPricePanel.Size = new System.Drawing.Size(222, 42);
-            this.RoomPricePanel.TabIndex = 3;
-            // 
-            // RoomPriceLabel
-            // 
-            this.RoomPriceLabel.AutoSize = true;
-            this.RoomPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomPriceLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.RoomPriceLabel.Location = new System.Drawing.Point(40, 11);
-            this.RoomPriceLabel.Name = "RoomPriceLabel";
-            this.RoomPriceLabel.Size = new System.Drawing.Size(111, 20);
-            this.RoomPriceLabel.TabIndex = 1;
-            this.RoomPriceLabel.Text = "RoomPrices";
-            // 
-            // RoomPricePic
-            // 
-            this.RoomPricePic.Image = ((System.Drawing.Image)(resources.GetObject("RoomPricePic.Image")));
-            this.RoomPricePic.Location = new System.Drawing.Point(3, 3);
-            this.RoomPricePic.Name = "RoomPricePic";
-            this.RoomPricePic.Size = new System.Drawing.Size(34, 36);
-            this.RoomPricePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RoomPricePic.TabIndex = 0;
-            this.RoomPricePic.TabStop = false;
-            // 
-            // RoomPositionPanel
-            // 
-            this.RoomPositionPanel.Controls.Add(this.RoomPositionLabel);
-            this.RoomPositionPanel.Controls.Add(this.RoomPositionPic);
-            this.RoomPositionPanel.Location = new System.Drawing.Point(70, 281);
-            this.RoomPositionPanel.Name = "RoomPositionPanel";
-            this.RoomPositionPanel.Size = new System.Drawing.Size(222, 42);
-            this.RoomPositionPanel.TabIndex = 4;
-            // 
-            // RoomPositionLabel
-            // 
-            this.RoomPositionLabel.AutoSize = true;
-            this.RoomPositionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoomPositionLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.RoomPositionLabel.Location = new System.Drawing.Point(40, 11);
-            this.RoomPositionLabel.Name = "RoomPositionLabel";
-            this.RoomPositionLabel.Size = new System.Drawing.Size(135, 20);
-            this.RoomPositionLabel.TabIndex = 1;
-            this.RoomPositionLabel.Text = "RoomPositions";
-            // 
-            // RoomPositionPic
-            // 
-            this.RoomPositionPic.Image = ((System.Drawing.Image)(resources.GetObject("RoomPositionPic.Image")));
-            this.RoomPositionPic.Location = new System.Drawing.Point(3, 3);
-            this.RoomPositionPic.Name = "RoomPositionPic";
-            this.RoomPositionPic.Size = new System.Drawing.Size(34, 36);
-            this.RoomPositionPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RoomPositionPic.TabIndex = 0;
-            this.RoomPositionPic.TabStop = false;
-            // 
-            // UserPanel
-            // 
-            this.UserPanel.Controls.Add(this.UserLabel);
-            this.UserPanel.Controls.Add(this.UserPic);
-            this.UserPanel.Location = new System.Drawing.Point(70, 147);
-            this.UserPanel.Name = "UserPanel";
-            this.UserPanel.Size = new System.Drawing.Size(258, 42);
-            this.UserPanel.TabIndex = 5;
-            // 
-            // UserLabel
-            // 
-            this.UserLabel.AutoSize = true;
-            this.UserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.UserLabel.Location = new System.Drawing.Point(40, 10);
-            this.UserLabel.Name = "UserLabel";
-            this.UserLabel.Size = new System.Drawing.Size(59, 20);
-            this.UserLabel.TabIndex = 1;
-            this.UserLabel.Text = "Users";
-            // 
-            // UserPic
-            // 
-            this.UserPic.Image = ((System.Drawing.Image)(resources.GetObject("UserPic.Image")));
-            this.UserPic.Location = new System.Drawing.Point(3, 3);
-            this.UserPic.Name = "UserPic";
-            this.UserPic.Size = new System.Drawing.Size(34, 36);
-            this.UserPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.UserPic.TabIndex = 0;
-            this.UserPic.TabStop = false;
-            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -893,6 +907,25 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.SidebarPanel.ResumeLayout(false);
             this.SidebarPanel.PerformLayout();
+            this.UserPanel.ResumeLayout(false);
+            this.UserPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPic)).EndInit();
+            this.RoomPositionPanel.ResumeLayout(false);
+            this.RoomPositionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPositionPic)).EndInit();
+            this.LogoutPanel.ResumeLayout(false);
+            this.LogoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoutPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
+            this.RoomPricePanel.ResumeLayout(false);
+            this.RoomPricePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomPricePic)).EndInit();
+            this.RRListPanel.ResumeLayout(false);
+            this.RRListPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RRPic)).EndInit();
+            this.RoomTypePanel.ResumeLayout(false);
+            this.RoomTypePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomTypePic)).EndInit();
             this.BanResidentListPanel.ResumeLayout(false);
             this.BanResidentListPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.banResidentListPic)).EndInit();
@@ -914,15 +947,9 @@
             this.BanResidentPanel.ResumeLayout(false);
             this.BanResidentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BanResidentPic)).EndInit();
-            this.RRListPanel.ResumeLayout(false);
-            this.RRListPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RRPic)).EndInit();
             this.BillingPanel.ResumeLayout(false);
             this.BillingPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingPic)).EndInit();
-            this.LogoutPanel.ResumeLayout(false);
-            this.LogoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoutPic)).EndInit();
             this.BillListPanel.ResumeLayout(false);
             this.BillListPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillListPic)).EndInit();
@@ -935,7 +962,6 @@
             this.PersonDetailPanel.ResumeLayout(false);
             this.PersonDetailPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PersonDetailPic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPic)).EndInit();
             this.RoomPanel.ResumeLayout(false);
             this.RoomPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPic)).EndInit();
@@ -944,18 +970,6 @@
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.RoomTypePanel.ResumeLayout(false);
-            this.RoomTypePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoomTypePic)).EndInit();
-            this.RoomPricePanel.ResumeLayout(false);
-            this.RoomPricePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoomPricePic)).EndInit();
-            this.RoomPositionPanel.ResumeLayout(false);
-            this.RoomPositionPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RoomPositionPic)).EndInit();
-            this.UserPanel.ResumeLayout(false);
-            this.UserPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPic)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HostelManagementSystem.Views.DataEntryForm
 {
-    public partial class FrmRoomType : Form
+    public partial class FrmRoomPosition : Form
     {
-        public FrmRoomType()
+        public FrmRoomPosition()
         {
             InitializeComponent();
         }
@@ -30,38 +30,38 @@ namespace HostelManagementSystem.Views.DataEntryForm
 
         private void Clear()
         {
-            txtRoomType.Text = ""; 
-            txtRoomType.Focus();
+            txtRoomPosition.Text = "";
+            txtRoomPosition.Focus();
             UpdateBtn.Visible = false;
             DeleteBtn.Visible = false;
             SaveBtn.Visible = true;
         }
 
-        private void FrmRoomType_Load(object sender, EventArgs e)
+        private void FrmRoomPosition_Load(object sender, EventArgs e)
         {
             Connection();
             Clear();
-            FillDgRoomTypeListData();
+            FillDgRoomPositionListData();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                string query = @"INSERT INTO TblRoomTypes (RoomType) VALUES (@RoomType)";
+                string query = @"INSERT INTO TblRoomPositions (RoomPosition) VALUES (@RoomPosition)";
                 SqlCommand cmd = new SqlCommand(query, consql);
-                cmd.Parameters.Add("@RoomType", SqlDbType.NVarChar).Value = txtRoomType.Text;                
-                if (string.IsNullOrEmpty(txtRoomType.Text))
+                cmd.Parameters.Add("@RoomPosition", SqlDbType.NVarChar).Value = txtRoomPosition.Text;
+                if (string.IsNullOrEmpty(txtRoomPosition.Text))
                 {
-                    MessageBox.Show("Fill text into RoomType field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Fill text into RoomPosition field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-               
-                if (!string.IsNullOrEmpty(txtRoomType.Text))
+
+                if (!string.IsNullOrEmpty(txtRoomPosition.Text))
                 {
-                    ExecuteMyQuery(cmd, "Adding new RoomType is success.");
+                    ExecuteMyQuery(cmd, "Adding new RoomPosition is success.");
                 }
                 Clear();
-                FillDgRoomTypeListData();
+                FillDgRoomPositionListData();
             }
             catch
             {
@@ -69,20 +69,20 @@ namespace HostelManagementSystem.Views.DataEntryForm
             }
         }
 
-        private void FillDgRoomTypeListData()
+        private void FillDgRoomPositionListData()
         {
             try
             {
-                string query = "SELECT * FROM TblRoomTypes";
+                string query = "SELECT * FROM TblRoomPositions";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "RoomTypeList");
-                dgRoomTypeList.DataSource = ds.Tables["RoomTypeList"];
-                txtRoomTypeCount.Text = ds.Tables["RoomTypeList"].Rows.Count.ToString();
-                dgRoomTypeList.RowTemplate.Height = 70;
-                dgRoomTypeList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
-                dgRoomTypeList.AllowUserToAddRows = false;
-                dgRoomTypeList.Columns[0].Width = 170;
+                dgRoomPositionList.DataSource = ds.Tables["RoomTypeList"];
+                txtRoomPositionCount.Text = ds.Tables["RoomTypeList"].Rows.Count.ToString();
+                dgRoomPositionList.RowTemplate.Height = 70;
+                dgRoomPositionList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
+                dgRoomPositionList.AllowUserToAddRows = false;
+                dgRoomPositionList.Columns[0].Width = 170;
             }
             catch
             {
@@ -102,14 +102,15 @@ namespace HostelManagementSystem.Views.DataEntryForm
             }
         }
 
-        private void dgRoomTypeList_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgRoomPositionList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtRoomTypeId.Text = dgRoomTypeList.CurrentRow.Cells[0].Value.ToString();
-            txtRoomType.Text = dgRoomTypeList.CurrentRow.Cells[1].Value.ToString();
+            txtRoomPositionId.Text = dgRoomPositionList.CurrentRow.Cells[0].Value.ToString();
+            txtRoomPosition.Text = dgRoomPositionList.CurrentRow.Cells[1].Value.ToString();
             UpdateBtn.Visible = true;
             DeleteBtn.Visible = true;
             SaveBtn.Visible = false;
         }
+
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             Clear();
@@ -119,22 +120,23 @@ namespace HostelManagementSystem.Views.DataEntryForm
         {
             try
             {
-                string query = @"UPDATE TblRoomTypes SET RoomType = @RoomType WHERE RoomTypeId = @RoomTypeId";
+                string query = @"UPDATE TblRoomPositions SET RoomPosition = @RoomPosition 
+                                WHERE RoomPositionId = @RoomPositionId";
                 SqlCommand cmd = new SqlCommand(query, consql);
-                cmd.Parameters.AddWithValue("@RoomType", txtRoomType.Text.ToString());                
-                cmd.Parameters.AddWithValue("@RoomTypeId", txtRoomTypeId.Text.ToString());
-                if (string.IsNullOrEmpty(txtRoomType.Text))
+                cmd.Parameters.AddWithValue("@RoomPosition", txtRoomPosition.Text.ToString());
+                cmd.Parameters.AddWithValue("@RoomPositionId", txtRoomPositionId.Text.ToString());
+                if (string.IsNullOrEmpty(txtRoomPosition.Text))
                 {
                     MessageBox.Show("Fill text into RoomType field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                if (!string.IsNullOrEmpty(txtRoomType.Text))
+                if (!string.IsNullOrEmpty(txtRoomPosition.Text))
                 {
                     ExecuteMyQuery(cmd, "Update Successful.!");
                 }
 
                 Clear();
-                FillDgRoomTypeListData();
+                FillDgRoomPositionListData();
             }
             catch
             {
@@ -144,12 +146,12 @@ namespace HostelManagementSystem.Views.DataEntryForm
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM TblRoomTypes WHERE RoomTypeId = @RoomTypeId";
+            string query = "DELETE FROM TblRoomPositions WHERE RoomPositionId = @RoomPositionId";
             SqlCommand cmd = new SqlCommand(query, consql);
-            cmd.Parameters.AddWithValue("@RoomTypeId", txtRoomTypeId.Text.ToString());
+            cmd.Parameters.AddWithValue("@RoomPositionId", txtRoomPositionId.Text.ToString());            
             ExecuteMyQuery(cmd, "Deleting is success.!");
             Clear();
-            FillDgRoomTypeListData();
+            FillDgRoomPositionListData();
         }
     }
 }
