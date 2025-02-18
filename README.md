@@ -8,7 +8,7 @@ ABSTRACT
 
 Structure Chart for MM Hostel Management System
 -----------------------------------------------
-![StructureChart](Images/systemImages/MMHMS-StructureChart.jpg)
+![StructureChart](Images/systemImages/update-hms-structure-chart.jpg)
 
 
 ER for MM Hostel Management System
@@ -18,4 +18,4 @@ ER for MM Hostel Management System
 
 Resident Register in Hostel Management System
 ----------------------------------------------
-![ResidentRegister](Images/systemImages/resident-register(2).png)
+![ResidentRegister](Images/systemImages/update-resident-detail.png)
