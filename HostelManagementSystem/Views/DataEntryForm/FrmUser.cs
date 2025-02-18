@@ -58,7 +58,7 @@ namespace HostelManagementSystem.Views.DataEntryForm
         {
             if (txtConfirmPassword.Text != txtUserPassword.Text)
             {
-                MessageBox.Show("Confirm Password doesn't match password. Please type again!");
+                MessageBox.Show("Confirm Password doesn't match password. Please type again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtConfirmPassword.Clear();
             }
         }
@@ -67,11 +67,13 @@ namespace HostelManagementSystem.Views.DataEntryForm
         {
             try
             {
-                string query = "INSERT INTO TblUsers VALUES (@UserName, @UserPassword, @UerRole)";
+                int defaultUser = 0;
+                string query = "INSERT INTO TblUsers VALUES (@UserName, @UserPassword, @UerRole, @DefaultUser)";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.Add("@UserName", SqlDbType.VarChar).Value = txtUserName.Text;
                 cmd.Parameters.Add("@UserPassword", SqlDbType.VarChar).Value = txtUserPassword.Text;
                 cmd.Parameters.Add("@UerRole", SqlDbType.VarChar).Value = cboUserRole.SelectedItem.ToString();
+                cmd.Parameters.Add("@DefaultUser", SqlDbType.Int).Value = defaultUser;
                 if (string.IsNullOrEmpty(txtUserName.Text))
                 {
                     MessageBox.Show("Fill UserName field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -94,7 +96,7 @@ namespace HostelManagementSystem.Views.DataEntryForm
             }
             catch
             {
-                MessageBox.Show("Something wrongs! check for creating room.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Something wrongs! check for creating system user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -115,7 +117,9 @@ namespace HostelManagementSystem.Views.DataEntryForm
         {
             try
             {
-                string query = @"SELECT * FROM TblUsers ORDER BY UserId";
+                string query = @"SELECT UserId, UserName, UserPassword As Password, UserRole FROM TblUsers 
+                                    WHERE DefaultUser = 0
+                                    ORDER BY UserId";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet Dset = new DataSet();
                 DataTable dt = new DataTable();
@@ -123,7 +127,7 @@ namespace HostelManagementSystem.Views.DataEntryForm
                 dt = Dset.Tables["Users"];
                 dgUserList.DataSource = dt;
                 txtUserListCount.Text = Dset.Tables["Users"].Rows.Count.ToString();
-
+                dgUserList.Columns["UserId"].Visible = false;
                 dgUserList.RowTemplate.Height = 100;
                 dgUserList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgUserList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -155,13 +159,15 @@ namespace HostelManagementSystem.Views.DataEntryForm
         {
             try
             {
+                int defaultUser = 0;
                 string query = @"UPDATE TblUsers SET UserName = @UserName, UserPassword = @UserPassword,
-                                    UserRole = @UserRole
+                                    UserRole = @UserRole, DefaultUser = @DefaultUser
                                     WHERE UserId = @UserId";
                 SqlCommand cmd = new SqlCommand(query, consql);
                 cmd.Parameters.AddWithValue("@UserName", txtUserName.Text);
                 cmd.Parameters.AddWithValue("@UserPassword", txtUserPassword.Text);
                 cmd.Parameters.AddWithValue("@UserRole", cboUserRole.Text);
+                cmd.Parameters.AddWithValue("@DefaultUser", defaultUser);
                 cmd.Parameters.AddWithValue("@UserId", txtUserId.Text);
                 if (string.IsNullOrEmpty(txtUserName.Text))
                 {

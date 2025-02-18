@@ -79,6 +79,7 @@ namespace HostelManagementSystem.Views.DataEntryForm
                 adapter.Fill(ds, "RoomTypeList");
                 dgRoomTypeList.DataSource = ds.Tables["RoomTypeList"];
                 txtRoomTypeCount.Text = ds.Tables["RoomTypeList"].Rows.Count.ToString();
+                dgRoomTypeList.Columns["RoomTypeId"].Visible = false;
                 dgRoomTypeList.RowTemplate.Height = 70;
                 dgRoomTypeList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgRoomTypeList.AllowUserToAddRows = false;

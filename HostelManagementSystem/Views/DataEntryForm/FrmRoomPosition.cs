@@ -76,9 +76,10 @@ namespace HostelManagementSystem.Views.DataEntryForm
                 string query = "SELECT * FROM TblRoomPositions";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, consql);
                 DataSet ds = new DataSet();
-                adapter.Fill(ds, "RoomTypeList");
-                dgRoomPositionList.DataSource = ds.Tables["RoomTypeList"];
-                txtRoomPositionCount.Text = ds.Tables["RoomTypeList"].Rows.Count.ToString();
+                adapter.Fill(ds, "RoomPositionList");
+                dgRoomPositionList.DataSource = ds.Tables["RoomPositionList"];
+                txtRoomPositionCount.Text = ds.Tables["RoomPositionList"].Rows.Count.ToString();
+                dgRoomPositionList.Columns["RoomPositionId"].Visible = false;
                 dgRoomPositionList.RowTemplate.Height = 70;
                 dgRoomPositionList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgRoomPositionList.AllowUserToAddRows = false;

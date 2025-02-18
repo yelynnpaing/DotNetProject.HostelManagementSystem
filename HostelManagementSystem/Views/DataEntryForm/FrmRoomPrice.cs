@@ -81,27 +81,40 @@ namespace HostelManagementSystem.Views.DataEntryForm
             {
                 string query = "INSERT INTO TblRoomPrices VALUES (@RoomTypeId, @RoomPositionId, @RoomPrice)";
                 SqlCommand cmd = new SqlCommand(query, consql);
-                cmd.Parameters.Add("@RoomTypeId", SqlDbType.Int).Value = cboRoomType.SelectedValue;                
-                cmd.Parameters.Add("@RoomPositionId", SqlDbType.Int).Value = cboRoomPosition.SelectedValue;
-                cmd.Parameters.Add("@RoomPrice", SqlDbType.Decimal).Value = txtRoomPrice.Text;
-                if (string.IsNullOrEmpty(cboRoomType.Text))
+                //Check Room Price is already exist
+                foreach(DataGridViewRow dr in dgRoomPriceList.Rows)
                 {
-                    MessageBox.Show("Select RoomType into RoomType field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                if (string.IsNullOrEmpty(cboRoomPosition.Text))
-                {
-                    MessageBox.Show("Select RoomPosition into RoomPosition field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                if (string.IsNullOrEmpty(txtRoomPrice.Text))
-                {
-                    MessageBox.Show("Fill Room Price in RoomPrice field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    if (dr.Cells["RoomType"].Value.ToString() != cboRoomType.Text && dr.Cells["RoomPosition"].Value.ToString() != cboRoomPosition.Text)
+                    {
+                        cmd.Parameters.Add("@RoomTypeId", SqlDbType.Int).Value = cboRoomType.SelectedValue;
+                        cmd.Parameters.Add("@RoomPositionId", SqlDbType.Int).Value = cboRoomPosition.SelectedValue;
+                        cmd.Parameters.Add("@RoomPrice", SqlDbType.Decimal).Value = txtRoomPrice.Text;
+                        if (string.IsNullOrEmpty(cboRoomType.Text))
+                        {
+                            MessageBox.Show("Select RoomType into RoomType field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        if (string.IsNullOrEmpty(cboRoomPosition.Text))
+                        {
+                            MessageBox.Show("Select RoomPosition into RoomPosition field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        if (string.IsNullOrEmpty(txtRoomPrice.Text))
+                        {
+                            MessageBox.Show("Fill Room Price in RoomPrice field.!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
 
-                if (!string.IsNullOrEmpty(cboRoomPosition.Text) && !string.IsNullOrEmpty(cboRoomPosition.Text) && !string.IsNullOrEmpty(txtRoomPrice.Text))
-                {
-                    ExecuteMyQuery(cmd, "Adding new RoomType is success.");
+                        if (!string.IsNullOrEmpty(cboRoomPosition.Text) && !string.IsNullOrEmpty(cboRoomPosition.Text) && !string.IsNullOrEmpty(txtRoomPrice.Text))
+                        {
+                            ExecuteMyQuery(cmd, "Adding new RoomType is success.");
+                        }
+                        FilldgRoomPriceData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("This room type and room position for Price is already taken. Please choose another another room type and position!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
                 }
-                FilldgRoomPriceData();
+                
                 Clear();
             }
             catch
@@ -141,7 +154,7 @@ namespace HostelManagementSystem.Views.DataEntryForm
                 dt = Dset.Tables["RoomPrice"];
                 dgRoomPriceList.DataSource = dt;
                 txtRoomPriceCount.Text = Dset.Tables["RoomPrice"].Rows.Count.ToString();
-
+                dgRoomPriceList.Columns["RoomPriceId"].Visible = false;
                 dgRoomPriceList.RowTemplate.Height = 100;
                 dgRoomPriceList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgRoomPriceList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

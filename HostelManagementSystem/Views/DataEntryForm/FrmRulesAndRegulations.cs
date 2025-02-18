@@ -88,6 +88,7 @@ namespace HostelManagementSystem.Views.DataEntryForm
                 adapter.Fill(ds, "RRList");
                 dgRRList.DataSource = ds.Tables["RRList"];
                 txtRRCount.Text = ds.Tables["RRList"].Rows.Count.ToString();
+                dgRRList.Columns["RRId"].Visible = false;
                 dgRRList.RowTemplate.Height = 70;
                 dgRRList.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10F, FontStyle.Bold);
                 dgRRList.AllowUserToAddRows = false;
