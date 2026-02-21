@@ -1,9 +1,10 @@
 Teammates
----------
+=========
+
 1 - Ko Yan Aung
-2- Ko Soe Thu Ra Min
-3- Ko Hlwan Moe Naing
-4- Ko Nay Min Thant
+2 - Ko Soe Thu Ra Min
+3 - Ko Hlwan Moe Naing
+4 - Ko Nay Min Thant
 
 
 ABSTRACT 
